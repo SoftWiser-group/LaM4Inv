@@ -1,4 +1,4 @@
-# LM<sup>2</sup>C
+#  LaM4Inv
 
 
 A loop invariant inference tool which combines LLMs with traditional Bounded Model Checking tools..
