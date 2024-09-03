@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/302.c
+GPT Answer: ['assert(i >= 0);', 'assert(i % 4 == 0);', 'assert(i % 4 == 0 || i % 4 == 8);', 'assert((i % 4) == 0 || (i % 4) == 8);']
+AnsSet: ['i >= 0', 'i % 4 == 0', '(i % 4 == 0)', '((i % 4) == 0)']
+Candidate: assert(i >= 0);
+SMTLIB2: (assert (>= i 0))
+ (>= i 0)
+The answer is :  assert(i >= 0);
+Time cost is :  15.189208030700684
+The proposal times is :  1

@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/110.c
+GPT Answer: ['assert(sn == i - 1);', 'assert(i >= 1);', 'assert(i <= n + 1);', 'assert(sn >= 0);', 'assert(i >= 1 && i <= n + 1);', 'assert(i >= 1 && i <= n + 1 && sn == i - 1);']
+AnsSet: ['n >= 1', 'sn == i - 1', 'i >= 1', 'sn >= 0']
+Candidate: assert(sn == i - 1);
+SMTLIB2: (assert (= sn (- i 1)))
+ (= sn (- i 1))
+n{'i': 0, 'sn': -1, 'n': -2}
+Size of CE: 1
+GPT Answer: ['assert(sn == i - 1);', 'assert(i >= 1);', 'assert(i <= n + 1);', 'assert(sn >= 0);', 'assert(i >= 1 && i <= n + 1);', 'assert(i >= 1 && i <= n + 1 && sn == i - 1);', 'assert((i > n && sn == n) || (i <= n && sn == i - 1));']
+AnsSet: ['n >= 1', 'sn == i - 1', 'i >= 1', 'sn >= 0', '((i > n && sn == n))||((i <= n && sn == i - 1))']
+GPT Answer: ['assert(sn == i - 1);', 'assert(i >= 1);', 'assert(i <= n + 1);', 'assert(sn >= 0);', 'assert(i >= 1 && i <= n + 1);', 'assert(i >= 1 && i <= n + 1 && sn == i - 1);', 'assert((i > n && sn == n) || (i <= n && sn == i - 1));', 'assert(i >= 1 && sn == i - 1 && sn >= 0);']
+AnsSet: ['n >= 1', 'sn == i - 1', 'i >= 1', 'sn >= 0', '((i > n && sn == n))||((i <= n && sn == i - 1))']
+=================Verifivation Begin=================
+CombineCandidate: assert((n >= 1) && (sn == i - 1) && (i >= 1) && (sn >= 0) && (((i > n && sn == n))||((i <= n && sn == i - 1))));
+CombineSMTLIB2: (assert (and (and (and (and (>= n 1) (= sn (- i 1))) (>= i 1)) (>= sn 0)) (or (and (> i n) (= sn n)) (and (<= i n) (= sn (- i 1))))))
+ (and (and (and (and (>= n 1) (= sn (- i 1))) (>= i 1)) (>= sn 0)) (or (and (> i n) (= sn n)) (and (<= i n) (= sn (- i 1)))))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((n >= 1) && (sn == i - 1) && (i >= 1) && (sn >= 0) && (((i > n && sn == n))||((i <= n && sn == i - 1))));
+Time cost is :  21.24972152709961
+The proposal times is :  2

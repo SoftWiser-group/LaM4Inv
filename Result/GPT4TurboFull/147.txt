@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/147.c
+GPT Answer: ['assert(xa == 0 && ya == 0);', 'assert((xa + ya * 2) % 3 == 0);', 'assert((xa + ya * 2) >= 0);', 'assert((xa + ya * 2 + 1 >= 0) && (xa - ya * 2 - 1 <= 0));', 'assert(xa >= -ya * 2);']
+AnsSet: ['(xa + ya * 2) >= 0', '(xa + ya * 2 + 1 >= 0)', 'xa >= -ya * 2']
+Candidate: assert(xa == 0 && ya == 0);
+SMTLIB2: (assert (and (= xa 0) (= ya 0)))
+ (and (= xa 0) (= ya 0))
+i({'y': 1, 'tmp': 0, 'ya': 0, 'x': 1, 'xa': 0}, {'x': 1, 'ya': 3, 'xa': -1, 'y': 1, 'tmp': 0})
+Size of CE: 1
+GPT Answer: ['assert(xa == 0 && ya == 0);', 'assert((xa + ya * 2) % 3 == 0);', 'assert((xa + ya * 2) >= 0);', 'assert((xa + ya * 2 + 1 >= 0) && (xa - ya * 2 - 1 <= 0));', 'assert(xa >= -ya * 2);', 'assert(xa + ya * 2 >= 0);']
+AnsSet: ['(xa + ya * 2) >= 0', '(xa + ya * 2 + 1 >= 0)', 'xa >= -ya * 2', 'xa + ya * 2 >= 0']
+GPT Answer: ['assert(xa == 0 && ya == 0);', 'assert((xa + ya * 2) % 3 == 0);', 'assert((xa + ya * 2) >= 0);', 'assert((xa + ya * 2 + 1 >= 0) && (xa - ya * 2 - 1 <= 0));', 'assert(xa >= -ya * 2);', 'assert(xa + ya * 2 >= 0);', 'assert(xa + 2 * ya >= 0);']
+AnsSet: ['(xa + ya * 2) >= 0', '(xa + ya * 2 + 1 >= 0)', 'xa >= -ya * 2', 'xa + ya * 2 >= 0', 'xa + 2 * ya >= 0']
+=================Verifivation Begin=================
+CombineCandidate: assert(((xa + ya * 2) >= 0) && ((xa + ya * 2 + 1 >= 0)) && (xa >= -ya * 2) && (xa + ya * 2 >= 0) && (xa + 2 * ya >= 0));
+CombineSMTLIB2: (assert (and (and (and (and (>= (+ xa (* ya 2)) 0) (>= (+ (+ xa (* ya 2)) 1) 0)) (>= xa (* (- 0 ya) 2))) (>= (+ xa (* ya 2)) 0)) (>= (+ xa (* 2 ya)) 0)))
+ (and (and (and (and (>= (+ xa (* ya 2)) 0) (>= (+ (+ xa (* ya 2)) 1) 0)) (>= xa (* (- 0 ya) 2))) (>= (+ xa (* ya 2)) 0)) (>= (+ xa (* 2 ya)) 0))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((xa + ya * 2) >= 0) && ((xa + ya * 2 + 1 >= 0)) && (xa >= -ya * 2) && (xa + ya * 2 >= 0) && (xa + 2 * ya >= 0));
+Time cost is :  29.040128707885742
+The proposal times is :  2

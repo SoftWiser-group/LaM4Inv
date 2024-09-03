@@ -1,0 +1,56 @@
+Begin_process:   Benchmarks/Linear/c/289.c
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000016);', 'assert(x < y);', 'assert(y <= 20000001);', 'assert(x <= y + 16);', 'assert(x < y || x == y);']
+AnsSet: ['(x < y)||(x >= y)']
+Candidate: assert(x < y || x >= y);
+SMTLIB2: (assert (or (< x y) (>= x y)))
+ (or (< x y) (>= x y))
+n{'y': 0, 'x': 17}
+Size of CE: 1
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000016);', 'assert(x < y);', 'assert(y <= 20000001);', 'assert(x <= y + 16);', 'assert(x < y || x == y);', 'assert(x < y || (x >= 0 && y >= 0 && x - y <= 16));']
+AnsSet: ['(x < y)||(x >= y)']
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000016);', 'assert(x < y);', 'assert(y <= 20000001);', 'assert(x <= y + 16);', 'assert(x < y || x == y);', 'assert(x < y || (x >= 0 && y >= 0 && x - y <= 16));', 'assert(x + 16 >= y);']
+AnsSet: ['(x < y)||(x >= y)']
+=================Verifivation Begin=================
+CombineCandidate: assert(((x < y)||(x >= y)));
+CombineSMTLIB2: (assert (or (< x y) (>= x y)))
+ (or (< x y) (>= x y))
+n{'y': -17, 'x': 0}
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert(y <= 20000016);
+SMTLIB2: (assert (<= y 20000016))
+ (<= y 20000016)
+i({'y': 20000014, 'x': -1}, {'y': 20000017, 'x': 6})
+Size of CE: 3
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000016);', 'assert(x < y);', 'assert(y <= 20000001);', 'assert(x <= y + 16);', 'assert(x < y || x == y);', 'assert(x < y || (x >= 0 && y >= 0 && x - y <= 16));', 'assert(x + 16 >= y);', 'assert(y <= 20000016 && x >= -1);']
+AnsSet: ['(x < y)||(x >= y)']
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000016);', 'assert(x < y);', 'assert(y <= 20000001);', 'assert(x <= y + 16);', 'assert(x < y || x == y);', 'assert(x < y || (x >= 0 && y >= 0 && x - y <= 16));', 'assert(x + 16 >= y);', 'assert(y <= 20000016 && x >= -1);', 'assert(x + 3*y >= 3*y - 16);']
+AnsSet: ['(x < y)||(x >= y)']
+
+Candidate: assert(x < y);
+SMTLIB2: (assert (< x y))
+ (< x y)
+i({'y': 1, 'x': 0}, {'x': 10, 'y': 4})
+Size of CE: 4
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000016);', 'assert(x < y);', 'assert(y <= 20000001);', 'assert(x <= y + 16);', 'assert(x < y || x == y);', 'assert(x < y || (x >= 0 && y >= 0 && x - y <= 16));', 'assert(x + 16 >= y);', 'assert(y <= 20000016 && x >= -1);', 'assert(x + 3*y >= 3*y - 16);', 'assert(x - 3 * y <= 0);']
+AnsSet: ['(x < y)||(x >= y)']
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000016);', 'assert(x < y);', 'assert(y <= 20000001);', 'assert(x <= y + 16);', 'assert(x < y || x == y);', 'assert(x < y || (x >= 0 && y >= 0 && x - y <= 16));', 'assert(x + 16 >= y);', 'assert(y <= 20000016 && x >= -1);', 'assert(x + 3*y >= 3*y - 16);', 'assert(x - 3 * y <= 0);']
+AnsSet: ['(x < y)||(x >= y)']
+
+Candidate: assert(y <= 20000001);
+SMTLIB2: (assert (<= y 20000001))
+ (<= y 20000001)
+i({'y': 19999999, 'x': 19999998}, {'y': 20000002, 'x': 20000008})
+Size of CE: 5
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000016);', 'assert(x < y);', 'assert(y <= 20000001);', 'assert(x <= y + 16);', 'assert(x < y || x == y);', 'assert(x < y || (x >= 0 && y >= 0 && x - y <= 16));', 'assert(x + 16 >= y);', 'assert(y <= 20000016 && x >= -1);', 'assert(x + 3*y >= 3*y - 16);', 'assert(x - 3 * y <= 0);', 'assert(x <= y + 16 && y <= 20000001);']
+AnsSet: ['(x < y)||(x >= y)']
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000016);', 'assert(x < y);', 'assert(y <= 20000001);', 'assert(x <= y + 16);', 'assert(x < y || x == y);', 'assert(x < y || (x >= 0 && y >= 0 && x - y <= 16));', 'assert(x + 16 >= y);', 'assert(y <= 20000016 && x >= -1);', 'assert(x + 3*y >= 3*y - 16);', 'assert(x - 3 * y <= 0);', 'assert(x <= y + 16 && y <= 20000001);']
+AnsSet: ['(x < y)||(x >= y)']
+
+Candidate: assert(x <= y + 16);
+SMTLIB2: (assert (<= x (+ y 16)))
+ (<= x (+ y 16))
+The answer is :  assert(x <= y + 16);
+Time cost is :  40.90314984321594
+The proposal times is :  6

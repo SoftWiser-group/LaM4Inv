@@ -1,0 +1,19 @@
+Begin_process:   Benchmarks/Linear/c/271.c
+GPT Answer: ['assert(x != y);', 'assert(y >= t);', 'assert(x <= 0 || y >= t);']
+AnsSet: []
+Candidate: assert(x != y);
+SMTLIB2: (assert (not (= x y)))
+ (not (= x y))
+i({'y': 0, 't': 0, 'x': 1, 'tmp': 0}, {'y': 1, 't': 0, 'x': 1, 'tmp': 0})
+Size of CE: 1
+GPT Answer: ['assert(x != y);', 'assert(y >= t);', 'assert(x <= 0 || y >= t);']
+AnsSet: []
+GPT Answer: ['assert(x != y);', 'assert(y >= t);', 'assert(x <= 0 || y >= t);', 'assert(y >= t && x != y);']
+AnsSet: []
+
+Candidate: assert(y >= t);
+SMTLIB2: (assert (>= y t))
+ (>= y t)
+The answer is :  assert(y >= t);
+Time cost is :  25.545840978622437
+The proposal times is :  2

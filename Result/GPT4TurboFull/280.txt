@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/280.c
+GPT Answer: ['assert(x < y || x >= y);', 'assert(x >= y);']
+AnsSet: ['(x < y)||(x >= y)']
+Candidate: assert(x < y || x >= y);
+SMTLIB2: (assert (or (< x y) (>= x y)))
+ (or (< x y) (>= x y))
+The answer is :  assert(x < y || x >= y);
+Time cost is :  21.16505718231201
+The proposal times is :  1

@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/30.c
+GPT Answer: ['assert(x == 100 || x <= 100);', 'assert(x >= 0);', 'assert(x >= 0 && x <= 100);']
+AnsSet: ['(x == 100)||(x <= 100)', 'x >= 0', 'x <= 100']
+Candidate: assert(x == 100 || x <= 100);
+SMTLIB2: (assert (or (= x 100) (<= x 100)))
+ (or (= x 100) (<= x 100))
+n{'x': -1}
+Size of CE: 1
+GPT Answer: ['assert(x == 100 || x <= 100);', 'assert(x >= 0);', 'assert(x >= 0 && x <= 100);']
+AnsSet: ['(x == 100)||(x <= 100)', 'x >= 0', 'x <= 100']
+GPT Answer: ['assert(x == 100 || x <= 100);', 'assert(x >= 0);', 'assert(x >= 0 && x <= 100);']
+AnsSet: ['(x == 100)||(x <= 100)', 'x >= 0', 'x <= 100']
+=================Verifivation Begin=================
+CombineCandidate: assert(((x == 100)||(x <= 100)) && (x >= 0) && (x <= 100));
+CombineSMTLIB2: (assert (and (and (or (= x 100) (<= x 100)) (>= x 0)) (<= x 100)))
+ (and (and (or (= x 100) (<= x 100)) (>= x 0)) (<= x 100))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((x == 100)||(x <= 100)) && (x >= 0) && (x <= 100));
+Time cost is :  14.759991645812988
+The proposal times is :  2

@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/119.c
+GPT Answer: ['assert(i >= 1 && i <= size + 1 && sn == i - 1);', 'assert(i >= 1);', 'assert(sn == i - 1);', 'assert(sn <= size);', 'assert(i <= size + 1);']
+AnsSet: ['size >= 1', 'i >= 1', 'sn == i - 1', 'sn <= size']
+Candidate: assert(i >= 1 && i <= size + 1 && sn == i - 1);
+SMTLIB2: (assert (and (and (>= i 1) (<= i (+ size 1))) (= sn (- i 1))))
+ (and (and (>= i 1) (<= i (+ size 1))) (= sn (- i 1)))
+The answer is :  assert(i >= 1 && i <= size + 1 && sn == i - 1);
+Time cost is :  12.250036478042603
+The proposal times is :  1

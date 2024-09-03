@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/126.c
+GPT Answer: ['assert(x == y);', 'assert(i == j);', 'assert(i - j == x - y);', 'assert((x >= 0) && (y == j - i + x));', 'assert(x == y && y == i - j);', 'assert((x == y) && (i == j));', 'assert((x >= 0) && (y >= 0));']
+AnsSet: ['i - j == x - y', '(y == j - i + x)']
+Candidate: assert(x == y);
+SMTLIB2: (assert (= x y))
+ (= x y)
+p{'x': 1, 'y': 0, 'i': 1, 'j': 0}
+Size of CE: 1
+GPT Answer: ['assert(x == y);', 'assert(i == j);', 'assert(i - j == x - y);', 'assert((x >= 0) && (y == j - i + x));', 'assert(x == y && y == i - j);', 'assert((x == y) && (i == j));', 'assert((x >= 0) && (y >= 0));', 'assert((x == y) || (x == 0 && y == y));']
+AnsSet: ['i - j == x - y', '(y == j - i + x)']
+GPT Answer: ['assert(x == y);', 'assert(i == j);', 'assert(i - j == x - y);', 'assert((x >= 0) && (y == j - i + x));', 'assert(x == y && y == i - j);', 'assert((x == y) && (i == j));', 'assert((x >= 0) && (y >= 0));', 'assert((x == y) || (x == 0 && y == y));', 'assert((i == j && x == y) || (i != j));']
+AnsSet: ['i - j == x - y', '(y == j - i + x)', '((i == j && x == y))||((i != j))']
+=================Verifivation Begin=================
+CombineCandidate: assert((i - j == x - y) && ((y == j - i + x)) && (((i == j && x == y))||((i != j))));
+CombineSMTLIB2: (assert (and (and (= (- i j) (- x y)) (= y (+ (- j i) x))) (or (and (= i j) (= x y)) (not (= i j)))))
+ (and (and (= (- i j) (- x y)) (= y (+ (- j i) x))) (or (and (= i j) (= x y)) (not (= i j))))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((i - j == x - y) && ((y == j - i + x)) && (((i == j && x == y))||((i != j))));
+Time cost is :  23.81287980079651
+The proposal times is :  2

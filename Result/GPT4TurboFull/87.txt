@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/87.c
+GPT Answer: ['assert((x == y) || (lock == 0));', 'assert((lock == 1 && x == y) || (lock == 0 && x != y));', 'assert((lock == 1) || (x == y));', 'assert(x == y);']
+AnsSet: ['((x == y))', '((lock == 1 && x == y))', '((lock == 1))||((x == y))', 'x == y']
+Candidate: assert((x == y) || (lock == 0));
+SMTLIB2: (assert (or (= x y) (= lock 0)))
+ (or (= x y) (= lock 0))
+n{'y': 0, 'x': 0, 'lock': 2}
+Size of CE: 1
+GPT Answer: ['assert((x == y) || (lock == 0));', 'assert((lock == 1 && x == y) || (lock == 0 && x != y));', 'assert((lock == 1) || (x == y));', 'assert(x == y);', 'assert((x == y && lock == 1) || (lock == 0));']
+AnsSet: ['((x == y))', '((lock == 1 && x == y))', '((lock == 1))||((x == y))', 'x == y', '((x == y && lock == 1))']
+GPT Answer: ['assert((x == y) || (lock == 0));', 'assert((lock == 1 && x == y) || (lock == 0 && x != y));', 'assert((lock == 1) || (x == y));', 'assert(x == y);', 'assert((x == y && lock == 1) || (lock == 0));', 'assert((x == y && lock == 1) || (x != y && lock == 0));']
+AnsSet: ['((x == y))', '((lock == 1 && x == y))', '((lock == 1))||((x == y))', 'x == y', '((x == y && lock == 1))']
+=================Verifivation Begin=================
+CombineCandidate: assert((((x == y))) && (((lock == 1 && x == y))) && (((lock == 1))||((x == y))) && (x == y) && (((x == y && lock == 1))));
+CombineSMTLIB2: (assert (and (and (and (and (= x y) (and (= lock 1) (= x y))) (or (= lock 1) (= x y))) (= x y)) (and (= x y) (= lock 1))))
+ (and (and (and (and (= x y) (and (= lock 1) (= x y))) (or (= lock 1) (= x y))) (= x y)) (and (= x y) (= lock 1)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((((x == y))) && (((lock == 1 && x == y))) && (((lock == 1))||((x == y))) && (x == y) && (((x == y && lock == 1))));
+Time cost is :  24.65818476676941
+The proposal times is :  2

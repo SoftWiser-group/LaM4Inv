@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/132.c
+GPT Answer: ['assert(i >= 0);', 'assert(c <= 48 || c >= 57 || (i == 2 * (i - (c - 48))));', 'assert(j == 2*i || j == 0);', 'assert(c <= 48 || c >= 57 || (i >= 0 && j == 2 * (i - (c - 48))));', 'assert(c <= 48 || c >= 57 || i >= 0);']
+AnsSet: ['i >= 0', '(c <= 48)||(c >= 57)||(i >= 0)']
+Candidate: assert(i >= 0);
+SMTLIB2: (assert (>= i 0))
+ (>= i 0)
+The answer is :  assert(i >= 0);
+Time cost is :  15.829566717147827
+The proposal times is :  1

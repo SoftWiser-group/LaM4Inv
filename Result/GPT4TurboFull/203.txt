@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/203.c
+GPT Answer: ['assert(x <= 1);', 'assert(y >= -3);', 'assert(x >= -1);', 'assert(x >= -3);', 'assert(y == -3 || y >= -1);', 'assert(x - y <= 2);']
+AnsSet: ['x <= 1', 'y >= -3']
+Candidate: assert(x <= 1);
+SMTLIB2: (assert (<= x 1))
+ (<= x 1)
+The answer is :  assert(x <= 1);
+Time cost is :  18.465978622436523
+The proposal times is :  1

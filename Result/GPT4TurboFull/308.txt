@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/308.c
+GPT Answer: ['assert((i + j + k + v4) == l);', 'assert(l >= 0);', 'assert(l <= n);', 'assert(l == n);', 'assert(v4 == ((l + 3) / 4));', 'assert(i <= l / 3);', 'assert(j <= l / 2);', 'assert(k + i + j + v4 == l);', 'assert(v4 == (l + 3) / 4);', 'assert(i == l / 3 - v4 / 3);', 'assert(j == l / 2 - v4 / 2 - i / 2);']
+AnsSet: ['n <= 20000001', 'l >= 0', 'l <= n', 'v4 == ((l + 3) / 4)', 'i <= l / 3', 'j <= l / 2', 'v4 == (l + 3) / 4']
+Candidate: assert((i + j + k + v4) == l);
+SMTLIB2: (assert (= (+ (+ (+ i j) k) v4) l))
+ (= (+ (+ (+ i j) k) v4) l)
+The answer is :  assert((i + j + k + v4) == l);
+Time cost is :  143.5446059703827
+The proposal times is :  1

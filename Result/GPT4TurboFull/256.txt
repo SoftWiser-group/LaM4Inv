@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/256.c
+GPT Answer: ['assert(v == 1 || v % 2 == 1);', 'assert(v >= 1);', 'assert(v <= 51);', 'assert(v % 2 == 1);', 'assert(v == 1 || v >= 51);', 'assert((v % 2) == 1);']
+AnsSet: ['(v == 1)||(v % 2 == 1)', 'v >= 1', 'v <= 51', 'v % 2 == 1', '(v % 2) == 1']
+Candidate: assert(v == 1 || v % 2 == 1);
+SMTLIB2: (assert (or (= v 1) (= (mod v 2) 1)))
+ (or (= v 1) (= (mod v 2) 1))
+The answer is :  assert(v == 1 || v % 2 == 1);
+Time cost is :  14.291540622711182
+The proposal times is :  1

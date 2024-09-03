@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/200.c
+GPT Answer: ['assert(d1 == 1);', 'assert(d2 == 1);', 'assert(d3 == 1);', 'assert(x1 <= 0 || x2 <= 0 || x3 <= 0);', 'assert(d1 == 1 && d2 == 1 && d3 == 1);', 'assert(x1 >= 0 && x2 >= 0 && x3 >= 0);', 'assert(x1 <= 0 || x2 <= 0 || x3 <= 0 || ! (x1 > 0 && x2 > 0 && x3 > 0));']
+AnsSet: ['d1 == 1', 'd2 == 1']
+Candidate: assert(d1 == 1);
+SMTLIB2: (assert (= d1 1))
+ (= d1 1)
+The answer is :  assert(d1 == 1);
+Time cost is :  29.582970142364502
+The proposal times is :  1

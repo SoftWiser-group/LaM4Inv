@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/154.c
+GPT Answer: ['assert(i >= 0 && j == 2 * i);', 'assert(j == 2 * i);']
+AnsSet: ['x > 0', 'i >= 0', 'j == 2 * i']
+Candidate: assert(i >= 0 && j == 2 * i);
+SMTLIB2: (assert (and (>= i 0) (= j (* 2 i))))
+ (and (>= i 0) (= j (* 2 i)))
+n{'j': 2, 'i': 1, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert(i >= 0 && j == 2 * i);', 'assert(j == 2 * i);', 'assert(i >= 0 && i <= x && j == 2 * i);']
+AnsSet: ['x > 0', 'i >= 0', 'j == 2 * i', 'i <= x']
+GPT Answer: ['assert(i >= 0 && j == 2 * i);', 'assert(j == 2 * i);', 'assert(i >= 0 && i <= x && j == 2 * i);', 'assert(i >= 0 && j == 2 * i && i <= x);']
+AnsSet: ['x > 0', 'i >= 0', 'j == 2 * i', 'i <= x']
+=================Verifivation Begin=================
+CombineCandidate: assert((x > 0) && (i >= 0) && (j == 2 * i) && (i <= x));
+CombineSMTLIB2: (assert (and (and (and (> x 0) (>= i 0)) (= j (* 2 i))) (<= i x)))
+ (and (and (and (> x 0) (>= i 0)) (= j (* 2 i))) (<= i x))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x > 0) && (i >= 0) && (j == 2 * i) && (i <= x));
+Time cost is :  13.33391547203064
+The proposal times is :  2

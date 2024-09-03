@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/283.c
+GPT Answer: ['assert(x == 4 * y);']
+AnsSet: ['x == 4 * y']
+Candidate: assert(x == 4 * y);
+SMTLIB2: (assert (= x (* 4 y)))
+ (= x (* 4 y))
+The answer is :  assert(x == 4 * y);
+Time cost is :  8.731518507003784
+The proposal times is :  1

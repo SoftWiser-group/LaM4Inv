@@ -1,0 +1,151 @@
+(set-logic QF_NIA)
+
+( declare-const A Int )
+( declare-const A! Int )
+( declare-const B Int )
+( declare-const B! Int )
+( declare-const q Int )
+( declare-const q! Int )
+( declare-const r Int )
+( declare-const r! Int )
+( declare-const t Int )
+( declare-const t! Int )
+
+( declare-const A_0 Int )
+( declare-const B_0 Int )
+( declare-const q_0 Int )
+( declare-const q_1 Int )
+( declare-const q_2 Int )
+( declare-const q_3 Int )
+( declare-const r_0 Int )
+( declare-const r_1 Int )
+( declare-const r_2 Int )
+( declare-const r_3 Int )
+( declare-const r_4 Int )
+( declare-const t_0 Int )
+( declare-const t_1 Int )
+( declare-const t_2 Int )
+( declare-const t_3 Int )
+( declare-const t_4 Int )
+
+( define-fun inv-f( ( A Int )( B Int )( q Int )( r Int )( t Int ) ) Bool
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+)
+
+( define-fun pre-f ( ( A Int )( B Int )( q Int )( r Int )( t Int )( A_0 Int )( B_0 Int )( q_0 Int )( q_1 Int )( q_2 Int )( q_3 Int )( r_0 Int )( r_1 Int )( r_2 Int )( r_3 Int )( r_4 Int )( t_0 Int )( t_1 Int )( t_2 Int )( t_3 Int )( t_4 Int ) ) Bool
+	( and
+		( = A A_0 )
+		( = B B_0 )
+		( = q q_0 )
+		( = r r_0 )
+		( = t t_0 )
+		( = q_0 0 )
+		( = r_0 0 )
+		( = t_0 A_0 )
+		( >= A_0 0 )
+		( >= B_0 1 )
+	)
+)
+
+( define-fun trans-f ( ( A Int )( B Int )( q Int )( r Int )( t Int )( A! Int )( B! Int )( q! Int )( r! Int )( t! Int )( A_0 Int )( B_0 Int )( q_0 Int )( q_1 Int )( q_2 Int )( q_3 Int )( r_0 Int )( r_1 Int )( r_2 Int )( r_3 Int )( r_4 Int )( t_0 Int )( t_1 Int )( t_2 Int )( t_3 Int )( t_4 Int ) ) Bool
+	( or
+		( and
+			( = q_1 q )
+			( = r_1 r )
+			( = t_1 t )
+			( = q_1 q! )
+			( = r_1 r! )
+			( = t_1 t! )
+			( = A A! )
+			( = B B! )
+			( = q q! )
+			( = r r! )
+		)
+		( and
+			( = q_1 q )
+			( = r_1 r )
+			( = t_1 t )
+			( not ( = t_1 0 ) )
+			( = ( + r_1 1 ) B_0 )
+			( = q_2 ( + q_1 1 ) )
+			( = r_2 0 )
+			( = t_2 ( - t_1 1 ) )
+			( = q_3 q_2 )
+			( = r_3 r_2 )
+			( = t_3 t_2 )
+			( = q_3 q! )
+			( = r_3 r! )
+			( = t_3 t! )
+			(= A A_0 )
+			(= A! A_0 )
+			(= B B_0 )
+			(= B! B_0 )
+		)
+		( and
+			( = q_1 q )
+			( = r_1 r )
+			( = t_1 t )
+			( not ( = t_1 0 ) )
+			( not ( = ( + r_1 1 ) B_0 ) )
+			( = r_4 ( + r_1 1 ) )
+			( = t_4 ( - t_1 1 ) )
+			( = q_3 q_1 )
+			( = r_3 r_4 )
+			( = t_3 t_4 )
+			( = q_3 q! )
+			( = r_3 r! )
+			( = t_3 t! )
+			(= A A_0 )
+			(= A! A_0 )
+			(= B B_0 )
+			(= B! B_0 )
+		)
+	)
+)
+
+( define-fun post-f ( ( A Int )( B Int )( q Int )( r Int )( t Int )( A_0 Int )( B_0 Int )( q_0 Int )( q_1 Int )( q_2 Int )( q_3 Int )( r_0 Int )( r_1 Int )( r_2 Int )( r_3 Int )( r_4 Int )( t_0 Int )( t_1 Int )( t_2 Int )( t_3 Int )( t_4 Int ) ) Bool
+	( or
+		( not
+			( and
+				( = A A_0)
+				( = B B_0)
+				( = q q_1)
+				( = r r_1)
+				( = t t_1)
+			)
+		)
+		( not
+			( and
+				( not ( not ( = t_1 0 ) ) )
+				( not ( = q_1 ( div A_0 B_0 ) ) )
+			)
+		)
+	)
+)
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+( assert ( not
+	( =>
+		( pre-f A B q r t A_0 B_0 q_0 q_1 q_2 q_3 r_0 r_1 r_2 r_3 r_4 t_0 t_1 t_2 t_3 t_4  )
+		( inv-f A B q r t )
+	)
+))
+
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+( assert ( not
+	( =>
+		( and
+			( inv-f A B q r t )
+			( trans-f A B q r t A! B! q! r! t! A_0 B_0 q_0 q_1 q_2 q_3 r_0 r_1 r_2 r_3 r_4 t_0 t_1 t_2 t_3 t_4 )
+		)
+		( inv-f A! B! q! r! t! )
+	)
+))
+
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+( assert ( not
+	( =>
+		( inv-f A B q r t  )
+		( post-f A B q r t A_0 B_0 q_0 q_1 q_2 q_3 r_0 r_1 r_2 r_3 r_4 t_0 t_1 t_2 t_3 t_4 )
+	)
+))
+

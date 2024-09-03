@@ -1,0 +1,19 @@
+Begin_process:   Benchmarks/Linear/c/221.c
+GPT Answer: ['assert(x == w);', 'assert(y == z);', 'assert(x > 0 && w > 0);', 'assert(y > 0 && z > 0);', 'assert(x == w && y == z);', 'assert(z == y);']
+AnsSet: []
+Candidate: assert(x == w);
+SMTLIB2: (assert (= x w))
+ (= x w)
+n{'y': 1, 'z': 0, 'w': 0, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert(x == w);', 'assert(y == z);', 'assert(x > 0 && w > 0);', 'assert(y > 0 && z > 0);', 'assert(x == w && y == z);', 'assert(z == y);', 'assert(y == z && x == w);']
+AnsSet: []
+GPT Answer: ['assert(x == w);', 'assert(y == z);', 'assert(x > 0 && w > 0);', 'assert(y > 0 && z > 0);', 'assert(x == w && y == z);', 'assert(z == y);', 'assert(y == z && x == w);']
+AnsSet: []
+
+Candidate: assert(y == z);
+SMTLIB2: (assert (= y z))
+ (= y z)
+The answer is :  assert(y == z);
+Time cost is :  25.112152099609375
+The proposal times is :  2

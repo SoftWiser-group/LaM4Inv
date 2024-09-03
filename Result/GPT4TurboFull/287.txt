@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/287.c
+GPT Answer: ['assert(x >= 0 && y >= 0);', 'assert(x <= 100 && y <= 100);', 'assert(x == y);', 'assert(x < 100 && y < 100);', 'assert(x >= 100 || y >= 100);']
+AnsSet: ['x <= 100', 'y <= 100']
+Candidate: assert(x >= 0 && y >= 0);
+SMTLIB2: (assert (and (>= x 0) (>= y 0)))
+ (and (>= x 0) (>= y 0))
+p{'y': -1, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert(x >= 0 && y >= 0);', 'assert(x <= 100 && y <= 100);', 'assert(x == y);', 'assert(x < 100 && y < 100);', 'assert(x >= 100 || y >= 100);', 'assert(x >= 0 && y >= 0 && x <= 100 && y <= 100);']
+AnsSet: ['x <= 100', 'y <= 100']
+GPT Answer: ['assert(x >= 0 && y >= 0);', 'assert(x <= 100 && y <= 100);', 'assert(x == y);', 'assert(x < 100 && y < 100);', 'assert(x >= 100 || y >= 100);', 'assert(x >= 0 && y >= 0 && x <= 100 && y <= 100);', 'assert((x >= 0 && y >= 0) || (x >= 100 || y >= 100));']
+AnsSet: ['x <= 100', 'y <= 100']
+=================Verifivation Begin=================
+CombineCandidate: assert((x <= 100) && (y <= 100));
+CombineSMTLIB2: (assert (and (<= x 100) (<= y 100)))
+ (and (<= x 100) (<= y 100))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x <= 100) && (y <= 100));
+Time cost is :  26.800236701965332
+The proposal times is :  2

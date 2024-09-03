@@ -1,0 +1,129 @@
+Begin_process:   Benchmarks/Linear/c/240.c
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+Candidate: assert(x > -1.0 && x < 1.0);
+SMTLIB2: (assert (and (> x (- 0 1.0)) (< x 1.0)))
+ (and (> x (- 0 1.0)) (< x 1.0))
+n{'result': -1, 'exp': 0, 'count': 0, 'term': 0, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((x > -1.0) && (x < 1.0) && (count >= 1) && (count > 0));
+CombineSMTLIB2: (assert (and (and (and (> x (- 0 1.0)) (< x 1.0)) (>= count 1)) (> count 0)))
+ (and (and (and (> x (- 0 1.0)) (< x 1.0)) (>= count 1)) (> count 0))
+n{'result': -1, 'exp': 0, 'count': 1, 'term': 0, 'x': 0}
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));
+SMTLIB2: (assert count)
+ count
+
+Candidate: assert(exp == 1.0 || exp >= 1.0);
+SMTLIB2: (assert (or (= exp 1.0) (>= exp 1.0)))
+ (or (= exp 1.0) (>= exp 1.0))
+i({'x': 0, 'count': 0, 'exp': 2, 'result': 0, 'term': -1, 'tmp': 0, '/0': [else -> 2]}, {'count': 0, 'x': 0, 'term': -2, 'exp': 0, 'result': 0, 'tmp': 0})
+Size of CE: 3
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+
+Candidate: assert(count >= 1);
+SMTLIB2: (assert (>= count 1))
+ (>= count 1)
+n{'result': -1, 'exp': 0, 'count': 1, 'term': 0, 'x': 0}
+Size of CE: 4
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+
+Candidate: assert(count > 0);
+SMTLIB2: (assert (> count 0))
+ (> count 0)
+n{'result': -1, 'exp': 0, 'count': 1, 'term': 0, 'x': 0}
+Size of CE: 5
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+
+Candidate: assert(term == pow((x),( count - 1)) / tgamma(count));
+SMTLIB2: (assert count)
+ count
+
+Candidate: assert(exp <= result);
+SMTLIB2: (assert (<= exp result))
+ (<= exp result)
+i({'result': 0, 'x': 0, 'exp': 0, 'count': 0, 'term': 1, 'tmp': 0, '/0': [else -> 1]}, {'count': 0, 'x': 0, 'term': 1, 'result': 0, 'exp': 1, 'tmp': 0})
+Size of CE: 6
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+
+Candidate: assert(term == pow((x),( count - 1)) / factorial(count - 1));
+SMTLIB2: (assert (- count 1))
+ (- count 1)
+
+Candidate: assert(exp >= 1.0);
+SMTLIB2: (assert (>= exp 1.0))
+ (>= exp 1.0)
+i({'x': 1, 'exp': 1, 'result': 0, 'count': 1, 'term': -1, 'tmp': 0, '/0': [else -> 1]}, {'count': 1, 'x': 1, 'exp': 0, 'term': -1, 'result': 0, 'tmp': 0})
+Size of CE: 7
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+
+Candidate: assert(x > -1.0);
+SMTLIB2: (assert (> x (- 0 1.0)))
+ (> x (- 0 1.0))
+n{'result': -1, 'exp': 0, 'count': 0, 'term': 0, 'x': 0}
+Size of CE: 8
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == expm1(x) + 1);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+
+Candidate: assert(x < 1.0);
+SMTLIB2: (assert (< x 1.0))
+ (< x 1.0)
+n{'result': -1, 'exp': 0, 'count': 0, 'term': 0, 'x': 0}
+Size of CE: 9
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == expm1(x) + 1);', 'assert(exp + term * (x / count) >= exp);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == expm1(x) + 1);', 'assert(exp + term * (x / count) >= exp);', 'assert(exp == 1.0 + term);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+
+Candidate: assert(exp >= result);
+SMTLIB2: (assert (>= exp result))
+ (>= exp result)
+p{'count': 1, 'term': 1, 'x': 0, 'result': 2, 'exp': 1, '/0': [else -> 1]}
+Size of CE: 10
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == expm1(x) + 1);', 'assert(exp + term * (x / count) >= exp);', 'assert(exp == 1.0 + term);', 'assert(exp <= result || exp >= result);']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == expm1(x) + 1);', 'assert(exp + term * (x / count) >= exp);', 'assert(exp == 1.0 + term);', 'assert(exp <= result || exp >= result);', 'assert((count == 1 && term == 1.0 && exp == 1.0 && result == 2.0) || (exp <= result));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+
+Candidate: assert(term * (1 - x) == exp * (1 - x - x * count));
+SMTLIB2: (assert (= (* term (- 1 x)) (* exp (- (- 1 x) (* x count)))))
+ (= (* term (- 1 x)) (* exp (- (- 1 x) (* x count))))
+i({'result': 0, 'exp': -1, 'x': -2, 'term': -1, 'count': 0, 'tmp': 0, '/0': [else -> 1]}, {'count': 0, 'x': -2, 'term': -1, 'exp': -2, 'result': 0, 'tmp': 0})
+Size of CE: 11
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == expm1(x) + 1);', 'assert(exp + term * (x / count) >= exp);', 'assert(exp == 1.0 + term);', 'assert(exp <= result || exp >= result);', 'assert((count == 1 && term == 1.0 && exp == 1.0 && result == 2.0) || (exp <= result));', 'assert(term * (1 - x - x * count) == exp * (1 - x));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == expm1(x) + 1);', 'assert(exp + term * (x / count) >= exp);', 'assert(exp == 1.0 + term);', 'assert(exp <= result || exp >= result);', 'assert((count == 1 && term == 1.0 && exp == 1.0 && result == 2.0) || (exp <= result));', 'assert(term * (1 - x - x * count) == exp * (1 - x));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']
+
+Candidate: assert(exp >= 1.0 && count >= 1);
+SMTLIB2: (assert (and (>= exp 1.0) (>= count 1)))
+ (and (>= exp 1.0) (>= count 1))
+i({'x': 1, 'exp': 1, 'result': 0, 'count': 2, 'term': -2, 'tmp': 0, '/0': [else -> 1/2]}, {'count': 2, 'x': 1, 'term': -1, 'exp': 0, 'result': 0, 'tmp': 0})
+Size of CE: 12
+GPT Answer: ['assert(x > -1.0 && x < 1.0);', 'assert(term == 1.0 || term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == 1.0 || exp >= 1.0);', 'assert(count >= 1);', 'assert(count > 0);', 'assert(term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp <= result);', 'assert(term == pow((x),( count - 1)) / factorial(count - 1));', 'assert(exp >= 1.0);', 'assert(x > -1.0);', 'assert(x < 1.0);', 'assert(exp >= result);', 'assert(term * (1 - x) == exp * (1 - x - x * count));', 'assert(exp >= 1.0 && count >= 1);', 'assert(exp == 1.0 + (1 - pow((1 + x),( count))) / x);', 'assert(exp - 1.0 <= result);', 'assert(exp == 1 + term * (1 / (1 - x)));', 'assert(exp == 1.0 + (1.0 - pow((1.0 - x),( count))) / x);', 'assert(exp == (1 - pow((x),( count))) / (1 - x));', 'assert(exp + term * x / count == result);', 'assert(exp >= 1.0 && count > 0 && term == pow((x),( count - 1)) / tgamma(count));', 'assert(exp == expm1(x) + 1);', 'assert(exp + term * (x / count) >= exp);', 'assert(exp == 1.0 + term);', 'assert(exp <= result || exp >= result);', 'assert((count == 1 && term == 1.0 && exp == 1.0 && result == 2.0) || (exp <= result));', 'assert(term * (1 - x - x * count) == exp * (1 - x));']
+AnsSet: ['x > -1.0', 'x < 1.0', 'count >= 1', 'count > 0']

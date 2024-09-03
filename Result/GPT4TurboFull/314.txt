@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/314.c
+GPT Answer: ['assert(i == j);', 'assert(i == k);', 'assert(j == k);', 'assert(i >= 0 && i <= n);', 'assert(j >= 0 && j <= n);', 'assert(k >= 0 && k <= n);', 'assert((n - i) % 3 == 0);', 'assert(i % 3 == 0);', 'assert(j % 3 == 0);', 'assert(k % 3 == 0);', 'assert(i >= 0);', 'assert(i <= n);', 'assert(i == j && j == k);', 'assert(i % 3 == 0 && j % 3 == 0 && k % 3 == 0);', 'assert(i <= n && j <= n && k <= n);']
+AnsSet: ['n <= 20000001', 'i == j', 'i == k', 'j == k', 'i >= 0', 'j >= 0', 'k >= 0', 'i % 3 == 0', 'j % 3 == 0', 'k % 3 == 0']
+Candidate: assert(i == j);
+SMTLIB2: (assert (= i j))
+ (= i j)
+The answer is :  assert(i == j);
+Time cost is :  31.142821550369263
+The proposal times is :  1

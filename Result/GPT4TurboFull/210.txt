@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/210.c
+GPT Answer: ['assert(x >= 0);', 'assert(y == 2 * x);', 'assert(z == 3 * x);', 'assert(y >= 0);', 'assert(z == 3 * y / 2);', 'assert(z == 1.5 * y);', 'assert(x * 2 == y);']
+AnsSet: ['x >= 0', 'y == 2 * x', 'z == 3 * x', 'y >= 0', 'z == 3 * y / 2', 'x * 2 == y']
+Candidate: assert(x >= 0);
+SMTLIB2: (assert (>= x 0))
+ (>= x 0)
+n{'y': -1, 'z': 0, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert(x >= 0);', 'assert(y == 2 * x);', 'assert(z == 3 * x);', 'assert(y >= 0);', 'assert(z == 3 * y / 2);', 'assert(z == 1.5 * y);', 'assert(x * 2 == y);', 'assert(x >= 0 && y == 2 * x && z == 3 * x);']
+AnsSet: ['x >= 0', 'y == 2 * x', 'z == 3 * x', 'y >= 0', 'z == 3 * y / 2', 'x * 2 == y']
+GPT Answer: ['assert(x >= 0);', 'assert(y == 2 * x);', 'assert(z == 3 * x);', 'assert(y >= 0);', 'assert(z == 3 * y / 2);', 'assert(z == 1.5 * y);', 'assert(x * 2 == y);', 'assert(x >= 0 && y == 2 * x && z == 3 * x);', 'assert(y == 2 * x && z == 3 * x);']
+AnsSet: ['x >= 0', 'y == 2 * x', 'z == 3 * x', 'y >= 0', 'z == 3 * y / 2', 'x * 2 == y']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 0) && (y == 2 * x) && (z == 3 * x) && (y >= 0) && (z == 3 * y / 2) && (x * 2 == y));
+CombineSMTLIB2: (assert (and (and (and (and (and (>= x 0) (= y (* 2 x))) (= z (* 3 x))) (>= y 0)) (= z (/ (* 3 y) 2))) (= (* x 2) y)))
+ (and (and (and (and (and (>= x 0) (= y (* 2 x))) (= z (* 3 x))) (>= y 0)) (= z (/ (* 3 y) 2))) (= (* x 2) y))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x >= 0) && (y == 2 * x) && (z == 3 * x) && (y >= 0) && (z == 3 * y / 2) && (x * 2 == y));
+Time cost is :  42.26891851425171
+The proposal times is :  2

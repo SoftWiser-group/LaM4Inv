@@ -1,0 +1,109 @@
+Begin_process:   Benchmarks/Linear/c/254.c
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));']
+AnsSet: ['x >= 1', 'y >= 0']
+Candidate: assert(x >= 1);
+SMTLIB2: (assert (>= x 1))
+ (>= x 1)
+n{'y': 0, 'x': 1}
+Size of CE: 1
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);']
+AnsSet: ['x >= 1', 'y >= 0']
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);']
+AnsSet: ['x >= 1', 'y >= 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 1) && (y >= 0));
+CombineSMTLIB2: (assert (and (>= x 1) (>= y 0)))
+ (and (>= x 1) (>= y 0))
+n{'y': 0, 'x': 1}
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert(y >= 1);
+SMTLIB2: (assert (>= y 1))
+ (>= y 1)
+i({'y': 1, 'x': 50}, {'x': 51, 'y': 0})
+Size of CE: 3
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);']
+AnsSet: ['x >= 1', 'y >= 0']
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);']
+AnsSet: ['x >= 1', 'y >= 0']
+
+Candidate: assert(x == y + 50 || y == 0);
+SMTLIB2: (assert (or (= x (+ y 50)) (= y 0)))
+ (or (= x (+ y 50)) (= y 0))
+p{'y': 1, 'x': 1}
+Size of CE: 4
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)']
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));', 'assert((x >= 1 && y >= 1) || y == 0);']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)', '((x >= 1 && y >= 1))||(y == 0)']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 1) && (y >= 0) && ((y == 0 || x <= 100)) && (((x >= 1 && y >= 1))||(y == 0)));
+CombineSMTLIB2: (assert (and (and (and (>= x 1) (>= y 0)) (or (= y 0) (<= x 100))) (or (and (>= x 1) (>= y 1)) (= y 0))))
+ (and (and (and (>= x 1) (>= y 0)) (or (= y 0) (<= x 100))) (or (and (>= x 1) (>= y 1)) (= y 0)))
+i({'x': 100, 'y': 2}, {'x': 101, 'y': 1})
+Size of CE: 5
+=================Verifivation Compelete=================
+
+Candidate: assert(x >= 1 && y >= 1);
+SMTLIB2: (assert (and (>= x 1) (>= y 1)))
+ (and (>= x 1) (>= y 1))
+i({'x': 50, 'y': 1}, {'x': 51, 'y': 0})
+Size of CE: 6
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));', 'assert((x >= 1 && y >= 1) || y == 0);', 'assert(x >= 1 && y >= 1 && x - y == 0);']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)', '((x >= 1 && y >= 1))||(y == 0)']
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));', 'assert((x >= 1 && y >= 1) || y == 0);', 'assert(x >= 1 && y >= 1 && x - y == 0);', 'assert(y >= 1 && x >= 1 && x <= 100);']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)', '((x >= 1 && y >= 1))||(y == 0)', 'x <= 100']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 1) && (y >= 0) && ((y == 0 || x <= 100)) && (((x >= 1 && y >= 1))||(y == 0)) && (x <= 100));
+CombineSMTLIB2: (assert (and (and (and (and (>= x 1) (>= y 0)) (or (= y 0) (<= x 100))) (or (and (>= x 1) (>= y 1)) (= y 0))) (<= x 100)))
+ (and (and (and (and (>= x 1) (>= y 0)) (or (= y 0) (<= x 100))) (or (and (>= x 1) (>= y 1)) (= y 0))) (<= x 100))
+i({'x': 100, 'y': 2}, {'x': 101, 'y': 1})
+Size of CE: 7
+=================Verifivation Compelete=================
+
+Candidate: assert(y >= 0);
+SMTLIB2: (assert (>= y 0))
+ (>= y 0)
+n{'y': 0, 'x': 101}
+Size of CE: 8
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));', 'assert((x >= 1 && y >= 1) || y == 0);', 'assert(x >= 1 && y >= 1 && x - y == 0);', 'assert(y >= 1 && x >= 1 && x <= 100);', 'assert(x >= 1 && y >= 0 && (y == 0 || x == 100));']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)', '((x >= 1 && y >= 1))||(y == 0)', 'x <= 100']
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));', 'assert((x >= 1 && y >= 1) || y == 0);', 'assert(x >= 1 && y >= 1 && x - y == 0);', 'assert(y >= 1 && x >= 1 && x <= 100);', 'assert(x >= 1 && y >= 0 && (y == 0 || x == 100));', 'assert(x >= 1 && y >= 1 && x <= 100 && (y == 1 || x >= 50));']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)', '((x >= 1 && y >= 1))||(y == 0)', 'x <= 100']
+
+Candidate: assert((x >= 50 && y == 0) || (x < 50 && y > 0));
+SMTLIB2: (assert (or (and (>= x 50) (= y 0)) (and (< x 50) (> y 0))))
+ (or (and (>= x 50) (= y 0)) (and (< x 50) (> y 0)))
+i({'x': 49, 'y': 1}, {'x': 50, 'y': 2})
+Size of CE: 9
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));', 'assert((x >= 1 && y >= 1) || y == 0);', 'assert(x >= 1 && y >= 1 && x - y == 0);', 'assert(y >= 1 && x >= 1 && x <= 100);', 'assert(x >= 1 && y >= 0 && (y == 0 || x == 100));', 'assert(x >= 1 && y >= 1 && x <= 100 && (y == 1 || x >= 50));', 'assert((x >= 1) && (y == x || y == 2*x - 99));']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)', '((x >= 1 && y >= 1))||(y == 0)', 'x <= 100', '(x >= 1)']
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));', 'assert((x >= 1 && y >= 1) || y == 0);', 'assert(x >= 1 && y >= 1 && x - y == 0);', 'assert(y >= 1 && x >= 1 && x <= 100);', 'assert(x >= 1 && y >= 0 && (y == 0 || x == 100));', 'assert(x >= 1 && y >= 1 && x <= 100 && (y == 1 || x >= 50));', 'assert((x >= 1) && (y == x || y == 2*x - 99));', 'assert(y == 101 - x);']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)', '((x >= 1 && y >= 1))||(y == 0)', 'x <= 100', '(x >= 1)']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 1) && (y >= 0) && ((y == 0 || x <= 100)) && (((x >= 1 && y >= 1))||(y == 0)) && (x <= 100) && ((x >= 1)));
+CombineSMTLIB2: (assert (and (and (and (and (and (>= x 1) (>= y 0)) (or (= y 0) (<= x 100))) (or (and (>= x 1) (>= y 1)) (= y 0))) (<= x 100)) (>= x 1)))
+ (and (and (and (and (and (>= x 1) (>= y 0)) (or (= y 0) (<= x 100))) (or (and (>= x 1) (>= y 1)) (= y 0))) (<= x 100)) (>= x 1))
+i({'x': 100, 'y': 2}, {'x': 101, 'y': 1})
+Size of CE: 10
+=================Verifivation Compelete=================
+
+Candidate: assert(x == 2 * y - 1 || x == 2 * y - 101);
+SMTLIB2: (assert (or (= x (- (* 2 y) 1)) (= x (- (* 2 y) 101))))
+ (or (= x (- (* 2 y) 1)) (= x (- (* 2 y) 101)))
+i({'x': 51, 'y': 26}, {'x': 52, 'y': 25})
+Size of CE: 11
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));', 'assert((x >= 1 && y >= 1) || y == 0);', 'assert(x >= 1 && y >= 1 && x - y == 0);', 'assert(y >= 1 && x >= 1 && x <= 100);', 'assert(x >= 1 && y >= 0 && (y == 0 || x == 100));', 'assert(x >= 1 && y >= 1 && x <= 100 && (y == 1 || x >= 50));', 'assert((x >= 1) && (y == x || y == 2*x - 99));', 'assert(y == 101 - x);', 'assert(y > 0 && ((x < 50 && y == x) || (x >= 50 && y == 100 - x)));']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)', '((x >= 1 && y >= 1))||(y == 0)', 'x <= 100', '(x >= 1)', '((x < 50 && y == x) || (x >= 50 && y == 100 - x))']
+GPT Answer: ['assert(x >= 1);', 'assert(y >= 1);', 'assert(x == y + 50 || y == 0);', 'assert(x >= 1 && y >= 1);', 'assert(y >= 0);', 'assert((x >= 50 && y == 0) || (x < 50 && y > 0));', 'assert(x == 2 * y - 1 || x == 2 * y - 101);', 'assert(y == 1 || x >= 50);', 'assert(x == y + 50 || (x >= 100 && y == 0));', 'assert(x >= 1 && y >= 1 && x == 2 * y - 1);', 'assert(x + y == 100 && y >= 0);', 'assert(x + y == 51);', 'assert(x + y == 101);', 'assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));', 'assert((x >= 1 && y >= 1) || y == 0);', 'assert(x >= 1 && y >= 1 && x - y == 0);', 'assert(y >= 1 && x >= 1 && x <= 100);', 'assert(x >= 1 && y >= 0 && (y == 0 || x == 100));', 'assert(x >= 1 && y >= 1 && x <= 100 && (y == 1 || x >= 50));', 'assert((x >= 1) && (y == x || y == 2*x - 99));', 'assert(y == 101 - x);', 'assert(y > 0 && ((x < 50 && y == x) || (x >= 50 && y == 100 - x)));', 'assert(y > 0 && (x + y == 52));']
+AnsSet: ['x >= 1', 'y >= 0', '(y == 0 || x <= 100)', '((x >= 1 && y >= 1))||(y == 0)', 'x <= 100', '(x >= 1)', '((x < 50 && y == x) || (x >= 50 && y == 100 - x))']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 1) && (y >= 0) && ((y == 0 || x <= 100)) && (((x >= 1 && y >= 1))||(y == 0)) && (x <= 100) && ((x >= 1)) && (((x < 50 && y == x) || (x >= 50 && y == 100 - x))));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (>= x 1) (>= y 0)) (or (= y 0) (<= x 100))) (or (and (>= x 1) (>= y 1)) (= y 0))) (<= x 100)) (>= x 1)) (or (and (< x 50) (= y x)) (and (>= x 50) (= y (- 100 x))))))
+ (and (and (and (and (and (and (>= x 1) (>= y 0)) (or (= y 0) (<= x 100))) (or (and (>= x 1) (>= y 1)) (= y 0))) (<= x 100)) (>= x 1)) (or (and (< x 50) (= y x)) (and (>= x 50) (= y (- 100 x)))))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x >= 1) && (y >= 0) && ((y == 0 || x <= 100)) && (((x >= 1 && y >= 1))||(y == 0)) && (x <= 100) && ((x >= 1)) && (((x < 50 && y == x) || (x >= 50 && y == 100 - x))));
+Time cost is :  195.89866852760315
+The proposal times is :  12

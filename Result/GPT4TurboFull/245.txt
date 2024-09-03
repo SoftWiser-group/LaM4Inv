@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/245.c
+GPT Answer: ['assert((st == 0 && c >= 200000) || (st == 1 && c == 200000));', 'assert((st == 0 && last < c) || (st == 1 && last >= c));', 'assert(c == 200000);', 'assert(a == b);', 'assert(c >= 200000);']
+AnsSet: ['c == 200000', '((st == 0 && c >= 200000))||((st == 1 && c == 200000))', '((st == 0 && last < c))||((st == 1 && last >= c))', 'a == b', 'c >= 200000']
+Candidate: assert((st == 0 && c >= 200000) || (st == 1 && c == 200000));
+SMTLIB2: (assert (or (and (= st 0) (>= c 200000)) (and (= st 1) (= c 200000))))
+ (or (and (= st 0) (>= c 200000)) (and (= st 1) (= c 200000)))
+n{'a': 0, 'b': 0, 'st': 0, 'last': 0, 'c': 200001}
+Size of CE: 1
+GPT Answer: ['assert((st == 0 && c >= 200000) || (st == 1 && c == 200000));', 'assert((st == 0 && last < c) || (st == 1 && last >= c));', 'assert(c == 200000);', 'assert(a == b);', 'assert(c >= 200000);']
+AnsSet: ['c == 200000', '((st == 0 && c >= 200000))||((st == 1 && c == 200000))', '((st == 0 && last < c))||((st == 1 && last >= c))', 'a == b', 'c >= 200000']
+GPT Answer: ['assert((st == 0 && c >= 200000) || (st == 1 && c == 200000));', 'assert((st == 0 && last < c) || (st == 1 && last >= c));', 'assert(c == 200000);', 'assert(a == b);', 'assert(c >= 200000);', 'assert(st == 1 && c == 200000);']
+AnsSet: ['c == 200000', '((st == 0 && c >= 200000))||((st == 1 && c == 200000))', '((st == 0 && last < c))||((st == 1 && last >= c))', 'a == b', 'c >= 200000']
+=================Verifivation Begin=================
+CombineCandidate: assert((c == 200000) && (((st == 0 && c >= 200000))||((st == 1 && c == 200000))) && (((st == 0 && last < c))||((st == 1 && last >= c))) && (a == b) && (c >= 200000));
+CombineSMTLIB2: (assert (and (and (and (and (= c 200000) (or (and (= st 0) (>= c 200000)) (and (= st 1) (= c 200000)))) (or (and (= st 0) (< last c)) (and (= st 1) (>= last c)))) (= a b)) (>= c 200000)))
+ (and (and (and (and (= c 200000) (or (and (= st 0) (>= c 200000)) (and (= st 1) (= c 200000)))) (or (and (= st 0) (< last c)) (and (= st 1) (>= last c)))) (= a b)) (>= c 200000))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((c == 200000) && (((st == 0 && c >= 200000))||((st == 1 && c == 200000))) && (((st == 0 && last < c))||((st == 1 && last >= c))) && (a == b) && (c >= 200000));
+Time cost is :  33.6220862865448
+The proposal times is :  2

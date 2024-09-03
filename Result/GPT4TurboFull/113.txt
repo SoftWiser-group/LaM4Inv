@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/113.c
+GPT Answer: ['assert(i >= 1 && i <= n + 1);', 'assert(sn == i - 1);', 'assert(sn >= 0);', 'assert((sn == i - 1) && (i <= n + 1));', 'assert(i >= 1 && i <= n + 1 && sn == i - 1);', 'assert(i >= 1);']
+AnsSet: ['n >= 1', 'i >= 1', 'sn == i - 1', 'sn >= 0', '(sn == i - 1)']
+Candidate: assert(i >= 1 && i <= n + 1);
+SMTLIB2: (assert (and (>= i 1) (<= i (+ n 1))))
+ (and (>= i 1) (<= i (+ n 1)))
+n{'i': 1, 'sn': -1, 'n': 0}
+Size of CE: 1
+GPT Answer: ['assert(i >= 1 && i <= n + 1);', 'assert(sn == i - 1);', 'assert(sn >= 0);', 'assert((sn == i - 1) && (i <= n + 1));', 'assert(i >= 1 && i <= n + 1 && sn == i - 1);', 'assert(i >= 1);', 'assert(i == sn + 1 && sn >= 0 && i >= 1 && i <= n + 1);']
+AnsSet: ['n >= 1', 'i >= 1', 'sn == i - 1', 'sn >= 0', '(sn == i - 1)', 'i == sn + 1']
+GPT Answer: ['assert(i >= 1 && i <= n + 1);', 'assert(sn == i - 1);', 'assert(sn >= 0);', 'assert((sn == i - 1) && (i <= n + 1));', 'assert(i >= 1 && i <= n + 1 && sn == i - 1);', 'assert(i >= 1);', 'assert(i == sn + 1 && sn >= 0 && i >= 1 && i <= n + 1);', 'assert(i == sn + 1 && sn <= n);']
+AnsSet: ['n >= 1', 'i >= 1', 'sn == i - 1', 'sn >= 0', '(sn == i - 1)', 'i == sn + 1', 'sn <= n']
+=================Verifivation Begin=================
+CombineCandidate: assert((n >= 1) && (i >= 1) && (sn == i - 1) && (sn >= 0) && ((sn == i - 1)) && (i == sn + 1) && (sn <= n));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (>= n 1) (>= i 1)) (= sn (- i 1))) (>= sn 0)) (= sn (- i 1))) (= i (+ sn 1))) (<= sn n)))
+ (and (and (and (and (and (and (>= n 1) (>= i 1)) (= sn (- i 1))) (>= sn 0)) (= sn (- i 1))) (= i (+ sn 1))) (<= sn n))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((n >= 1) && (i >= 1) && (sn == i - 1) && (sn >= 0) && ((sn == i - 1)) && (i == sn + 1) && (sn <= n));
+Time cost is :  20.642638206481934
+The proposal times is :  2

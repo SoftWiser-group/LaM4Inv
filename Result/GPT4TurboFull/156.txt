@@ -1,0 +1,146 @@
+Begin_process:   Benchmarks/Linear/c/156.c
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);']
+AnsSet: ['k >= 0']
+Candidate: assert(j == k * 2 + 2);
+SMTLIB2: (assert (= j (+ (* k 2) 2)))
+ (= j (+ (* k 2) 2))
+i({'t': 0, 'j': 2, 'tmp': 0, 'k': 0}, {'j': 6, 'k': 0, 't': 0, 'tmp': 0})
+Size of CE: 1
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))']
+=================Verifivation Begin=================
+CombineCandidate: assert((k >= 0) && ((j == k * 2 + 2)||((k == 0 && t == 0))));
+CombineSMTLIB2: (assert (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))))
+ (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0))))
+i({'j': 4, 't': 0, 'tmp': 0, 'k': 1}, {'j': 8, 't': 0, 'k': 1, 'tmp': 0})
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert(k >= 0);
+SMTLIB2: (assert (>= k 0))
+ (>= k 0)
+n{'k': 1, 'j': 0, 't': 1}
+Size of CE: 3
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))']
+
+Candidate: assert(j == k * 2 + 2 || (k == 0 && t == 0));
+SMTLIB2: (assert (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0))))
+ (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))
+i({'t': 0, 'j': 4, 'tmp': 0, 'k': 1}, {'j': 8, 'k': 1, 't': 0, 'tmp': 0})
+Size of CE: 4
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))']
+
+Candidate: assert(j == 2 * k + 2);
+SMTLIB2: (assert (= j (+ (* 2 k) 2)))
+ (= j (+ (* 2 k) 2))
+i({'j': 2, 't': 0, 'tmp': 0, 'k': 0}, {'j': 6, 'k': 0, 't': 0, 'tmp': 0})
+Size of CE: 5
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((k >= 0) && ((j == k * 2 + 2)||((k == 0 && t == 0))) && ((j - 2) % 2 == 0));
+CombineSMTLIB2: (assert (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0)))
+ (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0))
+i({'k': 1, 't': 0, 'j': 4, 'tmp': 0}, {'j': 8, 'k': 1, 't': 0, 'tmp': 0})
+Size of CE: 6
+=================Verifivation Compelete=================
+
+Candidate: assert((j - 2) % 2 == 0 && k >= 0);
+SMTLIB2: (assert (and (= (mod (- j 2) 2) 0) (>= k 0)))
+ (and (= (mod (- j 2) 2) 0) (>= k 0))
+n{'k': 1, 'j': 0, 't': 0}
+Size of CE: 7
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)']
+=================Verifivation Begin=================
+CombineCandidate: assert((k >= 0) && ((j == k * 2 + 2)||((k == 0 && t == 0))) && ((j - 2) % 2 == 0) && ((j % 2 == 0)));
+CombineSMTLIB2: (assert (and (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0)) (= (mod j 2) 0)))
+ (and (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0)) (= (mod j 2) 0))
+i({'k': 1, 'j': 4, 't': 0, 'tmp': 0}, {'j': 8, 'k': 1, 't': 0, 'tmp': 0})
+Size of CE: 8
+=================Verifivation Compelete=================
+
+Candidate: assert(j - 2 * k == 2 || (k == 0 && t != 0));
+SMTLIB2: (assert (or (= (- j (* 2 k)) 2) (and (= k 0) (not (= t 0)))))
+ (or (= (- j (* 2 k)) 2) (and (= k 0) (not (= t 0))))
+i({'j': 1, 't': -1, 'tmp': 0, 'k': 0}, {'j': 3, 't': -1, 'k': 1, 'tmp': 0})
+Size of CE: 9
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));', 'assert(j == 2 * k + 2 || (k == 0 && t == 0));']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))', '(j == 2 * k + 2)||((k == 0 && t == 0))']
+=================Verifivation Begin=================
+CombineCandidate: assert((k >= 0) && ((j == k * 2 + 2)||((k == 0 && t == 0))) && ((j - 2) % 2 == 0) && ((j % 2 == 0)) && ((j == 2 + 2 * k)||((k == 0 && t == 0))) && ((j == 2 * k + 2)||((k == 0 && t == 0))));
+CombineSMTLIB2: (assert (and (and (and (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0)) (= (mod j 2) 0)) (or (= j (+ 2 (* 2 k))) (and (= k 0) (= t 0)))) (or (= j (+ (* 2 k) 2)) (and (= k 0) (= t 0)))))
+ (and (and (and (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0)) (= (mod j 2) 0)) (or (= j (+ 2 (* 2 k))) (and (= k 0) (= t 0)))) (or (= j (+ (* 2 k) 2)) (and (= k 0) (= t 0))))
+i({'k': 1, 't': 0, 'j': 4, 'tmp': 0}, {'j': 8, 'k': 1, 't': 0, 'tmp': 0})
+Size of CE: 10
+=================Verifivation Compelete=================
+
+Candidate: assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));
+SMTLIB2: (assert (and (= j (+ (+ 2 (* 2 k)) (* 2 (>= k 0)))) (= (mod j 2) 0)))
+ (and (= j (+ (+ 2 (* 2 k)) (* 2 (>= k 0)))) (= (mod j 2) 0))
+p{'j': 2, 'k': 0}
+Size of CE: 11
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));', 'assert(j == 2 * k + 2 || (k == 0 && t == 0));', 'assert(j == 2 + 2 * k && j % 2 == 0);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))', '(j == 2 * k + 2)||((k == 0 && t == 0))', 'j % 2 == 0']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));', 'assert(j == 2 * k + 2 || (k == 0 && t == 0));', 'assert(j == 2 + 2 * k && j % 2 == 0);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))', '(j == 2 * k + 2)||((k == 0 && t == 0))', 'j % 2 == 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((k >= 0) && ((j == k * 2 + 2)||((k == 0 && t == 0))) && ((j - 2) % 2 == 0) && ((j % 2 == 0)) && ((j == 2 + 2 * k)||((k == 0 && t == 0))) && ((j == 2 * k + 2)||((k == 0 && t == 0))) && (j % 2 == 0));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0)) (= (mod j 2) 0)) (or (= j (+ 2 (* 2 k))) (and (= k 0) (= t 0)))) (or (= j (+ (* 2 k) 2)) (and (= k 0) (= t 0)))) (= (mod j 2) 0)))
+ (and (and (and (and (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0)) (= (mod j 2) 0)) (or (= j (+ 2 (* 2 k))) (and (= k 0) (= t 0)))) (or (= j (+ (* 2 k) 2)) (and (= k 0) (= t 0)))) (= (mod j 2) 0))
+i({'k': 1, 'j': 4, 't': 0, 'tmp': 0}, {'j': 8, 'k': 1, 't': 0, 'tmp': 0})
+Size of CE: 12
+=================Verifivation Compelete=================
+
+Candidate: assert(j == 2 + 2 * k || (k == 0 && t == 0));
+SMTLIB2: (assert (or (= j (+ 2 (* 2 k))) (and (= k 0) (= t 0))))
+ (or (= j (+ 2 (* 2 k))) (and (= k 0) (= t 0)))
+i({'t': 0, 'j': 0, 'tmp': 0, 'k': -1}, {'j': 4, 'k': -1, 't': 0, 'tmp': 0})
+Size of CE: 13
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));', 'assert(j == 2 * k + 2 || (k == 0 && t == 0));', 'assert(j == 2 + 2 * k && j % 2 == 0);', 'assert((j - 2) % 2 == 0 && j == 2 + 2 * k);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))', '(j == 2 * k + 2)||((k == 0 && t == 0))', 'j % 2 == 0']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));', 'assert(j == 2 * k + 2 || (k == 0 && t == 0));', 'assert(j == 2 + 2 * k && j % 2 == 0);', 'assert((j - 2) % 2 == 0 && j == 2 + 2 * k);', 'assert(j == 2 + 2 * k);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))', '(j == 2 * k + 2)||((k == 0 && t == 0))', 'j % 2 == 0']
+
+Candidate: assert(j == 2 * k + 2 || (k == 0 && t == 0));
+SMTLIB2: (assert (or (= j (+ (* 2 k) 2)) (and (= k 0) (= t 0))))
+ (or (= j (+ (* 2 k) 2)) (and (= k 0) (= t 0)))
+i({'j': 0, 't': 0, 'tmp': 0, 'k': -1}, {'j': 4, 't': 0, 'k': -1, 'tmp': 0})
+Size of CE: 14
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));', 'assert(j == 2 * k + 2 || (k == 0 && t == 0));', 'assert(j == 2 + 2 * k && j % 2 == 0);', 'assert((j - 2) % 2 == 0 && j == 2 + 2 * k);', 'assert(j == 2 + 2 * k);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))', '(j == 2 * k + 2)||((k == 0 && t == 0))', 'j % 2 == 0']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));', 'assert(j == 2 * k + 2 || (k == 0 && t == 0));', 'assert(j == 2 + 2 * k && j % 2 == 0);', 'assert((j - 2) % 2 == 0 && j == 2 + 2 * k);', 'assert(j == 2 + 2 * k);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))', '(j == 2 * k + 2)||((k == 0 && t == 0))', 'j % 2 == 0']
+
+Candidate: assert(j == 2 + 2 * k && j % 2 == 0);
+SMTLIB2: (assert (and (= j (+ 2 (* 2 k))) (= (mod j 2) 0)))
+ (and (= j (+ 2 (* 2 k))) (= (mod j 2) 0))
+i({'k': -3, 'j': -4, 't': 0, 'tmp': 0}, {'j': 0, 'k': -3, 't': 0, 'tmp': 0})
+Size of CE: 15
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));', 'assert(j == 2 * k + 2 || (k == 0 && t == 0));', 'assert(j == 2 + 2 * k && j % 2 == 0);', 'assert((j - 2) % 2 == 0 && j == 2 + 2 * k);', 'assert(j == 2 + 2 * k);', 'assert(j - 2 == 2 * k && j % 2 == 0);']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))', '(j == 2 * k + 2)||((k == 0 && t == 0))', 'j % 2 == 0']
+GPT Answer: ['assert(j == k * 2 + 2);', 'assert(k >= 0);', 'assert(j == k * 2 + 2 || (k == 0 && t == 0));', 'assert(j == 2 * k + 2);', 'assert((j - 2) % 2 == 0 && k >= 0);', 'assert(j - 2 * k == 2 || (k == 0 && t != 0));', 'assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));', 'assert(j == 2 + 2 * k || (k == 0 && t == 0));', 'assert(j == 2 * k + 2 || (k == 0 && t == 0));', 'assert(j == 2 + 2 * k && j % 2 == 0);', 'assert((j - 2) % 2 == 0 && j == 2 + 2 * k);', 'assert(j == 2 + 2 * k);', 'assert(j - 2 == 2 * k && j % 2 == 0);', 'assert(j == 2 + 2 * k && (k == 0 || t != 0));']
+AnsSet: ['k >= 0', '(j == k * 2 + 2)||((k == 0 && t == 0))', '(j - 2) % 2 == 0', '(j % 2 == 0)', '(j == 2 + 2 * k)||((k == 0 && t == 0))', '(j == 2 * k + 2)||((k == 0 && t == 0))', 'j % 2 == 0', '(k == 0 || t != 0)']
+=================Verifivation Begin=================
+CombineCandidate: assert((k >= 0) && ((j == k * 2 + 2)||((k == 0 && t == 0))) && ((j - 2) % 2 == 0) && ((j % 2 == 0)) && ((j == 2 + 2 * k)||((k == 0 && t == 0))) && ((j == 2 * k + 2)||((k == 0 && t == 0))) && (j % 2 == 0) && ((k == 0 || t != 0)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0)) (= (mod j 2) 0)) (or (= j (+ 2 (* 2 k))) (and (= k 0) (= t 0)))) (or (= j (+ (* 2 k) 2)) (and (= k 0) (= t 0)))) (= (mod j 2) 0)) (or (= k 0) (not (= t 0)))))
+ (and (and (and (and (and (and (and (>= k 0) (or (= j (+ (* k 2) 2)) (and (= k 0) (= t 0)))) (= (mod (- j 2) 2) 0)) (= (mod j 2) 0)) (or (= j (+ 2 (* 2 k))) (and (= k 0) (= t 0)))) (or (= j (+ (* 2 k) 2)) (and (= k 0) (= t 0)))) (= (mod j 2) 0)) (or (= k 0) (not (= t 0))))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((k >= 0) && ((j == k * 2 + 2)||((k == 0 && t == 0))) && ((j - 2) % 2 == 0) && ((j % 2 == 0)) && ((j == 2 + 2 * k)||((k == 0 && t == 0))) && ((j == 2 * k + 2)||((k == 0 && t == 0))) && (j % 2 == 0) && ((k == 0 || t != 0)));
+Time cost is :  67.09089159965515
+The proposal times is :  16

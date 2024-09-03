@@ -1,0 +1,29 @@
+Begin_process:   Benchmarks/Linear/c/279.c
+GPT Answer: ['assert(i >= 1);', 'assert(j >= 1);', 'assert(i <= j);', 'assert(i * i < j * j);', 'assert(i * i < j * j || i == j);', 'assert(j >= i);']
+AnsSet: ['i >= 1', 'j >= 1']
+Candidate: assert(i >= 1);
+SMTLIB2: (assert (>= i 1))
+ (>= i 1)
+n{'j': 0, 'i': 1}
+Size of CE: 1
+GPT Answer: ['assert(i >= 1);', 'assert(j >= 1);', 'assert(i <= j);', 'assert(i * i < j * j);', 'assert(i * i < j * j || i == j);', 'assert(j >= i);', 'assert(i >= 1 && j >= 1 && i <= j);']
+AnsSet: ['i >= 1', 'j >= 1']
+GPT Answer: ['assert(i >= 1);', 'assert(j >= 1);', 'assert(i <= j);', 'assert(i * i < j * j);', 'assert(i * i < j * j || i == j);', 'assert(j >= i);', 'assert(i >= 1 && j >= 1 && i <= j);']
+AnsSet: ['i >= 1', 'j >= 1']
+
+Candidate: assert(j >= 1);
+SMTLIB2: (assert (>= j 1))
+ (>= j 1)
+n{'j': 1, 'i': 2}
+Size of CE: 2
+GPT Answer: ['assert(i >= 1);', 'assert(j >= 1);', 'assert(i <= j);', 'assert(i * i < j * j);', 'assert(i * i < j * j || i == j);', 'assert(j >= i);', 'assert(i >= 1 && j >= 1 && i <= j);']
+AnsSet: ['i >= 1', 'j >= 1']
+GPT Answer: ['assert(i >= 1);', 'assert(j >= 1);', 'assert(i <= j);', 'assert(i * i < j * j);', 'assert(i * i < j * j || i == j);', 'assert(j >= i);', 'assert(i >= 1 && j >= 1 && i <= j);']
+AnsSet: ['i >= 1', 'j >= 1']
+
+Candidate: assert(i <= j);
+SMTLIB2: (assert (<= i j))
+ (<= i j)
+The answer is :  assert(i <= j);
+Time cost is :  29.14166283607483
+The proposal times is :  3

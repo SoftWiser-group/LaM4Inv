@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/98.c
+GPT Answer: ['assert(i == j/y);', 'assert(y == 2);', 'assert(i == j / y);', 'assert(i == j || y != 1);', 'assert(i >= 0);', 'assert(j >= 0);']
+AnsSet: ['i == j/y', 'y == 2', 'i == j / y', '(i == j)||(y != 1)', 'i >= 0', 'j >= 0']
+Candidate: assert(i == j/y);
+SMTLIB2: (assert (= i (/ j y)))
+ (= i (/ j y))
+i({'y': 0, 'i': 0, 'j': 0, 'x': 0, '/0': [else -> 0]}, {'x': 0, 'j': 0, 'i': 1, 'y': 0})
+Size of CE: 1
+GPT Answer: ['assert(i == j/y);', 'assert(y == 2);', 'assert(i == j / y);', 'assert(i == j || y != 1);', 'assert(i >= 0);', 'assert(j >= 0);', 'assert(j == i * y);']
+AnsSet: ['i == j/y', 'y == 2', 'i == j / y', '(i == j)||(y != 1)', 'i >= 0', 'j >= 0', 'j == i * y']
+GPT Answer: ['assert(i == j/y);', 'assert(y == 2);', 'assert(i == j / y);', 'assert(i == j || y != 1);', 'assert(i >= 0);', 'assert(j >= 0);', 'assert(j == i * y);']
+AnsSet: ['i == j/y', 'y == 2', 'i == j / y', '(i == j)||(y != 1)', 'i >= 0', 'j >= 0', 'j == i * y']
+=================Verifivation Begin=================
+CombineCandidate: assert((i == j/y) && (y == 2) && (i == j / y) && ((i == j)||(y != 1)) && (i >= 0) && (j >= 0) && (j == i * y));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (= i (/ j y)) (= y 2)) (= i (/ j y))) (or (= i j) (not (= y 1)))) (>= i 0)) (>= j 0)) (= j (* i y))))
+ (and (and (and (and (and (and (= i (/ j y)) (= y 2)) (= i (/ j y))) (or (= i j) (not (= y 1)))) (>= i 0)) (>= j 0)) (= j (* i y)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((i == j/y) && (y == 2) && (i == j / y) && ((i == j)||(y != 1)) && (i >= 0) && (j >= 0) && (j == i * y));
+Time cost is :  26.46068811416626
+The proposal times is :  2

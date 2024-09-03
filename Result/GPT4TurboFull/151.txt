@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/151.c
+GPT Answer: ['assert(x >= 0);', 'assert((x >= 4 && y >= 2) || x < 4);', 'assert(x >= 4 || x == 0 || (x > 0 && x < 4));', 'assert((x >= 4 && y > 0) || (x < 0 && y <= 0) || (x >= 0 && x < 4 && y >= 100));', 'assert(x < 4 || y > 2);', 'assert(y >= 0);', 'assert((x < 4) || (x - y == 3));', 'assert((x < 4 && y >= 100 * x) || (x >= 4 && y >= x + 96));']
+AnsSet: ['x >= 0', '((x >= 4 && y >= 2))||(x < 4)', '(x >= 4)||(x == 0)||((x > 0 && x < 4))', '(x < 4)||(y > 2)', 'y >= 0', '((x < 4 && y >= 100 * x))||((x >= 4 && y >= x + 96))']
+Candidate: assert(x >= 0);
+SMTLIB2: (assert (>= x 0))
+ (>= x 0)
+n{'y': 2, 'x': 4}
+Size of CE: 1
+GPT Answer: ['assert(x >= 0);', 'assert((x >= 4 && y >= 2) || x < 4);', 'assert(x >= 4 || x == 0 || (x > 0 && x < 4));', 'assert((x >= 4 && y > 0) || (x < 0 && y <= 0) || (x >= 0 && x < 4 && y >= 100));', 'assert(x < 4 || y > 2);', 'assert(y >= 0);', 'assert((x < 4) || (x - y == 3));', 'assert((x < 4 && y >= 100 * x) || (x >= 4 && y >= x + 96));', 'assert((x >= 0) && (x < 4 || y > 2));']
+AnsSet: ['x >= 0', '((x >= 4 && y >= 2))||(x < 4)', '(x >= 4)||(x == 0)||((x > 0 && x < 4))', '(x < 4)||(y > 2)', 'y >= 0', '((x < 4 && y >= 100 * x))||((x >= 4 && y >= x + 96))', '(x >= 0)', '(x < 4 || y > 2)']
+GPT Answer: ['assert(x >= 0);', 'assert((x >= 4 && y >= 2) || x < 4);', 'assert(x >= 4 || x == 0 || (x > 0 && x < 4));', 'assert((x >= 4 && y > 0) || (x < 0 && y <= 0) || (x >= 0 && x < 4 && y >= 100));', 'assert(x < 4 || y > 2);', 'assert(y >= 0);', 'assert((x < 4) || (x - y == 3));', 'assert((x < 4 && y >= 100 * x) || (x >= 4 && y >= x + 96));', 'assert((x >= 0) && (x < 4 || y > 2));', 'assert(x >= 0 && (x < 4 || y > 2));']
+AnsSet: ['x >= 0', '((x >= 4 && y >= 2))||(x < 4)', '(x >= 4)||(x == 0)||((x > 0 && x < 4))', '(x < 4)||(y > 2)', 'y >= 0', '((x < 4 && y >= 100 * x))||((x >= 4 && y >= x + 96))', '(x >= 0)', '(x < 4 || y > 2)']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 0) && (((x >= 4 && y >= 2))||(x < 4)) && ((x >= 4)||(x == 0)||((x > 0 && x < 4))) && ((x < 4)||(y > 2)) && (y >= 0) && (((x < 4 && y >= 100 * x))||((x >= 4 && y >= x + 96))) && ((x >= 0)) && ((x < 4 || y > 2)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (>= x 0) (or (and (>= x 4) (>= y 2)) (< x 4))) (or (or (>= x 4) (= x 0)) (and (> x 0) (< x 4)))) (or (< x 4) (> y 2))) (>= y 0)) (or (and (< x 4) (>= y (* 100 x))) (and (>= x 4) (>= y (+ x 96))))) (>= x 0)) (or (< x 4) (> y 2))))
+ (and (and (and (and (and (and (and (>= x 0) (or (and (>= x 4) (>= y 2)) (< x 4))) (or (or (>= x 4) (= x 0)) (and (> x 0) (< x 4)))) (or (< x 4) (> y 2))) (>= y 0)) (or (and (< x 4) (>= y (* 100 x))) (and (>= x 4) (>= y (+ x 96))))) (>= x 0)) (or (< x 4) (> y 2)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x >= 0) && (((x >= 4 && y >= 2))||(x < 4)) && ((x >= 4)||(x == 0)||((x > 0 && x < 4))) && ((x < 4)||(y > 2)) && (y >= 0) && (((x < 4 && y >= 100 * x))||((x >= 4 && y >= x + 96))) && ((x >= 0)) && ((x < 4 || y > 2)));
+Time cost is :  31.721813440322876
+The proposal times is :  2

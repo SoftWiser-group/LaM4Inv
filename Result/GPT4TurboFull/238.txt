@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/238.c
+GPT Answer: ['assert(i == 0 && j == 0 && k == 0);', 'assert(k == 3 * i);', 'assert(j == 2 * i);', 'assert(i == j / 2);', 'assert(k == 3 * j / 2);']
+AnsSet: ['k == 3 * i', 'j == 2 * i', 'i == j / 2', 'k == 3 * j / 2']
+Candidate: assert(i == 0 && j == 0 && k == 0);
+SMTLIB2: (assert (and (and (= i 0) (= j 0)) (= k 0)))
+ (and (and (= i 0) (= j 0)) (= k 0))
+i({'j': 0, 'i': 0, 'k': 0}, {'j': 2, 'k': 3, 'i': 1})
+Size of CE: 1
+GPT Answer: ['assert(i == 0 && j == 0 && k == 0);', 'assert(k == 3 * i);', 'assert(j == 2 * i);', 'assert(i == j / 2);', 'assert(k == 3 * j / 2);', 'assert(k == 3 * i && j == 2 * i);']
+AnsSet: ['k == 3 * i', 'j == 2 * i', 'i == j / 2', 'k == 3 * j / 2']
+GPT Answer: ['assert(i == 0 && j == 0 && k == 0);', 'assert(k == 3 * i);', 'assert(j == 2 * i);', 'assert(i == j / 2);', 'assert(k == 3 * j / 2);', 'assert(k == 3 * i && j == 2 * i);']
+AnsSet: ['k == 3 * i', 'j == 2 * i', 'i == j / 2', 'k == 3 * j / 2']
+=================Verifivation Begin=================
+CombineCandidate: assert((k == 3 * i) && (j == 2 * i) && (i == j / 2) && (k == 3 * j / 2));
+CombineSMTLIB2: (assert (and (and (and (= k (* 3 i)) (= j (* 2 i))) (= i (/ j 2))) (= k (/ (* 3 j) 2))))
+ (and (and (and (= k (* 3 i)) (= j (* 2 i))) (= i (/ j 2))) (= k (/ (* 3 j) 2)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((k == 3 * i) && (j == 2 * i) && (i == j / 2) && (k == 3 * j / 2));
+Time cost is :  26.291390895843506
+The proposal times is :  2

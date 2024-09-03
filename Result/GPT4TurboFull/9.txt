@@ -1,0 +1,48 @@
+Begin_process:   Benchmarks/Linear/c/9.c
+GPT Answer: ['assert((x % 2 == y % 2) && x >= 0 && y >= 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0));', 'assert((x == 4) || (x <= 2));', 'assert((x - y == 0));', 'assert((x % 2 == 0) && (y % 2 == 0));', 'assert((x >= 0) && (x <= 4) && (y >= 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y % 2 == 0) && (y == x));']
+AnsSet: ['x >= 0', 'y >= 0', '(x >= 0)', '(y >= 0)']
+Candidate: assert((x % 2 == y % 2) && x >= 0 && y >= 0);
+SMTLIB2: (assert (and (and (= (mod x 2) (mod y 2)) (>= x 0)) (>= y 0)))
+ (and (and (= (mod x 2) (mod y 2)) (>= x 0)) (>= y 0))
+p{'y': 0, 'x': 1}
+Size of CE: 1
+GPT Answer: ['assert((x % 2 == y % 2) && x >= 0 && y >= 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0));', 'assert((x == 4) || (x <= 2));', 'assert((x - y == 0));', 'assert((x % 2 == 0) && (y % 2 == 0));', 'assert((x >= 0) && (x <= 4) && (y >= 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y % 2 == 0) && (y == x));', 'assert((x % 2 == y % 2) && (x >= 0) && (y >= 0) && (x <= 4) && (y <= 4));']
+AnsSet: ['x >= 0', 'y >= 0', '(x >= 0)', '(y >= 0)']
+GPT Answer: ['assert((x % 2 == y % 2) && x >= 0 && y >= 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0));', 'assert((x == 4) || (x <= 2));', 'assert((x - y == 0));', 'assert((x % 2 == 0) && (y % 2 == 0));', 'assert((x >= 0) && (x <= 4) && (y >= 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y % 2 == 0) && (y == x));', 'assert((x % 2 == y % 2) && (x >= 0) && (y >= 0) && (x <= 4) && (y <= 4));', 'assert((x % 2 == y % 2) && x >= 0 && y >= 0 || (x == 4 && y != 0));']
+AnsSet: ['x >= 0', 'y >= 0', '(x >= 0)', '(y >= 0)']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 0) && (y >= 0) && ((x >= 0)) && ((y >= 0)));
+CombineSMTLIB2: (assert (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0)))
+ (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0))
+n{'y': 0, 'x': 4}
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert((x >= 0) && (x <= 4));
+SMTLIB2: (assert (and (>= x 0) (<= x 4)))
+ (and (>= x 0) (<= x 4))
+i({'x': 3, 'y': 0, 'tmp': 0}, {'x': 5, 'y': 2, 'tmp': 0})
+Size of CE: 3
+GPT Answer: ['assert((x % 2 == y % 2) && x >= 0 && y >= 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0));', 'assert((x == 4) || (x <= 2));', 'assert((x - y == 0));', 'assert((x % 2 == 0) && (y % 2 == 0));', 'assert((x >= 0) && (x <= 4) && (y >= 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y % 2 == 0) && (y == x));', 'assert((x % 2 == y % 2) && (x >= 0) && (y >= 0) && (x <= 4) && (y <= 4));', 'assert((x % 2 == y % 2) && x >= 0 && y >= 0 || (x == 4 && y != 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y == x));']
+AnsSet: ['x >= 0', 'y >= 0', '(x >= 0)', '(y >= 0)']
+GPT Answer: ['assert((x % 2 == y % 2) && x >= 0 && y >= 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0));', 'assert((x == 4) || (x <= 2));', 'assert((x - y == 0));', 'assert((x % 2 == 0) && (y % 2 == 0));', 'assert((x >= 0) && (x <= 4) && (y >= 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y % 2 == 0) && (y == x));', 'assert((x % 2 == y % 2) && (x >= 0) && (y >= 0) && (x <= 4) && (y <= 4));', 'assert((x % 2 == y % 2) && x >= 0 && y >= 0 || (x == 4 && y != 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y == x));', 'assert((x >= 0) && (y >= 0) && (x - y == 0));']
+AnsSet: ['x >= 0', 'y >= 0', '(x >= 0)', '(y >= 0)']
+
+Candidate: assert((y >= 0));
+SMTLIB2: (assert (>= y 0))
+ (>= y 0)
+n{'x': 4, 'y': 0}
+Size of CE: 4
+GPT Answer: ['assert((x % 2 == y % 2) && x >= 0 && y >= 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0));', 'assert((x == 4) || (x <= 2));', 'assert((x - y == 0));', 'assert((x % 2 == 0) && (y % 2 == 0));', 'assert((x >= 0) && (x <= 4) && (y >= 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y % 2 == 0) && (y == x));', 'assert((x % 2 == y % 2) && (x >= 0) && (y >= 0) && (x <= 4) && (y <= 4));', 'assert((x % 2 == y % 2) && x >= 0 && y >= 0 || (x == 4 && y != 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y == x));', 'assert((x >= 0) && (y >= 0) && (x - y == 0));']
+AnsSet: ['x >= 0', 'y >= 0', '(x >= 0)', '(y >= 0)']
+GPT Answer: ['assert((x % 2 == y % 2) && x >= 0 && y >= 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0));', 'assert((x == 4) || (x <= 2));', 'assert((x - y == 0));', 'assert((x % 2 == 0) && (y % 2 == 0));', 'assert((x >= 0) && (x <= 4) && (y >= 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y % 2 == 0) && (y == x));', 'assert((x % 2 == y % 2) && (x >= 0) && (y >= 0) && (x <= 4) && (y <= 4));', 'assert((x % 2 == y % 2) && x >= 0 && y >= 0 || (x == 4 && y != 0));', 'assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y == x));', 'assert((x >= 0) && (y >= 0) && (x - y == 0));', 'assert((x >= 0) && (y >= 0) && (x <= y + 2));']
+AnsSet: ['x >= 0', 'y >= 0', '(x >= 0)', '(y >= 0)', '(x <= y + 2)']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 0) && (y >= 0) && ((x >= 0)) && ((y >= 0)) && ((x <= y + 2)));
+CombineSMTLIB2: (assert (and (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0)) (<= x (+ y 2))))
+ (and (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0)) (<= x (+ y 2)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x >= 0) && (y >= 0) && ((x >= 0)) && ((y >= 0)) && ((x <= y + 2)));
+Time cost is :  36.908347368240356
+The proposal times is :  5

@@ -1,0 +1,4029 @@
+Benchmarks/Linear/c/1.c
+assert((y >= 0) && (x >= y));
+assert(x >= y && y >= 0);
+assert((x >= 1) && (y >= 0) && (x >= y));
+assert(y >= 0 && x >= y);
+assert(x >= y);
+assert(y >= 0);
+assert(x >= 1);
+assert((x >= (y * (y - 1) / 2) + 1) && (y >= 0));
+assert((y >= 0) && (x == (y * (y + 1)) / 2));
+19.772085666656494	assert(((y >= 0)) && ((x >= y)) && (x >= y) && (y >= 0) && ((x >= 1)) && (x >= 1) && ((x >= (y * (y - 1) / 2) + 1)));	2
+
+Benchmarks/Linear/c/2.c
+assert((y >= 0) && (x >= y));
+assert((y <= 1000));
+assert(x >= y);
+assert(y >= 0);
+assert(x >= 1);
+assert((y >= 0) && (x >= y) && (x >= 1));
+assert((y >= 0) && (x == y * (y + 1) / 2 + 1));
+assert((y >= 0) && (x == (y * (y - 1)) / 2 + 1));
+20.128379583358765	assert(((y >= 0)) && ((x >= y)) && ((y <= 1000)) && (x >= y) && (y >= 0) && (x >= 1) && ((x >= 1)) && ((x == (y * (y - 1)) / 2 + 1)));	2
+
+Benchmarks/Linear/c/3.c
+assert(x >= 0 && x <= 5);
+assert((x > 0 && z >= y) || x == 0);
+assert(z >= y || x == 0);
+assert(x >= 0 && x <= 5 && (x == 0 || z >= y));
+assert((x >= 0 && x <= 5) && (x == 0 || z >= y));
+22.147746086120605	assert((x >= 0) && (x <= 5) && (((x > 0 && z >= y))||(x == 0)) && ((z >= y)||(x == 0)) && ((x == 0 || z >= y)) && ((x >= 0 && x <= 5)));	2
+
+Benchmarks/Linear/c/4.c
+assert(x >= 0 && x <= 500);
+assert(z >= y || x == 0);
+assert(x >= 0 && x <= 500 && (x == 0 || z >= y));
+assert((x >= 0 && x <= 500) && (x == 0 || z >= y));
+19.844969749450684	assert((x >= 0) && (x <= 500) && ((z >= y)||(x == 0)) && ((x == 0 || z >= y)) && ((x >= 0 && x <= 500)));	2
+
+Benchmarks/Linear/c/5.c
+assert(x >= 0 && x <= size);
+assert(size <= 0 || y <= z || x == 0);
+assert(size >= 0);
+assert(y >= z || x == 0);
+assert(x >= 0 && x <= size && (x == 0 || z >= y));
+assert(size <= 0 || x <= size);
+assert(size <= 0 || x >= 0);
+assert(size <= 0 || (x > 0 && z >= y));
+assert(z >= y || x == 0);
+assert(x == 0 || (x > 0 && x <= size));
+34.64239835739136	assert(size <= 0 || y <= z || x == 0);	3
+
+Benchmarks/Linear/c/6.c
+assert(size >= 0);
+assert(x >= 0 && x <= size);
+assert(y <= z || x == 0);
+assert(x == 0 || y <= z);
+assert(x >= 0 && x <= size && (x == 0 || z >= y));
+assert((x >= 0 && x <= size) && (z >= y || x == 0));
+assert(size <= 0 || x <= size && y <= z);
+23.679837942123413	assert((x >= 0) && ((y <= z)||(x == 0)) && ((x == 0)||(y <= z)) && ((x == 0 || z >= y)) && ((z >= y || x == 0)));	2
+
+Benchmarks/Linear/c/7.c
+assert((x >= 0) && (x <= 20));
+assert((y >= 0) && (y <= 20));
+assert((x == y));
+assert((x >= 0) && (y >= 0) && (x == y));
+assert(x >= 0 && y >= 0);
+assert(x <= y + 10);
+assert((x % 10 == y % 10));
+21.413136959075928	assert(((x >= 0)) && ((y >= 0)) && (x >= 0) && (y >= 0) && (x <= y + 10));	2
+
+Benchmarks/Linear/c/8.c
+assert((x >= 0) && (y >= 0));
+assert((x % 10 == y % 10));
+assert((x >= 0) && (y >= 0) && (x == y));
+assert(x >= 0);
+assert(y >= 0);
+assert(x == y || x == 0 && y == 0);
+assert((x - y) == 0);
+assert((x == y) || (x == 10 && y == 0));
+assert((x >= 0) && (y >= 0) && (x <= y + 10) && (y <= x + 10));
+21.130354166030884	assert(((x >= 0)) && ((y >= 0)) && (x >= 0) && (y >= 0) && ((x <= y + 10)) && ((y <= x + 10)));	2
+
+Benchmarks/Linear/c/9.c
+assert((x % 2 == y % 2) && x >= 0 && y >= 0);
+assert((x >= 0) && (x <= 4));
+assert((y >= 0));
+assert((x == 4) || (x <= 2));
+assert((x - y == 0));
+assert((x % 2 == 0) && (y % 2 == 0));
+assert((x >= 0) && (x <= 4) && (y >= 0));
+assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y % 2 == 0) && (y == x));
+assert((x % 2 == y % 2) && (x >= 0) && (y >= 0) && (x <= 4) && (y <= 4));
+assert((x % 2 == y % 2) && x >= 0 && y >= 0 || (x == 4 && y != 0));
+assert((x >= 0) && (x % 2 == 0) && (y >= 0) && (y == x));
+assert((x >= 0) && (y >= 0) && (x - y == 0));
+assert((x >= 0) && (y >= 0) && (x <= y + 2));
+36.908347368240356	assert((x >= 0) && (y >= 0) && ((x >= 0)) && ((y >= 0)) && ((x <= y + 2)));	5
+
+Benchmarks/Linear/c/10.c
+assert((x >= 0) && (y >= 0));
+assert((x % 2 == y % 2));
+assert(x >= 0);
+assert(y >= 0);
+assert((y == 0 && x != 4) || y > 0);
+assert((x >= 0) && (x <= 4));
+assert((y >= 0) && (y <= 4));
+assert((x % 2) == (y % 2));
+assert((x >= 0) && (x <= 4) && (y >= 0) && ((x % 2) == (y % 2)));
+assert((x >= 0) && (x % 2 == 0) && (y % 2 == 0));
+assert((x >= 0) && (x % 2 == 0) && (y % 2 == 0) && (x == y));
+28.953685522079468	assert(((x >= 0)) && ((y >= 0)) && (x >= 0) && (y >= 0) && (((y == 0 && x != 4))||(y > 0)));	2
+
+Benchmarks/Linear/c/11.c
+assert(x >= 0 && x <= 20 && y >= 0);
+assert(x >= 0 && y >= 0);
+assert(x <= y + 10 && y <= x + 10);
+assert((x >= 0) && (y >= 0) && (x == y));
+assert((x >= 0) && (x <= 20) && (y >= 0) && (x - y == 0));
+assert(x >= 0 && x <= 20);
+assert(y >= 0);
+assert((x == 20) || (x >= 0 && x <= 10));
+assert((y != 0) || (y >= 0 && y <= 10));
+assert((x - y) == 0);
+29.85467839241028	assert((x >= 0) && (y >= 0) && (x <= y + 10) && (y <= x + 10) && ((x >= 0)) && ((y >= 0)) && (((y != 0))||((y >= 0 && y <= 10))));	2
+
+Benchmarks/Linear/c/12.c
+assert((x >= 0) && (y >= 0) && (x == y));
+assert((x >= 0) && (y >= 0));
+assert((x % 10 == y % 10));
+assert(x <= y && x >= 0 && y <= 100);
+assert(x >= 0);
+assert(y >= 0);
+assert(x == y || x == y + 10);
+assert((x >= 0) && (y >= 0) && ((x == y) || (x == 0 && y == 0)));
+assert((x >= 0) && (y >= 0) && (x <= y + 10) && (y <= x + 10));
+assert((x >= 0 && y >= 0 && x % 10 == y % 10) || (x == 0 && y == 0));
+assert((x == y) || (x % 10 == y % 10));
+assert((x == y) || (x >= 10 && y >= 10));
+assert((x >= 0 && x <= y) || (x >= 10 && y >= 10));
+assert(x >= 0 && y >= 0 && x % 10 == y % 10);
+assert((x >= 0) && (y >= 0) && (x % 10 == y % 10));
+assert(x >= 0 && y >= 0 && x <= y + 10);
+assert((x == y) || (x == y + 10) || (x == y - 10));
+assert((x == y) || (x >= 20 && y >= 20));
+52.59272599220276	assert((x >= 0) && (y >= 0) && (x <= y + 10) && (y <= x + 10));	12
+
+Benchmarks/Linear/c/13.c
+assert(x >= 0 && x <= 4);
+assert(y >= 0);
+assert(x == y || x == y + 2 || x + 2 == y);
+assert((x % 2 == 0) && (y % 2 == 0) && (x >= 0) && (y >= 0));
+assert((x % 2 == 0) && (y % 2 == 0));
+assert((x >= 0) && (x <= 4));
+assert((y >= 0));
+assert((x % 2 == y % 2));
+assert((x % 2 == y % 2) && (x >= 0) && (y >= 0));
+assert(x >= 0 && y >= 0 && x - y == 0);
+assert((x >= 0) && (y >= 0) && (x % 2 == y % 2));
+assert((x >= 0) && (x % 2 == 0) && (y % 2 == 0));
+assert((x == y || x == y + 2 || x + 2 == y) && (x >= 0 && x <= 4) && (y >= 0 && y <= 4));
+assert((x >= 0) && (x <= 4) && (y >= 0) && (x == y || x == y + 1 || x == y + 2));
+assert((x >= 0) && (y >= 0) && (x == y));
+assert((x >= 0) && (y >= 0) && (x <= y + 2));
+58.47753095626831	assert((x >= 0) && (y >= 0) && ((x >= 0)) && ((y >= 0)) && ((x <= y + 2)));	9
+
+Benchmarks/Linear/c/14.c
+assert((x % 2 == 0) && (y % 2 == 0));
+assert(x >= 0);
+assert(y >= 0);
+assert((x % 2) == (y % 2));
+assert((x % 2 == y % 2));
+assert((x == y) || (x >= y));
+assert((x >= 0) && (y >= 0) && ((x % 2) == (y % 2)));
+assert((x % 2 == y % 2) || (x < 4 && y == 0));
+assert((x % 2 == y % 2) || (x == 1 && y == 0));
+assert((x <= y + 2) && (y <= x + 2));
+53.203882694244385	assert((x >= 0) && (y >= 0) && ((x >= 0)) && ((y >= 0)) && ((x <= y + 2)) && ((y <= x + 2)));	8
+
+Benchmarks/Linear/c/15.c
+assert(x >= 0 && x <= n);
+assert(m >= 0 && m <= x);
+assert(x <= n);
+assert(x >= 0);
+assert(m >= 0);
+assert(m <= x);
+assert((x >= 0 && x <= n) || (x == 0 && n <= 0));
+assert(x >= 0 && (x <= n || n <= 0));
+assert(m >= 0 && m < n && x <= n);
+assert(m >= 0 && m < x && x <= n);
+assert(x <= n || n <= 0);
+assert(x <= n && x >= 0);
+assert((x >= 0 && x <= n) && (m < n || x == 0));
+assert(x <= n && (m < n || n <= 0) && m >= 0);
+38.61332631111145	assert((x >= 0) && (m >= 0) && (m <= x) && (((x >= 0 && x <= n))||((x == 0 && n <= 0))) && ((x <= n || n <= 0)) && ((x <= n)||(n <= 0)) && ((m < n || x == 0)) && ((m < n || n <= 0)));	7
+
+Benchmarks/Linear/c/16.c
+assert(x >= 0 && x <= n);
+assert(m >= 0 && m <= x);
+assert(m >= 0);
+assert(m <= x);
+assert(x <= n);
+assert((x >= 0 && x <= n) || x == 0);
+22.51558780670166	assert((x >= 0) && (m >= 0) && (m <= x) && (((x >= 0 && x <= n))||(x == 0)));	2
+
+Benchmarks/Linear/c/17.c
+assert(x >= 1 && x <= n);
+assert(m >= 1 && m <= x);
+assert(x >= 1);
+assert(x <= n);
+assert(m >= 1);
+assert((n <= 1) || (x >= 1 && x <= n));
+assert((x >= 1 && x <= n) || (x == 1 && n <= 1));
+assert((x >= 1 && m >= 1 && m <= x) || (x >= n && (m == 1 || (m < n && m >= 1))));
+assert(m >= 1 && m <= x && x <= n);
+assert(x > n || x <= n);
+assert(x <= n || x == 1);
+assert(x >= 1 && x <= n && (m == 1 || (m >= 1 && m < x)));
+assert(x >= 1 && x <= n && (m >= 1 && m <= x));
+43.928147315979004	assert((x >= 1) && (m >= 1) && (m <= x) && (((n <= 1))||((x >= 1 && x <= n))) && (((x >= 1 && x <= n))||((x == 1 && n <= 1))) && (((x >= 1 && m >= 1 && m <= x))||((x >= n && (m == 1 || (m < n && m >= 1))))) && ((x > n)||(x <= n)) && ((x <= n)||(x == 1)) && ((m == 1 || (m >= 1 && m < x))) && ((m >= 1 && m <= x)));	9
+
+Benchmarks/Linear/c/18.c
+assert(x >= 1 && x <= n);
+assert(m >= 1 && m <= x);
+assert(x >= 1);
+assert(x <= n);
+assert(x >= 1 && x <= n && (m >= 1 && m <= x));
+assert((x == 1 && m == 1) || (x >= 1 && x <= n && m >= 1));
+assert((x >= 1 && x <= n) || (x == 1 && n <= 1));
+23.301734924316406	assert((x >= 1) && (m >= 1) && (m <= x) && ((m >= 1 && m <= x)) && (((x == 1 && m == 1))||((x >= 1 && x <= n && m >= 1))) && (((x >= 1 && x <= n))||((x == 1 && n <= 1))));	2
+
+Benchmarks/Linear/c/19.c
+assert(x >= 0 && x <= n);
+assert(m >= 0 && m <= n);
+assert(m <= x);
+assert(x <= n);
+assert(m >= 0);
+assert(m >= 0 && m <= x);
+assert((x >= 0 && x <= n) || (x == 0 && n <= 0));
+assert(x >= 0 && x <= n && (x == 0 || m < n));
+23.12732720375061	assert((x >= 0) && (m >= 0) && (m <= x) && (((x >= 0 && x <= n))||((x == 0 && n <= 0))) && ((x == 0 || m < n)));	2
+
+Benchmarks/Linear/c/20.c
+assert(x <= n);
+assert(m >= 0 && m <= x);
+assert(m >= 0 && (m <= x || x == 0));
+assert(x >= 0);
+assert(m >= 0);
+assert(m <= x);
+assert(x >= 0 && x <= n);
+assert(x <= n && x >= 0);
+22.07348394393921	assert((m >= 0) && (m <= x) && ((m <= x || x == 0)) && (x >= 0));	2
+
+Benchmarks/Linear/c/21.c
+assert(x >= 1);
+assert(m >= 1);
+assert(x <= n);
+assert(m <= x);
+assert(n > 0);
+assert(x >= 1 && x <= n);
+assert(m >= 1 && m <= x);
+assert(n >= 1);
+assert(x >= 1 && m >= 1 && m <= x && x <= n);
+assert(m >= 1 && m <= x && x <= n);
+assert(x <= n || x == 1);
+assert(x >= 1 && x <= n || x == 1);
+assert(m < n && m >= 1 && x <= n);
+assert(n <= 0 || (m < n && m >= 1 && x >= 1));
+assert(n <= 0 || (m < n && m >= 1));
+assert((n <= 1) || (x >= 1 && x <= n && m >= 1 && m <= x));
+assert((x >= 1 && x <= n) || (x == 1 && n <= 1));
+assert((x == 1 && m == 1) || (m >= 1 && m <= x));
+assert((x >= 1 && m >= 1 && m <= x) || (x >= n && m == 1));
+assert(n <= 0 || (x <= n && (m == 1 || (m < n && m >= 1))));
+assert(n <= 1 || (m < n && m >= 1));
+67.2978343963623	assert((x >= 1) && (m >= 1) && (m <= x) && ((x <= n)||(x == 1)) && ((x >= 1 && x <= n)||(x == 1)) && (((n <= 1))||((x >= 1 && x <= n && m >= 1 && m <= x))) && (((x >= 1 && x <= n))||((x == 1 && n <= 1))) && (((x == 1 && m == 1))||((m >= 1 && m <= x))) && (((x >= 1 && m >= 1 && m <= x))||((x >= n && m == 1))) && ((n <= 0)||((x <= n && (m == 1 || (m < n && m >= 1))))) && ((n <= 1)||((m < n && m >= 1))));	13
+
+Benchmarks/Linear/c/22.c
+assert(x >= 1 && x <= n);
+assert(m >= 1 && m <= x);
+assert(x >= 1 && x <= n && (m >= 1 && m <= x));
+assert(x >= 1);
+assert(x <= n);
+assert(m >= 1);
+assert(m <= x);
+assert((x >= 1 && x <= n) || (x == 1 && n <= 0));
+assert(x == 1 || (x > 1 && x <= n));
+22.789018154144287	assert((x >= 1) && (m >= 1) && (m <= x) && ((m >= 1 && m <= x)) && (((x >= 1 && x <= n))||((x == 1 && n <= 0))) && ((x == 1)||((x > 1 && x <= n))));	2
+
+Benchmarks/Linear/c/23.c
+assert(i == 1 && j == 20);
+assert(j >= i - 3);
+assert((i + j) % 3 == 1);
+assert((i + j == 21) && (i % 2 == 1) && (j % 2 == 0));
+assert((i == 1) && (j == 20));
+assert(j >= i);
+assert(i + j == 21);
+assert((j >= i) || (j == 13));
+assert(((i + j) % 3 == 0));
+assert((j - i == 19) && (i % 2 == 1) && (j % 2 == 0));
+assert((j - i) % 3 == 2);
+assert((j == i - 9) && (i % 2 == 1) && (j % 2 == 0));
+assert((i + j) == 21 && (i - j) % 3 == 1);
+assert((i + j == 21) || (j < i));
+assert((i + j) % 3 == 1 || (i == 1 && j == 20));
+assert((i + j == 21) && (i % 2 == 1));
+assert((j - i == 17) && (i % 2 == 1) && (j % 2 == 0));
+assert((j - i == 9) && (i % 2 == 1) && (j % 2 == 0));
+assert(i + j <= 21 && i + j >= 19);
+assert((i + j) == 21);
+assert((j - i == 21) || (j == 13));
+assert((j - i == 18 || j - i == 17) && (i + j) % 3 == 2);
+assert(i + j == 21 && i % 2 == 1);
+assert((i <= j + 1) && ((j - i) % 3 == 1));
+assert((j >= i - 1) && (((i + j) % 3) == 1 || i > j));
+assert((i == 1 && j == 20) || (j == i - 9 && i % 2 == 1 && j % 2 == 0));
+assert((j == 20 && i == 1) || (j == i - 9 && i % 2 == 1 && j % 2 == 0));
+assert((i + j == 21) || (i == 1 && j == 20));
+assert((i + j) == 21 && j >= i);
+assert((i + j == 21) && (i % 2 == 1) && (j <= 20) && (j >= i));
+assert((i <= j + 1) && ((i % 2 == 1) || (i == 0)) && ((j % 2 == 0) || (j == 20)));
+assert((j >= i && (j - i) % 3 == 0 && i % 2 == 1 && j % 2 == 0) || (j < i));
+assert((i <= j && (j - i) % 3 == 2 && i % 2 == 1 && j % 2 == 0) || (i > j));
+assert((i + j) == 21 && i <= 21 && j >= 13);
+assert((j >= i) && (i + j <= 21));
+assert((j - i == 19) || (j == 13));
+assert((j >= i) && (j - i == 19 - 3 * ((i - 1) / 2)));
+assert((i == 1 && j == 20) || (j - i <= 18 && (i + j) % 3 == 2));
+152.10178589820862	assert((j >= i - 3) && ((i % 2 == 1)) && (((j >= i))||((j == 13))) && (i + j >= 19) && (i % 2 == 1) && ((j <= 20)) && (((i % 2 == 1) || (i == 0))) && (i <= 21) && (j >= 13) && ((j - i == 19 - 3 * ((i - 1) / 2))));	29
+
+Benchmarks/Linear/c/24.c
+assert((i + j == 11) && (i - j == -9 || i - j == -7 || i - j == -5 || i - j == -3 || i - j == -1));
+assert((j >= i) || (j == 6));
+assert((i + j) % 2 == 1);
+assert((j == 10 - (i - 1) / 2) && i <= 11 && j >= 6);
+assert((j == 10 - ((i - 1) / 2)) && (i <= 11) && (j >= 6));
+assert(i + j == 11);
+assert((i + j == 11) && (i % 2 == 1) && (j % 2 == 0));
+26.37281370162964	assert((((j >= i))||((j == 6))) && ((j == 10 - (i - 1) / 2)) && (i <= 11) && (j >= 6) && ((j == 10 - ((i - 1) / 2))) && ((i <= 11)) && ((j >= 6)) && ((i % 2 == 1)));	2
+
+Benchmarks/Linear/c/25.c
+assert(x >= 0 && x <= 10000);
+assert(x >= 0);
+assert(x <= 10000);
+7.116698503494263	assert(x >= 0 && x <= 10000);	1
+
+Benchmarks/Linear/c/26.c
+assert(x >= 1 && x <= n);
+assert(x >= 1);
+assert(n == x || x == 1);
+assert(x <= n && x >= 1);
+assert((x <= n) && (x >= 1));
+assert(x <= n);
+assert((x > 1) || (x == 1));
+assert((x >= 1 && x <= n) || (x <= 0 && n <= 0));
+17.958208322525024	assert((x <= n) && ((x <= n)) && (((x >= 1 && x <= n))||((x <= 0 && n <= 0))));	2
+
+Benchmarks/Linear/c/27.c
+assert((x >= 1) && (x <= n));
+assert((x <= n) && (x >= 1));
+assert(x >= 1);
+assert(x <= n);
+assert((x == 1) || (x > 1 && x <= n));
+assert((x <= n) && (x >= 1) || x == 0 && n == 0);
+assert((x <= n) && (x >= 1) || (x == 0 && n == 0));
+assert(x == n && n >= 1 || x == 1 && n < 1);
+assert((x > 1) || (x == 1));
+assert((x <= n && x >= 1) || (x == 1 && n < 1));
+assert((x <= n && x >= 1) || (x == n && n < 1));
+42.758867263793945	assert(((x <= n)) && (x <= n) && (((x <= n && x >= 1))||((x == n && n < 1))));	8
+
+Benchmarks/Linear/c/28.c
+assert(x >= 0);
+assert(x <= n);
+assert((x >= 0) && (x <= n));
+assert(x >= 0 && (x == 0 || x > 0));
+assert(x >= 0 || n < 0);
+17.9158136844635	assert((x <= n) && ((x <= n)) && ((x >= 0)||(n < 0)));	2
+
+Benchmarks/Linear/c/29.c
+assert(x >= 0 && x <= n);
+assert((x >= 0) && (x <= n));
+assert(n >= 0);
+assert(x >= 0);
+assert(x <= n);
+assert(x == n && (x >= 0 || x <= 0));
+assert(x >= 0 && x <= n || x == n);
+19.17765212059021	assert((x <= n) && ((x <= n)) && ((x >= 0 || x <= 0)) && ((x >= 0 && x <= n)||(x == n)));	2
+
+Benchmarks/Linear/c/30.c
+assert(x == 100 || x <= 100);
+assert(x >= 0);
+assert(x >= 0 && x <= 100);
+14.759991645812988	assert(((x == 100)||(x <= 100)) && (x >= 0) && (x <= 100));	2
+
+Benchmarks/Linear/c/31.c
+assert(x <= n && x >= 1);
+assert(x <= n);
+assert(x >= 1);
+assert((x <= n && x >= 1) || (x <= 1 && n < 1));
+assert((x <= n && x >= 1) || (x == n && n <= 0));
+22.679478645324707	assert((x <= n) && (((x <= n && x >= 1))||((x <= 1 && n < 1))) && (((x <= n && x >= 1))||((x == n && n <= 0))));	2
+
+Benchmarks/Linear/c/32.c
+assert((x <= n) && (x >= 1));
+assert(x >= 1 && x <= n);
+assert((x >= 1) && (x <= n));
+assert((x >= 1) || (n <= 0));
+assert((x <= n) && (x >= 1) || (n < 1 && x == 0));
+16.543742656707764	assert(((x <= n)) && (x <= n) && (((x >= 1))||((n <= 0))));	2
+
+Benchmarks/Linear/c/33.c
+assert(x >= 0);
+assert(x <= n);
+assert(x >= 0 && x <= n);
+assert(x <= n && x >= 0);
+assert((x >= 0) && (x <= n));
+assert((x <= n) && (x >= 0));
+assert((x >= 0 && x <= n) || (x <= 0));
+assert(x >= 0 || n < 0);
+26.120205402374268	assert((x <= n) && ((x <= n)) && (((x >= 0 && x <= n))||((x <= 0))) && ((x >= 0)||(n < 0)));	6
+
+Benchmarks/Linear/c/34.c
+assert(n >= 0 && x <= n && x >= 0);
+assert(n >= 0);
+assert(x <= n);
+assert(x >= 0);
+assert(x >= 0 && x <= n);
+assert((x <= n && x >= 0) || (x <= 0 && n < 0));
+assert((x <= n && x >= 0) || (n < 0 && x == n));
+21.70505690574646	assert((x <= n) && (((x <= n && x >= 0))||((x <= 0 && n < 0))) && (((x <= n && x >= 0))||((n < 0 && x == n))));	2
+
+Benchmarks/Linear/c/35.c
+assert(c >= 0 && c <= 40);
+assert((c >= 0) && (c <= 40));
+10.551831007003784	assert(c >= 0 && c <= 40);	1
+
+Benchmarks/Linear/c/36.c
+assert(c >= 0 && c <= 40);
+assert((c >= 0) && (c <= 40));
+9.88088607788086	assert(c >= 0 && c <= 40);	1
+
+Benchmarks/Linear/c/37.c
+assert(c >= 0 && c <= 40);
+assert(c >= 0);
+assert(c <= 40);
+assert((c >= 0) && (c <= 40));
+9.708128690719604	assert(c >= 0 && c <= 40);	1
+
+Benchmarks/Linear/c/38.c
+assert(n > 0);
+assert(c >= 0 && c <= n);
+assert(c >= 1 && c <= n);
+10.01089596748352	assert(n > 0);	1
+
+Benchmarks/Linear/c/39.c
+assert(c >= 1 && c <= n);
+assert(c >= 0 && c <= n);
+assert(c == 0 || (c >= 1 && c <= n));
+assert((c == 0 && n > 0) || (c >= 1 && c <= n));
+17.384615898132324	assert((c <= n) && (c >= 0) && ((c == 0)||((c >= 1 && c <= n))) && (((c == 0 && n > 0))||((c >= 1 && c <= n))));	2
+
+Benchmarks/Linear/c/40.c
+assert(n > 0);
+assert(c >= 0);
+assert(c <= n + 1);
+assert((c >= 0 && c <= n + 1));
+assert(c >= 0 && c <= n+1);
+assert(c == n || c >= 0);
+assert(!(c != n) || (c < n));
+20.93126153945923	assert((n > 0) && (c >= 0) && ((c >= 0)) && (((c < n))));	2
+
+Benchmarks/Linear/c/41.c
+assert(n > 0);
+assert(c <= n + 1);
+assert(c <= n || c == 1);
+assert(c >= 0 && c <= n);
+assert(n > 0 && c >= 1 && c <= n);
+21.087768077850342	assert((n > 0) && ((c <= n)||(c == 1)) && (c >= 0) && (c <= n));	2
+
+Benchmarks/Linear/c/42.c
+assert(n > 0);
+assert(c >= 0);
+assert(c <= n + 1);
+assert(c >= 0 && c <= n+1);
+assert((c >= 0) && (c <= n + 1));
+assert(c >= 0 && c <= n + 1);
+12.097931385040283	assert(n > 0);	1
+
+Benchmarks/Linear/c/43.c
+assert((c >= 0) && (c <= n + 1));
+assert(n > 0);
+assert(c >= 0 && c <= n + 1);
+assert((c >= 0) && (c <= n + 1) && (n >= 0));
+17.767566204071045	assert(((c >= 0)) && (n > 0) && (c >= 0) && ((n >= 0)));	2
+
+Benchmarks/Linear/c/44.c
+assert(c >= 0 && c <= n + 1);
+assert((c >= 0) && (c <= n+1));
+assert(n > 0);
+assert((c >= 0 && c <= n + 1) || (c == 1 && n == 0));
+assert(c >= 0 && c <= n);
+17.0928213596344	assert((c >= 0) && ((c >= 0)) && (n > 0) && (c <= n));	2
+
+Benchmarks/Linear/c/45.c
+assert((c >= 0) && (c <= n));
+assert((n > 0));
+assert(n > 0);
+assert(c >= 0);
+assert(c <= n);
+15.036072969436646	assert(((c >= 0)) && ((c <= n)) && ((n > 0)) && (n > 0) && (c >= 0) && (c <= n));	2
+
+Benchmarks/Linear/c/46.c
+assert(c >= 0 && c <= n);
+assert((c >= 0) && (c <= n));
+assert(n > 0);
+13.405206203460693	assert((c >= 0) && (c <= n) && ((c >= 0)) && ((c <= n)) && (n > 0));	2
+
+Benchmarks/Linear/c/47.c
+assert(c >= 0);
+assert(c <= n);
+assert(n > 0);
+assert(c >= 0 && c <= n);
+assert((c >= 0) && (c <= n));
+10.339306354522705	assert(c >= 0);	1
+
+Benchmarks/Linear/c/48.c
+assert((c >= 0) && (c <= n));
+assert(n > 0);
+assert(c >= 0 && c <= n);
+assert((c >= 0) && (c <= n) && (n > 0));
+15.781563997268677	assert(((c >= 0)) && ((c <= n)) && (n > 0) && (c >= 0) && (c <= n) && ((n > 0)));	2
+
+Benchmarks/Linear/c/49.c
+assert((c >= 0) && (c <= n));
+assert(n > 0);
+assert(c >= 0 && c <= n);
+assert((c >= 0) && (c <= n) && (c == 0 || c == n || c == 1));
+15.456599712371826	assert(((c >= 0)) && ((c <= n)) && (n > 0) && (c >= 0) && (c <= n));	2
+
+Benchmarks/Linear/c/50.c
+assert(c >= 0 && c <= 4);
+assert((c >= 0) && (c <= 4));
+10.413334608078003	assert(c >= 0 && c <= 4);	1
+
+Benchmarks/Linear/c/51.c
+assert(c >= 0 && c <= 4);
+assert((c >= 0) && (c <= 4));
+8.729363203048706	assert(c >= 0 && c <= 4);	1
+
+Benchmarks/Linear/c/52.c
+assert(c >= 0 && c <= 4);
+assert(c >= 0);
+assert(c <= 4);
+assert((c >= 0) && (c <= 4));
+10.637596845626831	assert(c >= 0 && c <= 4);	1
+
+Benchmarks/Linear/c/53.c
+assert((c >= 0) && (c <= n+1));
+assert(c >= 0 && c <= n + 1);
+assert((c >= 0) && (c <= n + 1));
+assert(n > 0);
+assert(c >= 0);
+assert(c <= n + 1);
+19.965376138687134	assert(((c >= 0)) && (c >= 0) && (n > 0));	2
+
+Benchmarks/Linear/c/54.c
+assert(n > 0);
+assert(c <= n + 1);
+assert((c <= n + 1) && (c >= 0));
+assert(c >= 0 && c <= n);
+assert(n > 0 && c >= 0 && c <= n + 1);
+16.224929332733154	assert((n > 0) && ((c >= 0)) && (c >= 0) && (c <= n));	2
+
+Benchmarks/Linear/c/55.c
+assert((c >= 0) && (c <= n + 1));
+assert(c >= 0 && c <= n+1);
+assert(n > 0);
+assert(c >= 0);
+assert(c <= n + 1);
+assert(c >= 1 && c <= n);
+assert((c >= 0) && (c <= n));
+assert((c >= 0) && (c <= n + 1) && (c != n + 1 || n == 0));
+17.947265148162842	assert(((c >= 0)) && (c >= 0) && (n > 0) && (c <= n) && ((c <= n)) && ((c != n + 1 || n == 0)));	2
+
+Benchmarks/Linear/c/56.c
+assert(n > 0);
+assert(c != n || n <= -1);
+assert(c == n || c == 1 || c == 0);
+assert(c <= n || c == 1);
+assert((c >= 0) && (c <= n + 1));
+assert(n > 0 && c <= 0);
+21.465308666229248	assert((n > 0) && ((c != n)) && ((c == 1)||(c == 0)) && ((c <= n)||(c == 1)) && ((c >= 0)) && (c <= 0));	2
+
+Benchmarks/Linear/c/57.c
+assert((c <= n + 1) && (c >= 0));
+assert(c >= 0 && c <= n + 1);
+assert((c <= n+1) && (c >= 0));
+assert(n > 0);
+assert(c != n || c <= 1);
+assert((c == 0) || (c == 1) || (c > n));
+assert((c == 0) || (c == 1) || (c <= n + 1));
+assert((c >= 0) && (c <= n + 1) && ((c > n) || (c == 0)));
+31.188077211380005	assert(((c >= 0)) && (c >= 0) && (n > 0) && ((c != n)||(c <= 1)) && (((c == 0))||((c == 1))) && (((c == 0))||((c == 1))||((c <= n + 1))) && (((c > n) || (c == 0))));	5
+
+Benchmarks/Linear/c/58.c
+assert(n > 0);
+assert(c >= 0 && c <= n);
+assert((c >= 0) && (c <= n));
+12.198419094085693	assert((n > 0) && (c >= 0) && (c <= n) && ((c >= 0)) && ((c <= n)));	2
+
+Benchmarks/Linear/c/59.c
+assert(c >= 0 && c <= n);
+assert((c >= 0) && (c <= n));
+assert(n > 0);
+assert((c >= 0 && c <= n) || (c == 1 && n == 1));
+16.567086458206177	assert((c >= 0) && (c <= n) && ((c >= 0)) && ((c <= n)) && (n > 0) && (((c >= 0 && c <= n))||((c == 1 && n == 1))));	2
+
+Benchmarks/Linear/c/60.c
+assert(c >= 0 && c <= n);
+assert(c >= 0);
+assert(c <= n);
+11.812589883804321	assert(c >= 0);	3
+
+Benchmarks/Linear/c/61.c
+assert((c >= 0) && (c <= n));
+assert(n > 0);
+assert(c >= 0 && c <= n);
+assert((c >= 0) && (c <= n) && (n > 0));
+15.085323572158813	assert(((c >= 0)) && ((c <= n)) && (n > 0) && (c >= 0) && (c <= n) && ((n > 0)));	2
+
+Benchmarks/Linear/c/62.c
+assert((c >= 0 && c <= n));
+assert(n > 0);
+assert(c >= 0 && c <= n);
+assert((c >= 0) && (c <= n));
+assert((c >= 0 && c <= n) || (c == 1 && n == c));
+assert((c >= 0 && c <= n) || (c == 1 && n == 0));
+18.804997444152832	assert(((c >= 0 && c <= n)) && (n > 0) && (c >= 0) && (c <= n) && ((c >= 0)) && ((c <= n)) && (((c >= 0 && c <= n))||((c == 1 && n == c))) && (((c >= 0 && c <= n))));	2
+
+Benchmarks/Linear/c/63.c
+assert(x > 0 && x <= 11);
+assert(y >= 0 && y <= 9);
+assert(x >= 1 && x <= 11);
+assert(y == 10 - x + 1);
+assert((x > 0 && x <= 11) && (y == 10 - (x - 1) || x == 1));
+assert((x > 0 && x <= 11) || (x == 1));
+21.309035539627075	assert((x > 0) && (x <= 11) && (x >= 1) && ((x > 0 && x <= 11)) && ((y == 10 - (x - 1) || x == 1)) && (((x > 0 && x <= 11))||((x == 1))));	2
+
+Benchmarks/Linear/c/64.c
+assert(x >= 1 && x <= 11);
+assert(y >= 0 && y < 10);
+assert(x > 0 && x <= 11);
+assert(y >= 0 && y <= 9);
+assert(y == 10 - x + 1);
+assert(x >= 1 && x <= 11 && y == 10 - x + 1);
+assert((x >= 1 && x <= 11) && (y == 10 - x || x == 1));
+assert((x > 10 && (y >= 0 && y < 10)) || (x <= 10 && y == 10 - x));
+assert((x > 10 && y == 0) || (x <= 10 && y >= 0 && y < 10));
+assert((x > 0 && x <= 11) && (y == 10 - x || x == 1));
+assert(x > 0 && x <= 11 && y == 10 - x && y >= 0 && y < 10);
+assert((x > 10 && y == 0) || (x >= 1 && x <= 10 && y == 10 - x));
+assert(x > 1 && y >= 0 && y < 10 || x == 1);
+39.45515441894531	assert((x >= 1) && (x <= 11) && (x > 0) && ((x >= 1 && x <= 11)) && ((x > 0 && x <= 11)) && ((x > 1 && y >= 0 && y < 10)||(x == 1)));	7
+
+Benchmarks/Linear/c/65.c
+assert(x >= 1 && x <= 101);
+assert(y == 100 - x + 1);
+assert(x >= 1 && x <= 101 && y == 100 - x + 1);
+assert((x >= 1 && x <= 101) && (y == 100 - x + 1 || x == 1));
+27.111417531967163	assert((x >= 1) && (x <= 101) && ((x >= 1 && x <= 101)) && ((y == 100 - x + 1 || x == 1)));	2
+
+Benchmarks/Linear/c/66.c
+assert(x > 0 && x <= 101);
+assert(y >= 0 && y < 100);
+assert(x >= 1 && x <= 101);
+assert(y >= -1 && y < 100);
+assert(x >= 1 && x <= 101 && y == 100 - x + 1);
+assert((x > 100 && y == 0) || (x <= 100 && y >= 0 && y < 100));
+assert(y == 100 - x + 1);
+assert(x > 0 && x <= 101 && y == 100 - x + 1);
+assert((x > 0 && x <= 101) && (y == 100 - x + 1 || x == 1));
+23.5250403881073	assert((x > 0) && (x <= 101) && (x >= 1) && ((x > 0 && x <= 101)) && ((y == 100 - x + 1 || x == 1)));	2
+
+Benchmarks/Linear/c/67.c
+assert(x >= 1 && x <= n + 1);
+assert(y == n - x + 1);
+assert(x >= 1 && x <= n + 1 && y == n - x + 1);
+assert((x >= 1 && x <= n + 1) || (x == 1 && n < 1));
+assert((n < 1) || (x >= 1 && x <= n + 1));
+assert(x > n || (y == n - x + 1 && y >= 0));
+assert(x <= n + 1 && (x > 1 || n < 1 || y == n));
+assert((n <= 0) || (x >= 1 && x <= n + 1 && y == n - x + 1));
+assert((x == 1 && y == 0) || (x >= 1 && x <= n + 1 && y == n - x + 1));
+assert((x >= 1 && x <= n + 1) || (n < 1 && x == 1));
+assert((x >= 1 && x <= n + 1) && (y == n - x + 1));
+assert((x > n) || (0 <= y && y < n));
+assert(x > 0 && y == n - x + 1);
+assert(x > n || (y == n - x + 1));
+assert(x <= n + 1 && (x == 1 || y == n - x + 1));
+assert((n <= 0) || (x >= 1 && x <= n + 1 && y >= 0));
+assert((x == 1) || (x > 1 && x <= n+1 && y == n - x + 1));
+assert((x > 0 && y >= 0 && y < n) || (n <= 0 && x == 1 && y == n));
+assert((x >= 1 && x <= n + 1 && y == n - x + 1) || (n <= 0 && x == 1 && y == n));
+assert((x >= 1 && x <= n + 1) && (y >= 0 || n <= 0));
+assert((x > n) || (0 <= y && y <= n - x));
+assert(x == 1 && y == n - x + 1 || x > 1 && y == n - x + 1);
+assert((x > 0 && x <= n + 1) || (x == 1 && n < 1));
+assert((x > 0 && y == n - x + 1) || (n < 1 && x == 1 && y == 0));
+assert(x > n || y == n - x + 1);
+assert(x == 1 || n >= x - 1);
+assert(x == 1 || y == n - x + 1);
+99.44402003288269	assert((x >= 1) && (x > 0) && ((x == 1 || y == n - x + 1)) && ((x == 1)||(n >= x - 1)) && ((x == 1)||(y == n - x + 1)));	19
+
+Benchmarks/Linear/c/68.c
+assert(x <= n + 1 && y == n - x + 1);
+assert(x >= 1 && x <= n + 1);
+assert(y == n - x + 1);
+assert(x <= n + 1);
+assert((x == 1 && y == n) || (x > 1 && x <= n + 1 && y == n - x + 1));
+assert(x >= 1 && (x <= n + 1 || n < 1));
+assert((x >= 1 && x <= n) || (x == 1 && n < 1));
+assert((x == 1 && y == n - x + 1) || (x <= n && y == n - x + 1));
+assert(x >= 1 && x <= n + 1 && y == n - x + 1);
+assert(x > 0 && (x <= n + 1 || n < 0));
+assert(n < 0 || x <= n + 1);
+assert((x == 1 && y == n) || (x > 1 && x <= n && y == n - x + 1));
+assert((x == 1 && y != y) || (x <= n + 1 && y == n - x + 1));
+assert((x == 1 && y == n) || (x <= n && y == n - x));
+assert((x == 1 && n < 1) || (x >= 1 && x <= n + 1 && y == n - x + 1));
+assert((x >= 1 && x <= n + 1 && y == n - x + 1) || (x == 1 && n < 1));
+assert(x > 0 && x <= n + 1);
+assert(x >= 1 && x <= n + 1 && (x == 1 || y == n - x + 1));
+79.97170281410217	assert((x >= 1) && (x > 0) && ((x == 1 || y == n - x + 1)));	15
+
+Benchmarks/Linear/c/69.c
+assert(x >= 1 && x <= n + 1);
+assert(y == n - x + 1);
+assert(x >= 1 && x <= n + 1 && y == n - x + 1);
+assert((n >= 0 && x >= 1 && x <= n + 1) || (n < 0 && x == 1));
+assert(x <= n + 1 && (x == 1 || y == n - x + 1));
+assert(x > n || (y >= 0 && y <= n - x));
+assert((x >= 1 && x <= n + 1) || (x == 1 && n < 1));
+assert((x == 1 && y == n) || (x > 1 && x <= n + 1 && y == n - x + 1));
+assert((x > 1 && y == n - x + 1 && x <= n + 1) || (x == 1 && n >= 0));
+assert(x >= 1 && y >= 0 && y < n);
+assert((x > n && y == n - x + 1) || x <= n);
+assert(x == 1 || (x <= n + 1 && y == n - x + 1));
+assert(x > n || (y >= 0 && y < n));
+assert((x == 1 && y >= 0) || (x > 1 && x <= n + 1 && y == n - x + 1));
+assert((x > 1 && y == n - x + 1 && x <= n + 1) || (x == 1 && n < 1));
+assert((x == 1 && y >= 0 && y < n) || (x > 1 && y == n - x + 1 && x <= n + 1));
+assert((n <= 0) || (x >= 1 && y >= 0 && y < n));
+assert((x > n && y == n - x + 1) || (x <= n && y == n - x + 1));
+assert((x > n && y == n - x + 1) || (x <= n && y == n - x + 1) || x == 1);
+69.0262508392334	assert(x == 1 || (x <= n + 1 && y == n - x + 1));	15
+
+Benchmarks/Linear/c/70.c
+assert(x > 0 && x <= n + 1);
+assert(y == n - x + 1);
+assert(x >= 1 && x <= n + 1);
+assert(x <= n + 1 && y == n - x + 1);
+assert(x >= 1 && x <= n + 1 && y >= 0 && y < n);
+assert((x > 0 && x <= n) || (x == 1 && n < 1));
+assert(x == 1 || (x > 1 && y >= 0 && y < n));
+22.198842525482178	assert((x > 0) && (x >= 1) && ((x == 1)||((x > 1 && y >= 0 && y < n))));	2
+
+Benchmarks/Linear/c/71.c
+assert(y >= 0 && y <= 127);
+assert(z >= 36 * y);
+assert(c >= 0 && c <= 36);
+assert((z >= (36 * y)) && (z <= (36 * y) + 36) && (c >= 0) && (c <= 36));
+assert(y >= 0);
+assert(y <= 127);
+assert(c >= 0);
+assert(c <= 36);
+assert((c < 36) || (z == 36 * y + c));
+assert((c >= 0) && (z >= (36 * y) + c) && (c <= 36));
+assert(z >= 36 * y && z <= 36 * y + 36);
+assert(c >= 0 && c <= 36 && z == 36 * y + c);
+assert((c >= 0) && (z == 36 * y + c) && (c <= 36));
+33.275848388671875	assert((y >= 0) && (y <= 127) && (z >= 36 * y) && (c >= 0) && (c <= 36) && ((z >= (36 * y))) && ((z <= (36 * y) + 36)) && ((c >= 0)) && ((c <= 36)) && (((c < 36))||((z == 36 * y + c))) && ((z >= (36 * y) + c)) && (z <= 36 * y + 36) && (z == 36 * y + c) && ((z == 36 * y + c)));	2
+
+Benchmarks/Linear/c/72.c
+assert((z == 36 * y + c) && (c >= 0) && (c <= 36) && (y >= 0) && (y <= 127));
+assert((c >= 0) && (c <= 36) && (z == 36 * y + c));
+assert(c >= 0);
+assert(c <= 36);
+assert(z == 36 * y + c);
+assert(y >= 0 && y <= 127);
+assert(y >= 0);
+assert(y <= 127);
+assert((y >= 0) && (y <= 127));
+assert((z >= 36 * y) && (z <= 36 * y + c));
+assert((c >= 0) && (c <= 36));
+19.51466178894043	assert((z == 36 * y + c) && (c >= 0) && (c <= 36) && (y >= 0) && (y <= 127));	1
+
+Benchmarks/Linear/c/73.c
+assert((c >= 0) && (c <= 36) && (z == 36 * y + c));
+assert((z >= 36 * y) && (z <= 36 * y + c));
+assert((c >= 0) && (c <= 36));
+assert(y >= 0);
+assert(y <= 127);
+assert(z == 36 * y + c);
+assert(c >= 0);
+assert(c <= 36);
+assert((z >= 36 * y) && (z <= 36 * y + c) && (c <= 36));
+assert((z >= 36 * y) && (z <= 36 * y + c) && (c >= 0) && (c <= 36));
+15.464458703994751	assert((c >= 0) && (c <= 36) && (z == 36 * y + c));	1
+
+Benchmarks/Linear/c/74.c
+assert(c >= 0);
+assert(c <= 36);
+assert(z == 36 * y + c);
+assert(y >= 0 && y <= 127);
+assert((z >= 36 * y) && (z <= 36 * y + 35) && (c >= 0) && (c <= 35));
+assert(z >= 36 * y);
+assert(c >= 0 && c <= 36);
+assert(z <= 36 * y + 36);
+assert(y >= 0);
+assert(y <= 127);
+assert((z >= 36 * y) && (z <= 36 * y + 35) && (c >= 0) && (c <= 36));
+assert(c >= 0 && c <= 36 && z >= 36 * y && z <= 36 * y + 36);
+assert(c <= 36 && z == 36 * y + c && c >= 0 && y >= 0 && y <= 127);
+assert((c >= 0) && (c <= 36) && (z == 36 * y + c));
+assert(c >= 0 && c <= 36 && z == 36 * y + c);
+assert(c >= 0 && z == 36 * y + c && y >= 0 && y <= 127);
+assert((z == 36 * y + c) && (c >= 0) && (c <= 36));
+assert(y >= 0 && y <= 127 && z == c + 36 * y && c >= 0 && c <= 36);
+assert((z >= 36 * y) && (z <= 36 * y + c) && (c >= 0) && (c <= 35));
+assert(y >= 0 && y <= 127 && z == 36*y + c && c >= 0 && c <= 36);
+assert(z >= 36 * y && z <= 36 * y + 35 && c >= 0 && c <= 36);
+assert((z >= 36 * y) && (z <= 36 * y + c) && (c >= 0) && (c <= 36));
+66.53889489173889	assert(c <= 36 && z == 36 * y + c && c >= 0 && y >= 0 && y <= 127);	18
+
+Benchmarks/Linear/c/75.c
+assert(y >= 0 && y <= 127);
+assert(z == 36 * y + c);
+assert(c >= 0 && c <= 36);
+assert((z == 36 * y + c) && (c >= 0) && (c <= 36) && (y >= 0) && (y <= 127));
+assert(z >= 36 * y && z <= 36 * y + 36);
+assert((c >= 0) && (c <= 36) && (z == 36 * y + c));
+assert((c >= 0) && (c <= 36));
+assert(y >= 0 && y <= 127 && z == 36 * y + c && c >= 0 && c <= 36);
+21.763646602630615	assert((y >= 0) && (y <= 127) && (z == 36 * y + c) && (c >= 0) && (c <= 36) && ((z == 36 * y + c)) && ((c >= 0)) && ((c <= 36)) && ((y >= 0)) && ((y <= 127)) && (z >= 36 * y) && (z <= 36 * y + 36));	2
+
+Benchmarks/Linear/c/76.c
+assert((c >= 0) && (z == 36 * y + c));
+assert(y >= 0 && y <= 127);
+assert(z >= 36 * y);
+assert(c >= 0 && c <= 36);
+assert(z == 36 * y + c);
+assert(z >= (36 * y));
+assert(c >= 0);
+assert(c <= 36);
+assert((z == 36 * y + c) && (c >= 0) && (c <= 36));
+17.460137605667114	assert((c >= 0) && (z == 36 * y + c));	1
+
+Benchmarks/Linear/c/77.c
+assert(x >= 0);
+assert(y >= 0);
+assert(x >= y);
+assert(i >= 0);
+assert(i <= y);
+assert((i >= 0) && (i <= y));
+15.59586477279663	assert((x >= 0) && (y >= 0) && (x >= y) && (i >= 0) && (i <= y) && ((i >= 0)) && ((i <= y)));	2
+
+Benchmarks/Linear/c/78.c
+assert(x >= 0);
+assert(y >= 0);
+assert(x >= y);
+assert(i >= 0);
+assert(i <= y);
+assert((i >= 0) && (i <= y));
+assert(0 <= i && i <= y);
+assert(x >= 0 && y >= 0 && x >= y && 0 <= i && i <= y);
+assert(x >= 0 && y >= 0 && x >= y && i >= 0 && i <= y);
+18.327245235443115	assert((x >= 0) && (y >= 0) && (x >= y) && (i >= 0) && (i <= y) && ((i >= 0)) && ((i <= y)) && (0 <= i));	2
+
+Benchmarks/Linear/c/79.c
+assert(i >= 0 && i <= y);
+assert((i >= 0) && (i <= y));
+assert(x >= 0);
+assert(y >= 0);
+assert(x >= y);
+assert(i >= 0);
+assert(i <= y);
+assert(i >= 0 && i <= x);
+13.270945072174072	assert(i >= 0 && i <= y);	1
+
+Benchmarks/Linear/c/80.c
+assert(x >= 0);
+assert(y >= 0);
+assert(x >= y);
+assert(i >= 0);
+assert(i <= y);
+assert(i >= 0 && i <= y);
+assert(x >= 0 && y >= 0 && x >= y && i >= 0 && i <= y);
+13.409964084625244	assert((x >= 0) && (y >= 0) && (x >= y) && (i >= 0) && (i <= y));	2
+
+Benchmarks/Linear/c/81.c
+assert(x >= 0);
+assert(y >= 0);
+assert(x >= y);
+assert(0 <= i && i <= y);
+assert((i >= 0) && (i <= y));
+assert(i >= 0 && i <= y);
+assert(x >= 0 && y >= 0 && x >= y && i >= 0 && i <= y);
+21.09866213798523	assert((x >= 0) && (y >= 0) && (x >= y) && (0 <= i) && (i <= y) && ((i >= 0)) && ((i <= y)) && (i >= 0));	2
+
+Benchmarks/Linear/c/82.c
+assert(x >= 0);
+assert(y >= 0);
+assert(x >= y);
+assert(i >= 0);
+assert(i <= y);
+assert(i >= 0 && i <= y);
+assert(i >= 0 && i <= x);
+18.910872220993042	assert(x >= 0);	1
+
+Benchmarks/Linear/c/83.c
+assert((x <= 0) && (y >= 0));
+assert((x >= -5000) && (y <= 5001));
+assert(x <= 0 && y >= -5000);
+assert(x >= -5000);
+assert(x <= 0 && y <= 5000);
+assert((x < 0 && y <= 0) || (x >= 0 && y > 0));
+assert((x >= -5000) && (y >= 0));
+assert((x <= 0) || (y >= 0));
+assert((x <= 0 && y >= -5000) || (x >= 0));
+assert((x >= -5000) && (y <= 5002));
+assert((x <= 0 && y >= -x) || (x >= 0));
+assert((x <= 0 && y >= 0) || (x >= 0));
+assert((x >= -5000 && y >= 0) || x >= 0);
+assert(x + y*y <= 0);
+assert(y >= -4999);
+assert((x < 0 && y >= 0) || (x >= 0));
+assert((x < 0 && y >= 1) || (x >= 0));
+assert((x >= -5000) || (x >= 0 && y >= 0));
+assert((x >= -5000) || (x >= 0));
+assert((x < 0 || y > 0));
+assert((x >= 0 && y > 0) || (x < 0 && y >= 0));
+assert((x <= 0 && y <= -5000) || x >= 0);
+assert((x <= 0 && y >= -5000 && y <= 0) || (x >= 0));
+assert(((x >= -5000) && (y <= 5002)) || (x >= 0));
+assert((x <= 0 && y >= -x + 5001) || (x >= 0));
+assert((x <= 0 && y >= -x) || (x >= 0 && y == 0));
+assert((x <= 0 && y >= 1) || (x >= 0));
+assert((x <= 0 && y >= 0) || x >= 0);
+assert((x >= -5000 && y >= -1) || x >= 0);
+assert((x < 0 && y == 0) || (x >= 0 && y > 0));
+assert((x >= -5000) && (y >= -5000));
+assert((x >= -5000 && y >= -5000) || x >= 0);
+assert((x < 0 && y >= -5000) || (x >= 0));
+assert((x < 0 && y >= 0) || (x >= 0 && y > 0));
+assert((x <= 0 && y >= -5000) || (x >= 0 && y >= 0));
+assert((x <= 0) && (y >= -1));
+assert((x + y >= -5000) && (y >= -1));
+assert((x <= 0) && (y >= -x));
+71.2082245349884	assert((x < 0 || y > 0));	20
+
+Benchmarks/Linear/c/84.c
+assert(x == -50 || x >= 0);
+assert(y >= 0);
+assert((x >= -50));
+assert((y >= 0));
+assert(x >= 0 || y == 0);
+assert((x < 0 || y > 0));
+assert((y >= 0 || x >= 0));
+assert((x >= -50) && (y >= 0));
+assert(x >= 0 || y > 0);
+assert(y == 1 || x >= 0);
+assert((x < 0 && y >= 1) || x >= 0);
+assert((x >= 0) || (y >= 0));
+assert((x >= 0) || (y > 0));
+assert((y >= 0 && x <= 0));
+assert((x + y > -50) && (y >= 0));
+assert((y >= 0) || (x >= 0));
+assert(y > 0 || x >= 0);
+assert((x >= 0) || (y <= 0));
+39.080363273620605	assert((x < 0 || y > 0));	6
+
+Benchmarks/Linear/c/85.c
+assert((x <= 0) && (y >= 1));
+assert((x < 0 || y > 0) && y >= 1);
+assert(x < 0 && y >= 1);
+assert(x >= -15000);
+assert(y >= 1 || x >= 0);
+assert(x + y > -15000);
+assert(y >= 0);
+assert((x >= 0) || ((x < 0) && (y >= 1)));
+assert((x >= 0) || (y > 0 && x + y * y / 2 - y / 2 <= 0));
+assert((x >= 0 || y >= 1));
+assert(x >= 0 || y > 0);
+assert((x < 0 && y >= 0) || (x >= 0));
+assert((x >= 0) || (x < 0 && y >= 1));
+assert(x + y >= 0);
+assert(x + y >= -15000);
+assert((x >= 0) || (y > 0 && x + y >= 0));
+assert(y >= 0 && x >= -15000);
+assert((x >= 0) || (y > 0 && x + y >= -15000));
+assert((x >= 0) || (x + y > -15000));
+assert((x >= 0) || (y > 0));
+assert((x >= 0) || (y >= 0));
+assert((x >= 0) || (y >= 1));
+assert((x >= 0) || (y > 0 && x + y * (y - 1) / 2 >= -15000));
+assert((x >= 0 || y >= 0));
+assert(x < 0 || y > 0);
+assert((x >= 0) || (x < 0 && y >= 0));
+assert((x >= 0) || (x + y >= 0 && y >= 1));
+assert((x >= 0) || (x + y >= -15000));
+assert((x >= 0) || (x < 0 && y >= -14999));
+assert((x >= 0) || (y >= 0 && x >= -15000));
+assert((x >= 0) || (y >= 0 && x == -15000));
+assert((x >= 0) || (y > 0 && x + y > -15000));
+assert((x >= 0) || (y > 0 && x + y * (y - 1) / 2 >= 0));
+assert((x >= 0) || (y <= 0));
+assert((x < 0 && y >= 1) || (x >= 0));
+assert((x >= 0) || (y > 0 && x + y * y - y >= -15000));
+assert((x >= 0) || (y >= 0 && x + y * (y - 1) / 2 >= -15000));
+139.858056306839	assert(x < 0 || y > 0);	25
+
+Benchmarks/Linear/c/86.c
+assert((x >= -50) && (y >= 0));
+assert((x += y) >= -50);
+assert(x >= 0 || (x += y) < 0);
+assert(x <= 0 && y >= -50);
+assert(x >= -50 && y <= x+50);
+assert(x <= 0);
+assert(y == x + 50 || y == 0);
+assert(y >= 0);
+assert((x < 0) || (x >= 0 && y > 0));
+assert((x >= -50) && (y >= 0) && (x >= 50 - y*(y - 1)));
+assert((x >= -50) || (x >= 0));
+assert((x >= -50) || (y <= 0));
+assert(x >= -50 && y >= -1);
+assert(x >= -50 && y >= 0);
+assert(x >= 0 || (x < 0 && y <= 0));
+assert((x >= -50 && y >= -50) || x >= 0);
+assert((x < 0 && y <= -50) || (x >= 0 && y >= -50));
+assert((x >= -50 && y >= 1) || x >= 0);
+assert((x >= -50 && y <= 50) || x >= 0);
+assert(x+y <= 0);
+assert(x + y*(y-1)/2 >= -50);
+assert(y == x + 50 || x >= 0);
+assert((x >= 0 && y > 0) || (x == -50 && y == 0));
+assert((x >= 0 && y > 0) || x == -50);
+assert((x >= 0) || (y <= 0));
+35.0731418132782	assert((x < 0) || (x >= 0 && y > 0));	9
+
+Benchmarks/Linear/c/87.c
+assert((x == y) || (lock == 0));
+assert((lock == 1 && x == y) || (lock == 0 && x != y));
+assert((lock == 1) || (x == y));
+assert(x == y);
+assert((x == y && lock == 1) || (lock == 0));
+assert((x == y && lock == 1) || (x != y && lock == 0));
+24.65818476676941	assert((((x == y))) && (((lock == 1 && x == y))) && (((lock == 1))||((x == y))) && (x == y) && (((x == y && lock == 1))));	2
+
+Benchmarks/Linear/c/88.c
+assert((x == y) || (x + 1 == y));
+assert((lock == 1 && x == y) || (lock == 0 && x != y));
+assert((lock == 0 || lock == 1) && (x == y || x + 1 == y));
+assert(lock == 0 || lock == 1);
+assert((x == y) || (lock == 0 && x + 1 == y));
+30.98328948020935	assert((((x == y))||((x + 1 == y))) && (((lock == 1 && x == y))||((lock == 0 && x != y))) && ((lock == 0 || lock == 1)) && ((x == y || x + 1 == y)) && ((lock == 0)||(lock == 1)) && (((x == y))||((lock == 0 && x + 1 == y))));	2
+
+Benchmarks/Linear/c/89.c
+assert(lock == 0 || lock == 1);
+assert(x == y);
+assert((lock == 1 || lock == 0) && x == y);
+assert((x == y) || (lock == 1));
+assert((lock == 0 && x != y) || (lock == 1 && x == y));
+assert((x == y) || (lock == 0 && x != y));
+assert(lock == 1 || (x != y && lock == 0));
+assert(x == y || x != y);
+25.8207905292511	assert(((lock == 1)) && (x == y) && ((lock == 1 || lock == 0)) && (((x == y))||((lock == 1))) && (((lock == 1 && x == y))) && (((x == y))) && ((x == y)));	2
+
+Benchmarks/Linear/c/90.c
+assert((x == y) || (lock == 0 && x != y));
+assert((lock == 0 || lock == 1) && x != y);
+assert((x == y) || (x + 1 == y));
+assert(lock == 1 || lock == 0);
+assert((lock == 1 && x == y) || (lock == 0 && x != y));
+assert((lock == 0 || lock == 1) && (x == y || x + 1 == y));
+assert((x == y) || (lock == 0 && x < y));
+assert((x == y) || (lock == 0 && x + 1 == y));
+25.90322732925415	assert((((x == y))||((lock == 0 && x != y))) && ((lock == 0 || lock == 1)) && (((x == y))||((x + 1 == y))) && ((lock == 1)||(lock == 0)) && (((lock == 1 && x == y))||((lock == 0 && x != y))) && ((x == y || x + 1 == y)) && (((x == y))||((lock == 0 && x + 1 == y))));	2
+
+Benchmarks/Linear/c/91.c
+assert(y >= 0);
+assert(x <= 0 || y < 0);
+assert(x == 0);
+assert(y >= 0 && x == 0);
+assert(x >= 0);
+14.215932846069336	assert((x == 0) && (y == 0) && ((x <= 0)) && (x >= 0));	2
+
+Benchmarks/Linear/c/92.c
+assert(y >= 0);
+assert(x == 0);
+assert(y >= 0 && x >= 0);
+assert(y >= 0 && x == 0);
+assert(x >= 0);
+assert((x >= 0 && y >= 0) || (x <= 0));
+14.484626770019531	assert((x == 0) && (y == 0) && (x >= 0) && (((x >= 0 && y >= 0))||((x <= 0))));	2
+
+Benchmarks/Linear/c/93.c
+assert(i <= n);
+assert(x + y == 3 * i);
+assert((x + y) == 3 * i);
+assert(i == x + y);
+assert((2*i == x + y) || (3*i == x + y));
+assert((i == x + y) && (x <= 2 * i) && (y <= 2 * i) && (x >= i) && (y >= i));
+assert((i >= 0) && (i <= n) && ((x + y) == (3 * i)));
+assert((i >= 0) && (i <= n) && (x + y == 3 * i));
+23.765512466430664	assert((i <= n) && (x + y == 3 * i) && ((x + y) == 3 * i) && (((2*i == x + y))||((3*i == x + y))) && ((x <= 2 * i)) && ((y <= 2 * i)) && ((x >= i)) && ((y >= i)) && ((i >= 0)) && ((i <= n)) && (((x + y) == (3 * i))) && ((x + y == 3 * i)));	2
+
+Benchmarks/Linear/c/94.c
+assert((i == j * (i - 1) / 2) && (i >= 0) && (j >= 0) && (i <= n + 1));
+assert(k >= 0);
+assert(n >= 0);
+assert(i >= 0);
+assert(j >= 0);
+assert(i <= n + 1);
+assert(j == (i * (i - 1)) / 2);
+assert(i >= 0 && i <= n + 1);
+assert(j == i * (i - 1) / 2);
+assert((i * (i + 1) / 2 == j) && (i >= 0) && (j >= 0) && (i <= n));
+31.79200506210327	assert(((i >= 0)) && ((j >= 0)) && (k >= 0) && (n >= 0) && (i >= 0) && (j >= 0) && ((i * (i + 1) / 2 == j)));	2
+
+Benchmarks/Linear/c/95.c
+assert(y == 1);
+assert(i == j);
+assert(i <= x + 1);
+assert(i >= 0);
+assert(j >= 0);
+assert(i == j + 1 || (i == 0 && j == 0));
+assert((i == j) && (i <= x + 1));
+assert((i == j) && (y == 1));
+20.37678360939026	assert((y == 1) && (i == j) && (i >= 0) && (j >= 0) && ((i == j)) && ((y == 1)));	2
+
+Benchmarks/Linear/c/96.c
+assert(i == j && y == 1);
+assert(i == j);
+assert(y == 1);
+assert(i >= 0);
+assert(j >= 0);
+11.670772075653076	assert(i == j && y == 1);	1
+
+Benchmarks/Linear/c/97.c
+assert((i == j / y) && (j == i * y));
+assert(j == i * y);
+assert(i == j / y && j == y * i);
+assert(y == 2);
+assert(i == j / y);
+assert((j == i * y) && (i <= x + 1));
+18.03545379638672	assert(((i == j / y)) && ((j == i * y)) && (j == i * y) && (i == j / y) && (j == y * i) && (y == 2));	2
+
+Benchmarks/Linear/c/98.c
+assert(i == j/y);
+assert(y == 2);
+assert(i == j / y);
+assert(i == j || y != 1);
+assert(i >= 0);
+assert(j >= 0);
+assert(j == i * y);
+26.46068811416626	assert((i == j/y) && (y == 2) && (i == j / y) && ((i == j)||(y != 1)) && (i >= 0) && (j >= 0) && (j == i * y));	2
+
+Benchmarks/Linear/c/99.c
+assert((x >= 0) && (y >= 0) && (n == (x + y)));
+assert((x >= 0));
+assert((y >= 0));
+assert((n == (x + y)));
+assert((x >= 0) && (y >= 0) && (n == x + y));
+assert(n >= 0);
+assert(x >= 0);
+assert(y >= 0);
+assert(n == x + y);
+13.178321599960327	assert((x >= 0) && (y >= 0) && (n == (x + y)));	1
+
+Benchmarks/Linear/c/100.c
+assert(x >= 0);
+assert(y >= 0);
+assert(x + y == n);
+assert((y >= 0) && (x >= 0) && (y + x == n));
+assert((y + x == n) && (y >= 0) && (x >= 0));
+assert((x >= 0) && (y + x == n));
+assert(y + x == n);
+assert(x >= 0 && y >= 0 && x + y == n);
+18.799320220947266	assert((x >= 0) && (y >= 0) && (x + y == n) && ((y >= 0)) && ((x >= 0)) && ((y + x == n)) && (y + x == n));	2
+
+Benchmarks/Linear/c/101.c
+assert(x >= 0);
+assert(x <= n);
+assert(x >= 0 && x <= n);
+assert((x >= 0) && (x <= n) || (n < 0));
+22.286324739456177	assert((x >= 0) && (((x >= 0) && (x <= n))||((n < 0))));	4
+
+Benchmarks/Linear/c/102.c
+assert(x <= n && x >= 0);
+assert(x >= 0 && x <= n);
+assert(x >= 0);
+assert(x <= n);
+assert(x <= n || x == 0);
+16.588147163391113	assert((x >= 0) && ((x <= n)||(x == 0)));	2
+
+Benchmarks/Linear/c/103.c
+assert(x >= 0 && x <= 100);
+assert((x >= 0) && (x <= 100));
+11.773311138153076	assert(x >= 0 && x <= 100);	1
+
+Benchmarks/Linear/c/104.c
+assert(x >= 0 && x <= n);
+assert(x >= 0);
+assert(x <= n);
+assert(x >= 0 && x <= n || n < 0);
+assert((x >= 0 && x <= n) || (n < 0));
+19.718018531799316	assert((x >= 0) && ((x >= 0 && x <= n)||(n < 0)) && (((x >= 0 && x <= n))||((n < 0))));	2
+
+Benchmarks/Linear/c/105.c
+assert(x >= 0 && x <= n);
+assert(n >= 0);
+assert(x <= n);
+assert(x >= 0);
+assert((n < 0 && x == 0) || (x >= 0 && x <= n));
+22.02338480949402	assert((x >= 0) && (((n < 0 && x == 0))||((x >= 0 && x <= n))));	2
+
+Benchmarks/Linear/c/106.c
+assert(a <= m);
+assert(k >= 0 && k <= 1);
+assert((k == 1 && a <= m) || (k == 0));
+assert(j < 1);
+assert(a <= m || k == 1);
+assert(m >= a || k == 0);
+assert(k <= 1 && a <= m);
+assert(k >= 0 && k <= 1 && (k == 0 || a <= m));
+16.973261833190918	assert(a <= m);	1
+
+Benchmarks/Linear/c/107.c
+assert(k >= 0 && k <= 1 && (k == 0 || m >= a));
+assert(k <= 1);
+assert(k == 0 || m >= a);
+assert(k >= 0 && k <= 1);
+assert(k == 0 || (m >= a && k == 1));
+20.098875761032104	assert(k >= 0 && k <= 1 && (k == 0 || m >= a));	1
+
+Benchmarks/Linear/c/108.c
+assert(k >= 0 && k <= c && (m >= a || j == 0));
+assert(k >= 0 && k <= c && (m >= a || k == 0));
+assert(k >= 0 && k <= c);
+assert(a <= m);
+assert(j == 0);
+23.919248819351196	assert((j == 0) && (a <= m) && (k >= 0) && ((m >= a || j == 0)) && ((m >= a || k == 0)));	2
+
+Benchmarks/Linear/c/109.c
+assert(k >= 0 && k <= c);
+assert(m >= a || k == 0);
+assert(k >= 0 && k <= c && (k == 0 || m >= a));
+assert(k <= c);
+assert(k == 0 || m >= a);
+25.75780439376831	assert((j == 0) && (k >= 0) && ((m >= a)||(k == 0)) && ((k == 0 || m >= a)) && ((k == 0)||(m >= a)));	2
+
+Benchmarks/Linear/c/110.c
+assert(sn == i - 1);
+assert(i >= 1);
+assert(i <= n + 1);
+assert(sn >= 0);
+assert(i >= 1 && i <= n + 1);
+assert(i >= 1 && i <= n + 1 && sn == i - 1);
+assert((i > n && sn == n) || (i <= n && sn == i - 1));
+assert(i >= 1 && sn == i - 1 && sn >= 0);
+21.24972152709961	assert((n >= 1) && (sn == i - 1) && (i >= 1) && (sn >= 0) && (((i > n && sn == n))||((i <= n && sn == i - 1))));	2
+
+Benchmarks/Linear/c/111.c
+assert(i >= 1 && i <= n + 1 && sn == i - 1);
+assert(i > n || (i <= n && sn == i - 1));
+assert(n >= 1);
+assert(sn == i - 1);
+assert(i >= 1);
+assert(i <= n + 1);
+assert(i >= 1 && i <= n + 1);
+16.998029470443726	assert(i >= 1 && i <= n + 1 && sn == i - 1);	1
+
+Benchmarks/Linear/c/112.c
+assert(i >= 1);
+assert(sn >= 0);
+assert(i == sn + 1);
+assert(sn == i - 1 && i >= 1 && i <= n + 1);
+assert(i >= 1 && i <= n + 1 && sn == i - 1);
+assert(sn == i - 1);
+assert(i <= n + 1);
+assert(i >= 1 && sn == i - 1);
+assert(sn == i - 1 && i <= n + 1);
+assert((i > 0) && (sn == i - 1) && (i <= n + 1));
+assert((i == sn + 1) && (i >= 1));
+assert((i == sn + 1) && (i >= 1) && (i <= n + 1) && (sn >= 0));
+31.775792598724365	assert(sn == i - 1 && i >= 1 && i <= n + 1);	7
+
+Benchmarks/Linear/c/113.c
+assert(i >= 1 && i <= n + 1);
+assert(sn == i - 1);
+assert(sn >= 0);
+assert((sn == i - 1) && (i <= n + 1));
+assert(i >= 1 && i <= n + 1 && sn == i - 1);
+assert(i >= 1);
+assert(i == sn + 1 && sn >= 0 && i >= 1 && i <= n + 1);
+assert(i == sn + 1 && sn <= n);
+20.642638206481934	assert((n >= 1) && (i >= 1) && (sn == i - 1) && (sn >= 0) && ((sn == i - 1)) && (i == sn + 1) && (sn <= n));	2
+
+Benchmarks/Linear/c/114.c
+assert(sn == x);
+6.779626369476318	assert(sn == x);	1
+
+Benchmarks/Linear/c/115.c
+assert(sn == x);
+assert(x == sn);
+6.608208417892456	assert(sn == x);	1
+
+Benchmarks/Linear/c/116.c
+assert(sn == x);
+assert(x == sn);
+8.697137117385864	assert(sn == x);	1
+
+Benchmarks/Linear/c/117.c
+assert(sn == x);
+assert(x == sn);
+6.715484857559204	assert(sn == x);	1
+
+Benchmarks/Linear/c/118.c
+assert(size >= 1);
+assert(i >= 1);
+assert(sn >= 0);
+assert(i == sn + 1);
+assert(sn <= size);
+assert(i >= 1 && i <= size + 1 && sn == i - 1);
+assert(i <= size + 1);
+assert(sn == i - 1);
+assert(size >= 1 && i >= 1 && i <= size + 1 && sn == i - 1);
+22.066819667816162	assert((size >= 1) && (i >= 1) && (sn >= 0) && (i == sn + 1) && (sn <= size) && (sn == i - 1));	2
+
+Benchmarks/Linear/c/119.c
+assert(i >= 1 && i <= size + 1 && sn == i - 1);
+assert(i >= 1);
+assert(sn == i - 1);
+assert(sn <= size);
+assert(i <= size + 1);
+12.250036478042603	assert(i >= 1 && i <= size + 1 && sn == i - 1);	1
+
+Benchmarks/Linear/c/120.c
+assert(i >= 1 && i <= 9 && sn == i - 1);
+assert(i >= 1 && i <= 9);
+assert(sn == i - 1);
+assert((sn == i - 1) && (i >= 1) && (i <= 9));
+assert((i >= 1) && (i <= 9));
+assert(i == sn + 1 && sn >= 0 && sn < 8);
+15.024950504302979	assert(i >= 1 && i <= 9 && sn == i - 1);	1
+
+Benchmarks/Linear/c/121.c
+assert((i >= 1) && (i <= 9));
+assert(sn == i - 1);
+assert((i - 1 == sn) && (i >= 1) && (i <= 9));
+assert(sn == i - 1 && i >= 1 && i <= 9);
+assert(i >= 1 && i <= 9);
+assert((i > 1) && (sn == i - 1));
+assert((i >= 1) && (i <= 9) && (sn == i - 1));
+18.34971857070923	assert(((i >= 1)) && ((i <= 9)) && (sn == i - 1) && ((i - 1 == sn)) && (i >= 1) && (i <= 9) && ((sn == i - 1)));	2
+
+Benchmarks/Linear/c/122.c
+assert(size >= 1);
+assert(i == sn + 1);
+assert(i >= 1 && i <= size + 1);
+assert(sn >= 0 && sn <= size);
+assert(sn == i - 1);
+assert(i > 0);
+assert(sn >= 0);
+assert(i >= 1);
+assert(i >= 1 && i <= size + 1 && sn == i - 1);
+assert(i >= 1 && sn == i - 1);
+24.55309534072876	assert((size >= 1) && (i == sn + 1) && (i >= 1) && (sn >= 0) && (sn <= size) && (sn == i - 1) && (i > 0));	2
+
+Benchmarks/Linear/c/123.c
+assert(i >= 1 && i <= size + 1 && sn == i - 1);
+assert(size >= 1);
+assert(sn == i - 1);
+assert(i >= 1 && i <= size + 1);
+assert(i >= 1);
+assert(sn >= 0);
+assert(i == sn + 1);
+14.387447595596313	assert(i >= 1 && i <= size + 1 && sn == i - 1);	1
+
+Benchmarks/Linear/c/124.c
+assert(x == y);
+assert(i - x == j - y);
+assert(y == i - j);
+assert((x == y));
+assert((i - j == x - y));
+assert((x == y) && (x == i - j));
+assert(x == y && y >= 0);
+assert((x == y) || (x == 0));
+assert((x == y) || (x <= 0));
+19.37048649787903	assert((i - x == j - y) && ((i - j == x - y)));	2
+
+Benchmarks/Linear/c/125.c
+assert((y == x) && (i - j == x - y));
+assert(x == y);
+assert(i - x == j - y);
+assert((y == x) && (x >= 0) && (y >= 0));
+assert((x == y) || (x == 0 && y == j - i));
+assert((x == y) && (i - j == x - y) || (x == 0 && y == 0));
+17.639488458633423	assert(((i - j == x - y)) && (i - x == j - y));	2
+
+Benchmarks/Linear/c/126.c
+assert(x == y);
+assert(i == j);
+assert(i - j == x - y);
+assert((x >= 0) && (y == j - i + x));
+assert(x == y && y == i - j);
+assert((x == y) && (i == j));
+assert((x >= 0) && (y >= 0));
+assert((x == y) || (x == 0 && y == y));
+assert((i == j && x == y) || (i != j));
+23.81287980079651	assert((i - j == x - y) && ((y == j - i + x)) && (((i == j && x == y))||((i != j))));	2
+
+Benchmarks/Linear/c/127.c
+assert(x == y);
+assert((x == 0) || (x != y));
+assert((x == y) && (i - x == j - y));
+assert(y == j - i);
+assert(y == (j - i));
+assert((x == y) && (i - j == x - y));
+assert(x == y || x == 0);
+assert((x == y) || (x == 0));
+19.267403602600098	assert(((i - x == j - y)) && ((i - j == x - y)));	2
+
+Benchmarks/Linear/c/128.c
+assert(x >= 1);
+assert(x < y || x >= y);
+assert(x >= 1 && x < y);
+assert((x >= 1) && (x < y));
+12.427603006362915	assert(x >= 1);	1
+
+Benchmarks/Linear/c/129.c
+assert(x >= 1);
+assert(x < y || x >= y);
+assert(x >= 1 && x < y);
+assert(x <= y || x >= y);
+17.82267427444458	assert(x >= 1);	1
+
+Benchmarks/Linear/c/130.c
+assert(x1 >= 0 && x2 >= x1 && x3 >= x1);
+assert(x1 >= 0 && x2 >= 0 && x3 >= 0 && x2 >= x1 && x3 >= x1);
+20.044517993927002	assert((d1 == 1) && (d2 == 1) && (d3 == 1) && (x2 >= x1) && (x3 >= x1) && (x1 >= 0) && (x2 >= 0) && (x3 >= 0));	2
+
+Benchmarks/Linear/c/131.c
+assert(x2 >= x1 && x3 >= x1 && x1 >= 0);
+assert(x1 >= 0 && x2 >= x1 && x3 >= x1);
+assert(x1 >= 0);
+assert(x2 >= 0);
+assert(x3 >= 0);
+assert((x2 >= x1) || (x1 <= 0));
+assert((x3 >= x1) || (x1 <= 0));
+assert(x2 >= x1);
+assert(x3 >= x1);
+25.70464015007019	assert((d1 == 1) && (d2 == 1) && (d3 == 1) && (x2 >= x1) && (x3 >= x1) && (x1 >= 0) && (x2 >= 0) && (x3 >= 0) && (((x2 >= x1))||((x1 <= 0))) && (((x3 >= x1))||((x1 <= 0))));	2
+
+Benchmarks/Linear/c/132.c
+assert(i >= 0);
+assert(c <= 48 || c >= 57 || (i == 2 * (i - (c - 48))));
+assert(j == 2*i || j == 0);
+assert(c <= 48 || c >= 57 || (i >= 0 && j == 2 * (i - (c - 48))));
+assert(c <= 48 || c >= 57 || i >= 0);
+15.829566717147827	assert(i >= 0);	1
+
+Benchmarks/Linear/c/133.c
+assert((x >= 0) && (x <= n));
+assert(x >= 0 && x <= n);
+assert(x >= 0);
+assert(x <= n);
+9.346669673919678	assert((x >= 0) && (x <= n));	1
+
+Benchmarks/Linear/c/134.c
+assert(p >= 0 && p <= 4 && cl == c - p);
+assert((p <= 4) && (cl == c - p));
+assert(p >= 0 && p <= 4);
+assert(cl == c - p);
+assert((p < 4 && cl > 0) || (p == 4 || cl == 0));
+14.236267566680908	assert(p >= 0 && p <= 4 && cl == c - p);	1
+
+Benchmarks/Linear/c/135.c
+assert(p + cl == c && p >= 0 && p <= 4 && cl >= 0);
+assert(p >= 0 && p <= 4);
+assert(p + cl == c);
+assert(cl == c - p);
+assert(cl >= 0);
+assert(p >= 0 && p <= 4 && cl == c - p);
+assert(c == cl + p);
+assert(p <= 4);
+assert((p + cl == c && p >= 0 && cl >= 0) || (p == 0 && cl <= 0));
+assert((p + cl == c && p >= 0 && p <= 4 && cl >= 0) || (p == 0 && cl <= 0));
+24.790672540664673	assert((p + cl == c) && (p >= 0) && (p <= 4) && (cl == c - p) && (c == cl + p) && (((p + cl == c && p >= 0 && cl >= 0))||((p == 0 && cl <= 0))) && (((p + cl == c && p >= 0 && p <= 4 && cl >= 0))||((p == 0 && cl <= 0))));	2
+
+Benchmarks/Linear/c/136.c
+assert(v3 >= 0);
+assert(v1 <= 5);
+assert((v1 - v3) >= 0);
+assert(v2 * 2 - v1 - v3 == 0);
+assert(v2 + 5 >= 0);
+assert(v2 <= 5);
+assert(t >= 0);
+assert(v2 + 5 >= 0 && v2 <= 5);
+assert(v2 >= -5 && v2 <= 5);
+assert(v1 <= 5 && v3 >= 0 && (v1 - v3) >= 0 && v2 * 2 - v1 - v3 == 0);
+assert(v1 - v3 >= 0);
+29.500171661376953	assert((v3 >= 0) && (v1 <= 5) && ((v1 - v3) >= 0) && (t >= 0) && (v1 - v3 >= 0));	2
+
+Benchmarks/Linear/c/137.c
+assert(v2 + 5 >= 0);
+assert(v2 <= 5);
+assert(v1 <= 5);
+assert(v3 >= 0);
+assert((v1 - v3) >= 0);
+assert(v2 * 2 - v1 - v3 == 0);
+assert(v2 + 5 >= 0 && v2 <= 5);
+assert(v1 <= 5 && v3 >= 0 && (v1 - v3) >= 0);
+assert(t >= 0);
+assert(x2 * 2 - x1 - x3 <= 0 || x2 * 2 - x1 - x3 >= 0);
+assert(v1 <= 5 && v3 >= 0);
+assert((v2 + 5 >= 0) && (v2 <= 5));
+assert((v2 * 2 - v1 - v3 == 0) || (x2 * 2 - x1 - x3 >= 0) || (x2 * 2 - x1 - x3 <= 0));
+assert(v2 >= -5 && v2 <= 5);
+assert((v2 * 2 - v1 - v3) == 0);
+assert(v1 >= v3);
+assert((v2 >= -5) && (v2 <= 5));
+assert((v2 + 5 >= 0 && v2 <= 5) || v2 == -6);
+assert(v1 <= 5 && v3 >= 0 && (v1 - v3) >= 0 && v2 * 2 - v1 - v3 == 0 && v2 + 5 >= 0 && v2 <= 5);
+assert(v2 >= -5 && v2 <= 5 && v1 <= 5 && v3 >= 0 && (v2 * 2 - v1 - v3 == 0));
+assert(v1 <= 5 && v3 >= 0 && v2 * 2 - v1 - v3 == 0);
+assert((v2 + 5 >= 0) && (v2 <= 5) && (v2 * 2 - v1 - v3 == 0));
+assert((x2 * 2 - x1 - x3 >= 0 && v2 >= 0) || (x2 * 2 - x1 - x3 <= 0 && v2 <= 5));
+assert(v3 >= 0 && v1 <= 5 && v1 >= v3);
+assert(v1 - v3 >= 0);
+assert(x2 * 2 - x1 - x3 <= v2 * 2);
+assert((x2 * 2 - x1 - x3 >= 0 && v2 <= 4) || (x2 * 2 - x1 - x3 <= 0 && v2 >= 1));
+assert((v2 >= -5) && (v2 <= 5) && (v2 * 2 - v1 - v3 == 0));
+assert(v2 >= -5 && v2 <= 6);
+assert(v2 + 5 >= 0 && v2 <= 5 && v1 <= 5 && v3 >= 0 && (v1 - v3) >= 0);
+assert(v1 <= 5 && v3 >= 0 && v2 >= -5 && v2 <= 5);
+assert(v1 <= 5 && v3 >= 0 && (v2 * 2 - v1 - v3 == 0) && (v2 + 5 >= 0) && (v2 <= 5));
+assert(v1 <= 5 && v3 >= 0 && v2 * 2 - v1 - v3 == 0 && x2 * 2 - x1 - x3 <= 0);
+assert(v2 * 2 - v1 - v3 == 0 && v2 >= -5 && v2 <= 5);
+assert(x2 == 75 + t * v2);
+assert(x1 == 100 + t * v1);
+assert(x3 == -50 + t * v3);
+assert(v3 >= 0 && v1 <= 5 && v1 >= v3 && v2 * 2 - v1 - v3 == 0 && v2 + 5 >= 0 && v2 <= 5);
+assert(v3 >= 0 && v1 <= 5 && (v1 - v3) >= 0 && v2 * 2 - v1 - v3 == 0 && v2 + 5 >= 0 && v2 <= 5);
+assert((v2 + 5 >= 0) && (v2 <= 5) && (v1 - v3 >= 0) && (v2 * 2 - v1 - v3 == 0));
+assert((v2 + 5 >= 0 && v2 <= 5) || (v2 < -5 || v2 > 5));
+assert((v2 + 5 >= 0 && v2 <= 5) || (v2 < 0 || v2 > 5));
+assert((v2 > 5 || v2 + 5 < 0) || (v2 >= 0 && v2 <= 5));
+assert((v2 + 5 >= 0 && v2 <= 5) || t == 0);
+assert((x2 * 2 - x1 - x3 >= 0 && v2 <= 5) || (x2 * 2 - x1 - x3 <= 0 && v2 >= -5));
+assert(v1 <= 5 && v3 >= 0 && v2 + 5 >= 0 && v2 <= 5 && (v1 - v3) >= 0 && v2 * 2 - v1 - v3 == 0);
+assert(v2 + 5 >= 0 && v2 <= 5 && v1 <= 5 && v3 >= 0 && (v1 - v3) >= 0 && v2 * 2 - v1 - v3 == 0);
+assert(v2 >= -5 && v2 <= 5 && v1 <= 5 && v3 >= 0 && v1 >= v3 && 2 * v2 == v1 + v3);
+assert(v2 * 2 - v1 - v3 == 0 && v1 <= 5 && v3 >= 0);
+assert(v1 <= 5 && v3 >= 0 && (v2 * 2 >= v1 + v3) && (v2 + 5 >= 0) && (v2 <= 5));
+None	None	None
+
+Benchmarks/Linear/c/138.c
+assert(v2 + 5 >= 0 && v2 <= 5);
+assert(v1 <= 5 && v3 >= 0 && (v1 - v3) >= 0);
+assert(v2 * 2 - v1 - v3 == 0);
+assert(v2 + 5 >= 0);
+assert(v2 <= 5);
+assert(v1 <= 5 && v3 >= 0);
+assert((v1 - v3) >= 0);
+assert(v3 >= 0);
+assert(v1 <= 5);
+assert(v1 <= 5 && v3 >= 0 && (v1 - v3) >= 0 && v2 * 2 - v1 - v3 == 0);
+assert(v1 - v3 >= 0);
+assert(v1 <= 5 && v2 <= 5 && v2 >= -5 && v3 >= 0 && (v1 - v3) >= 0 && (v2 * 2 - v1 - v3 == 0));
+assert(v2 >= -5 && v2 <= 5);
+assert(x2 >= x1 || x3 >= x1);
+assert(x1 - x3 >= 0);
+assert(v2 + 5 >= 0 && v2 <= 5 && x2 * 2 - x1 - x3 >= 0);
+assert(v1 <= 5 && v3 >= 0 && v2 >= -5 && v2 <= 5);
+assert((v2 + 5 >= 0) && (v2 <= 5) && (v1 <= 5) && (v3 >= 0) && (v2 * 2 - v1 - v3 == 0));
+assert(t * 5 + 75 >= x2);
+115.15425992012024	assert((v3 >= 0) && (v1 <= 5) && ((v1 - v3) >= 0) && (v1 - v3 >= 0) && ((v1 <= 5)) && ((v3 >= 0)) && (t * 5 + 75 >= x2));	10
+
+Benchmarks/Linear/c/139.c
+assert(v1 <= 5 && v3 >= 0 && v2 <= 5 && v2 >= -5);
+assert((v1 - v3) >= 0);
+assert(v2 * 2 - v1 - v3 == 0);
+assert(v3 >= 0);
+assert(v1 <= 5);
+assert(v2 + 5 >= 0 && v2 <= 5);
+assert(v2 + 5 >= 0);
+assert(v2 <= 5);
+assert(v2 >= 0);
+assert(v2 <= 6);
+assert(v1 <= 5 && v3 >= 0);
+assert(v1 - v3 >= 0);
+assert(v2 >= -5);
+assert(v1 <= 5 && v3 >= 0 && v2 >= -5 && v2 <= 5);
+assert(v1 <= 5 && v3 >= 0 && v2 >= -5 && v2 <= 5 && v2 * 2 - v1 - v3 == 0);
+39.95282483100891	assert((v3 >= 0) && (v1 <= 5) && ((v1 - v3) >= 0) && (v2 <= 6) && (v1 - v3 >= 0));	2
+
+Benchmarks/Linear/c/140.c
+assert(v3 >= 0);
+assert(v1 <= 5);
+assert((v1 - v3) >= 0);
+assert(v2 * 2 - v1 - v3 == 0);
+assert(v2 + 5 >= 0);
+assert(v2 <= 5);
+assert(v2 + 5 >= 0 && v2 <= 5);
+assert(v1 <= 5 && v3 >= 0 && (v1 - v3) >= 0 && v2 * 2 - v1 - v3 == 0 && v2 <= 5);
+22.478268146514893	assert(v3 >= 0);	1
+
+Benchmarks/Linear/c/141.c
+assert(v2 <= 5 && v2 >= -5);
+assert(t >= 0);
+assert(v1 <= 5);
+assert(x1 == 100 + t * v1);
+assert(x3 == -50 + t * v3);
+assert(v2 + 5 >= 0 && v2 <= 5);
+assert(v1 - v3 >= 0);
+assert(v2 * 2 - v1 - v3 == 0);
+assert(v3 >= 0);
+assert((v1 - v3) >= 0);
+assert((v2 + 5 >= 0) && (v2 <= 5));
+assert(v2 + 6 >= 0);
+assert(v2 >= -5 && v2 <= 5);
+31.08443331718445	assert((v3 >= 0) && (v1 <= 5) && (t >= 0) && (x1 == 100 + t * v1) && (x3 == -50 + t * v3) && (v1 - v3 >= 0) && ((v1 - v3) >= 0) && (v2 + 6 >= 0));	2
+
+Benchmarks/Linear/c/142.c
+assert(x1 == 100 + t * v1);
+assert(x3 == -50 + t * v3);
+assert(v2 * 2 - v1 - v3 == 0);
+assert(v2 + 5 >= 0 && v2 <= 5);
+assert(v2 == (100 - x1 + x3 + 50) / 2);
+assert(v2 + 5 >= 0);
+assert(v2 <= 5);
+assert(x2 + t * 5 >= 75);
+assert(t >= 0);
+assert(v1 <= 5 && v3 >= 0);
+assert((v1 - v3) >= 0);
+assert((v2 + 5 >= 0 && v2 <= 5) || (v2 + 5 < 0 || v2 > 5));
+assert(v1 <= 5 && v1 >= v3);
+41.2827353477478	assert((v3 >= 0) && (v1 <= 5) && (x1 == 100 + t * v1) && (x3 == -50 + t * v3) && (x2 + t * 5 >= 75) && (t >= 0) && ((v1 - v3) >= 0) && (((v2 + 5 >= 0 && v2 <= 5))||((v2 + 5 < 0 || v2 > 5))));	2
+
+Benchmarks/Linear/c/143.c
+assert(v2 + 5 >= 0 && v2 <= 5);
+assert(v1 <= 5);
+assert((v1 - v3) >= 0);
+assert(v2 * 2 - v1 - v3 == 0);
+assert(v2 + 5 >= 0);
+assert(v2 <= 5);
+assert(v3 >= 0);
+assert(v2 + 5 >= 0 || v2 > 5);
+assert(v1 <= 5 && v3 >= 0);
+assert(v2 + 5 >= 0 && v2 <= 5 && x2 * 2 - x1 - x3 == v2 * t);
+assert(v1 <= 5 && v3 >= 0 && (v1 - v3) >= 0 && v2 * 2 - v1 - v3 == 0);
+assert(t >= 0);
+assert(v3 >= 0 && v1 <= 5 && (v1 - v3) >= 0 && v2 * 2 - v1 - v3 == 0 && v2 + 5 >= 0 && v2 <= 5);
+45.09886145591736	assert((v3 >= 0) && (v1 <= 5) && ((v1 - v3) >= 0) && (t >= 0));	4
+
+Benchmarks/Linear/c/144.c
+assert(v1 - v3 >= 0);
+assert(v2 >= -5 && v2 <= 5);
+assert(v2 * 2 - v1 - v3 == 0);
+assert(v2 + 5 >= 0);
+assert(v2 <= 5);
+assert(v2 + 5 >= 0 && v2 <= 5);
+assert(v1 <= 5);
+assert((v2 * 2 - v1 - v3) == 0);
+25.252402782440186	assert(v1 - v3 >= 0);	1
+
+Benchmarks/Linear/c/145.c
+assert(hi - lo == mid * 2 && mid >= 0);
+assert(lo + hi == 2 * mid && mid >= 0);
+assert(mid >= 0);
+assert(lo + hi == 2 * mid);
+assert(lo == hi || mid != 0);
+assert(lo - hi == 0);
+17.529561758041382	assert(hi - lo == mid * 2 && mid >= 0);	1
+
+Benchmarks/Linear/c/146.c
+assert(y >= 0);
+assert(x == 0 || y == 0);
+assert(y <= 1024);
+assert(x == 0 || (x == 1 && y == 0));
+assert(x == 0 || x == 1);
+assert(y >= 0 && y <= 1024);
+assert(y >= 0 && y <= 1024 && (y < 1024 || x == 0));
+24.59710717201233	assert((y >= 0) && ((x == 0)||(y == 0)) && (y <= 1024) && ((x == 0)||((x == 1 && y == 0))) && ((x == 0)||(x == 1)) && ((y < 1024 || x == 0)));	2
+
+Benchmarks/Linear/c/147.c
+assert(xa == 0 && ya == 0);
+assert((xa + ya * 2) % 3 == 0);
+assert((xa + ya * 2) >= 0);
+assert((xa + ya * 2 + 1 >= 0) && (xa - ya * 2 - 1 <= 0));
+assert(xa >= -ya * 2);
+assert(xa + ya * 2 >= 0);
+assert(xa + 2 * ya >= 0);
+29.040128707885742	assert(((xa + ya * 2) >= 0) && ((xa + ya * 2 + 1 >= 0)) && (xa >= -ya * 2) && (xa + ya * 2 >= 0) && (xa + 2 * ya >= 0));	2
+
+Benchmarks/Linear/c/148.c
+assert(x >= 1 && y >= 1);
+19.110124826431274	assert(x >= 1 && y >= 1);	1
+
+Benchmarks/Linear/c/149.c
+assert(x == y);
+assert(i >= x * (x + 1) / 2);
+assert(j >= y + i);
+assert(x == y && i >= x && j >= i);
+assert(j >= i);
+assert(j >= y * (y + 1) / 2);
+assert(i >= x);
+assert(x == y && i == x * (x + 1) / 2 && j >= i);
+23.166200160980225	assert((x == y) && (i >= x * (x + 1) / 2) && (i >= x) && (j >= i) && (j >= y * (y + 1) / 2) && (i == x * (x + 1) / 2));	2
+
+Benchmarks/Linear/c/150.c
+assert(x >= 0 && (x < 4 || (y <= x + 2 && y >= 100)));
+assert((x >= 4 && y >= x + 1) || (x < 4 && y >= 100 * x) || (x < 0 && y <= -1));
+assert(x >= 0);
+assert((y >= 0 && x >= 4) || (y >= 100 && x == 1) || (y == 0 && x == 0));
+assert((x < 4 && y >= 0) || (x >= 4 && y >= x) || (x < 0 && y <= 0));
+assert(x >= 0 && y >= 0);
+assert(x >= 0 && (y >= 100 * x - 99 || x >= 4));
+assert(x >= 0 && (x < 4 || y > 102));
+32.23029017448425	assert((x >= 0) && (((x >= 4 && y >= x + 1))||((x < 4 && y >= 100 * x))||((x < 0 && y <= -1))) && (((x < 4 && y >= 0))||((x >= 4 && y >= x))||((x < 0 && y <= 0))) && (y >= 0) && ((y >= 100 * x - 99 || x >= 4)) && ((x < 4 || y > 102)));	2
+
+Benchmarks/Linear/c/151.c
+assert(x >= 0);
+assert((x >= 4 && y >= 2) || x < 4);
+assert(x >= 4 || x == 0 || (x > 0 && x < 4));
+assert((x >= 4 && y > 0) || (x < 0 && y <= 0) || (x >= 0 && x < 4 && y >= 100));
+assert(x < 4 || y > 2);
+assert(y >= 0);
+assert((x < 4) || (x - y == 3));
+assert((x < 4 && y >= 100 * x) || (x >= 4 && y >= x + 96));
+assert((x >= 0) && (x < 4 || y > 2));
+assert(x >= 0 && (x < 4 || y > 2));
+31.721813440322876	assert((x >= 0) && (((x >= 4 && y >= 2))||(x < 4)) && ((x >= 4)||(x == 0)||((x > 0 && x < 4))) && ((x < 4)||(y > 2)) && (y >= 0) && (((x < 4 && y >= 100 * x))||((x >= 4 && y >= x + 96))) && ((x >= 0)) && ((x < 4 || y > 2)));	2
+
+Benchmarks/Linear/c/152.c
+assert(k >= 0);
+assert(turn >= 0 && turn <= 5);
+assert(i >= 0);
+assert(j == 0 || turn == 5);
+assert(turn != 1 || i == 0);
+assert(i >= 0 || i == -1);
+assert((turn == 0 && i >= 0) || (turn == 1 && i >= 0 && pvlen >= 0) || (turn == 2 && t >= 0 && i >= 0 && k >= 0) || (turn >= 3 && n >= 0 && j >= 0 && k >= 0));
+24.177116632461548	assert(k >= 0);	1
+
+Benchmarks/Linear/c/153.c
+assert((w == 1 && z == 0) || (w == 0 && z == 1));
+assert(x == y);
+assert(w == 1 || w == 0);
+assert(z == 1 || z == 0);
+assert(w == 0 || x == y);
+assert(w == 1 && z == 0 || w == 0 && z == 1);
+assert(w == 0 || w == 1);
+assert(z == 0 || z == 1);
+assert((w == 1 && z == 0) || (w != 1 && z == 0) || (w == 1 && z != 0) || (w != 1 && z != 0));
+assert(w == 0 && z == 1 && x == y);
+45.71919631958008	assert((((w == 1 && z == 0))||((w == 0 && z == 1))) && (x == y) && ((w == 1)||(w == 0)) && ((z == 1)||(z == 0)) && ((w == 0)||(x == y)) && ((w == 1 && z == 0)||(w == 0 && z == 1)) && ((w == 0)||(w == 1)) && ((z == 0)||(z == 1)) && (((w == 1 && z == 0))||((w != 1 && z != 0))));	2
+
+Benchmarks/Linear/c/154.c
+assert(i >= 0 && j == 2 * i);
+assert(j == 2 * i);
+assert(i >= 0 && i <= x && j == 2 * i);
+assert(i >= 0 && j == 2 * i && i <= x);
+13.33391547203064	assert((x > 0) && (i >= 0) && (j == 2 * i) && (i <= x));	2
+
+Benchmarks/Linear/c/155.c
+assert(j >= 2);
+assert(j == k * 2 + 2 || k == 0);
+assert(k >= 0);
+assert(j == k * 2 + 2 || t == 0);
+assert(j == 2 + k * 2);
+assert(k == 0 || t != 0);
+assert(j == 2 * k + 2);
+assert(j == k * 2 + 2);
+assert((k == 0 && j >= 2) || (j == k * 2 + 2));
+28.06915545463562	assert((j >= 2) && ((j == k * 2 + 2)||(k == 0)) && (k >= 0) && ((j == k * 2 + 2)||(t == 0)) && ((k == 0)||(t != 0)) && (((k == 0 && j >= 2))||((j == k * 2 + 2))));	2
+
+Benchmarks/Linear/c/156.c
+assert(j == k * 2 + 2);
+assert(k >= 0);
+assert(j == k * 2 + 2 || (k == 0 && t == 0));
+assert(j == 2 * k + 2);
+assert((j - 2) % 2 == 0 && k >= 0);
+assert(j - 2 * k == 2 || (k == 0 && t != 0));
+assert((j == 2 + 2 * k + 2 * (k >= 0)) && (j % 2 == 0));
+assert(j == 2 + 2 * k || (k == 0 && t == 0));
+assert(j == 2 * k + 2 || (k == 0 && t == 0));
+assert(j == 2 + 2 * k && j % 2 == 0);
+assert((j - 2) % 2 == 0 && j == 2 + 2 * k);
+assert(j == 2 + 2 * k);
+assert(j - 2 == 2 * k && j % 2 == 0);
+assert(j == 2 + 2 * k && (k == 0 || t != 0));
+67.09089159965515	assert((k >= 0) && ((j == k * 2 + 2)||((k == 0 && t == 0))) && ((j - 2) % 2 == 0) && ((j % 2 == 0)) && ((j == 2 + 2 * k)||((k == 0 && t == 0))) && ((j == 2 * k + 2)||((k == 0 && t == 0))) && (j % 2 == 0) && ((k == 0 || t != 0)));	16
+
+Benchmarks/Linear/c/157.c
+assert(j > 0);
+assert(a >= 0 - (j - 1) && a <= j - 1);
+assert(a >= 1 - j && a <= j - 1);
+assert(j >= 1 && j <= m + 1);
+assert(a >= -j + 1);
+assert(a <= j - 1);
+assert(a >= -(j - 1) && a <= j - 1);
+assert(j > 0 && j <= m + 1);
+assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);
+assert(a >= -j + 1 && a <= j - 1);
+assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);
+assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);
+assert(j >= 1 && a >= 1 - j && a <= j - 1);
+assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);
+assert(j >= 1 && j <= m + 1 && a >= -j + 1);
+assert(j > 0 && a >= 1 - j && a <= j - 1);
+assert(j > 0 && j <= m + 1 && a >= -j + 1 && a <= j - 1);
+assert(j > 0 && a >= -(j - 1) && a <= j - 1 && j <= m + 1);
+assert(j >= 1 && a >= -(j - 1) && a <= j - 1 && m >= 0);
+assert(j > 0 && j <= m + 1 && a >= -m && a <= m);
+67.96902799606323	assert((m > 0) && (j > 0) && (a >= 0 - (j - 1)) && (a <= j - 1) && (a >= 1 - j) && (j >= 1) && (a >= -j + 1) && (a >= -(j - 1)) && (m >= 0) && (a >= -m) && (a <= m));	11
+
+Benchmarks/Linear/c/158.c
+assert(j > 0 && j <= m + 1);
+assert(a >= -m && a <= m);
+assert(a <= j - 1 && a >= -j + 1);
+assert(j > 0);
+assert(j >= 1 && j <= m + 1);
+assert(j <= m + 1);
+assert(a <= j - 1);
+assert(a >= 1 - j);
+assert(j > 0 && j <= m + 1 && a >= -m && a <= m);
+assert(j > 0 && j <= m + 1 && -m <= a && a <= m);
+37.11204290390015	assert((m > 0) && (j > 0) && (a >= -m) && (a <= m) && (a <= j - 1) && (a >= -j + 1) && (j >= 1) && (a >= 1 - j) && (-m <= a));	2
+
+Benchmarks/Linear/c/159.c
+assert(j >= 0 && k >= n - j);
+assert(j >= 0);
+assert(k >= n - j);
+assert(j <= n);
+assert(j >= 0 && k <= k + j);
+assert(k + j == k + n);
+assert(j >= 0 && j <= n);
+18.766008853912354	assert(j >= 0 && k >= n - j);	1
+
+Benchmarks/Linear/c/160.c
+assert(x <= i && y == j - (i - x));
+assert(y == j - i);
+assert(x == i - j || x == 0);
+assert(x == y);
+assert(x >= 0 && y >= 0);
+16.188015937805176	assert(x <= i && y == j - (i - x));	1
+
+Benchmarks/Linear/c/161.c
+assert(x == y);
+assert(x >= 0 && y >= 0);
+assert(x == i - j);
+assert(y == j - (i - x));
+assert(x >= 0);
+assert(y == j - i + x);
+assert(x == y || x == 0);
+assert(x >= 0 && y == j - i + x);
+21.508533000946045	assert((y == j - (i - x)) && (y == j - i + x));	2
+
+Benchmarks/Linear/c/162.c
+assert(turn >= 0 && turn < 3);
+assert(k >= 1);
+assert(i >= 1);
+assert(j >= 0 && j <= i);
+assert(turn >= 0 && turn < 3 || turn == 3);
+assert(j >= 0);
+assert(turn >= 0 && turn <= 3);
+assert((turn != 0) || (i < n || turn == 3));
+assert((turn != 1) || (j <= i));
+assert((turn == 3) == (i >= n));
+assert(j <= i);
+assert((turn == 0 && i <= n) || (turn == 1 && j <= i) || (turn == 2 && j == i) || (turn == 3 && k >= n));
+assert((turn == 0 && i < n) || (turn == 1 && j <= i) || (turn == 2) || (turn == 3 && k >= n));
+32.96962523460388	assert(k >= 1);	3
+
+Benchmarks/Linear/c/163.c
+assert(b >= 0);
+assert(j >= 0);
+assert(j <= b);
+assert(b <= n);
+assert((flag != 1) || (j == b));
+assert((flag == 1 && j == b) || (flag != 1 && j == 0));
+assert(n > 0);
+assert(b >= 0 && b <= n);
+assert(j >= 0 && j <= n);
+assert(b == j || flag != 1);
+assert(j >= 0 && j <= b);
+assert(flag != 1 || j == b);
+assert((flag != 1 && j == 0) || (flag == 1 && j == b));
+assert(b >= 0 && j >= 0 && j <= b && (flag != 1 || j == b));
+32.90181827545166	assert((n > 0) && (b >= 0) && (j >= 0) && (j <= b) && (b <= n) && (((flag != 1))||((j == b))) && (((flag == 1 && j == b))||((flag != 1 && j == 0))) && (j <= n) && ((b == j)||(flag != 1)) && ((flag != 1)||(j == b)) && (((flag != 1 && j == 0))||((flag == 1 && j == b))) && ((flag != 1 || j == b)));	2
+
+Benchmarks/Linear/c/164.c
+assert(b >= 0);
+assert(j >= 0 && j <= b);
+assert(b <= n);
+assert(j >= 0);
+assert(j <= b);
+assert(flag == 1 || flag != 1);
+assert(n > 0);
+assert(b >= 0 && b <= n);
+assert((flag != 1) || (j == b));
+assert(b >= 0 && j >= 0 && j <= b && b <= n);
+27.2364022731781	assert((n > 0) && (b >= 0) && (j >= 0) && (j <= b) && (b <= n) && ((flag == 1)||(flag != 1)) && (((flag != 1))||((j == b))));	2
+
+Benchmarks/Linear/c/165.c
+assert(x >= 0 && x <= n);
+assert(y == m + x);
+assert(m >= 0 && m < n);
+assert(y == x || y == m);
+assert(m >= 0);
+assert(n >= 0);
+assert(m < n);
+assert(x >= 0);
+assert(y >= m);
+assert(x <= n);
+assert(y >= m && y <= n);
+assert(x >= y || y == m);
+assert(x >= 0 && y >= m && y == x);
+assert(x >= 0 && y == m + x && x <= n);
+assert(x <= n && y == m + x);
+assert(x <= n && y == x && m >= 0 && m < n);
+assert(x >= 0 && y == x && x <= n);
+assert(y == x && x <= n && m <= x);
+assert(x <= n && y == x && m < n);
+assert(x >= 0 && y == x && m < n);
+assert(x <= n && y == x);
+assert(y == x && x >= m && x <= n);
+assert(x >= 0 && y == x && x <= n && y <= n);
+assert(m >= 0 && n >= 0 && m < n);
+assert(x >= 0 && x <= n && y == x);
+assert(x >= 0 && y >= m && (x <= m || y == x));
+assert(x >= 0 && y >= m && (y == x || x < n));
+89.60891723632812	assert((n >= 0) && (m >= 0) && (m < n) && (x >= 0) && (x <= n) && ((y == x)||(y == m)) && (y >= m) && (y <= n) && ((x >= y)||(y == m)) && ((x <= m || y == x)) && ((y == x || x < n)));	15
+
+Benchmarks/Linear/c/166.c
+assert((x + y) == k);
+assert(j >= 0 && j <= n);
+assert(j <= n);
+13.461655378341675	assert((x + y) == k);	1
+
+Benchmarks/Linear/c/167.c
+assert(j >= 0 && j <= n);
+assert(x + y == k);
+assert(m >= 0 || m <= j);
+assert((x + y) == k);
+assert(m <= j);
+assert(j >= 0);
+assert(j <= n);
+assert((x + y) == k && j == 0);
+assert((x + y == k) && (j == 0) && (m == 0) && (j <= n));
+assert((x + y == k) && (j <= n) && (m <= j || m == 0));
+assert(m >= 0);
+assert((x + y) == k && j <= n && m >= 0);
+37.93135690689087	assert((j >= 0) && (x + y == k) && ((m >= 0)||(m <= j)) && ((x + y) == k) && (m <= j) && ((x + y == k)) && ((m <= j || m == 0)) && (m >= 0));	6
+
+Benchmarks/Linear/c/168.c
+assert((x + y) == k);
+assert(j >= 0);
+assert(j <= n);
+assert(m <= j);
+assert(m >= 0 || m == 0);
+assert(0 <= m && m <= j);
+assert(x + y == k);
+assert(0 <= j && j <= n);
+assert((m == 0) || (0 < m && m <= j));
+assert(m >= 0);
+assert(0 <= m);
+assert((x + y) == k && m >= 0 && j <= n);
+32.09774613380432	assert(((x + y) == k) && (j >= 0) && (m <= j) && ((m >= 0)||(m == 0)) && (0 <= m) && (x + y == k) && (0 <= j) && (((m == 0))||((0 < m && m <= j))) && (m >= 0));	2
+
+Benchmarks/Linear/c/169.c
+assert((x + y) == k);
+assert(j >= 0);
+assert(m >= 0 && m <= j);
+assert(j <= n);
+assert(j >= 0 && j <= n);
+assert(m <= j);
+assert(m >= 0 && m <= n);
+assert((x + y) == k && j <= n && (m == 0 || (m >= 1 && m <= j)));
+assert((x + y) == k && j <= n && m <= j);
+assert((x + y) == k && j >= 0 && j <= n && m <= j);
+assert(x + y == k);
+assert((x + y) == k && j <= n && m >= 0 && m <= j);
+assert((j <= n && n >= 0) || n < 0);
+assert((j <= n) || (n <= 0));
+43.26097011566162	assert(((x + y) == k) && (j >= 0) && (m >= 0) && (m <= j) && ((m == 0 || (m >= 1 && m <= j))) && (x + y == k) && (((j <= n && n >= 0))||(n < 0)) && (((j <= n))||((n <= 0))));	7
+
+Benchmarks/Linear/c/170.c
+assert((x + y) == k);
+assert(j >= 0);
+assert(m <= j || m == 0);
+assert(j <= n);
+assert(m >= 0);
+assert(x + y == k);
+assert((x + y) == k && j <= n);
+assert(j >= 0 && j <= n);
+assert((x + y) == k && j <= n && (m <= j || m == 0));
+assert((j <= n) || (j == 0 && n <= 0));
+40.41209864616394	assert(((x + y) == k) && (j >= 0) && ((m <= j)||(m == 0)) && (m >= 0) && (x + y == k) && ((m <= j || m == 0)) && (((j <= n))||((j == 0 && n <= 0))));	7
+
+Benchmarks/Linear/c/171.c
+assert(i >= 0);
+assert(k == 2000 * i || k == 4000 * i || (k > 2000 * i && k < 4000 * i));
+assert(i >= 0 && i <= n);
+assert(k == 2000 * i || k == 4000 * i || (k >= 2000 * i && k <= 4000 * i));
+assert(n > 0 && n < 10);
+assert(i <= n);
+assert(k == i * 2000 || k == i * 4000 || (k > i * 2000 && k < i * 4000));
+assert(k >= 0);
+assert(k >= 2000 * i);
+assert(i >= 0 && k >= 2000 * i);
+38.781134843826294	assert((n > 0) && (n < 10) && (i >= 0) && ((k == 2000 * i)||(k == 4000 * i)||((k > 2000 * i && k < 4000 * i))) && (i <= n) && ((k == 2000 * i)||(k == 4000 * i)||((k >= 2000 * i && k <= 4000 * i))) && ((k == i * 2000)||(k == i * 4000)||((k > i * 2000 && k < i * 4000))) && (k >= 0) && (k >= 2000 * i));	2
+
+Benchmarks/Linear/c/172.c
+assert(i >= 0 && i <= n);
+assert(sum == i * (i - 1) / 2);
+assert(sum >= 0);
+assert(i >= 0 && i <= n && sum == i * (i - 1) / 2);
+assert(i >= 0 && sum >= 0 && i <= n);
+assert(i >= 0 && i <= n && sum == (i * (i - 1)) / 2);
+19.537025213241577	assert(sum == i * (i - 1) / 2);	3
+
+Benchmarks/Linear/c/173.c
+assert(turn >= 0 && turn < 3);
+assert(i >= j);
+assert(x >= y);
+assert(j <= i + 1);
+assert(i >= j || turn != 2);
+19.02682375907898	assert(turn >= 0 && turn < 3);	1
+
+Benchmarks/Linear/c/174.c
+assert(x >= 0);
+assert(y >= 0);
+assert(x == y);
+assert(x >= n);
+assert(y >= n);
+assert(x == y && x >= n);
+13.880464553833008	assert((n == 0) && (x >= 0) && (y >= 0) && (x == y) && (x >= n) && (y >= n));	2
+
+Benchmarks/Linear/c/175.c
+assert(i >= 0 && c >= 0 && i <= n);
+assert(i >= 0 && c >= 0);
+assert(i <= n);
+assert(i >= 0 && i <= n);
+assert(c >= 0);
+assert(c == (i * (i - 1)) / 2);
+assert(c == i * (i - 1) / 2);
+assert(i >= 0);
+18.853466749191284	assert(i >= 0 && c >= 0 && i <= n);	1
+
+Benchmarks/Linear/c/176.c
+assert(n >= 0 && n <= 2 * k);
+assert((n % 2 == 0 && b == 1) || (n % 2 != 0 && b == 0));
+assert(i + j == (n / 2) + (i == j ? i : 0));
+assert(i >= j && (i == j || i == j + 1));
+assert(b == 0 || b == 1);
+assert((b == 0 && i == j + 1) || (b == 1 && i == j));
+assert((n % 2 == 0 && b == 1 && i == j + n / 2) || (n % 2 == 1 && b == 0 && i == j + n / 2 + 1));
+assert(k > 0 && k < 20000001);
+assert(i == j);
+assert(n % 2 == 0 || b == 1);
+assert(n % 2 == 1 || b == 0);
+assert((n % 2 == 0 && i == j) || (n % 2 == 1 && i == j + 1));
+assert(i == j + n / 2);
+assert(j == i - n / 2);
+assert((n % 2 == 0 && i == j + n / 2) || (n % 2 == 1 && i + 1 == j + n / 2));
+48.20228338241577	assert((k > 0) && (k < 20000001) && (n >= 0) && (n <= 2 * k) && (((n % 2 == 0 && b == 1))||((n % 2 != 0 && b == 0))) && ((i == j || i == j + 1)) && ((b == 0)||(b == 1)) && (((b == 0 && i == j + 1))||((b == 1 && i == j))) && (((n % 2 == 0 && i == j))||((n % 2 == 1 && i == j + 1))));	2
+
+Benchmarks/Linear/c/177.c
+assert(turn >= 0 && turn <= 3);
+assert((turn == 0 && x == 0 && y == 0) || (turn == 1 && x >= y) || turn == 2 || turn == 3);
+assert(z == k + y - c);
+assert(x == y || turn != 0);
+assert(x >= 0 && y >= 0);
+assert((turn == 0 && z == k) || (turn == 1 && z == k + y - c) || (turn == 2 && z == k + y - c) || (turn == 3 && z == x + y));
+assert(turn == 0 || turn == 1 || turn == 2 || turn == 3);
+assert((turn != 1 && turn != 2) || z == k + y - c);
+assert(x == y || turn == 1 || turn == 2);
+assert(x == y);
+29.986974000930786	assert(turn >= 0 && turn <= 3);	1
+
+Benchmarks/Linear/c/178.c
+assert(n > 0);
+assert(x >= 0);
+assert(x <= n);
+assert(x >= 0 && x <= n);
+assert(n > 0 && x <= n);
+13.459875345230103	assert((n > 0) && (x >= 0) && (x <= n));	2
+
+Benchmarks/Linear/c/179.c
+assert(x >= 0 && x <= n);
+assert(m >= 0 && m <= x);
+assert(x >= 0);
+assert(x <= n);
+assert(m <= x);
+assert(n > 0);
+assert(m >= 0);
+assert(m <= x - 1);
+assert(x >= 0 && x <= n && (m >= 0 || x == 0));
+assert(x >= 0 && x <= n && (m == 0 || (m >= 0 && m < n)));
+21.284377574920654	assert((n > 0) && (x >= 0) && (x <= n) && (m >= 0) && (m <= x) && ((m >= 0 || x == 0)) && ((m == 0 || (m >= 0 && m < n))));	2
+
+Benchmarks/Linear/c/180.c
+assert(x >= 0 && x <= n);
+assert(m >= 0 && m <= x);
+assert(n > 0);
+assert(x >= 0);
+assert(x <= n);
+assert(m >= 0);
+assert(m <= x);
+assert(x >= 0 && x <= n && m >= 0 && m <= x);
+assert(x >= 0 && m >= 0 && m <= x && x <= n);
+assert(x >= 0 && x <= n && (m < n || m == 0) && (m <= x));
+25.37757682800293	assert((n > 0) && (x >= 0) && (x <= n) && (m >= 0) && (m <= x) && ((m < n || m == 0)) && ((m <= x)));	5
+
+Benchmarks/Linear/c/181.c
+assert(n >= 0 && n <= 2 * k);
+assert(b == 0 || b == 1);
+assert((n % 2 == 0 && i == j) || (n % 2 == 1 && i == j - 1));
+assert((b == 0 || b == 1));
+assert((n % 2 == 0 && i == j) || (n % 2 != 0 && i != j));
+assert((n % 2 == 0 && b == 0 && i == j + n / 2) || (n % 2 == 1 && b == 1 && i + 1 == j + n / 2));
+assert(k > 0 && k < 20000001);
+assert((i + j) == (n + 2 * j));
+assert(n % 2 == 0 || b == 1);
+assert(n % 2 == 1 || b == 0);
+assert((i == j) || (i == j + 1) || (i + 1 == j));
+assert((n % 2 == 0 && i == j) || (n % 2 == 1 && i + 1 == j));
+56.54378700256348	assert((k > 0) && (k < 20000001) && (n >= 0) && (n <= 2 * k) && ((b == 0)||(b == 1)) && (((n % 2 == 0 && i == j))||((n % 2 == 1 && i == j - 1))) && (((b == 0 || b == 1))) && (((n % 2 == 0 && i == j))||((n % 2 != 0 && i != j))) && ((n % 2 == 0)||(b == 1)) && ((n % 2 == 1)||(b == 0)) && (((i == j))||((i + 1 == j))) && (((n % 2 == 0 && i == j))||((n % 2 == 1 && i + 1 == j))));	2
+
+Benchmarks/Linear/c/182.c
+assert(i >= 0 && j >= 0);
+assert(i == j);
+assert(i <= n + 1 && j <= n + 1);
+assert(i >= 0);
+assert(i <= n + 1);
+assert(j == i);
+assert(i >= 0 && i <= n + 1);
+assert(n >= 0);
+assert(k >= 0);
+assert(i >= 0 && j >= 0 && i == j);
+assert(i >= 0 && j == i);
+22.319327116012573	assert((n >= 0) && (n <= 20000001) && (k >= 0) && (k <= 20000001) && (i >= 0) && (j >= 0) && (i == j) && (i <= n + 1) && (j <= n + 1) && (j == i));	2
+
+Benchmarks/Linear/c/183.c
+assert(x <= 0 || y >= t);
+assert(x != y);
+assert(x <= 0 || y > t);
+assert(t == y || y >= t);
+assert(y >= t);
+assert(x >= 0 && y >= t);
+assert(x <= 0 || (y >= t && y - t >= x));
+assert(y >= t && x > 0);
+32.8887882232666	assert(t == y || y >= t);	4
+
+Benchmarks/Linear/c/184.c
+assert(n == 1 || n == 2);
+assert(j == i * n);
+assert(i >= 0);
+assert(i <= k + 1);
+assert(j == n * i);
+assert(i >= 0 && i <= k + 1);
+34.65394854545593	assert(((n == 1)||(n == 2)) && (j == i * n) && (i >= 0) && (j == n * i));	2
+
+Benchmarks/Linear/c/185.c
+assert(n == 1 || n == 2);
+assert(i >= 0 && j == n * i);
+assert(i == j / n);
+assert(j == i * n);
+assert(i >= 0 && j >= 0);
+assert(j == n * i);
+assert(i >= 0);
+92.86649465560913	assert(((n == 1)||(n == 2)) && (i >= 0) && (j == n * i) && (j == i * n) && (j >= 0));	2
+
+Benchmarks/Linear/c/186.c
+assert(x >= 0);
+assert(z >= 0);
+assert(w >= 0);
+assert(y >= 0 || x < 4);
+assert(3 * x >= y || (x < 4 && w <= y));
+assert(y >= 0);
+assert((x < 4) || (z >= 4));
+assert((x >= z) || (w <= y));
+assert(3 * x >= y);
+assert(3 * x >= y || (x < 0 && -3 * x >= -y));
+assert((x >= 0 && 3 * x >= y) || (x < 0 && 3 * (-x) >= -y));
+assert(3 * x >= y && x >= -1);
+assert(x >= 0 && 3 * x >= y && w >= 0 && z >= 0);
+assert(x == -y || 3 * x >= y);
+assert(y >= 0 && x >= 0);
+assert((3 * x >= y) && (x >= 0));
+assert(3 * x >= y || x < 0);
+assert(x >= 0 && y >= 0 && z >= 0 && w >= 0);
+assert(3 * x - y >= 0);
+assert(y >= -2 && y - 2 <= 3 * x);
+assert((3 * x >= y) || (x < 4));
+assert((3 * x >= y) && (x >= -3));
+assert((x <= 0 && y == -2 * x) || (x > 0 && y == 2 * x));
+assert((x < 4 && 3 * x >= y) || (x >= 4 && 3 * (x + 1) >= y + 3));
+assert(3 * x >= y && x >= 0);
+assert((x >= 0 && 3 * x >= y) || (x <= 0 && 3 * (-x) >= -y));
+assert(x >= 0 && 3 * x >= y);
+assert(x >= -1 && 3 * x + 2 >= y);
+assert(x >= 0 && w >= 0 && z >= 0 && (3 * x >= y || (x < 4 && 3 * x + 6 >= y)));
+assert(x >= 0 && y >= 0 && z >= 0 && w >= 0 && (x == 0 || 3 * x >= y));
+assert(3 * x >= y && x >= -1 && y >= 0);
+assert((x >= 0 && 3 * x >= y) || (x < 0 && x == -y));
+assert(x >= 0 && y >= 0 && y - 3 * x <= 2);
+assert(3 * x >= y && x >= 0 && (x < 4 || y >= 0));
+assert(3 * x >= y && x >= 0 && z >= 0 && w >= 0);
+assert(x >= 0 && (3 * x >= y || y <= -3 * x));
+assert(x >= 0 && 3 * x >= y && y >= 0);
+assert((x < 4 && 3 * x >= y) || (x >= 4 && z == w && 3 * x >= y));
+assert(x >= 0 && y >= 0 && 3 * x >= y);
+assert(x <= 0 || 3 * x >= y);
+assert(3 * x >= y && x >= -3 && x - z <= 4);
+assert((x >= 0 && y == 2 * x) || (x <= -1 && y == -2 * x - 2));
+assert((x >= 0 && y == 2 * x) || (x <= 0 && y == -2 * x));
+assert(3 * x >= y && (x >= 4 || x >= z));
+assert(3 * x >= y && x >= 0 && x - z <= 4);
+assert(3 * x >= y && x >= -3);
+assert((x >= 0 && 3 * x >= y) || (x < 0 && y == -3 * x));
+assert(x >= 0 && y >= 0 && (3 * x >= y || x < 0));
+assert(x >= 0 && w >= 0 && z >= 0 && 3 * x >= y);
+assert(x >= 0 && y >= 0 && z >= 0 && w >= 0 && 3 * x >= y);
+None	None	None
+
+Benchmarks/Linear/c/187.c
+assert(x >= 0);
+assert(w >= 0);
+assert(z >= 0);
+assert(w == z / 10);
+assert((x < 4) || (y > 2));
+assert((x >= 4 && y > 2) || x < 4);
+assert(z == 10 * w);
+assert(x == w || (x == w + 1 && x >= 4));
+assert((x < 4 && y == 100 * x) || (x >= 4 && y >= 2) || (y <= -2));
+assert(y >= -200 && y <= 200);
+assert(x >= 0 && z == 10 * w && (y > 2 || x < 4));
+assert((x < 4 || y > 2) && w >= 0 && z >= 10 * w);
+assert(x >= 4 && y > 2 || x < 4);
+assert(x >= 0 && w == z / 10);
+assert((x >= 4 && y >= 2) || x < 4);
+assert((x < 4) || (y > 2) || (z >= 100 * x));
+assert(x >= 0 && w >= 0 && z >= 0 && z >= 10 * w);
+assert(x >= 0 && w == x && z == 10 * w);
+assert((x < 4 && y >= 0) || (x >= 4 && y > 2));
+92.49872374534607	assert((x >= 0) && (w >= 0) && (z >= 0) && (w == z / 10) && (((x < 4))||((y > 2))) && (((x >= 4 && y > 2))||(x < 4)) && (z == 10 * w) && ((x == w)||((x == w + 1 && x >= 4))) && (((x < 4 && y == 100 * x))||((x >= 4 && y >= 2))||((y <= -2))) && (y >= -200) && ((y > 2 || x < 4)) && ((x < 4 || y > 2)) && (z >= 10 * w) && ((x >= 4 && y > 2)||(x < 4)) && (((x >= 4 && y >= 2))||(x < 4)) && (((x < 4))||((y > 2))||((z >= 100 * x))) && (w == x) && (((x < 4 && y >= 0))||((x >= 4 && y > 2))));	12
+
+Benchmarks/Linear/c/188.c
+assert(w == z / 10);
+assert((x < 4) || (y > 2));
+assert((y > 2 && x >= 4) || y <= 2);
+assert((y <= 2 && x < 4) || y > 2);
+assert(x >= 4 || y >= 0);
+assert(x >= 0);
+assert(y >= -y);
+assert(z >= 0);
+assert(w >= 0);
+assert(z >= 10 * w);
+assert((y <= 2) == (x < 4));
+assert((y > 2 && x >= 4) || (y <= 2 && x < 4));
+assert((y > 2) || (x < 4));
+assert((z == 10 * w) && (x < 4 || y > 2));
+assert((x < 4 && y <= 2) || (y > 2));
+assert((x < 4 && y <= 2) || (x >= 4 && z >= 10 * w) || (y > 2));
+assert(w == z / 10 && (x >= 4 || y >= 0));
+assert((x >= 4 && y >= 2*x) || (y <= 10*w && z >= 10*x) || (x < 4));
+assert(z == 10 * w && w >= 0);
+assert(w == z / 10 && z % 10 == 0 && (y > 2 || (x < 4 && y <= 2)));
+assert(x >= 0 && z == 10 * w);
+assert(z == 10 * w && (x == w || y == -100 * (w - 1)));
+assert(x >= 0 && z == 10 * w && (y >= 0 || (y <= 0 && y == -100 * (x - 1))));
+assert(x >= 0 && y >= -100 * x && y <= 100 * x && z >= 0 && z >= 10 * w && w >= 0);
+assert(z == 10 * w && (x == y / 100 || (y <= 0 && x > 4)));
+assert(z == 10 * w);
+assert(y >= -102 || y <= 200);
+assert((y > 2 || x < 4) && w >= 0 && z >= 10 * w);
+assert(x >= 4 || y <= 0 || z >= 10 * x);
+assert((y > 2 || x < 4) && z == 10 * w);
+assert((x >= 0) && (w >= 0) && (z >= 10 * w));
+assert((x >= 4 && y >= 2) || (y <= 2 && x < 4) || y > 2);
+assert(x >= 0 && z == 10 * w && y <= 2 + 98 * x);
+assert((y >= 0 || y <= -10) && w >= 0 && z >= 0 && x >= 0 && z >= 10 * w);
+assert((y > 2) || (x < 4) || (z >= 100 * x));
+assert(z == 10 * w && (x < 4 || y > 2));
+assert(x >= 0 && y >= -100 && z >= 0 && w >= 0);
+assert((x < 4 && y <= 2) || (x >= 4 && y > 2) || (y <= 2 && x >= 4));
+assert((x >= 4 && y >= 2) || (x < 4 && y <= 2 + 101 * x));
+assert((x >= 4 && y >= 2) || (x < 4));
+assert(w == z / 10 && (y > 10 * w || z < 100 * x || y >= 0));
+assert(w == z / 10 && (x < 4 || (y > 10 * w && z >= 100 * x) || y >= 0));
+assert((x >= 0) && (y >= -100) && (z >= 0) && (w >= 0) && (z >= 10 * x) && (y <= 100 * w + 100));
+assert((x >= 4 && y >= 2 * x) || (y <= 10 * w && z >= 10 * x) || (x < 4 && y <= 10 * w));
+assert((x >= 4 && y <= 2) || (x < 4 && y > 2));
+assert(z == 10 * w && w >= 0 && x >= 0);
+assert(w == z / 10 && z % 10 == 0 && (y > 2 || x < 4));
+assert(w == z / 10 && z % 10 == 0 && ((y > 2 && x >= 4) || (y <= 2 && x < 4)));
+assert(x >= 0 && z == 10 * w && (y > 2 || x < 4));
+assert(x >= 0 && z == 10 * w && y <= 100 * w && y >= -100 * w);
+None	None	None
+
+Benchmarks/Linear/c/189.c
+assert(x >= 0 && y == 50 + x && x <= 100);
+assert(x >= 0 && x <= 100);
+assert(y == 50 || y == x);
+assert(x >= 50 || y == 50);
+assert(y == 50 || (y >= 50 && y <= 100));
+assert(y == x || y == 50);
+assert(y == 50 + (x - 50));
+assert(x >= 0 && y == 50 + (x - 50));
+assert(x >= 50 && y >= 50);
+assert(x >= 0 && x <= 100 && y == 50 + x);
+assert(x >= 0 && (x >= 50 || y == 50) && (x < 50 || y == x) && x <= 100);
+87.77387619018555	assert((x >= 0) && (x <= 100) && ((y == 50)||(y == x)) && ((x >= 50)||(y == 50)) && ((y == x)||(y == 50)) && (y >= 50) && ((x >= 50 || y == 50)) && ((x < 50 || y == x)));	2
+
+Benchmarks/Linear/c/190.c
+assert(y > -1000 && y < 1000);
+assert(x >= -50);
+assert(y >= -999);
+assert(y > -1000);
+assert(y < 1000);
+assert(y > 0 || x >= 0);
+assert(y >= 0);
+assert(y > 0);
+assert(x + y >= 0 && y > -1000);
+assert(y > -1000 && y < 1001);
+assert(y > -1000 && y < 1000 && x >= -50);
+assert(y > -1000 && y < 1000 && x + y >= 0);
+assert(x >= 0 || (x < 0 && y > -1000));
+assert(x >= 0 || (x < 0 && y > 0));
+assert((x >= 0) || (y > -1000 && y < 1000));
+assert(x >= 0 || y > 0);
+assert((x >= 0) || (y > 0));
+assert(x >= 0 || (y > -1000 && y < 1000));
+assert(x >= -50 && y > -1000);
+assert(y > -1000 && y < 1000 && (x >= 0 || (x + y >= 0 && y >= -999)));
+assert((x >= 0) || (y > 0 && x + y >= 0));
+assert(y >= -998 && x >= -50);
+assert(y > -1000 && x >= -50);
+assert(y > -1000 && y < 1000 && (x >= 0 || y > 0));
+assert((x < 0 && y > -1000) || (x >= 0));
+assert(x + y >= 0 && y > 0);
+assert(x >= 0 || (x < 0 && y >= 1));
+assert(x >= 0 || (x < 0 && y > -1000 && y < 1000));
+assert(x >= 0 || y >= 0);
+assert((x >= 0) || (y > 0 && y < 1000));
+assert(x < 0 || y > 0);
+assert((x >= 0) || (y > 0 && x < 0));
+assert((x >= 0) || (y > -1000 && y <= -1));
+assert(y > 0 && x + y >= 0);
+assert(y > -1000 && y - x > 0);
+assert((x >= 0) || (x < 0 && y > 0));
+assert((x >= 0 && y > -1000 && y < 1000) || (x < 0 && y > 0));
+assert((x < 0 && y > -1000) || (x >= 0 && y > 0));
+assert((x < 0 && y >= -999) || (x >= 0 && y > 0));
+assert((x >= 0) || (x + y >= 0 && y > 0));
+assert(x < 0 && y > -1000 && y < 1000 || x >= 0);
+assert((x >= 0) || (y > 0 && y >= -x));
+198.1208713054657	assert(x < 0 || y > 0);	41
+
+Benchmarks/Linear/c/191.c
+assert(res == a + b - cnt);
+assert(cnt >= 0);
+assert(res >= a);
+assert(res == a + (b - cnt));
+assert(res == a + b - cnt && cnt >= 0);
+19.609869718551636	assert((a <= 1000000) && (b >= 0) && (b <= 1000000) && (res == a + b - cnt) && (cnt >= 0) && (res >= a) && (res == a + (b - cnt)));	2
+
+Benchmarks/Linear/c/192.c
+assert(i >= 0);
+assert(i <= n);
+assert(b == 0 || i < n);
+assert(i == 0 || b != 0);
+assert(i >= 0 && i <= n);
+assert(i < n || b == 0);
+assert(i >= 0 && i <= n && (b != 0 || i == n));
+assert(i <= n && (b != 0 || i == n));
+assert(i >= 0 && i <= n && (i < n || b == 0));
+assert(i >= 0 && i <= n && (i < n || b != 0));
+assert(i >= 0 && i <= n && (b == 0 || i < n));
+59.54291582107544	assert((i >= 0) && (i <= n) && ((i == 0)||(b != 0)) && ((i < n || b != 0)));	9
+
+Benchmarks/Linear/c/193.c
+assert(i >= 0);
+assert(i <= n);
+assert(b != 0 || i == n || i < n);
+assert(b == 0 || i < n);
+assert(b != 0 || i >= n || i == 0);
+assert(b != 0 || i < n);
+assert(i >= 0 && i <= n);
+24.618202209472656	assert((i >= 0) && (i <= n) && ((b != 0)||(i == n)||(i < n)) && ((b != 0)||(i >= n)||(i == 0)) && ((b != 0)||(i < n)));	2
+
+Benchmarks/Linear/c/194.c
+assert(i >= 0);
+assert(y == i - 2 * z);
+assert(y == 2 * x);
+assert(y == x - 2*z);
+assert(z >= 0);
+assert(y == 2 * x - z);
+assert(x + z == i);
+assert(y + 2 * z == i);
+assert(y + 2*z == i);
+assert(y == 2 * x - i && z == i - x && i >= 0);
+assert(y == -2 * z + i && x + z == i);
+27.93059253692627	assert((i >= 0) && (y == i - 2 * z) && (z >= 0) && (x + z == i) && (y + 2 * z == i) && (y + 2*z == i) && (y == 2 * x - i) && (z == i - x) && (y == -2 * z + i));	2
+
+Benchmarks/Linear/c/195.c
+assert(i == j);
+assert(x == y);
+assert(i >= 0);
+assert(j >= 0);
+assert(x >= 0);
+assert(y >= 0);
+assert(i == j || i < j);
+assert(i == j || i == j - x);
+assert(j >= i);
+assert(j >= i && x == y);
+34.11855697631836	assert((x == y) && (i >= 0) && (j >= 0) && (x >= 0) && (y >= 0) && ((i == j)||(i < j)) && (j >= i));	2
+
+Benchmarks/Linear/c/196.c
+assert(k == x + y);
+assert(j <= n);
+assert(j >= 0 && j <= n);
+assert(m >= 0 && m <= j);
+assert(0 <= j && j <= n);
+18.52584409713745	assert(k == x + y);	1
+
+Benchmarks/Linear/c/197.c
+assert(j <= n);
+assert(k == x + y);
+assert(m >= 0 && m <= j);
+assert(j >= 0);
+assert(m >= 0);
+assert(j >= 0 && j <= n);
+assert(j <= n && (n <= 0 || j < n));
+assert(j <= n || n <= 0);
+29.342845916748047	assert((k == x + y) && (m >= 0) && (m <= j) && (j >= 0) && ((j <= n)||(n <= 0)));	2
+
+Benchmarks/Linear/c/198.c
+assert(j <= n);
+assert(k == x + y);
+assert(m >= 0 && m <= j);
+assert(m <= j);
+assert(m >= 0 && (m <= j || m == 0));
+assert(j <= n || n <= 0);
+assert(j == n && m <= j);
+assert(j >= 0 && j <= n);
+assert(k == x + y && m >= 0 && m < n);
+assert(k == x + y && m >= 0 && m <= j && j <= n);
+assert(m <= n && m >= 0 && j >= m);
+assert(0 <= j && j <= n);
+assert(j <= n && m <= j);
+assert(j <= n && m <= j && k == x + y);
+assert(n <= 0 || (j >= 0 && j <= n));
+assert(j == 0 || (j >= 0 && j <= n));
+assert(k == x + y && (n == 0 || (m >= 0 && m < n)));
+assert((n <= 0 || (k == x + y && j >= 0 && j <= n && m >= 0 && m <= j)));
+assert(k == x + y && j <= n && (j == 0 || m < n));
+assert((n <= 0) || (k == x + y && m >= 0 && m <= j && j <= n));
+81.27820014953613	assert((k == x + y) && (m >= 0) && (m <= j) && ((m <= j || m == 0)) && ((j <= n)||(n <= 0)) && (j >= 0) && (j >= m) && (0 <= j) && ((n <= 0)||((j >= 0 && j <= n))) && ((j == 0)||((j >= 0 && j <= n))) && (((n <= 0 || (k == x + y && j >= 0 && j <= n && m >= 0 && m <= j)))) && ((j == 0 || m < n)) && (((n <= 0))||((k == x + y && m >= 0 && m <= j && j <= n))));	17
+
+Benchmarks/Linear/c/199.c
+assert(k == x + y);
+assert(j >= 0 && j <= n);
+assert(m >= 0 && m <= n);
+assert(j <= n);
+assert(m <= j);
+assert(j >= 0);
+assert(x + y == k - i + j);
+assert(j >= m);
+assert(k == x + y && j == 0);
+assert(j >= 0 && j <= n && k == x + y);
+assert(k == x + y && j <= n);
+assert(k == x + y && j == 0 && m == 0);
+assert(j <= n || j == 0);
+assert(m <= j && m >= 0);
+assert(m <= n || m == 0);
+assert(m >= 0);
+assert(j <= n && x + y == k);
+assert((j >= n) || (x + y == k));
+assert(j == 0 && k == x + y || j >= 0 && j <= n && k == x + y);
+assert(j == n && k == x + y);
+assert(k == x + y && j <= n || j >= n);
+assert(k == x + y && j <= n || j == 0);
+assert(k == x + y && j >= 0 && j <= n && (m == 0 || (m >= 0 && m < n)));
+102.53195762634277	assert((k == x + y) && (j >= 0) && (m >= 0) && (m <= j) && (j >= m) && ((j <= n)||(j == 0)) && ((m <= n)||(m == 0)) && (x + y == k) && (((j >= n))||((x + y == k))) && ((j == 0 && k == x + y)||(j >= 0 && j <= n && k == x + y)) && ((k == x + y && j <= n)||(j >= n)) && ((k == x + y && j <= n)||(j == 0)) && ((m == 0 || (m >= 0 && m < n))));	19
+
+Benchmarks/Linear/c/200.c
+assert(d1 == 1);
+assert(d2 == 1);
+assert(d3 == 1);
+assert(x1 <= 0 || x2 <= 0 || x3 <= 0);
+assert(d1 == 1 && d2 == 1 && d3 == 1);
+assert(x1 >= 0 && x2 >= 0 && x3 >= 0);
+assert(x1 <= 0 || x2 <= 0 || x3 <= 0 || ! (x1 > 0 && x2 > 0 && x3 > 0));
+29.582970142364502	assert(d1 == 1);	1
+
+Benchmarks/Linear/c/201.c
+assert(x >= -3);
+assert(x >= -5);
+assert(x != 0);
+assert(x <= 1 || x >= -1);
+assert(x <= 1);
+assert(x <= -1 || x >= 1);
+16.997117280960083	assert(x >= -3);	1
+
+Benchmarks/Linear/c/202.c
+assert(y >= -3);
+assert(x <= 1);
+12.007000923156738	assert(y >= -3);	1
+
+Benchmarks/Linear/c/203.c
+assert(x <= 1);
+assert(y >= -3);
+assert(x >= -1);
+assert(x >= -3);
+assert(y == -3 || y >= -1);
+assert(x - y <= 2);
+18.465978622436523	assert(x <= 1);	1
+
+Benchmarks/Linear/c/204.c
+assert(x <= 5 && y <= 5);
+assert(x >= -1);
+assert(x <= 5);
+assert(y >= 4 || y <= 5);
+assert(y >= -1);
+assert(y >= 4);
+assert(x <= 5 || y <= 5);
+assert(x <= 5 && x >= 4 || x >= -1);
+assert(y <= 5 && y >= 4 || y >= -1);
+assert(y <= 5 && y >= -1);
+assert(x >= -1 && y <= 5 && y >= -1);
+assert(x <= 5 && x >= -1 && y >= -1);
+assert(y >= -1 && y <= 5);
+assert(y >= -1 && x <= 5);
+assert(y >= -1 && x >= -1);
+assert(x >= -1 && y >= 3);
+assert(y <= 5);
+assert(y <= 5 && x >= -1);
+assert(x >= -1 && y >= -1);
+assert(y >= 4 && y <= 5);
+assert(x <= 5 && y >= -1);
+assert(y >= -1 && x <= 6);
+assert((x >= -1 && y >= -1) || (x >= 0 && y >= 0));
+125.69872760772705	assert(y <= 5);	19
+
+Benchmarks/Linear/c/205.c
+assert(y == x);
+assert(x >= 0 || x < 1024);
+assert(y >= 0);
+assert(x == y);
+assert(x >= 0);
+assert(x >= 1024 || x < 1024);
+assert(x >= y);
+assert(x <= 1024);
+assert(x >= 0 && y >= 0);
+assert(x >= 1024 || y == x);
+19.02722668647766	assert(y == x);	1
+
+Benchmarks/Linear/c/206.c
+assert(x > -101 && x < 200);
+assert(z > 100 && z < 200);
+assert(x > -100);
+assert(x < 200);
+assert(z > 100);
+assert(z < 200);
+assert((x < 100 && z > 100) || x >= 100 || z <= 100);
+assert(x >= -100);
+assert(z > 100 || z <= 100);
+assert(x >= -100 && x <= 200);
+assert(z >= 100 && z <= 200);
+assert(x > -100 && x < 200);
+assert((x >= 100 || z <= 100) || (x < 100 && z > 100));
+assert(x > -101 && x < 200 && z >= 100 && z < 200);
+33.70312190055847	assert((x < 200) && (z < 200) && (((x < 100 && z > 100))||(x >= 100)||(z <= 100)) && ((z > 100)||(z <= 100)) && (x <= 200) && (z >= 100) && (z <= 200) && (((x >= 100 || z <= 100))||((x < 100 && z > 100))));	2
+
+Benchmarks/Linear/c/207.c
+assert(y <= 1000000);
+assert(x >= 0);
+assert(y <= 0 || x >= 100);
+assert(x >= 0 || y <= 0);
+assert(x < 100 || y <= 0 || x >= 100);
+assert(x < 100 || y <= 0);
+22.308478593826294	assert(y <= 1000000);	1
+
+Benchmarks/Linear/c/208.c
+assert(x >= 0);
+assert(x <= 6);
+assert(x >= 0 && x <= 6);
+16.373356580734253	assert((x >= 0) && (x <= 6));	2
+
+Benchmarks/Linear/c/209.c
+assert(x >= 0);
+assert(y == 2 * x);
+assert(z == 3 * x);
+12.595012664794922	assert(x >= 0);	1
+
+Benchmarks/Linear/c/210.c
+assert(x >= 0);
+assert(y == 2 * x);
+assert(z == 3 * x);
+assert(y >= 0);
+assert(z == 3 * y / 2);
+assert(z == 1.5 * y);
+assert(x * 2 == y);
+assert(x >= 0 && y == 2 * x && z == 3 * x);
+assert(y == 2 * x && z == 3 * x);
+42.26891851425171	assert((x >= 0) && (y == 2 * x) && (z == 3 * x) && (y >= 0) && (z == 3 * y / 2) && (x * 2 == y));	2
+
+Benchmarks/Linear/c/211.c
+assert(x >= 0);
+assert(y >= 0);
+assert(z >= 0);
+assert(z == 3 * x);
+assert(y == 2 * x);
+assert(x * 3 == z);
+assert(y * 3 == 2 * z);
+assert(x * 2 == y);
+assert(x == y / 2);
+assert(z == 1.5 * y);
+assert(x == 0.5 * y);
+assert(z >= 0 && x >= 0 && y >= 0 && 2 * x == y && 3 * x == z);
+67.08444428443909	assert((x >= 0) && (y >= 0) && (z >= 0) && (z == 3 * x) && (y == 2 * x) && (x * 3 == z) && (y * 3 == 2 * z) && (x * 2 == y) && (x == y / 2) && (2 * x == y) && (3 * x == z));	2
+
+Benchmarks/Linear/c/212.c
+assert((nonexclusive + unowned) >= 1 && invalid >= 1 || exclusive >= 0);
+assert(invalid >= 0);
+assert(nonexclusive + unowned + exclusive >= 1);
+assert((nonexclusive + unowned) >= 1 && invalid >= 1 || nonexclusive + unowned + invalid + exclusive >= 2);
+assert(exclusive >= 0);
+assert(nonexclusive >= 0);
+assert(unowned >= 0);
+assert((nonexclusive + unowned) >= 0);
+assert(((nonexclusive + unowned) >= 1 && invalid >= 1) || invalid >= 1);
+assert(invalid >= 1);
+assert(exclusive <= 1);
+assert((nonexclusive + unowned) >= 1 || invalid >= 1);
+assert(exclusive >= 0 && invalid >= 1);
+26.90600347518921	assert(((exclusive >= 0)) && (exclusive >= 0) && (nonexclusive >= 0) && (unowned >= 0) && ((nonexclusive + unowned) >= 0) && (exclusive <= 1));	2
+
+Benchmarks/Linear/c/213.c
+assert(invalid >= 0);
+assert(nonexclusive >= 0);
+assert(exclusive >= 0);
+assert(unowned >= 0);
+assert(invalid >= 1 || (nonexclusive + unowned) >= 1);
+assert(invalid >= 1);
+assert((nonexclusive + unowned) >= 1 || invalid >= 1);
+assert((exclusive == 1 && nonexclusive == 0 && unowned == 0) || (exclusive == 0 && nonexclusive >= 0 && unowned >= 0));
+assert(exclusive == 0 || exclusive == 1);
+assert((nonexclusive + unowned) >= 0);
+assert((nonexclusive + unowned >= 1 && invalid >= 1) || invalid >= 1);
+assert((nonexclusive + unowned) >= 1 && invalid >= 1 || nonexclusive + unowned == 0);
+assert(nonexclusive + unowned + exclusive + invalid > 0);
+39.84905385971069	assert((nonexclusive >= 0) && (exclusive >= 0) && (unowned >= 0) && (((exclusive == 1 && nonexclusive == 0 && unowned == 0))||((exclusive == 0 && nonexclusive >= 0 && unowned >= 0))) && ((exclusive == 0)||(exclusive == 1)) && ((nonexclusive + unowned) >= 0));	2
+
+Benchmarks/Linear/c/214.c
+assert(invalid >= 0);
+assert(exclusive == 1 || exclusive == 0);
+assert(nonexclusive + unowned + exclusive >= 1);
+assert(exclusive == 0 || exclusive == 1);
+assert((nonexclusive + unowned) >= 0 && invalid >= 0);
+assert((nonexclusive + unowned) >= 1 || exclusive == 1);
+assert(exclusive >= 0);
+assert(nonexclusive >= 0);
+assert(unowned >= 0);
+assert((nonexclusive + unowned >= 1 && invalid >= 1) || (!(nonexclusive + unowned >= 1) && invalid >= 1));
+assert((nonexclusive + unowned >= 1 && invalid >= 1) || invalid < 1);
+assert((nonexclusive + unowned) >= 1 || invalid >= 1);
+assert(invalid >= 1);
+assert(nonexclusive + exclusive + unowned + invalid >= 1);
+assert((nonexclusive + unowned + exclusive + invalid) > 0);
+42.79486346244812	assert(((exclusive == 1)||(exclusive == 0)) && ((exclusive == 0)||(exclusive == 1)) && ((nonexclusive + unowned) >= 0) && (exclusive >= 0) && (nonexclusive >= 0) && (unowned >= 0));	2
+
+Benchmarks/Linear/c/215.c
+assert(invalid >= 0);
+assert((nonexclusive + unowned) >= 1 || invalid >= 1);
+assert(exclusive == 0 || exclusive == 1);
+assert((nonexclusive + unowned + exclusive) >= 1);
+assert(invalid >= 1);
+assert((nonexclusive + unowned >= 1 && invalid >= 1) || exclusive == 1);
+assert((nonexclusive + unowned) >= 0);
+assert(exclusive == 1 || exclusive == 0);
+assert(invalid >= 1 || (nonexclusive + unowned) >= 1);
+assert((nonexclusive + unowned >= 1 && invalid >= 1) || (invalid < 1 && nonexclusive + unowned < 1));
+19.738219261169434	assert(invalid >= 0);	1
+
+Benchmarks/Linear/c/216.c
+assert(invalid + nonexclusive + unowned + exclusive >= 1);
+assert(invalid >= 0);
+assert(invalid >= 1);
+assert(((nonexclusive + unowned) >= 1 && invalid >= 1) || invalid >= 1);
+assert((nonexclusive + exclusive + unowned) >= 1);
+assert((nonexclusive + unowned + exclusive) >= 1);
+assert((invalid + unowned + nonexclusive + exclusive) >= 1);
+assert(nonexclusive + unowned + exclusive >= 1);
+assert(exclusive == 1 || nonexclusive + unowned > 0);
+assert(exclusive >= 0 && nonexclusive >= 0 && unowned >= 0);
+assert(exclusive >= 0);
+assert(nonexclusive >= 0);
+assert(unowned >= 0);
+assert(invalid + unowned + exclusive + nonexclusive >= 1);
+31.300740957260132	assert((exclusive >= 0) && (nonexclusive >= 0) && (unowned >= 0));	3
+
+Benchmarks/Linear/c/217.c
+assert(invalid >= 1);
+assert(invalid + nonexclusive + exclusive + unowned >= 1);
+assert((nonexclusive + unowned + exclusive) >= 1);
+assert((nonexclusive + unowned) >= 1 && invalid >= 1 || nonexclusive == 0 && unowned == 0);
+assert((nonexclusive + unowned) < 1 || invalid < 1);
+assert(invalid + unowned + exclusive + nonexclusive >= 1);
+assert((nonexclusive + unowned) >= 1 || invalid >= 1);
+assert(invalid >= 0);
+assert((nonexclusive + exclusive + unowned + invalid) >= 1);
+assert((invalid >= 1) && (nonexclusive + unowned + exclusive >= 0));
+22.625496864318848	assert(((nonexclusive + unowned + exclusive >= 0)));	2
+
+Benchmarks/Linear/c/218.c
+assert(x == 5 || (x - 5) % 8 == 0);
+assert((x % 8) == 5);
+assert(x % 8 == 5);
+12.859834432601929	assert(x == 5 || (x - 5) % 8 == 0);	1
+
+Benchmarks/Linear/c/219.c
+assert(s == 0 || s > 0);
+assert(s == 0);
+assert(s == 0 || s != 0);
+assert((s != 0) || (s == 0));
+assert(s >= 0);
+25.27511763572693	assert((s == 0) && ((s == 0)) && (((s == 0))) && (s >= 0));	2
+
+Benchmarks/Linear/c/220.c
+assert(w == x);
+assert(y == z);
+assert(x > 0);
+assert(y > 0);
+assert(z == y);
+assert(w > 0);
+assert(z > 0);
+29.288309812545776	assert(w == x);	1
+
+Benchmarks/Linear/c/221.c
+assert(x == w);
+assert(y == z);
+assert(x > 0 && w > 0);
+assert(y > 0 && z > 0);
+assert(x == w && y == z);
+assert(z == y);
+assert(y == z && x == w);
+25.112152099609375	assert(y == z);	2
+
+Benchmarks/Linear/c/222.c
+assert(y == z);
+assert(y > 0);
+assert(z > 0);
+assert(z == x + 1 + (y - (w + 1)));
+assert(x == w);
+assert(x == z - 1);
+assert(y == w + 1);
+assert(z == w + 1);
+assert(x > 0 && w > 0);
+19.612751245498657	assert(y == z);	1
+
+Benchmarks/Linear/c/223.c
+assert(x % 2 == 0);
+7.924386739730835	assert(x % 2 == 0);	1
+
+Benchmarks/Linear/c/224.c
+assert(x % 4 == 0);
+7.6884987354278564	assert(x % 4 == 0);	1
+
+Benchmarks/Linear/c/225.c
+assert(x % 2 == 1);
+10.002020359039307	assert(x % 2 == 1);	1
+
+Benchmarks/Linear/c/226.c
+assert(y >= 0);
+assert(x == 0 || (x == 1 && y == 0));
+assert(y <= 1024);
+assert(x == 0 || y == 0);
+assert(y >= 0 && x == 0);
+assert(y >= 0 && y <= 1024 && (y < 1024 || x == 0));
+27.280948638916016	assert((y >= 0) && ((x == 0)||((x == 1 && y == 0))) && (y <= 1024) && ((x == 0)||(y == 0)) && ((y < 1024 || x == 0)));	2
+
+Benchmarks/Linear/c/227.c
+assert(x >= 0);
+assert(x <= 99 || (x % 2) == (y % 2));
+assert(x == 0 || (x >= 99 && (x % 2) == (y % 2)));
+assert(x < 104);
+assert((x % 5) == 0);
+assert((x < 99) || ((x % 2) == (y % 2)));
+assert(x < 105);
+assert((x % 2) == (y % 2) && x >= -5);
+assert((x % 2) == (y % 2) && x >= -4);
+assert((x % 2) == (y % 2));
+assert((x % 10 == 0 && y % 2 == 0) || (x % 10 == 5 && y % 2 != 0));
+assert(x % 2 == y % 2);
+assert((x >= 0) && ((x % 15 == 0) || (x % 15 == 10)));
+assert(((x % 5) == 0) && ((x % 2 == 0) == (y % 2 == 0)));
+assert((x % 5 == 0) && (x >= 0) && (x < 99 || (x == 100 && y % 2 == 0)));
+assert((x % 10 == 0 && y % 2 == 0) || (x % 5 == 0 && y % 2 != 0));
+assert((x % 15 == 13 && y % 2 == 1) || (x >= 0 && x <= 105 && x % 5 == 0 && y % 2 == 0));
+assert(x % 5 == 0);
+assert((x % 2 == y % 2) || x >= 99);
+assert((x >= -5 && x <= 99) && (x % 2 == 0 || x % 5 == 0));
+assert((x < 99 && (x % 2) == (y % 2)) || x >= 99);
+assert(x < 99 || (x % 2) == (y % 2));
+assert(x >= 0 && x <= 99);
+assert(x < 99 && ((x % 10 == 0 && y % 2 == 0) || (x % 10 == 5 && y % 2 != 0)));
+assert((x >= 99 && (x % 2) == (y % 2)) || x < 99);
+assert((x >= 99 && x % 2 == y % 2) || x < 99);
+assert((x >= 99) || (x <= -5));
+assert((x % 15 == 0 || x % 15 == 10) && (x % 2 == y % 2));
+assert(x >= -5 && (x % 15 == 0 || x % 15 == 5 || x % 15 == 10));
+assert((x == 0 && y % 2 == 0) || (x >= 0 && (x % 2) == (y % 2)));
+assert((x >= 99) || (x < 99 && (x % 5) == 0 && ((x % 2 == 0) == (y % 2 == 0))));
+assert((x >= 0) && (x % 5 == 0));
+assert((x % 5 == 0) && (x >= 0) && ((x < 100) || (x == 100 && y % 2 == 0)));
+assert((x % 2 == y % 2) && x >= 0);
+assert(x < 99 && ((x % 5 == 0 && y % 2 == 0) || (x % 5 == 0 && y % 2 == 1)));
+assert((x == 0 && y % 2 == 0) || (x >= 0 && x <= 105 && x % 5 == 0));
+assert((x % 5 == 0) && (x >= 0));
+assert((x % 5 == 0) && (x % 2 == y % 2));
+assert((x % 2 == y % 2) || x >= 99 || x <= 0);
+assert((x == 0 && y % 2 != 0) || (x % 2 == y % 2));
+assert((x % 5 == 0 || x % 5 == -5) && (x >= -5 && x <= 104));
+assert((x % 5 == 0) && (x >= 0 && x <= 99));
+assert((x < 99 && (x % 2) == (y % 2)) || (x >= 99));
+assert((x < 99 && (x % 2) == 0) || x >= 99);
+assert((x >= 0) && (x % 10 == 0));
+assert((x >= -5 && x <= 104) && (x % 5 == 0));
+assert(x <= 100 && (x % 5 == 0) && ((x % 10 == 0) == (y % 2 == 0)));
+assert((x < 99 && ((x % 10 == 0 && y % 2 == 0) || (x % 10 != 0 && y % 2 == 1))) || x >= 99);
+assert((x % 10 == 0 && y % 2 == 0) || (x % 10 == 5 && y % 2 == 1));
+assert((x < 99) || ((x >= 99) && ((x % 2) == (y % 2))));
+None	None	None
+
+Benchmarks/Linear/c/228.c
+assert(x >= 0 && x <= 99);
+assert((x % 2) == (y % 2));
+assert(x >= 0 && x <= 100);
+assert((x == 0 && y % 2 == 0) || (x >= 99));
+assert(x == 0 || (x % 2) == (y % 2));
+assert((x % 2) == (y % 2) && x >= 0 && x <= 100);
+assert((x % 2) == (y % 2) || x < 99);
+assert((x % 2) == (y % 2) || x == 0);
+assert((x % 2) == (y % 2) && (x >= 0));
+assert((x < 99) && ((x % 2) == (y % 2)) || (x >= 99));
+None	None	None
+
+Benchmarks/Linear/c/229.c
+assert(x == 1 || x == 2);
+18.549421072006226	assert(x == 1 || x == 2);	1
+
+Benchmarks/Linear/c/230.c
+assert(x >= 0);
+assert(x <= 268435455);
+assert(x < 65520 || (x >= 65520 && x % 2 == 0));
+assert(x == 0 || x >= 65520);
+assert(x % 2 == 0 || x < 65520);
+assert(x <= 268435456);
+assert(x >= 0 && x <= 268435456);
+assert((x < 65520) || (x >= 65520 && (x % 2) == 0));
+assert(x % 2 == 0 || (x < 65520 && x % 2 == 1));
+assert(x <= 268435456 && (x < 65520 || x % 2 == 0));
+assert(x <= 268435455 && (x < 65521 || (x - 65520) % 2 == 0));
+40.559877157211304	assert(x < 65520 || (x >= 65520 && x % 2 == 0));	5
+
+Benchmarks/Linear/c/231.c
+assert(x == 0 || (x >= 65521 && x <= 268435455));
+assert((x < 65521 && x >= 0) || (x >= 65521 && (x % 2) == 1));
+assert(x == 0 || (x >= 65521 && x <= 268435455 && (x % 2) == 1));
+assert(x <= 268435455);
+assert(x % 2 == 1 || x < 65521);
+assert(x >= 0);
+assert(x % 2 == 0 || x % 2 == 1);
+assert(x <= 268435456);
+assert(x == 0 || x >= 65521);
+assert(x < 65521 || (x - 65521) % 2 == 0);
+assert(x % 2 == 0 || (x >= 65521 && x % 2 == 1));
+45.20799493789673	assert((((x < 65521 && x >= 0))||((x >= 65521 && (x % 2) == 1))) && (x <= 268435455) && ((x % 2 == 1)||(x < 65521)) && (x >= 0) && ((x % 2 == 0)||(x % 2 == 1)) && (x <= 268435456) && ((x < 65521)||((x - 65521) % 2 == 0)));	2
+
+Benchmarks/Linear/c/232.c
+assert(x >= 2);
+assert(y > 2);
+assert(x <= y);
+assert(x >= 2 && y > 2 && x <= y);
+assert(x >= 2 && y >= 3);
+assert(x >= 2 && y > 2);
+assert(x >= 1 && x <= y);
+assert(x >= 2 && x <= y);
+227.1587598323822	assert(x >= 2 && y > 2 && x <= y);	6
+
+Benchmarks/Linear/c/233.c
+assert(x % 2 == 0);
+assert(x >= 0);
+assert(x <= 268435456);
+assert(x <= 268435455 + 1);
+assert(x <= 268435455 || x == 268435456);
+21.247555017471313	assert(x % 2 == 0);	1
+
+Benchmarks/Linear/c/234.c
+assert(x % 2 == 0);
+assert(x >= 0);
+assert(x <= N);
+13.267135381698608	assert(x % 2 == 0);	1
+
+Benchmarks/Linear/c/235.c
+assert(x % 2 == 1);
+assert(x >= 1);
+8.658899784088135	assert(x % 2 == 1);	1
+
+Benchmarks/Linear/c/236.c
+assert(x % 2 == 268435440 % 2);
+assert(x % 2 == 0);
+9.577754735946655	assert(x % 2 == 268435440 % 2);	1
+
+Benchmarks/Linear/c/237.c
+assert(i == 2 * j && k == 3 * j);
+assert(k < 268435455 || k == (i + j));
+assert(i == j / 2);
+assert(k == i * 3);
+assert(k == j * 3 / 2);
+assert(i == 0 && j == 0 && k == 0);
+assert(k >= i + j);
+assert((k - i - j) % 3 == 0);
+assert(k == i + j);
+assert((k % 3) == 0);
+assert(j == 2 * i);
+assert(k % 3 == 0);
+assert(i == k / 3 && j == 2 * (k / 3) && k == 3 * (k / 3));
+assert(i + 2 * j == 3 * k);
+43.73133635520935	assert(((k < 268435455)||(k == (i + j))) && (i == j / 2) && (k == i * 3) && (k == j * 3 / 2) && (k >= i + j) && ((k - i - j) % 3 == 0) && (k == i + j) && ((k % 3) == 0) && (j == 2 * i) && (k % 3 == 0) && (i == k / 3) && (j == 2 * (k / 3)) && (k == 3 * (k / 3)));	2
+
+Benchmarks/Linear/c/238.c
+assert(i == 0 && j == 0 && k == 0);
+assert(k == 3 * i);
+assert(j == 2 * i);
+assert(i == j / 2);
+assert(k == 3 * j / 2);
+assert(k == 3 * i && j == 2 * i);
+26.291390895843506	assert((k == 3 * i) && (j == 2 * i) && (i == j / 2) && (k == 3 * j / 2));	2
+
+Benchmarks/Linear/c/239.c
+assert(i == 0 && j == 0 && k == 0);
+assert(k >= 268435455 || j == 2 * i);
+assert(j == 2 * i);
+assert(k == 3 * i);
+assert(i == j / 2);
+assert(j == 2 * i && k == 3 * i);
+28.726431131362915	assert(((k >= 268435455)||(j == 2 * i)) && (j == 2 * i) && (k == 3 * i) && (i == j / 2));	2
+
+Benchmarks/Linear/c/240.c
+assert(x > -1.0 && x < 1.0);
+assert(term == pow((x),( count - 1)) / tgamma(count));
+assert(exp >= 1.0);
+assert(count >= 1);
+assert(exp <= result);
+assert(count > 0);
+assert(exp == (1 - pow((x),( count))) / (1 - x));
+assert(x > -1.0 && x < 1.0 && exp == (1 - pow((x),( count))) / (1 - x));
+assert(term == pow((x),( count - 1)) / factorial(count - 1));
+assert(exp == expf(x));
+assert(exp >= 1.0 && term == pow((x),( count - 1)) / tgamma(count));
+assert(result == 2.0 * (1 / (1 - x)));
+assert(term == pow((x),( count-1)) / tgamma(count));
+assert(result == 2 * (1 / (1 - x)));
+assert(exp <= result && count > 0);
+assert(exp + term * x / count == result / 2);
+assert(exp - 1.0 <= result);
+assert(exp + term * x / (1 - x) >= result);
+assert(exp + term * x / count == result / 2.0);
+assert(exp <= result && term == pow((x),( count - 1)) / tgamma(count));
+assert(exp <= result && count > 0 && term == pow((x),( count - 1)) / factorial(count - 1));
+assert(exp + term * (x / count) == result / 2);
+assert(exp + term - 1.0 == 1.0 / (1 - x));
+assert(exp - 1.0 <= result && term == pow((x),( count - 1)) / tgamma(count));
+assert((!unknown()) || (exp + term * x / (1 - x) >= result));
+assert(exp + term * x / (1 - x) >= result || exp == result);
+assert(exp + term * (x / count) == result / 2.0);
+assert(exp + term == result / 2.0);
+assert(exp + term * (x / count) == result / (1 - x));
+assert(exp + term == 2 * (1 / (1 - x)));
+assert(exp == 1.0 / (1.0 - x) && count * term == x);
+assert(exp + term * (1.0 - x) == 1.0);
+assert(result == exp || exp + term * x / (1 - x) >= result);
+assert(exp == 1.0 && term == 1.0 && count == 1 && result == 2.0 || exp + term * x / (1 - x) >= result);
+assert(exp + term * (x / count) == result);
+assert(exp == 1.0 && term == 1.0 && count == 1 || exp + term * x / count == result / 2.0);
+assert((count == 1 && exp == 1.0 && term == 1.0) || (exp >= 1.0 && result >= exp));
+assert(exp >= 1.0 && exp + term <= result);
+assert((exp == 1.0 && term == 1.0 && count == 1) || exp + term * (x / count) * (1 - x) <= result);
+assert(exp + term * x / count == 2 * (1 / (1 - x)));
+assert(exp > 0.0 && term > 0.0);
+assert((count == 1 && term == 1.0 && exp == 1.0) || (exp <= 1.0 / (1.0 - x) && count * term == x * pow((x),( count - 1))));
+assert((exp == 1.0) && (term == 1.0) && (count == 1) || (exp >= 1.0 && exp <= result));
+assert((exp == 1.0 && term == 1.0 && count == 1) || (exp + term * (1.0 - x) >= result));
+assert(x > -1.0 && x < 1.0 && exp == 1.0 && term == 1.0 && count == 1 && result == 2 * (1 / (1 - x)) || exp + term * x / count >= exp);
+assert(result >= exp && count >= 1 && term * x / (1 - x) >= -1.0);
+assert(exp + term > 0);
+assert(exp + term <= result && x > -1.0 && x < 1.0);
+assert((count == 1 && exp == 1.0 && term == 1.0) || (exp + term * (x / count) <= result));
+assert((count == 1 && exp == 1.0 && term == 1.0) || (exp <= result));
+None	None	None
+
+Benchmarks/Linear/c/241.c
+assert(x > 0 && x < octant);
+assert(count >= 2);
+assert(evenExp >= 1.0);
+assert(term >= 0);
+assert(count % 2 == 0);
+assert(evenExp >= term);
+assert(oddExp >= x);
+assert(oddExp >= evenExp);
+assert(x > 0);
+assert(x < octant);
+94.61418581008911	assert(x > 0 && x < octant);	1
+
+Benchmarks/Linear/c/242.c
+assert(x > octant1 && x < octant2);
+assert(count % 2 == 0);
+assert(term >= 0);
+assert(evenExp <= oddExp || evenExp >= oddExp);
+assert(term == pow((x),( count)) / tgamma(count + 1));
+assert(evenExp <= oddExp || count % 2 == 0);
+assert(count > 1);
+assert(octant1 == 0);
+assert(octant2 == 3.14159 / 8);
+assert(evenExp >= 1.0);
+assert(oddExp >= x);
+147.2323122024536	assert(x > octant1 && x < octant2);	1
+
+Benchmarks/Linear/c/243.c
+assert(y == 1 || y == 0);
+assert(y == 0 || (x % 3 == 0 || x % 3 == 1 || x % 3 == 2));
+assert(x % 3 == 0 || x % 3 == 1 || x % 3 == 2);
+assert(y == 1 || (y == 0 && x % 3 == 0));
+assert(y == 0 || x % 3 != 1);
+assert(y == 0 || x % 3 != 2);
+assert((y == 0) == (x % 3 == 0));
+assert((y == 0 && x % 3 == 0) || (y == 1 && x % 3 != 0));
+assert((y == 1) || (y == 0 && x % 3 == 0));
+56.595123529434204	assert(((y == 1)||(y == 0)) && ((y == 0)||((x % 3 == 0 || x % 3 == 1 || x % 3 == 2))) && ((x % 3 == 0)||(x % 3 == 1)||(x % 3 == 2)) && ((y == 1)||((y == 0 && x % 3 == 0))) && (((y == 1))||((y == 0 && x % 3 == 0))));	2
+
+Benchmarks/Linear/c/244.c
+assert(a == b);
+assert((st == 0 && last < c) || (st == 1 && last >= c));
+assert(a == b && c > last);
+27.868953466415405	assert((c == 200000) && (a == b) && (((st == 0 && last < c))||((st == 1 && last >= c))));	2
+
+Benchmarks/Linear/c/245.c
+assert((st == 0 && c >= 200000) || (st == 1 && c == 200000));
+assert((st == 0 && last < c) || (st == 1 && last >= c));
+assert(c == 200000);
+assert(a == b);
+assert(c >= 200000);
+assert(st == 1 && c == 200000);
+33.6220862865448	assert((c == 200000) && (((st == 0 && c >= 200000))||((st == 1 && c == 200000))) && (((st == 0 && last < c))||((st == 1 && last >= c))) && (a == b) && (c >= 200000));	2
+
+Benchmarks/Linear/c/246.c
+assert(j >= 0);
+assert(j <= idBitLength / 8);
+assert(j <= material_length);
+assert(j <= idBitLength / 8 || j <= material_length);
+assert(0 <= j);
+assert(idBitLength % 8 == 0 || j <= idBitLength / 8);
+22.47078537940979	assert(j >= 0);	1
+
+Benchmarks/Linear/c/247.c
+assert(j >= 0);
+assert(j <= material_length);
+assert(j <= idBitLength / 8);
+assert(idBitLength >= 0);
+assert(material_length >= 0);
+assert(j <= idBitLength / 8 || idBitLength / 8 <= material_length);
+assert(j <= idBitLength / 8 || j <= material_length);
+assert(j >= 0 && j <= material_length && j <= idBitLength / 8);
+24.3456187129267	assert(j <= material_length);	3
+
+Benchmarks/Linear/c/248.c
+assert(idBitLength >= 0);
+assert(material_length >= 0);
+assert(j >= 0);
+assert(j <= idBitLength / 8 || j <= material_length);
+ssert((j / 4) <= nlen);
+assert(j <= idBitLength / 8);
+assert(j <= material_length);
+assert(nlen == idBitLength / 32);
+assert((j <= idBitLength / 8) || (j <= material_length));
+assert(j <= 4 * nlen || j == 0);
+34.4578963256842    assert((nlen == idBitLength / 32) && (idBitLength >= 0) && (material_length >= 0) && (j >= 0) && ((j <= idBitLength / 8)||(j <= material_length)) && ((j / 4) <= nlen) && (j <= idBitLength / 8) && (j <= material_length) && (((j <= idBitLength / 8))||((j <= material_length))));   2
+
+Benchmarks/Linear/c/249.c
+assert(i >= 1);
+assert(j >= 1);
+assert(k >= -1);
+assert(k <= 1);
+assert(i == j || i == j + 1);
+assert(k >= -1 && k <= 1);
+assert(j == i + k - 1);
+assert(i + k >= 1);
+assert(i + j == 2 * i - k);
+30.4215726852417	assert((k <= 1) && (i >= 1) && (i + k >= 1));	2
+
+Benchmarks/Linear/c/250.c
+assert(i >= 1);
+assert(j >= 1);
+assert(k <= 1);
+assert(i - j == 0 || i - j == -1);
+assert(k >= -1 && k <= 1);
+assert(i + j == 2 + k);
+assert(k >= -1);
+assert(i - j == -k);
+assert(i - j == 1 - k);
+assert(i - j + k == 1);
+assert(j == i + k * (k + 1) / 2);
+assert(j == i && k >= -1);
+assert(j == i - 1 + k);
+assert(i + j == 2 * k + 2);
+assert(i == j && k >= -1 && k <= 1);
+assert(j == i && k >= -1 && k <= 1);
+assert(j == i + k && k >= -1 && k <= 1);
+assert(i >= 1 && j >= 1 && k >= -1 && k <= 1 && i == j + k);
+assert((i == 1 && j == 1 && k >= 0 && k <= 1) || (i + j + k == 3));
+assert(i - j == 0 && k >= -1 && k <= 1);
+assert((i == 1 && j == 1 && k >= 0 && k <= 1) || (i - j == 1 - k));
+assert(i >= 1 && j >= 1 && i - j == -k || i + k == 2);
+assert((i - j == 1 - k) || (i == 1 && j == 1 && k == 0));
+assert(i - j >= -1 && i - j <= 1);
+assert((i + k <= 2) || (i - j + k == 1));
+assert((i - j + k == 1) || (i == 1 && j == 1 && k <= 1));
+assert((i == 1 && j == 1 && (k == 0 || k == 1)) || (j >= i && i + k <= 2));
+assert((i == 1 && j == 1 && (k == 0 || k == 1)) || (j == i + k * (k + 1) / 2));
+assert((i == 1 && j == 1 && k >= 0 && k <= 1) || (j == i - 1 + k));
+assert((i == 1 && j == 1 && (k == 0 || k == 1)) || (j == i - 1 + k));
+assert(k >= -1 && k <= 1 && i + j == k + 2);
+assert((i == 1 && j == 1 && k >= 0 && k <= 1) || (i >= 2 && j == i && k == 1 - i + 1));
+assert(i - j + k == 1 && k >= -1 && k <= 1);
+assert(i - j == 1 - k && k >= -1 && k <= 1);
+assert(i >= 1 && j == i + k && k >= -1 && k <= 1);
+assert((i == 1 && j == 1 && k >= 0 && k <= 1) || (j == i + k - 1 && k >= -1 && k <= 1));
+assert((i == 1 && j == 1 && k == 0) || (i >= 2 && j >= 1 && k <= 0 && i == j + k));
+assert((i == 1 && j == 1 && (k == 0 || k == 1)) || (i >= 2 && j >= 1 && k <= 0 && i == j + k));
+assert(i >= 1 && j == i && k == 1 - i + 1);
+assert(i >= 1 && j >= 1 && k <= 1 && j - i == k);
+assert((i - j == 1 - k) && (k >= -1) && (k <= 1));
+assert(i >= 1 && j == i && k == 2 - i);
+assert(i >= 1 && j >= 1 && i - j == 1 - k);
+assert(i - j == k + 1);
+assert(i - j == k + 1 && k >= -1);
+assert((i - j + k == 1) && (k >= -1) && (k <= 1));
+assert(i >= 1 && j >= 1 && k >= -1 && i + k <= 2);
+184.69598245620728	assert((k <= 1) && (i >= 1) && (i - j >= -1) && (((i + k <= 2))||((i - j + k == 1))) && ((k <= 1)) && (i + k <= 2));	32
+
+Benchmarks/Linear/c/251.c
+assert(k >= -1 && k <= 1);
+assert(i >= 1);
+assert(j == i || j == i - 1);
+assert(j >= i);
+assert(j >= 1);
+assert(i - j == 0 || i - j == 1);
+assert(k >= -1);
+assert(k <= 1);
+assert(i == j || i == j + 1);
+assert(j >= 1 && j <= i);
+assert(i - j == 0);
+assert(j == i + k);
+28.113027572631836	assert((k <= 1) && (i >= 1) && (j <= i));	2
+
+Benchmarks/Linear/c/252.c
+assert(i % 2 == 0);
+assert(j == i + 1);
+assert(a == b);
+assert(i >= 0);
+assert(j - i == 1);
+assert(a == b && j == i + 1);
+assert(b == a);
+20.120434522628784	assert((i % 2 == 0) && (j == i + 1) && (a == b) && (i >= 0) && (j - i == 1) && (b == a));	2
+
+Benchmarks/Linear/c/253.c
+assert(j - i == 1);
+assert(i % 2 == 1);
+assert(a == b);
+assert(i % 2 != 0);
+assert(j >= i + 1);
+assert(i >= 1);
+assert(j >= 1);
+assert(a >= 0);
+assert(b == a - i + j);
+assert(j == i || j == i + 1);
+assert(b == 0 && a == 0 || b == a * (j - i) / 2);
+assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));
+assert((i - j) % 2 == 0);
+assert(i - j == 1);
+assert(a >= 0 && b >= -1 && b <= a);
+assert(i % 2 == 1 && j == i);
+assert(b == a * (j - i));
+assert(!unknown() || (i >= 1 && j >= 1));
+assert(a == b || (j >= i && (j - i) % 2 == 1));
+assert((i % 2 == 1) && (j == i));
+assert(b == a - 1);
+assert(j >= i);
+assert((i - j == 1) || (i - j == 0));
+assert((j == i + 1) || (j == i));
+assert(j == i + 1);
+assert(a >= 0 && i >= 1 && j >= 1);
+assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);
+assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);
+assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);
+assert((i - j) == -1 || (i - j) == 1);
+assert((i - j) == 1 || (i - j) == -1);
+assert(a == b || (i - j == 1));
+assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));
+assert(a >= 0 && b == a - 1);
+assert((i - j) % 2 == 0 && i % 2 == 1);
+assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));
+assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));
+assert(b == a * (j - i + 1));
+assert((i - 1) % 2 == 0 && j == i);
+assert((a + b == i - 1) && ((j - i) % 2 == 1));
+assert((i - j) % 2 == 1 && a == -b);
+assert((i - j == -1) && (b == a * (i - 1)));
+assert(i % 2 == 1 && j == i && a - b == 1);
+assert(a == 0 && b == 0 || b == a - 1);
+assert(b == a - 1 || a == 0);
+assert(a == b + (i - 1) / 2);
+assert((i - j == 1) || (i - j == -1));
+assert((j - i == 1) || (j - i == 0));
+assert((j == i + 1) && ((i % 2 == 1) && (j % 2 == 0)) || (j == i) && ((i % 2 == 0) && (j % 2 == 0)));
+assert(a == 0 || j >= i);
+assert((a == 0 && b == 0 && j == 1 && i == 1) || (j >= i && (j - i) % 2 == 0));
+None	None	None
+
+Benchmarks/Linear/c/254.c
+assert(x >= 1);
+assert(y >= 1);
+assert(x == y + 50 || y == 0);
+assert(x >= 1 && y >= 1);
+assert(y >= 0);
+assert((x >= 50 && y == 0) || (x < 50 && y > 0));
+assert(x == 2 * y - 1 || x == 2 * y - 101);
+assert(y == 1 || x >= 50);
+assert(x == y + 50 || (x >= 100 && y == 0));
+assert(x >= 1 && y >= 1 && x == 2 * y - 1);
+assert(x + y == 100 && y >= 0);
+assert(x + y == 51);
+assert(x + y == 101);
+assert(y >= 0 && x >= 1 && (y == 0 || x <= 100));
+assert((x >= 1 && y >= 1) || y == 0);
+assert(x >= 1 && y >= 1 && x - y == 0);
+assert(y >= 1 && x >= 1 && x <= 100);
+assert(x >= 1 && y >= 0 && (y == 0 || x == 100));
+assert(x >= 1 && y >= 1 && x <= 100 && (y == 1 || x >= 50));
+assert((x >= 1) && (y == x || y == 2*x - 99));
+assert(y == 101 - x);
+assert(y > 0 && ((x < 50 && y == x) || (x >= 50 && y == 100 - x)));
+assert(y > 0 && (x + y == 52));
+195.89866852760315	assert((x >= 1) && (y >= 0) && ((y == 0 || x <= 100)) && (((x >= 1 && y >= 1))||(y == 0)) && (x <= 100) && ((x >= 1)) && (((x < 50 && y == x) || (x >= 50 && y == 100 - x))));	12
+
+Benchmarks/Linear/c/255.c
+assert(v % 2 == 1);
+assert(v >= 1);
+assert(v <= 52);
+assert(v == 1 || (v % 2 == 1 && v >= 3 && v <= 51));
+assert(v >= 1 && v <= 52);
+assert((v % 2) == 1);
+assert(v % 2 == 1 && v >= 1 && v <= 53);
+assert(v >= 1 && v % 2 == 1);
+18.102516889572144	assert((v % 2 == 1) && (v >= 1) && (v <= 52) && ((v == 1)||((v % 2 == 1 && v >= 3 && v <= 51))) && ((v % 2) == 1) && (v <= 53));	2
+
+Benchmarks/Linear/c/256.c
+assert(v == 1 || v % 2 == 1);
+assert(v >= 1);
+assert(v <= 51);
+assert(v % 2 == 1);
+assert(v == 1 || v >= 51);
+assert((v % 2) == 1);
+14.291540622711182	assert(v == 1 || v % 2 == 1);	1
+
+Benchmarks/Linear/c/257.c
+assert(x >= 0);
+assert(x == 0 || x > 0);
+9.676754474639893	assert(x >= 0);	1
+
+Benchmarks/Linear/c/258.c
+assert(x >= 0 && x <= 40);
+assert(x >= 0);
+assert(x <= 40);
+9.830419063568115	assert(x >= 0 && x <= 40);	1
+
+Benchmarks/Linear/c/259.c
+assert(x >= 0 && x <= 40);
+assert(x <= 40);
+assert(x >= 0);
+9.15026307106018	assert(x >= 0 && x <= 40);	1
+
+Benchmarks/Linear/c/260.c
+assert(x == 0 || x == 1);
+22.46222162246704	assert(x == 0 || x == 1);	1
+
+Benchmarks/Linear/c/261.c
+assert(x == 0 || x == 1);
+17.936888456344604	assert(x == 0 || x == 1);	1
+
+Benchmarks/Linear/c/262.c
+assert(i >= 0 && i <= n);
+assert(sum == (i * (i - 1)) / 2);
+assert(n >= 1 && n <= 1000);
+assert(sum == i * (i - 1) / 2);
+assert(i >= 0 && i <= n && sum == i * (i - 1) / 2);
+assert(1 <= n && n <= 1000);
+assert(sum == i * (i - 1) / 2 && i >= 0 && i <= n);
+assert(sum == (i * (i - 1)) / 2 && i <= n);
+37.79619860649109	assert(i >= 0 && i <= n && sum == i * (i - 1) / 2);	7
+
+Benchmarks/Linear/c/263.c
+assert(i <= 2 * k);
+assert(n >= 0);
+assert(n <= k);
+assert(i % 2 == 0 || n * 2 == i);
+assert(i >= 0);
+assert(n == i / 2);
+assert(i >= 0 && i <= 2 * k);
+assert(i % 2 == 0 || n == (i - 1) / 2);
+assert(i % 2 == 0 || i % 2 == 1);
+assert(k >= 0 && k <= 20000001);
+assert(i % 2 == 0 && n == i / 2 && i <= 2 * k);
+assert(n == i / 2 && i <= 2 * k);
+assert((i % 2 == 0 && n == i / 2) || (i % 2 != 0 && n == (i - 1) / 2));
+assert(n * 2 == i || n * 2 + 1 == i);
+assert((i % 2 == 0 && n * 2 == i) || (i % 2 != 0 && n * 2 == i - 1));
+assert(i >= 0 && n == i / 2 && k >= 0 && k <= 20000001);
+assert(i % 2 == n % 2);
+assert(i % 2 == 0 || n == (i + 1) / 2);
+assert(i % 2 != 0 || n == i / 2);
+78.62285709381104	assert((k >= 0) && (k <= 20000001) && (i <= 2 * k) && (n >= 0) && (n <= k) && (i >= 0) && ((i % 2 == 0)||(i % 2 == 1)) && ((i % 2 == 0)||(n == (i + 1) / 2)) && ((i % 2 != 0)||(n == i / 2)));	9
+
+Benchmarks/Linear/c/264.c
+assert(x >= 1 && y >= 1);
+assert(y >= x);
+assert(x == y);
+assert(y >= 1);
+assert(x >= 1);
+assert(x == y || x == 2 * y || y == 2 * x);
+16.9275963306427	assert(x >= 1 && y >= 1);	1
+
+Benchmarks/Linear/c/265.c
+assert(l == i || i >= n);
+assert(l > 0);
+assert(i >= l);
+assert(i <= n);
+assert(i >= l && i <= n);
+17.32133197784424	assert((l > 0) && (i >= l));	2
+
+Benchmarks/Linear/c/266.c
+assert(x == y);
+assert(i == j || (flag != 0 && j == i + 1));
+assert(i >= 0);
+assert(j >= i);
+assert(i >= x * (x - 1) / 2);
+assert(j >= y * (y - 1) / 2);
+assert(i >= 0 && j >= 0);
+assert(j >= y * (y + 1) / 2 || j >= y * (y + 1) / 2 + 1);
+assert((j >= y * (y - 1) / 2 + x && flag != 0) || (j >= y * (y - 1) / 2 && flag == 0));
+assert(x == y && j >= i);
+27.67268395423889	assert((x == y) && (i >= 0) && (j >= i) && (i >= x * (x - 1) / 2) && (j >= y * (y - 1) / 2) && (j >= 0) && ((j >= y * (y + 1) / 2)||(j >= y * (y + 1) / 2 + 1)) && (((j >= y * (y - 1) / 2 + x && flag != 0))||((j >= y * (y - 1) / 2 && flag == 0))));	2
+
+Benchmarks/Linear/c/267.c
+assert(n >= 1);
+assert(k >= j);
+assert(j >= 0 && j <= n);
+assert(k >= n);
+assert(j >= 0);
+assert(j <= n);
+assert(k + j == n + j - j);
+assert(k >= 0);
+assert(k + j == n);
+assert(k >= n - j);
+assert(j + k == n);
+assert(j >= 0 && j <= n && k == n - j);
+24.40418291091919	assert((n >= 1) && (j >= 0) && (k >= 0) && (k >= n - j));	2
+
+Benchmarks/Linear/c/268.c
+assert(x >= 0);
+assert(x <= y);
+assert(y <= n);
+assert(x >= 0 && x <= n && y >= x && y <= n);
+assert(x >= 0 && x == n && y >= x);
+15.654664516448975	assert((x >= 0) && (x <= y) && (y <= n) && (x <= n) && (y >= x));	2
+
+Benchmarks/Linear/c/269.c
+assert(sum >= 0);
+assert(i >= 0);
+assert(i <= n);
+assert(i >= 0 && i <= n);
+assert(sum == (i * (i - 1)) / 2);
+assert(sum >= 0 && sum <= (n-1)*n/2);
+assert(i >= 0 && sum >= 0 && i <= n);
+assert(sum == i * (i - 1) / 2 && i >= 0);
+assert(sum == i * (i - 1) / 2 && i >= 0 && sum >= 0);
+assert(sum >= 0 && i >= 0 && sum == i * (i - 1) / 2);
+assert(sum == i * (i - 1) / 2 && i >= 0 && i <= n);
+assert(i >= 0 && i <= n && sum >= 0 && sum == i * (i - 1) / 2);
+31.373840808868408	assert(sum == (i * (i - 1)) / 2);	6
+
+Benchmarks/Linear/c/270.c
+assert(y >= 0);
+assert(x == y);
+assert(x >= 0);
+assert(x == y && x >= 0);
+12.727030515670776	assert((x == y) && (y >= 0) && (x >= 0));	2
+
+Benchmarks/Linear/c/271.c
+assert(x != y);
+assert(y >= t);
+assert(x <= 0 || y >= t);
+assert(y >= t && x != y);
+25.545840978622437	assert(y >= t);	2
+
+Benchmarks/Linear/c/272.c
+assert(i == j);
+assert(i >= 0);
+assert(j >= 0);
+assert(i <= k + 1);
+14.695609331130981	assert(i == j);	1
+
+Benchmarks/Linear/c/273.c
+assert(i >= 0);
+assert(i <= 200);
+9.109564781188965	assert(i >= 0);	1
+
+Benchmarks/Linear/c/274.c
+assert(i == k);
+assert(i >= 0);
+assert(k >= 0);
+assert(i <= n);
+assert(i >= 0 && k >= 0);
+assert(i <= n && k <= n);
+assert(k <= n);
+14.501857995986938	assert(i == k);	1
+
+Benchmarks/Linear/c/275.c
+assert(y > 0 || x > 0);
+assert(x + y > -2);
+16.80605983734131	assert(y > 0 || x > 0);	1
+
+Benchmarks/Linear/c/276.c
+assert(i == j / 2);
+assert(i >= 0);
+assert(i >= 0 && j >= 0);
+assert(j == 2 * i);
+assert(i >= 0 && i <= 100);
+assert(j >= 0 && j <= 200);
+assert(i <= 100 && j <= 200);
+assert(i == j / 2 && i <= 100);
+assert(i <= 100 && j == 2 * i);
+17.163835287094116	assert((i == j / 2) && (i >= 0) && (j >= 0) && (j == 2 * i) && (i <= 100) && (j <= 200));	2
+
+Benchmarks/Linear/c/277.c
+assert(i <= n);
+assert(k == n - i);
+assert(i % 2 == 0);
+assert(i >= 0 && i <= n);
+assert(k == n - ((i + 1) / 2));
+assert((i == n) || (i == n - 1));
+assert((i % 2) == 0);
+assert(k == n - i/2);
+assert((n - i) % 2 == 0 || (n - i - 1) % 2 == 0);
+assert(k == n - i / 2);
+assert(i == 2 * (n - k));
+assert(2 * k == n - i);
+assert(n >= 0);
+assert(2 * k + i == n);
+assert((i == 0 && k == n) || (k == n - (i + 1) / 2));
+assert((i <= n) && (k == n - i/2));
+assert(i % 2 == 0 && k == n - i / 2);
+assert(i >= 0 && k == n - i / 2);
+assert(i >= 0 && k == n - i / 2 && i <= n + 1);
+assert(k == n - (i / 2) * 2);
+assert(k == n - (i + 1) / 2);
+assert(i >= 0 && k == n - i / 2 && i % 2 == 0);
+assert(i >= 0 && k == n - i / 2 && 2 * k + i == n);
+assert(n <= 20000001);
+assert(i == 0 && k == n || 2 * k == n - i + 1 || 2 * k == n - i);
+assert(i >= 0);
+assert(i >= 0 && k == n - i/2);
+assert(i % 2 == 0 && k == n - i/2);
+assert((i % 2 == 0) && (k == n - i / 2));
+assert(i % 2 == 0 && k == n - i / 2 && n >= 0);
+assert(i % 2 == 0 && k == n - i / 2 && i >= 0 && i <= n && k >= (n - 1) / 2);
+assert(i >= 0 && k == n - i / 2 && n >= 0 && i <= n + 1);
+assert(i >= 0 && i <= n && k == n - i / 2);
+124.99949216842651	assert(i >= 0 && k == n - i / 2 && i <= n + 1);	26
+
+Benchmarks/Linear/c/278.c
+assert(i < j || i >= j);
+assert(k > i - j || i >= j);
+assert(k > i - j);
+assert(i <= j);
+assert(k >= i - j + 1);
+assert(k > i - j && i <= j);
+30.156519889831543	assert(k > i - j);	4
+
+Benchmarks/Linear/c/279.c
+assert(i >= 1);
+assert(j >= 1);
+assert(i <= j);
+assert(i * i < j * j);
+assert(i * i < j * j || i == j);
+assert(j >= i);
+assert(i >= 1 && j >= 1 && i <= j);
+29.14166283607483	assert(i <= j);	3
+
+Benchmarks/Linear/c/280.c
+assert(x < y || x >= y);
+assert(x >= y);
+21.16505718231201	assert(x < y || x >= y);	1
+
+Benchmarks/Linear/c/281.c
+assert(x < y || x == y);
+assert(x <= y + 99);
+assert(x < y || x >= y);
+assert(y <= 20000001);
+assert((x - y) % 100 == 0 || x >= y);
+assert(x >= -99 && x < y);
+assert(x >= -99 && x < y + 100);
+27.955411672592163	assert((y <= 20000001) && (x <= y + 99) && ((x < y)||(x >= y)) && (x < y + 100));	2
+
+Benchmarks/Linear/c/282.c
+assert(n > 0);
+assert(i >= 0);
+assert(k >= 0);
+assert(i + k == n);
+assert(k == n - i);
+assert(i >= 0 && i <= n);
+assert(k + i == n);
+assert(i <= n);
+assert(k <= n);
+assert(k == n - i && i >= 0 && n > 0);
+19.91556429862976	assert((i >= 0) && (k >= 0) && (i + k == n) && (k == n - i) && (i <= n) && (k + i == n) && (k <= n));	2
+
+Benchmarks/Linear/c/283.c
+assert(x == 4 * y);
+8.731518507003784	assert(x == 4 * y);	1
+
+Benchmarks/Linear/c/284.c
+assert(y >= 0);
+assert(x == 4 * y);
+assert(x >= 0);
+assert(x % 4 == 0);
+assert(x == 4 * y && y >= 0);
+15.090502500534058	assert((y >= 0) && (y <= 20000001) && (x == 4 * y) && (x >= 0) && (x % 4 == 0));	2
+
+Benchmarks/Linear/c/285.c
+assert(x == 0);
+assert(y == 0);
+assert(z == 0);
+assert(x + y + z == 0);
+assert(x <= 0);
+assert(x == y);
+assert(z == -2 * y);
+assert(x == 0 && y == 0 && z == 0);
+assert(x <= 0 && y == 0 && z == 0);
+16.43644094467163	assert((x == 0) && (y == 0) && (z == 0) && (x + y + z == 0) && (x <= 0) && (x == y) && (z == -2 * y));	2
+
+Benchmarks/Linear/c/286.c
+assert(x == y);
+assert(x >= 0);
+assert(x + y + z == 0);
+assert(z <= 0 || x == 0);
+assert(x >= 0 || z <= 0);
+assert(z <= 0);
+assert(z <= 0 || x <= 0);
+assert(x == y && z == -2*x);
+assert(x == y && x >= 0 && x + y + z == 0);
+18.163838148117065	assert((x == y) && (x >= 0) && (x + y + z == 0) && ((x >= 0)||(z <= 0)) && (z == -2*x));	2
+
+Benchmarks/Linear/c/287.c
+assert(x >= 0 && y >= 0);
+assert(x <= 100 && y <= 100);
+assert(x == y);
+assert(x < 100 && y < 100);
+assert(x >= 100 || y >= 100);
+assert(x >= 0 && y >= 0 && x <= 100 && y <= 100);
+assert((x >= 0 && y >= 0) || (x >= 100 || y >= 100));
+26.800236701965332	assert((x <= 100) && (y <= 100));	2
+
+Benchmarks/Linear/c/288.c
+assert(x < y || x >= y);
+assert(y <= 20000001);
+20.673728466033936	assert(x < y || x >= y);	1
+
+Benchmarks/Linear/c/289.c
+assert(x < y || x >= y);
+assert(y <= 20000016);
+assert(x < y);
+assert(y <= 20000001);
+assert(x <= y + 16);
+assert(x < y || x == y);
+assert(x < y || (x >= 0 && y >= 0 && x - y <= 16));
+assert(x + 16 >= y);
+assert(y <= 20000016 && x >= -1);
+assert(x + 3*y >= 3*y - 16);
+assert(x - 3 * y <= 0);
+assert(x <= y + 16 && y <= 20000001);
+40.90314984321594	assert(x <= y + 16);	6
+
+Benchmarks/Linear/c/290.c
+assert(x < y || x <= y + 16);
+assert(y <= 20000001 + 3 * ((x - y) / 7 + 1));
+assert(y <= 20000001 + 3 * ((x - y + 10 + 6) / 17));
+assert(x < y || x > y && x <= y + 16);
+assert(y <= 20000001 + 3 * (y - x) / 7);
+assert(x < y || x >= y);
+assert(y <= 20000001 + 3 * (x - x%10)/10 + (x%10)/7 * 3 || y > 20000001);
+assert(y <= 20000001 + 3 * ((y - x + 16) / 7 + 1));
+23.909834623336792	assert(x < y || x <= y + 16);	1
+
+Benchmarks/Linear/c/291.c
+assert(x < y || x >= y);
+assert(y <= 20000001);
+assert(y <= 20000001 + 3 * ((x - y + 9) / 17));
+26.199216842651367	assert(x < y || x >= y);	1
+
+Benchmarks/Linear/c/292.c
+assert(i < j || i == j);
+assert(k > 0);
+assert(k + i > j);
+assert(i <= j);
+assert(k + i >= j);
+assert(k >= j - i);
+assert(k >= 0);
+assert(k >= j - i + 1);
+assert(k >= i - initial_i + initial_k);
+assert(j >= i);
+26.06594729423523	assert(k > 0);	3
+
+Benchmarks/Linear/c/293.c
+assert(r > i + j);
+assert(i >= 0);
+8.985469579696655	assert(r > i + j);	1
+
+Benchmarks/Linear/c/294.c
+assert(xa + ya > 0);
+assert(xa >= 0);
+assert(ya >= 0);
+13.063560724258423	assert(xa + ya > 0);	1
+
+Benchmarks/Linear/c/295.c
+assert(x == 0);
+assert(x >= 0 && x <= 100000000);
+assert((x >= 10000000) || (x < 10000000 && x % 1 == 0));
+assert(x >= 0);
+assert(x <= 100000000);
+assert(x % 2 == 0 || x <= 10000000);
+assert((x < 10000000) || (x >= 10000000 && x % 2 == 0));
+assert(x < 10000000 || x % 2 == 0);
+assert((x >= 10000000) || (x < 10000000 && x % 2 == 0));
+31.036386013031006	assert((x >= 0) && (x <= 100000000) && (((x >= 10000000))||((x < 10000000 && x % 1 == 0))) && ((x % 2 == 0)||(x <= 10000000)) && (((x < 10000000))||((x >= 10000000 && x % 2 == 0))) && ((x < 10000000)||(x % 2 == 0)));	2
+
+Benchmarks/Linear/c/296.c
+assert(x <= 1000000);
+assert((x >= 500000 && y == x - 500000) || (x < 500000 && y == x));
+assert((x >= 500000 && y == 500000 - x) || (x < 500000 && y == x));
+assert(y <= 500000 && y >= -500000);
+assert((y == 0 && x == 0) || (y == x - 1000000 && x >= 500000) || (y == x && x <= 500000));
+assert((x >= 500000) || (y == x));
+assert((x < 500000) || (y == 1000000 - x));
+assert(x <= 1000000 && ((x >= 500000 && y == 500000 - x) || (x < 500000 && y == x)));
+assert((x >= 500000 && y == 1000000 - x) || (x < 500000 && y == x));
+assert((x < 500000 && y == x) || (x >= 500000 && y == 1000000 - x));
+assert(y == x - 500000 || y == 500000 - x);
+assert((x <= 500000 && y == x) || (x > 500000 && y == 1000000 - x));
+assert(x <= 1000000 && (x >= 500000 || y == x) && (x < 500000 || y == 1000000 - x));
+assert((x <= 1000000) && (y == x - 2 * max(x - 500000, 0)));
+assert((x >= y) && (1000000 - x >= y));
+assert(x <= 1000000 && (x >= 500000 && y == 500000 - x) || (x < 500000 && y == x));
+assert(x <= 1000000 && ((x >= 500000 && y == 1000000 - x) || (x < 500000 && y == x)));
+assert((x >= 500000 && y == 500000 - (x - 500000)) || (x < 500000 && y == x));
+assert((x >= 500000 && y == 1000000 - (2 * (x - 500000))) || (x < 500000 && y == x));
+assert(x >= 1000000 || (y == x - 500000 && x >= 500000) || (y == x && x < 500000));
+assert(y == x - 500000 || (x <= 500000 && y == x) || (x > 500000 && y == 1000000 - x));
+assert((x <= 500000 && y == x) || (x > 500000 && y == 1000000 - x) || (x == 1000000 && y == 0));
+131.28879642486572	assert(x <= 1000000 && (x >= 500000 || y == x) && (x < 500000 || y == 1000000 - x));	22
+
+Benchmarks/Linear/c/297.c
+assert(x >= 0);
+assert(y == 500000 || y == x);
+assert(x <= 1000000);
+assert(y >= 500000);
+assert(y == x || y == 500000);
+assert(y == x || y == 500000 + x - 500000);
+assert(y <= 500000 + x);
+assert(x >= 0 && y == 500000 + x);
+assert(x >= 0 && y == x + 500000);
+assert(x >= y);
+assert(x <= 1000000 && (x < 500000 || y == x));
+assert(x <= 1000000 && y == x || y == 500000 + x);
+assert(x >= y && y >= 500000);
+assert(x <= 1000000 && (y == 500000 || y == x));
+assert(y == 500000 + (x - 500000) && x >= 500000);
+assert(x >= 0 && y == 500000 + x && x <= 1000000);
+assert(x <= y && y <= 500000 + x);
+assert(x >= 0 && (x < 500000 && y == 500000 || x >= 500000 && y == x));
+assert(x >= 0 && y == 500000 + max(0, x - 500000));
+assert(y == 500000 || y > 500000);
+assert(x <= 1000000 && (x < 500000 || y == 500000 + x));
+assert(x <= 1000000 && (x < 500000 || y == 500001 + x - 1000000));
+assert(x >= 0 && ((x >= 500000 && y == 500000 + x - 500000) || (x < 500000 && y == 500000)));
+assert(x >= 0 && y >= 500000 && y <= x + 500000);
+assert(x <= 1000000 && (x >= 500000 || y == 500000));
+assert(x >= 0 && y == 500000 + (x - 500000) * (x >= 500000));
+assert(x <= 1000000 && y == 500000 + max(0, x - 500000));
+assert(x >= 0 && ((x >= 500000 && y == 500000 + x - 499999) || (x < 500000 && y == 500000)) && x <= 1000000);
+assert(x >= 0 && (x < 500000 || y == x) && x <= 1000000);
+assert(x <= 1000000 && y == 500000 + x);
+assert(x <= 1000000 && y == 500000 + x - 500000 * (x >= 500000));
+112.54508781433105	assert(x >= 0 && (x < 500000 && y == 500000 || x >= 500000 && y == x));	29
+
+Benchmarks/Linear/c/298.c
+assert(x >= 0);
+assert(x <= 10000000);
+assert(z >= 0);
+assert(x < 5000000 || (z == 10000000 - x));
+assert(x >= 0 && z == 5000000);
+assert(x >= z);
+assert(z == 5000000 - (x - 5000000) || z == 5000000);
+assert((x < 5000000 && z == 5000000) || (x >= 5000000 && z == 10000000 - x));
+assert(z == 5000000 || z == 5000000 - (x - 5000000));
+assert(x < 5000000 || z == 10000000 - x);
+assert(z == 5000000 - (x - 5000000) || x <= 5000000);
+assert(x >= 0 && z == 5000000 - (x - 5000000));
+assert(x <= 10000000 && ((x >= 5000000 && z == 5000000 - (x - 5000000)) || (x < 5000000 && z == 5000000)));
+assert(x <= 10000000 && z == 5000000 - (x - 5000000));
+assert(z == 5000000 - (x - 5000000) && x >= 5000000 || z == 5000000 && x < 5000000);
+assert(z == 10000000 - x && x >= 5000000 || z == 5000000 && x < 5000000);
+assert(x <= z && z == 5000000 - (x - 5000000));
+assert(x >= 5000000 && z == 10000000 - x || x < 5000000 && z == 5000000);
+assert(x <= 10000000 && z == 5000000 - max(0, x - 5000000));
+assert(x >= 0 && z == 5000000 - max(0, x - 5000000));
+assert(z == 5000000 - (x - 5000000) && x >= 5000000 || z == 5000000 && x <= 5000000);
+assert((x < 5000000 && z == 5000000) || (x >= 5000000 && x <= 10000000 && z == 10000000 - x));
+assert((x <= 10000000) && (x < 5000000 && z == 5000000) || (x >= 5000000 && z == 10000000 - x));
+assert(x + z == 10000000);
+assert(x <= 10000000 && (x < 5000000 || z == 10000000 - x));
+assert(z == 10000000 - x || x < 5000000);
+assert((z == 5000000 - (x - 5000000) && x >= 5000000) || (z == 5000000 && x <= 5000000));
+assert(x >= 0 && x <= 10000000 && (x < 5000000 || z == 5000000 - (x - 5000000)));
+assert(x >= 0 && (x < 5000000 || z == 5000000 - (x - 5000000)));
+119.47344517707825	assert(x <= 10000000 && ((x >= 5000000 && z == 5000000 - (x - 5000000)) || (x < 5000000 && z == 5000000)));	21
+
+Benchmarks/Linear/c/299.c
+assert(x >= 0);
+assert(z >= 5000000);
+assert((x < 5000000) || (z == x + 5000000));
+assert(z == x || z == 5000000 + (x - 5000000));
+assert(z == 5000000 || z == x);
+assert(x <= 10000000);
+assert(z - x == 5000000 || x >= 10000000);
+assert(z == x || (x < 5000000 && z == 5000000));
+assert((x >= 5000000 && z == x + 1) || (x < 5000000 && z == 5000000));
+assert((x > 5000000 && z == 5000000 + x - 5000000) || (x <= 5000000 && z == 5000000));
+assert(z == x || z == 5000000 + x - 5000000);
+assert(x <= 10000000 && (z == 5000000 + (x - 5000000) * (x >= 5000000)));
+assert((x >= 5000000 && z == 5000000 + x) || (x < 5000000 && z == 5000000));
+assert(z == 5000000 + (x - 5000000) || (x < 5000000 && z == 5000000));
+assert(z == x || z == 5000000 && x >= 5000000);
+assert((x >= 5000000 && z == 5000000 + x - 5000000) || (x < 5000000 && z == 5000000));
+assert((z == 5000000 + x - 5000000 && x >= 5000000) || (z == 5000000 && x < 5000000));
+assert(z == x + 5000000 || z == x);
+assert(x >= z);
+assert(z == 5000000 + x);
+assert(z == 5000000 || x >= 5000000);
+assert((x >= 5000000 && z == x + 5000000) || (x < 5000000 && z == 5000000));
+91.4664990901947	assert((x > 5000000 && z == 5000000 + x - 5000000) || (x <= 5000000 && z == 5000000));	17
+
+Benchmarks/Linear/c/300.c
+assert(i >= 0 && j >= 0 && k >= 0);
+assert(i % 3 == 0);
+assert(i == j + k);
+assert((j % 3 == 0) && (k % 3 == 0));
+assert((i % 3) == 0);
+assert(i <= n);
+assert(j % 3 == 0);
+assert(k % 3 == 0);
+assert(j + k == i);
+assert((j % 3) == 0);
+assert((k % 3) == 0);
+assert((i % 2) != 0 || j == k);
+assert(i >= 0 && i <= n + 3);
+assert(j >= 0 && k >= 0);
+assert((i % 6 == 0 && j == k) || (i % 6 == 3 && j == k + 3));
+assert((i % 6 == 0 && j == i / 2) || (i % 6 == 3 && j == (i - 3) / 2 + 3));
+assert(j % 3 == 0 && k % 3 == 0);
+assert((n > 0 && i >= n && i < n + 3) || n <= 0);
+76.3745744228363	assert((n <= 20000001) && (i >= 0) && (j >= 0) && (k >= 0) && (i % 3 == 0) && (i == j + k) && ((j % 3 == 0)) && ((k % 3 == 0)) && ((i % 3) == 0) && (j % 3 == 0) && (k % 3 == 0) && (j + k == i) && ((j % 3) == 0) && ((k % 3) == 0) && (((i % 2) != 0)||(j == k)) && (((i % 6 == 0 && j == k))||((i % 6 == 3 && j == k + 3))) && (((i % 6 == 0 && j == i / 2))||((i % 6 == 3 && j == (i - 3) / 2 + 3))));	2
+
+Benchmarks/Linear/c/301.c
+assert(i % 3 == 0);
+assert(i >= 0);
+assert(i <= n);
+assert(i >= 0 && i <= n);
+assert(n <= 50000001);
+16.728363752365112	assert(i % 3 == 0);	1
+
+Benchmarks/Linear/c/302.c
+assert(i >= 0);
+assert(i % 4 == 0);
+assert(i % 4 == 0 || i % 4 == 8);
+assert((i % 4) == 0 || (i % 4) == 8);
+15.189208030700684	assert(i >= 0);	1
+
+Benchmarks/Linear/c/303.c
+assert(x == 0);
+assert(x >= 0);
+assert(x <= 100000000);
+assert((x < 10000000) || ((x >= 10000000) && (x % 2 == 0)));
+assert(x < 10000000 || x % 2 == 0);
+assert(x == 0 || x >= 10000000);
+assert(x % 2 == 0 || x < 10000000);
+assert(x < 100000002);
+assert((x % 2) == 0 || (x % 2) == 1);
+assert((x < 10000000 && x % 2 == 0) || (x >= 10000000 && x % 2 == 0));
+assert(x <= 100000000 && (x < 10000000 || x % 2 == 0));
+assert(x < 100000000 && (x % 2 == 0 || x < 10000000));
+35.66181993484497	assert((x >= 0) && (x <= 100000000) && (((x < 10000000))||(((x >= 10000000) && (x % 2 == 0)))) && ((x < 10000000)||(x % 2 == 0)) && ((x % 2 == 0)||(x < 10000000)) && (x < 100000002) && (((x % 2) == 0)||((x % 2) == 1)) && ((x < 10000000 || x % 2 == 0)) && ((x % 2 == 0 || x < 10000000)));	2
+
+Benchmarks/Linear/c/304.c
+assert(x <= 10000000);
+assert(z % 2 == 0);
+assert((x >= 5000000 && z == 2 * (x - 5000000)) || (x < 5000000 && z == 0));
+assert((x <= 10000000) && (z % 2 == 0));
+20.63335418701172	assert(z % 2 == 0);	3
+
+Benchmarks/Linear/c/305.c
+assert(x >= 0 && x <= 1000000);
+assert((x >= 750000 && (x - 750000) % 2 == 0) || x < 750000);
+assert(x >= 0);
+assert(x <= 1000000);
+assert(x >= 750000 || x < 750000);
+assert(x >= 750000 || x % 1 == 0);
+assert(x >= 750000 || (x >= 0 && x < 750000));
+assert(x >= 0 && x <= 1000000 && (x < 750000 || (x >= 750000 && x % 2 == 0)));
+assert(x >= 0 && x <= 1000002 && (x <= 750000 || x % 2 == 0));
+28.84986186027527	assert((x >= 0) && (x <= 1000000) && (((x >= 750000 && (x - 750000) % 2 == 0))||(x < 750000)) && ((x >= 750000)||(x < 750000)) && ((x >= 750000)||(x % 1 == 0)) && ((x >= 750000)||((x >= 0 && x < 750000))) && ((x < 750000 || (x >= 750000 && x % 2 == 0))) && (x <= 1000002) && ((x <= 750000 || x % 2 == 0)));	2
+
+Benchmarks/Linear/c/306.c
+assert(l <= n);
+assert(i + j == l);
+assert((l % 2 == 0 && i == (l + 1) / 2 && j == l / 2) || (l % 2 != 0 && i == l / 2 && j == (l + 1) / 2));
+assert((i + j) == l);
+assert(i == (l + 1) / 2 || j == l / 2);
+assert(l == i + j);
+assert(l >= 0 && l <= n);
+assert((l <= n) && (i + j == l));
+26.403258085250854	assert(i + j == l);	3
+
+Benchmarks/Linear/c/307.c
+assert(l == i + j + k);
+assert(l <= n);
+assert(j == (l / 6 + (l % 6 == 0 ? 0 : 1)));
+assert(k == l - i - j);
+assert((l % 3 == 0 && i == l / 3) || (l % 3 != 0 && i == l / 3 + 1));
+35.13934540748596	assert(l == i + j + k);	1
+
+Benchmarks/Linear/c/308.c
+assert((i + j + k + v4) == l);
+assert(l >= 0);
+assert(l <= n);
+assert(l == n);
+assert(v4 == ((l + 3) / 4));
+assert(i <= l / 3);
+assert(j <= l / 2);
+assert(k + i + j + v4 == l);
+assert(v4 == (l + 3) / 4);
+assert(i == l / 3 - v4 / 3);
+assert(j == l / 2 - v4 / 2 - i / 2);
+143.5446059703827	assert((i + j + k + v4) == l);	1
+
+Benchmarks/Linear/c/309.c
+assert(l <= n);
+assert((i + j + k + v4 + v3) == l);
+assert(l == n);
+assert(v3 == (l + 4) / 5);
+assert(v4 == (l + 3) / 4 - v3);
+assert(i == (l + 2) / 3 - v4 - v3);
+assert(j == (l + 1) / 2 - i - v4 - v3);
+assert(k == l - j - i - v4 - v3);
+assert(i + j + k + v4 + v3 == l);
+assert((l >= 0) && (l <= n) && ((i + j + k + v4 + v3) == l));
+assert(l == 0 && n == 0 || l <= n);
+183.32073163986206	assert((i + j + k + v4 + v3) == l);	3
+
+Benchmarks/Linear/c/310.c
+assert(l <= n);
+assert(l == i + j + k + v4 + v3 + v2);
+assert((i + j + k + v4 + v3 + v2) == l);
+assert((l == 0) || (v3 == l / 5 - l / 30 + (l % 5 == 0 && l % 6 != 0 ? 1 : 0)));
+assert((l == 0) || (i == l / 3 - l / 6 - l / 12 + l / 60 + (l % 3 == 0 && l % 2 != 0 && l % 4 != 0 ? 1 : 0)));
+assert((l == 0) || (k == l - (l / 2) - (l / 3) + (l / 6) - (l / 4) + (l / 12) - (l / 5) + (l / 30) - (l / 15) + (l / 60) + (l % 6 != 0 && l % 5 != 0 && l % 4 != 0 && l % 3 != 0 && l % 2 != 0 ? 1 : 0)));
+assert((l == 0) || (v2 == l / 6 + (l % 6 == 0 && 1) || (l % 6 != 0 && 0)));
+assert((l == 0) || ((l % 4 == 0 && l % 3 != 0 && l % 5 != 0) && v4 == l / 4 - l / 12 - l / 20 + l / 60 + 1) || !(l % 4 == 0 && l % 3 != 0 && l % 5 != 0) && v4 == l / 4 - l / 12 - l / 20 + l / 60);
+assert((l == 0) || (j == l / 2 - l / 4 - l / 6 + l / 12 + (l % 2 == 0 && l % 3 != 0) || (l % 2 != 0 || l % 3 == 0)));
+assert((l == 0 && i == 0 && j == 0 && k == 0 && v4 == 0 && v3 == 0 && v2 == 0) || l == n);
+assert(l == 0 || (i + j + k + v4 + v3 + v2) == l);
+180.11249947547913	assert(l == i + j + k + v4 + v3 + v2);	3
+
+Benchmarks/Linear/c/311.c
+assert(l <= n);
+assert(v1 + v2 + v3 + v4 + i + j + k + l == n);
+assert(l == n);
+assert(l == i + j + k + v4 + v3 + v2 + v1);
+assert((i + j + k + v4 + v3 + v2 + v1) == l);
+assert(l >= 0 && l <= n);
+assert(l == i + j + k + v4 + v3 + v2 + v1 || l == 0);
+assert(l <= n && (i + j + k + v4 + v3 + v2 + v1) == l);
+assert(l == 0 || (i + j + k + v4 + v3 + v2 + v1 + l == n));
+assert((l == 0 && i == 0 && j == 0 && k == 0 && v1 == 0 && v2 == 0 && v3 == 0 && v4 == 0) || (i + j + k + v4 + v3 + v2 + v1 == l));
+assert(l == n && (i + j + k + v4 + v3 + v2 + v1) == l);
+228.82822704315186	assert(l == i + j + k + v4 + v3 + v2 + v1);	5
+
+Benchmarks/Linear/c/312.c
+assert(l <= n);
+assert((i + j + k + v4 + v3 + v2 + v1 + v5) == l);
+assert(l == i + j + k + v4 + v3 + v2 + v1 + v5);
+assert(l >= 0 && l <= n);
+assert((l == 0 && i == 0 && j == 0 && k == 0 && v1 == 0 && v2 == 0 && v3 == 0 && v4 == 0 && v5 == 0) || (i + j + k + v1 + v2 + v3 + v4 + v5 == l));
+assert(l == 0 || (i + j + k + v4 + v3 + v2 + v1 + v5) == l);
+166.751797914505	assert((i + j + k + v4 + v3 + v2 + v1 + v5) == l);	3
+
+Benchmarks/Linear/c/313.c
+assert(l == i + j + k + v4 + v3 + v2 + v1 + v5 + v6);
+assert(l >= 0 && l <= n);
+assert(l <= n);
+assert((i + j + k + v4 + v3 + v2 + v1 + v5 + v6) == l);
+125.60404658317566	assert(l == i + j + k + v4 + v3 + v2 + v1 + v5 + v6);	1
+
+Benchmarks/Linear/c/314.c
+assert(i == j);
+assert(i == k);
+assert(j == k);
+assert(i >= 0 && i <= n);
+assert(j >= 0 && j <= n);
+assert(k >= 0 && k <= n);
+assert((n - i) % 3 == 0);
+assert(i % 3 == 0);
+assert(j % 3 == 0);
+assert(k % 3 == 0);
+assert(i >= 0);
+assert(i <= n);
+assert(i == j && j == k);
+assert(i % 3 == 0 && j % 3 == 0 && k % 3 == 0);
+assert(i <= n && j <= n && k <= n);
+31.142821550369263	assert(i == j);	1
+
+Benchmarks/Linear/c/315.c
+assert(k == j);
+assert(i == j);
+assert(i == k);
+assert(k % 3 == 0);
+assert(j % 3 == 0);
+assert(i % 3 == 0);
+assert(i <= n);
+assert(j <= n + 2);
+assert(k <= n + 2);
+assert(i == j && j == k);
+assert(i % 3 == 0 && j % 3 == 0 && k % 3 == 0);
+assert(j == k);
+assert(j <= n);
+assert(k <= n);
+assert((n - i) % 3 == 0);
+24.523958921432495	assert(k == j);	1
+
+Benchmarks/Linear/c/316.c
+assert(i == j && j == k);
+assert(i % 3 == 0);
+assert(i <= n);
+assert(n > 0 && n <= 20000001);
+assert(i <= n + 2);
+assert(i == 3 * ((i + 2) / 3));
+assert(i == j);
+assert(i == k);
+assert(j % 3 == 0);
+assert(k % 3 == 0);
+assert(i % 3 == 0 && j % 3 == 0 && k % 3 == 0);
+assert(i <= 3 * n);
+assert((i == j) && (j == k) && (k == 3 * (i / 3)));
+assert(i == 3 * (i / 3));
+assert((n - i) % 3 == 0);
+assert((i == 0 && j == 0 && k == 0) || (i == n + 3 - (n % 3) && j == n + 3 - (n % 3) && k == n + 3 - (n % 3)));
+assert(i == 3 * (i / 3) && j == i && k == i);
+assert(i == j && i == k && j == k);
+assert(i <= n + 2 && (i - n + 2) % 3 == 0);
+assert((i % 3) == 0 && (j % 3) == 0 && (k % 3) == 0);
+assert(i == k && k == j && i == j && j % 3 == 0 && i <= n + 2);
+assert((n - 1) / 3 * 3 + 3 == i || i == 0);
+assert(i == j && j == k && i % 3 == 0);
+assert(n > i || i == n + (3 - n % 3));
+assert(i == 3 * j && j == k && i <= n && (n - i) % 3 == 0);
+assert(i == 3 * k && i == k && k == j);
+assert(i == j && j == k && k == 3 * (i / 3));
+assert(i == j && j == k && i <= n && (i == n || i == n + 1 || i == n + 2));
+assert(j == i);
+assert(k == i);
+assert((i % 3 == 0 && j % 3 == 0 && k % 3 == 0) || i == 0);
+assert((i == 0 && n < 3) || (i >= 3 && (i - 3) % 3 == 0));
+assert(i == j && j == k && k == i && i % 3 == 0);
+assert(i == 3 * (i / 3) && j == i && k == i && n > 0 && n <= 20000001);
+assert(i == 3 * (i / 3) && j == i && k == i && i <= n + 2);
+assert((i == 0 && n == 0) || (i >= 3 && (i - 3) % 3 == 0));
+assert((i == 0 && j == 0 && k == 0 && n > 20000001) || (i <= n + 2 && j == i && k == i && (i - n + 2) % 3 == 0));
+assert((i == j) && (j == k) && (i % 3 == 0));
+assert((i == j) && (j == k));
+assert((i % 3) == 0);
+141.84585309028625	assert(i == k && k == j && i == j && j % 3 == 0 && i <= n + 2);	30
+

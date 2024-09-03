@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/212.c
+GPT Answer: ['assert((nonexclusive + unowned) >= 1 && invalid >= 1 || exclusive >= 0);', 'assert(invalid >= 0);', 'assert(nonexclusive + unowned + exclusive >= 1);', 'assert((nonexclusive + unowned) >= 1 && invalid >= 1 || nonexclusive + unowned + invalid + exclusive >= 2);', 'assert(exclusive >= 0);', 'assert(nonexclusive >= 0);', 'assert(unowned >= 0);', 'assert((nonexclusive + unowned) >= 0);', 'assert(((nonexclusive + unowned) >= 1 && invalid >= 1) || invalid >= 1);', 'assert(invalid >= 1);', 'assert(exclusive <= 1);', 'assert((nonexclusive + unowned) >= 1 || invalid >= 1);']
+AnsSet: ['(exclusive >= 0)', 'exclusive >= 0', 'nonexclusive >= 0', 'unowned >= 0', '(nonexclusive + unowned) >= 0', 'exclusive <= 1']
+Candidate: assert((nonexclusive + unowned) >= 1 && invalid >= 1 || exclusive >= 0);
+SMTLIB2: (assert (or (and (>= (+ nonexclusive unowned) 1) (>= invalid 1)) (>= exclusive 0)))
+ (or (and (>= (+ nonexclusive unowned) 1) (>= invalid 1)) (>= exclusive 0))
+n{'exclusive': -1, 'invalid': 1, 'nonexclusive': 1, 'unowned': 0}
+Size of CE: 1
+GPT Answer: ['assert((nonexclusive + unowned) >= 1 && invalid >= 1 || exclusive >= 0);', 'assert(invalid >= 0);', 'assert(nonexclusive + unowned + exclusive >= 1);', 'assert((nonexclusive + unowned) >= 1 && invalid >= 1 || nonexclusive + unowned + invalid + exclusive >= 2);', 'assert(exclusive >= 0);', 'assert(nonexclusive >= 0);', 'assert(unowned >= 0);', 'assert((nonexclusive + unowned) >= 0);', 'assert(((nonexclusive + unowned) >= 1 && invalid >= 1) || invalid >= 1);', 'assert(invalid >= 1);', 'assert(exclusive <= 1);', 'assert((nonexclusive + unowned) >= 1 || invalid >= 1);']
+AnsSet: ['(exclusive >= 0)', 'exclusive >= 0', 'nonexclusive >= 0', 'unowned >= 0', '(nonexclusive + unowned) >= 0', 'exclusive <= 1']
+GPT Answer: ['assert((nonexclusive + unowned) >= 1 && invalid >= 1 || exclusive >= 0);', 'assert(invalid >= 0);', 'assert(nonexclusive + unowned + exclusive >= 1);', 'assert((nonexclusive + unowned) >= 1 && invalid >= 1 || nonexclusive + unowned + invalid + exclusive >= 2);', 'assert(exclusive >= 0);', 'assert(nonexclusive >= 0);', 'assert(unowned >= 0);', 'assert((nonexclusive + unowned) >= 0);', 'assert(((nonexclusive + unowned) >= 1 && invalid >= 1) || invalid >= 1);', 'assert(invalid >= 1);', 'assert(exclusive <= 1);', 'assert((nonexclusive + unowned) >= 1 || invalid >= 1);', 'assert(exclusive >= 0 && invalid >= 1);']
+AnsSet: ['(exclusive >= 0)', 'exclusive >= 0', 'nonexclusive >= 0', 'unowned >= 0', '(nonexclusive + unowned) >= 0', 'exclusive <= 1']
+=================Verifivation Begin=================
+CombineCandidate: assert(((exclusive >= 0)) && (exclusive >= 0) && (nonexclusive >= 0) && (unowned >= 0) && ((nonexclusive + unowned) >= 0) && (exclusive <= 1));
+CombineSMTLIB2: (assert (and (and (and (and (and (>= exclusive 0) (>= exclusive 0)) (>= nonexclusive 0)) (>= unowned 0)) (>= (+ nonexclusive unowned) 0)) (<= exclusive 1)))
+ (and (and (and (and (and (>= exclusive 0) (>= exclusive 0)) (>= nonexclusive 0)) (>= unowned 0)) (>= (+ nonexclusive unowned) 0)) (<= exclusive 1))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((exclusive >= 0)) && (exclusive >= 0) && (nonexclusive >= 0) && (unowned >= 0) && ((nonexclusive + unowned) >= 0) && (exclusive <= 1));
+Time cost is :  26.90600347518921
+The proposal times is :  2

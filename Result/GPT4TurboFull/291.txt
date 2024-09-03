@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/291.c
+GPT Answer: ['assert(x < y || x >= y);', 'assert(y <= 20000001);', 'assert(y <= 20000001 + 3 * ((x - y + 9) / 17));']
+AnsSet: ['(x < y)||(x >= y)']
+Candidate: assert(x < y || x >= y);
+SMTLIB2: (assert (or (< x y) (>= x y)))
+ (or (< x y) (>= x y))
+The answer is :  assert(x < y || x >= y);
+Time cost is :  26.199216842651367
+The proposal times is :  1

@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/153.c
+GPT Answer: ['assert((w == 1 && z == 0) || (w == 0 && z == 1));', 'assert(x == y);', 'assert(w == 1 || w == 0);', 'assert(z == 1 || z == 0);', 'assert(w == 0 || x == y);', 'assert(w == 1 && z == 0 || w == 0 && z == 1);', 'assert(w == 0 || w == 1);', 'assert(z == 0 || z == 1);', 'assert((w == 1 && z == 0) || (w != 1 && z == 0) || (w == 1 && z != 0) || (w != 1 && z != 0));']
+AnsSet: ['((w == 1 && z == 0))||((w == 0 && z == 1))', 'x == y', '(w == 1)||(w == 0)', '(z == 1)||(z == 0)', '(w == 0)||(x == y)', '(w == 1 && z == 0)||(w == 0 && z == 1)', '(w == 0)||(w == 1)', '(z == 0)||(z == 1)', '((w == 1 && z == 0))||((w != 1 && z != 0))']
+Candidate: assert((w == 1 && z == 0) || (w == 0 && z == 1));
+SMTLIB2: (assert (or (and (= w 1) (= z 0)) (and (= w 0) (= z 1))))
+ (or (and (= w 1) (= z 0)) (and (= w 0) (= z 1)))
+n{'y': 0, 'z': 1, 'w': 0, 'x': 1}
+Size of CE: 1
+GPT Answer: ['assert((w == 1 && z == 0) || (w == 0 && z == 1));', 'assert(x == y);', 'assert(w == 1 || w == 0);', 'assert(z == 1 || z == 0);', 'assert(w == 0 || x == y);', 'assert(w == 1 && z == 0 || w == 0 && z == 1);', 'assert(w == 0 || w == 1);', 'assert(z == 0 || z == 1);', 'assert((w == 1 && z == 0) || (w != 1 && z == 0) || (w == 1 && z != 0) || (w != 1 && z != 0));']
+AnsSet: ['((w == 1 && z == 0))||((w == 0 && z == 1))', 'x == y', '(w == 1)||(w == 0)', '(z == 1)||(z == 0)', '(w == 0)||(x == y)', '(w == 1 && z == 0)||(w == 0 && z == 1)', '(w == 0)||(w == 1)', '(z == 0)||(z == 1)', '((w == 1 && z == 0))||((w != 1 && z != 0))']
+GPT Answer: ['assert((w == 1 && z == 0) || (w == 0 && z == 1));', 'assert(x == y);', 'assert(w == 1 || w == 0);', 'assert(z == 1 || z == 0);', 'assert(w == 0 || x == y);', 'assert(w == 1 && z == 0 || w == 0 && z == 1);', 'assert(w == 0 || w == 1);', 'assert(z == 0 || z == 1);', 'assert((w == 1 && z == 0) || (w != 1 && z == 0) || (w == 1 && z != 0) || (w != 1 && z != 0));', 'assert(w == 0 && z == 1 && x == y);']
+AnsSet: ['((w == 1 && z == 0))||((w == 0 && z == 1))', 'x == y', '(w == 1)||(w == 0)', '(z == 1)||(z == 0)', '(w == 0)||(x == y)', '(w == 1 && z == 0)||(w == 0 && z == 1)', '(w == 0)||(w == 1)', '(z == 0)||(z == 1)', '((w == 1 && z == 0))||((w != 1 && z != 0))']
+=================Verifivation Begin=================
+CombineCandidate: assert((((w == 1 && z == 0))||((w == 0 && z == 1))) && (x == y) && ((w == 1)||(w == 0)) && ((z == 1)||(z == 0)) && ((w == 0)||(x == y)) && ((w == 1 && z == 0)||(w == 0 && z == 1)) && ((w == 0)||(w == 1)) && ((z == 0)||(z == 1)) && (((w == 1 && z == 0))||((w != 1 && z != 0))));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (and (or (and (= w 1) (= z 0)) (and (= w 0) (= z 1))) (= x y)) (or (= w 1) (= w 0))) (or (= z 1) (= z 0))) (or (= w 0) (= x y))) (or (and (= w 1) (= z 0)) (and (= w 0) (= z 1)))) (or (= w 0) (= w 1))) (or (= z 0) (= z 1))) (or (and (= w 1) (= z 0)) (and (not (= w 1)) (not (= z 0))))))
+ (and (and (and (and (and (and (and (and (or (and (= w 1) (= z 0)) (and (= w 0) (= z 1))) (= x y)) (or (= w 1) (= w 0))) (or (= z 1) (= z 0))) (or (= w 0) (= x y))) (or (and (= w 1) (= z 0)) (and (= w 0) (= z 1)))) (or (= w 0) (= w 1))) (or (= z 0) (= z 1))) (or (and (= w 1) (= z 0)) (and (not (= w 1)) (not (= z 0)))))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((((w == 1 && z == 0))||((w == 0 && z == 1))) && (x == y) && ((w == 1)||(w == 0)) && ((z == 1)||(z == 0)) && ((w == 0)||(x == y)) && ((w == 1 && z == 0)||(w == 0 && z == 1)) && ((w == 0)||(w == 1)) && ((z == 0)||(z == 1)) && (((w == 1 && z == 0))||((w != 1 && z != 0))));
+Time cost is :  45.71919631958008
+The proposal times is :  2

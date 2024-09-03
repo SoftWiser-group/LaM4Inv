@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/92.c
+GPT Answer: ['assert(y >= 0);', 'assert(x == 0);', 'assert(y >= 0 && x >= 0);', 'assert(y >= 0 && x == 0);']
+AnsSet: ['x == 0', 'y == 0', 'x >= 0']
+Candidate: assert(y >= 0);
+SMTLIB2: (assert (>= y 0))
+ (>= y 0)
+i({'x': -1, 'y': 0}, {'x': -1, 'y': -1})
+Size of CE: 1
+GPT Answer: ['assert(y >= 0);', 'assert(x == 0);', 'assert(y >= 0 && x >= 0);', 'assert(y >= 0 && x == 0);', 'assert(x >= 0);']
+AnsSet: ['x == 0', 'y == 0', 'x >= 0']
+GPT Answer: ['assert(y >= 0);', 'assert(x == 0);', 'assert(y >= 0 && x >= 0);', 'assert(y >= 0 && x == 0);', 'assert(x >= 0);', 'assert((x >= 0 && y >= 0) || (x <= 0));']
+AnsSet: ['x == 0', 'y == 0', 'x >= 0', '((x >= 0 && y >= 0))||((x <= 0))']
+=================Verifivation Begin=================
+CombineCandidate: assert((x == 0) && (y == 0) && (x >= 0) && (((x >= 0 && y >= 0))||((x <= 0))));
+CombineSMTLIB2: (assert (and (and (and (= x 0) (= y 0)) (>= x 0)) (or (and (>= x 0) (>= y 0)) (<= x 0))))
+ (and (and (and (= x 0) (= y 0)) (>= x 0)) (or (and (>= x 0) (>= y 0)) (<= x 0)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x == 0) && (y == 0) && (x >= 0) && (((x >= 0 && y >= 0))||((x <= 0))));
+Time cost is :  14.484626770019531
+The proposal times is :  2

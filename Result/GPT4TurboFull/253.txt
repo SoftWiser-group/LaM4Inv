@@ -1,0 +1,441 @@
+Begin_process:   Benchmarks/Linear/c/253.c
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0']
+Candidate: assert(j - i == 1);
+SMTLIB2: (assert (= (- j i) 1))
+ (= (- j i) 1)
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 1
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((i % 2 == 1) && (i % 2 != 0) && (i >= 1) && (j >= 1) && (a >= 0));
+CombineSMTLIB2: (assert (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0)))
+ (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0))
+n{'j': 1, 'b': 1, 'a': 1, 'i': 1}
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert(i % 2 == 1);
+SMTLIB2: (assert (= (mod i 2) 1))
+ (= (mod i 2) 1)
+n{'b': 1, 'a': 1, 'j': 0, 'i': 1}
+Size of CE: 3
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0']
+
+Candidate: assert(a == b);
+SMTLIB2: (assert (= a b))
+ (= a b)
+i({'a': -1, 'b': -1, 'i': 1, 'tmp': 0, 'j': 1}, {'j': 2, 'b': -1, 'i': 3, 'a': 0, 'tmp': 0})
+Size of CE: 4
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a']
+=================Verifivation Begin=================
+CombineCandidate: assert((i % 2 == 1) && (i % 2 != 0) && (i >= 1) && (j >= 1) && (a >= 0) && (b <= a));
+CombineSMTLIB2: (assert (and (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0)) (<= b a)))
+ (and (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0)) (<= b a))
+i({'b': 0, 'j': 3, 'i': 1, 'a': 0, 'tmp': 0}, {'j': 4, 'i': 3, 'a': 1, 'b': 2, 'tmp': 0})
+Size of CE: 5
+=================Verifivation Compelete=================
+
+Candidate: assert(i % 2 != 0);
+SMTLIB2: (assert (not (= (mod i 2) 0)))
+ (not (= (mod i 2) 0))
+n{'b': 1, 'a': 1, 'i': 1, 'j': 0}
+Size of CE: 6
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a']
+
+Candidate: assert(j >= i + 1);
+SMTLIB2: (assert (>= j (+ i 1)))
+ (>= j (+ i 1))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 7
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))']
+=================Verifivation Begin=================
+CombineCandidate: assert((i % 2 == 1) && (i % 2 != 0) && (i >= 1) && (j >= 1) && (a >= 0) && (b <= a) && (((i >= 1 && j >= 1))));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0)) (<= b a)) (and (>= i 1) (>= j 1))))
+ (and (and (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0)) (<= b a)) (and (>= i 1) (>= j 1)))
+i({'b': 0, 'j': 3, 'i': 1, 'a': 0, 'tmp': 0}, {'j': 4, 'i': 3, 'a': 1, 'b': 2, 'tmp': 0})
+Size of CE: 8
+=================Verifivation Compelete=================
+
+Candidate: assert(i >= 1);
+SMTLIB2: (assert (>= i 1))
+ (>= i 1)
+n{'b': 1, 'a': 1, 'i': 1, 'j': 0}
+Size of CE: 9
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+=================Verifivation Begin=================
+CombineCandidate: assert((i % 2 == 1) && (i % 2 != 0) && (i >= 1) && (j >= 1) && (a >= 0) && (b <= a) && (((i >= 1 && j >= 1))) && ((i % 2 == 1)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0)) (<= b a)) (and (>= i 1) (>= j 1))) (= (mod i 2) 1)))
+ (and (and (and (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0)) (<= b a)) (and (>= i 1) (>= j 1))) (= (mod i 2) 1))
+i({'i': 1, 'b': 0, 'j': 3, 'a': 0, 'tmp': 0}, {'j': 4, 'i': 3, 'a': 1, 'b': 2, 'tmp': 0})
+Size of CE: 10
+=================Verifivation Compelete=================
+
+Candidate: assert(j >= 1);
+SMTLIB2: (assert (>= j 1))
+ (>= j 1)
+n{'b': 1, 'a': 1, 'i': 0, 'j': 1}
+Size of CE: 11
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert(a >= 0);
+SMTLIB2: (assert (>= a 0))
+ (>= a 0)
+n{'b': 1, 'a': 1, 'i': 0, 'j': 0}
+Size of CE: 12
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert(b == a - i + j);
+SMTLIB2: (assert (= b (+ (- a i) j)))
+ (= b (+ (- a i) j))
+i({'tmp': 0, 'j': 0, 'b': 0, 'i': 0, 'a': 0}, {'j': 2, 'b': 0, 'i': 2, 'a': 1, 'tmp': 0})
+Size of CE: 13
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert(j == i || j == i + 1);
+SMTLIB2: (assert (or (= j i) (= j (+ i 1))))
+ (or (= j i) (= j (+ i 1)))
+i({'a': 0, 'b': 0, 'i': 1, 'tmp': 0, 'j': 1}, {'j': 2, 'i': 3, 'a': 1, 'b': 0, 'tmp': 0})
+Size of CE: 14
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert(b == 0 && a == 0 || b == a * (j - i) / 2);
+SMTLIB2: (assert (or (and (= b 0) (= a 0)) (= b (/ (* a (- j i)) 2))))
+ (or (and (= b 0) (= a 0)) (= b (/ (* a (- j i)) 2)))
+i({'i': -6, 'b': -8, 'j': -2, 'a': -4, 'tmp': 0}, {'j': 0, 'i': -4, 'a': -3, 'b': -4, 'tmp': 0})
+Size of CE: 15
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));
+SMTLIB2: (assert (or (and (and (and (= a 0) (= b 0)) (= j 1)) (= i 1)) (and (and (= (mod i 2) 1) (= j (+ i 1))) (= b a))))
+ (or (and (and (and (= a 0) (= b 0)) (= j 1)) (= i 1)) (and (and (= (mod i 2) 1) (= j (+ i 1))) (= b a)))
+i({'i': -3, 'b': -2, 'j': -2, 'a': -2, 'tmp': 0}, {'j': -1, 'i': -1, 'a': -1, 'b': -1, 'tmp': 0})
+Size of CE: 16
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert((i - j) % 2 == 0);
+SMTLIB2: (assert (= (mod (- i j) 2) 0))
+ (= (mod (- i j) 2) 0)
+i({'a': -1, 'j': 3, 'b': 0, 'i': 1, 'tmp': 0}, {'j': 4, 'i': 3, 'a': 0, 'b': 2, 'tmp': 0})
+Size of CE: 17
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert(i - j == 1);
+SMTLIB2: (assert (= (- i j) 1))
+ (= (- i j) 1)
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 18
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert(a >= 0 && b >= -1 && b <= a);
+SMTLIB2: (assert (and (and (>= a 0) (>= b (- 0 1))) (<= b a)))
+ (and (and (>= a 0) (>= b (- 0 1))) (<= b a))
+i({'a': 0, 'b': 0, 'i': 0, 'tmp': 0, 'j': 2}, {'j': 4, 'i': 2, 'a': 1, 'b': 2, 'tmp': 0})
+Size of CE: 19
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert(i % 2 == 1 && j == i);
+SMTLIB2: (assert (and (= (mod i 2) 1) (= j i)))
+ (and (= (mod i 2) 1) (= j i))
+i({'a': 0, 'j': 1, 'b': 4, 'i': 1, 'tmp': 0}, {'j': 2, 'i': 3, 'b': 4, 'a': 1, 'tmp': 0})
+Size of CE: 20
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+
+Candidate: assert(b == a * (j - i));
+SMTLIB2: (assert (= b (* a (- j i))))
+ (= b (* a (- j i)))
+i({'i': 3, 'tmp': 0, 'b': 2, 'j': 2, 'a': -2}, {'j': 3, 'i': 5, 'a': -1, 'b': 1, 'tmp': 0})
+Size of CE: 21
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((i % 2 == 1) && (i % 2 != 0) && (i >= 1) && (j >= 1) && (a >= 0) && (b <= a) && (((i >= 1 && j >= 1))) && ((i % 2 == 1)) && ((i - 1) % 2 == 0));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0)) (<= b a)) (and (>= i 1) (>= j 1))) (= (mod i 2) 1)) (= (mod (- i 1) 2) 0)))
+ (and (and (and (and (and (and (and (and (= (mod i 2) 1) (not (= (mod i 2) 0))) (>= i 1)) (>= j 1)) (>= a 0)) (<= b a)) (and (>= i 1) (>= j 1))) (= (mod i 2) 1)) (= (mod (- i 1) 2) 0))
+i({'i': 1, 'b': 0, 'j': 3, 'a': 0, 'tmp': 0}, {'j': 4, 'i': 3, 'a': 1, 'b': 2, 'tmp': 0})
+Size of CE: 22
+=================Verifivation Compelete=================
+
+Candidate: assert(!unknown() || (i >= 1 && j >= 1));
+SMTLIB2: (assert (or (not unknown) (and (>= i 1) (>= j 1))))
+ (or (not unknown) (and (>= i 1) (>= j 1)))
+
+Candidate: assert(a == b || (j >= i && (j - i) % 2 == 1));
+SMTLIB2: (assert (or (= a b) (and (>= j i) (= (mod (- j i) 2) 1))))
+ (or (= a b) (and (>= j i) (= (mod (- j i) 2) 1)))
+i({'i': 1, 'b': -1, 'j': 0, 'a': -1, 'tmp': 0}, {'j': 1, 'i': 3, 'a': 0, 'b': -2, 'tmp': 0})
+Size of CE: 23
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+
+Candidate: assert((i % 2 == 1) && (j == i));
+SMTLIB2: (assert (and (= (mod i 2) 1) (= j i)))
+ (and (= (mod i 2) 1) (= j i))
+i({'a': 0, 'j': 1, 'b': 4, 'i': 1, 'tmp': 0}, {'j': 2, 'i': 3, 'b': 4, 'a': 1, 'tmp': 0})
+Size of CE: 24
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+
+Candidate: assert(b == a - 1);
+SMTLIB2: (assert (= b (- a 1)))
+ (= b (- a 1))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 25
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);', 'assert(b == a - 1 || a == 0);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+
+Candidate: assert(j >= i);
+SMTLIB2: (assert (>= j i))
+ (>= j i)
+i({'a': 0, 'b': 0, 'i': 1, 'tmp': 0, 'j': 1}, {'j': 2, 'i': 3, 'a': 1, 'b': 0, 'tmp': 0})
+Size of CE: 26
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);', 'assert(b == a - 1 || a == 0);', 'assert(a == b + (i - 1) / 2);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);', 'assert(b == a - 1 || a == 0);', 'assert(a == b + (i - 1) / 2);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+
+Candidate: assert((i - j == 1) || (i - j == 0));
+SMTLIB2: (assert (or (= (- i j) 1) (= (- i j) 0)))
+ (or (= (- i j) 1) (= (- i j) 0))
+i({'a': -1, 'b': 1, 'i': 1, 'tmp': 0, 'j': 0}, {'j': 1, 'i': 3, 'a': 0, 'b': 0, 'tmp': 0})
+Size of CE: 27
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);', 'assert(b == a - 1 || a == 0);', 'assert(a == b + (i - 1) / 2);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);', 'assert(b == a - 1 || a == 0);', 'assert(a == b + (i - 1) / 2);', 'assert((i - j == 1) || (i - j == -1));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+
+Candidate: assert((j == i + 1) || (j == i));
+SMTLIB2: (assert (or (= j (+ i 1)) (= j i)))
+ (or (= j (+ i 1)) (= j i))
+i({'a': -1, 'b': 0, 'i': 1, 'tmp': 0, 'j': 1}, {'j': 2, 'i': 3, 'a': 0, 'b': 0, 'tmp': 0})
+Size of CE: 28
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);', 'assert(b == a - 1 || a == 0);', 'assert(a == b + (i - 1) / 2);', 'assert((i - j == 1) || (i - j == -1));', 'assert((j - i == 1) || (j - i == 0));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);', 'assert(b == a - 1 || a == 0);', 'assert(a == b + (i - 1) / 2);', 'assert((i - j == 1) || (i - j == -1));', 'assert((j - i == 1) || (j - i == 0));', 'assert((j == i + 1) && ((i % 2 == 1) && (j % 2 == 0)) || (j == i) && ((i % 2 == 0) && (j % 2 == 0)));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+
+Candidate: assert(j == i + 1);
+SMTLIB2: (assert (= j (+ i 1)))
+ (= j (+ i 1))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 29
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);', 'assert(b == a - 1 || a == 0);', 'assert(a == b + (i - 1) / 2);', 'assert((i - j == 1) || (i - j == -1));', 'assert((j - i == 1) || (j - i == 0));', 'assert((j == i + 1) && ((i % 2 == 1) && (j % 2 == 0)) || (j == i) && ((i % 2 == 0) && (j % 2 == 0)));', 'assert(a == 0 || j >= i);']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+GPT Answer: ['assert(j - i == 1);', 'assert(i % 2 == 1);', 'assert(a == b);', 'assert(i % 2 != 0);', 'assert(j >= i + 1);', 'assert(i >= 1);', 'assert(j >= 1);', 'assert(a >= 0);', 'assert(b == a - i + j);', 'assert(j == i || j == i + 1);', 'assert(b == 0 && a == 0 || b == a * (j - i) / 2);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (i % 2 == 1 && j == i + 1 && b == a));', 'assert((i - j) % 2 == 0);', 'assert(i - j == 1);', 'assert(a >= 0 && b >= -1 && b <= a);', 'assert(i % 2 == 1 && j == i);', 'assert(b == a * (j - i));', 'assert(!unknown() || (i >= 1 && j >= 1));', 'assert(a == b || (j >= i && (j - i) % 2 == 1));', 'assert((i % 2 == 1) && (j == i));', 'assert(b == a - 1);', 'assert(j >= i);', 'assert((i - j == 1) || (i - j == 0));', 'assert((j == i + 1) || (j == i));', 'assert(j == i + 1);', 'assert(a >= 0 && i >= 1 && j >= 1);', 'assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);', 'assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);', 'assert((i - j) == -1 || (i - j) == 1);', 'assert((i - j) == 1 || (i - j) == -1);', 'assert(a == b || (i - j == 1));', 'assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));', 'assert(a >= 0 && b == a - 1);', 'assert((i - j) % 2 == 0 && i % 2 == 1);', 'assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));', 'assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));', 'assert(b == a * (j - i + 1));', 'assert((i - 1) % 2 == 0 && j == i);', 'assert((a + b == i - 1) && ((j - i) % 2 == 1));', 'assert((i - j) % 2 == 1 && a == -b);', 'assert((i - j == -1) && (b == a * (i - 1)));', 'assert(i % 2 == 1 && j == i && a - b == 1);', 'assert(a == 0 && b == 0 || b == a - 1);', 'assert(b == a - 1 || a == 0);', 'assert(a == b + (i - 1) / 2);', 'assert((i - j == 1) || (i - j == -1));', 'assert((j - i == 1) || (j - i == 0));', 'assert((j == i + 1) && ((i % 2 == 1) && (j % 2 == 0)) || (j == i) && ((i % 2 == 0) && (j % 2 == 0)));', 'assert(a == 0 || j >= i);', 'assert((a == 0 && b == 0 && j == 1 && i == 1) || (j >= i && (j - i) % 2 == 0));']
+AnsSet: ['i % 2 == 1', 'i % 2 != 0', 'i >= 1', 'j >= 1', 'a >= 0', 'b <= a', '((i >= 1 && j >= 1))', '(i % 2 == 1)', '(i - 1) % 2 == 0']
+
+Candidate: assert(a >= 0 && i >= 1 && j >= 1);
+SMTLIB2: (assert (and (and (>= a 0) (>= i 1)) (>= j 1)))
+ (and (and (>= a 0) (>= i 1)) (>= j 1))
+n{'b': 1, 'a': 1, 'i': 1, 'j': 1}
+Size of CE: 30
+
+Candidate: assert(i >= 1 && j >= 1 && a >= 0 && b == a * (j - i) / 2);
+SMTLIB2: (assert (and (and (and (>= i 1) (>= j 1)) (>= a 0)) (= b (/ (* a (- j i)) 2))))
+ (and (and (and (>= i 1) (>= j 1)) (>= a 0)) (= b (/ (* a (- j i)) 2)))
+i({'i': 17, 'b': -52, 'j': 4, 'a': 8, 'tmp': 0}, {'j': 5, 'i': 19, 'a': 9, 'b': -65, 'tmp': 0})
+Size of CE: 31
+
+Candidate: assert(i % 2 == 1 && j == i + (i + 1) / 2 && b == a - (i - 1) / 2);
+SMTLIB2: (assert (and (and (= (mod i 2) 1) (= j (+ i (/ (+ i 1) 2)))) (= b (- a (/ (- i 1) 2)))))
+ (and (and (= (mod i 2) 1) (= j (+ i (/ (+ i 1) 2)))) (= b (- a (/ (- i 1) 2))))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 32
+
+Candidate: assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1) / 2);
+SMTLIB2: (assert (and (and (= (mod i 2) 1) (= j (+ i 1))) (= b (/ (* a (- i 1)) 2))))
+ (and (and (= (mod i 2) 1) (= j (+ i 1))) (= b (/ (* a (- i 1)) 2)))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 33
+
+Candidate: assert((i - j) == -1 || (i - j) == 1);
+SMTLIB2: (assert (or (= (- i j) (- 0 1)) (= (- i j) 1)))
+ (or (= (- i j) (- 0 1)) (= (- i j) 1))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 34
+
+Candidate: assert((i - j) == 1 || (i - j) == -1);
+SMTLIB2: (assert (or (= (- i j) 1) (= (- i j) (- 0 1))))
+ (or (= (- i j) 1) (= (- i j) (- 0 1)))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 35
+
+Candidate: assert(a == b || (i - j == 1));
+SMTLIB2: (assert (or (= a b) (= (- i j) 1)))
+ (or (= a b) (= (- i j) 1))
+i({'i': 0, 'b': -2, 'j': 2, 'a': -2, 'tmp': 0}, {'j': 4, 'i': 2, 'a': -1, 'b': 0, 'tmp': 0})
+Size of CE: 36
+
+Candidate: assert((a == 0 && b == 0) || (i % 2 == 1 && j == i + 1));
+SMTLIB2: (assert (or (and (= a 0) (= b 0)) (and (= (mod i 2) 1) (= j (+ i 1)))))
+ (or (and (= a 0) (= b 0)) (and (= (mod i 2) 1) (= j (+ i 1))))
+i({'i': 0, 'b': 0, 'j': -1, 'a': 0, 'tmp': 0}, {'j': 1, 'i': 2, 'a': 1, 'b': -1, 'tmp': 0})
+Size of CE: 37
+
+Candidate: assert(a >= 0 && b == a - 1);
+SMTLIB2: (assert (and (>= a 0) (= b (- a 1))))
+ (and (>= a 0) (= b (- a 1)))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 38
+
+Candidate: assert((i - j) % 2 == 0 && i % 2 == 1);
+SMTLIB2: (assert (and (= (mod (- i j) 2) 0) (= (mod i 2) 1)))
+ (and (= (mod (- i j) 2) 0) (= (mod i 2) 1))
+i({'a': 0, 'j': 1, 'b': 0, 'i': -1, 'tmp': 0}, {'j': 2, 'tmp': 0, 'i': 1, 'a': 1, 'b': 2})
+Size of CE: 39
+
+Candidate: assert(i % 2 == 1 && j >= i && (j == i || j == i + 1));
+SMTLIB2: (assert (and (and (= (mod i 2) 1) (>= j i)) (or (= j i) (= j (+ i 1)))))
+ (and (and (= (mod i 2) 1) (>= j i)) (or (= j i) (= j (+ i 1))))
+i({'j': 3, 'a': 0, 'b': 0, 'i': 3, 'tmp': 0}, {'j': 4, 'i': 5, 'a': 1, 'b': 0, 'tmp': 0})
+Size of CE: 40
+
+Candidate: assert(i % 2 == 1 && j == i + 1 && b == a * (i - 1));
+SMTLIB2: (assert (and (and (= (mod i 2) 1) (= j (+ i 1))) (= b (* a (- i 1)))))
+ (and (and (= (mod i 2) 1) (= j (+ i 1))) (= b (* a (- i 1))))
+p{'i': 1, 'b': 0, 'j': 1, 'a': 0}
+Size of CE: 41
+
+Candidate: assert(b == a * (j - i + 1));
+SMTLIB2: (assert (= b (* a (+ (- j i) 1))))
+ (= b (* a (+ (- j i) 1)))
+i({'a': -2, 'i': 3, 'tmp': 0, 'b': 2, 'j': 1}, {'j': 2, 'i': 5, 'a': -1, 'b': 0, 'tmp': 0})
+Size of CE: 42
+
+Candidate: assert((i - 1) % 2 == 0 && j == i);
+SMTLIB2: (assert (and (= (mod (- i 1) 2) 0) (= j i)))
+ (and (= (mod (- i 1) 2) 0) (= j i))
+i({'a': -1, 'j': 1, 'b': 5, 'i': 1, 'tmp': 0}, {'j': 2, 'b': 5, 'i': 3, 'a': 0, 'tmp': 0})
+Size of CE: 43
+
+Candidate: assert((a + b == i - 1) && ((j - i) % 2 == 1));
+SMTLIB2: (assert (and (= (+ a b) (- i 1)) (= (mod (- j i) 2) 1)))
+ (and (= (+ a b) (- i 1)) (= (mod (- j i) 2) 1))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 44
+
+Candidate: assert((i - j) % 2 == 1 && a == -b);
+SMTLIB2: (assert (and (= (mod (- i j) 2) 1) (= a (- 0 b))))
+ (and (= (mod (- i j) 2) 1) (= a (- 0 b)))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 45
+
+Candidate: assert((i - j == -1) && (b == a * (i - 1)));
+SMTLIB2: (assert (and (= (- i j) (- 0 1)) (= b (* a (- i 1)))))
+ (and (= (- i j) (- 0 1)) (= b (* a (- i 1))))
+p{'b': 0, 'j': 1, 'a': 0, 'i': 1}
+Size of CE: 46
+
+Candidate: assert(i % 2 == 1 && j == i && a - b == 1);
+SMTLIB2: (assert (and (and (= (mod i 2) 1) (= j i)) (= (- a b) 1)))
+ (and (and (= (mod i 2) 1) (= j i)) (= (- a b) 1))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 47
+
+Candidate: assert(a == 0 && b == 0 || b == a - 1);
+SMTLIB2: (assert (or (and (= a 0) (= b 0)) (= b (- a 1))))
+ (or (and (= a 0) (= b 0)) (= b (- a 1)))
+i({'a': 2, 'b': 1, 'i': 0, 'tmp': 0, 'j': 2}, {'j': 4, 'i': 2, 'a': 3, 'b': 3, 'tmp': 0})
+Size of CE: 48
+
+Candidate: assert(b == a - 1 || a == 0);
+SMTLIB2: (assert (or (= b (- a 1)) (= a 0)))
+ (or (= b (- a 1)) (= a 0))
+i({'a': 0, 'b': 0, 'i': -1, 'tmp': 0, 'j': 0}, {'j': 1, 'i': 1, 'a': 1, 'b': 1, 'tmp': 0})
+Size of CE: 49
+
+Candidate: assert(a == b + (i - 1) / 2);
+SMTLIB2: (assert (= a (+ b (/ (- i 1) 2))))
+ (= a (+ b (/ (- i 1) 2)))
+i({'i': -3, 'b': 1, 'a': -1, 'tmp': 0, 'j': -4}, {'j': -3, 'i': -1, 'a': 0, 'b': 0, 'tmp': 0})
+Size of CE: 50
+
+Candidate: assert((i - j == 1) || (i - j == -1));
+SMTLIB2: (assert (or (= (- i j) 1) (= (- i j) (- 0 1))))
+ (or (= (- i j) 1) (= (- i j) (- 0 1)))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 51
+
+Candidate: assert((j - i == 1) || (j - i == 0));
+SMTLIB2: (assert (or (= (- j i) 1) (= (- j i) 0)))
+ (or (= (- j i) 1) (= (- j i) 0))
+i({'a': 0, 'b': 0, 'i': 1, 'tmp': 0, 'j': 1}, {'j': 2, 'i': 3, 'a': 1, 'b': 0, 'tmp': 0})
+Size of CE: 52
+
+Candidate: assert((j == i + 1) && ((i % 2 == 1) && (j % 2 == 0)) || (j == i) && ((i % 2 == 0) && (j % 2 == 0)));
+SMTLIB2: (assert (or (and (= j (+ i 1)) (and (= (mod i 2) 1) (= (mod j 2) 0))) (and (= j i) (and (= (mod i 2) 0) (= (mod j 2) 0)))))
+ (or (and (= j (+ i 1)) (and (= (mod i 2) 1) (= (mod j 2) 0))) (and (= j i) (and (= (mod i 2) 0) (= (mod j 2) 0))))
+p{'a': 0, 'j': 1, 'b': 0, 'i': 1}
+Size of CE: 53
+
+Candidate: assert(a == 0 || j >= i);
+SMTLIB2: (assert (or (= a 0) (>= j i)))
+ (or (= a 0) (>= j i))
+i({'i': 1, 'j': 0, 'a': 0, 'tmp': 0, 'b': 0}, {'j': 1, 'i': 3, 'a': 1, 'b': -1, 'tmp': 0})
+Size of CE: 54
+
+Candidate: assert((a == 0 && b == 0 && j == 1 && i == 1) || (j >= i && (j - i) % 2 == 0));
+SMTLIB2: (assert (or (and (and (and (= a 0) (= b 0)) (= j 1)) (= i 1)) (and (>= j i) (= (mod (- j i) 2) 0))))
+ (or (and (and (and (= a 0) (= b 0)) (= j 1)) (= i 1)) (and (>= j i) (= (mod (- j i) 2) 0)))
+i({'i': -5, 'b': -5, 'j': -1, 'a': -2, 'tmp': 0}, {'j': 0, 'i': -3, 'a': -1, 'b': -1, 'tmp': 0})
+Size of CE: 55
+
+
+
+

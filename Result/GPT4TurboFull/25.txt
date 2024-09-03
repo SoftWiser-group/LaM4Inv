@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/25.c
+GPT Answer: ['assert(x >= 0 && x <= 10000);', 'assert(x >= 0);', 'assert(x <= 10000);']
+AnsSet: ['x >= 0', 'x <= 10000']
+Candidate: assert(x >= 0 && x <= 10000);
+SMTLIB2: (assert (and (>= x 0) (<= x 10000)))
+ (and (>= x 0) (<= x 10000))
+The answer is :  assert(x >= 0 && x <= 10000);
+Time cost is :  7.116698503494263
+The proposal times is :  1

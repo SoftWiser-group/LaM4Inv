@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/8.c
+GPT Answer: ['assert((x >= 0) && (y >= 0));', 'assert((x % 10 == y % 10));', 'assert((x >= 0) && (y >= 0) && (x == y));', 'assert(x >= 0);', 'assert(y >= 0);', 'assert(x == y || x == 0 && y == 0);', 'assert((x - y) == 0);', 'assert((x == y) || (x == 10 && y == 0));']
+AnsSet: ['(x >= 0)', '(y >= 0)', 'x >= 0', 'y >= 0']
+Candidate: assert((x >= 0) && (y >= 0));
+SMTLIB2: (assert (and (>= x 0) (>= y 0)))
+ (and (>= x 0) (>= y 0))
+n{'y': 0, 'x': 20}
+Size of CE: 1
+GPT Answer: ['assert((x >= 0) && (y >= 0));', 'assert((x % 10 == y % 10));', 'assert((x >= 0) && (y >= 0) && (x == y));', 'assert(x >= 0);', 'assert(y >= 0);', 'assert(x == y || x == 0 && y == 0);', 'assert((x - y) == 0);', 'assert((x == y) || (x == 10 && y == 0));', 'assert((x >= 0) && (y >= 0) && (x <= y + 10) && (y <= x + 10));']
+AnsSet: ['(x >= 0)', '(y >= 0)', 'x >= 0', 'y >= 0', '(x <= y + 10)', '(y <= x + 10)']
+GPT Answer: ['assert((x >= 0) && (y >= 0));', 'assert((x % 10 == y % 10));', 'assert((x >= 0) && (y >= 0) && (x == y));', 'assert(x >= 0);', 'assert(y >= 0);', 'assert(x == y || x == 0 && y == 0);', 'assert((x - y) == 0);', 'assert((x == y) || (x == 10 && y == 0));', 'assert((x >= 0) && (y >= 0) && (x <= y + 10) && (y <= x + 10));']
+AnsSet: ['(x >= 0)', '(y >= 0)', 'x >= 0', 'y >= 0', '(x <= y + 10)', '(y <= x + 10)']
+=================Verifivation Begin=================
+CombineCandidate: assert(((x >= 0)) && ((y >= 0)) && (x >= 0) && (y >= 0) && ((x <= y + 10)) && ((y <= x + 10)));
+CombineSMTLIB2: (assert (and (and (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0)) (<= x (+ y 10))) (<= y (+ x 10))))
+ (and (and (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0)) (<= x (+ y 10))) (<= y (+ x 10)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((x >= 0)) && ((y >= 0)) && (x >= 0) && (y >= 0) && ((x <= y + 10)) && ((y <= x + 10)));
+Time cost is :  21.130354166030884
+The proposal times is :  2

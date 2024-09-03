@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/96.c
+GPT Answer: ['assert(i == j && y == 1);', 'assert(i == j);', 'assert(y == 1);', 'assert(i >= 0);', 'assert(j >= 0);']
+AnsSet: ['i == j', 'y == 1', 'i >= 0', 'j >= 0']
+Candidate: assert(i == j && y == 1);
+SMTLIB2: (assert (and (= i j) (= y 1)))
+ (and (= i j) (= y 1))
+The answer is :  assert(i == j && y == 1);
+Time cost is :  11.670772075653076
+The proposal times is :  1

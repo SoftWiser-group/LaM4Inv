@@ -1,0 +1,36 @@
+Begin_process:   Benchmarks/Linear/c/278.c
+GPT Answer: ['assert(i < j || i >= j);', 'assert(k > i - j || i >= j);', 'assert(k > i - j);', 'assert(i <= j);']
+AnsSet: ['(i < j)||(i >= j)', 'i <= j']
+Candidate: assert(i < j || i >= j);
+SMTLIB2: (assert (or (< i j) (>= i j)))
+ (or (< i j) (>= i j))
+n{'j': 0, 'i': 0, 'k': 0}
+Size of CE: 1
+GPT Answer: ['assert(i < j || i >= j);', 'assert(k > i - j || i >= j);', 'assert(k > i - j);', 'assert(i <= j);', 'assert(k >= i - j + 1);']
+AnsSet: ['(i < j)||(i >= j)', 'i <= j']
+GPT Answer: ['assert(i < j || i >= j);', 'assert(k > i - j || i >= j);', 'assert(k > i - j);', 'assert(i <= j);', 'assert(k >= i - j + 1);']
+AnsSet: ['(i < j)||(i >= j)', 'i <= j']
+=================Verifivation Begin=================
+CombineCandidate: assert(((i < j)||(i >= j)) && (i <= j));
+CombineSMTLIB2: (assert (and (or (< i j) (>= i j)) (<= i j)))
+ (and (or (< i j) (>= i j)) (<= i j))
+n{'j': 0, 'i': 0, 'k': 0}
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert(k > i - j || i >= j);
+SMTLIB2: (assert (or (> k (- i j)) (>= i j)))
+ (or (> k (- i j)) (>= i j))
+n{'j': 0, 'i': 0, 'k': 0}
+Size of CE: 3
+GPT Answer: ['assert(i < j || i >= j);', 'assert(k > i - j || i >= j);', 'assert(k > i - j);', 'assert(i <= j);', 'assert(k >= i - j + 1);', 'assert(k > i - j && i <= j);']
+AnsSet: ['(i < j)||(i >= j)', 'i <= j']
+GPT Answer: ['assert(i < j || i >= j);', 'assert(k > i - j || i >= j);', 'assert(k > i - j);', 'assert(i <= j);', 'assert(k >= i - j + 1);', 'assert(k > i - j && i <= j);']
+AnsSet: ['(i < j)||(i >= j)', 'i <= j']
+
+Candidate: assert(k > i - j);
+SMTLIB2: (assert (> k (- i j)))
+ (> k (- i j))
+The answer is :  assert(k > i - j);
+Time cost is :  30.156519889831543
+The proposal times is :  4

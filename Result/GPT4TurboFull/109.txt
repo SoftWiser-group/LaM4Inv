@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/109.c
+GPT Answer: ['assert(k >= 0 && k <= c);', 'assert(m >= a || k == 0);', 'assert(k >= 0 && k <= c && (k == 0 || m >= a));', 'assert(k <= c);', 'assert(k == 0 || m >= a);']
+AnsSet: ['j == 0', 'k >= 0', '(m >= a)||(k == 0)', '(k == 0 || m >= a)', '(k == 0)||(m >= a)']
+Candidate: assert(k >= 0 && k <= c);
+SMTLIB2: (assert (and (>= k 0) (<= k c)))
+ (and (>= k 0) (<= k c))
+p{'c': -1, 'j': 0, 'k': 0}
+Size of CE: 1
+GPT Answer: ['assert(k >= 0 && k <= c);', 'assert(m >= a || k == 0);', 'assert(k >= 0 && k <= c && (k == 0 || m >= a));', 'assert(k <= c);', 'assert(k == 0 || m >= a);']
+AnsSet: ['j == 0', 'k >= 0', '(m >= a)||(k == 0)', '(k == 0 || m >= a)', '(k == 0)||(m >= a)']
+GPT Answer: ['assert(k >= 0 && k <= c);', 'assert(m >= a || k == 0);', 'assert(k >= 0 && k <= c && (k == 0 || m >= a));', 'assert(k <= c);', 'assert(k == 0 || m >= a);']
+AnsSet: ['j == 0', 'k >= 0', '(m >= a)||(k == 0)', '(k == 0 || m >= a)', '(k == 0)||(m >= a)']
+=================Verifivation Begin=================
+CombineCandidate: assert((j == 0) && (k >= 0) && ((m >= a)||(k == 0)) && ((k == 0 || m >= a)) && ((k == 0)||(m >= a)));
+CombineSMTLIB2: (assert (and (and (and (and (= j 0) (>= k 0)) (or (>= m a) (= k 0))) (or (= k 0) (>= m a))) (or (= k 0) (>= m a))))
+ (and (and (and (and (= j 0) (>= k 0)) (or (>= m a) (= k 0))) (or (= k 0) (>= m a))) (or (= k 0) (>= m a)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((j == 0) && (k >= 0) && ((m >= a)||(k == 0)) && ((k == 0 || m >= a)) && ((k == 0)||(m >= a)));
+Time cost is :  25.75780439376831
+The proposal times is :  2

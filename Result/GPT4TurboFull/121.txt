@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/121.c
+GPT Answer: ['assert((i >= 1) && (i <= 9));', 'assert(sn == i - 1);', 'assert((i - 1 == sn) && (i >= 1) && (i <= 9));', 'assert(sn == i - 1 && i >= 1 && i <= 9);', 'assert(i >= 1 && i <= 9);', 'assert((i > 1) && (sn == i - 1));']
+AnsSet: ['(i >= 1)', '(i <= 9)', 'sn == i - 1', '(i - 1 == sn)', 'i >= 1', 'i <= 9', '(sn == i - 1)']
+Candidate: assert((i >= 1) && (i <= 9));
+SMTLIB2: (assert (and (>= i 1) (<= i 9)))
+ (and (>= i 1) (<= i 9))
+n{'i': 9, 'sn': 2}
+Size of CE: 1
+GPT Answer: ['assert((i >= 1) && (i <= 9));', 'assert(sn == i - 1);', 'assert((i - 1 == sn) && (i >= 1) && (i <= 9));', 'assert(sn == i - 1 && i >= 1 && i <= 9);', 'assert(i >= 1 && i <= 9);', 'assert((i > 1) && (sn == i - 1));', 'assert((i >= 1) && (i <= 9) && (sn == i - 1));']
+AnsSet: ['(i >= 1)', '(i <= 9)', 'sn == i - 1', '(i - 1 == sn)', 'i >= 1', 'i <= 9', '(sn == i - 1)']
+GPT Answer: ['assert((i >= 1) && (i <= 9));', 'assert(sn == i - 1);', 'assert((i - 1 == sn) && (i >= 1) && (i <= 9));', 'assert(sn == i - 1 && i >= 1 && i <= 9);', 'assert(i >= 1 && i <= 9);', 'assert((i > 1) && (sn == i - 1));', 'assert((i >= 1) && (i <= 9) && (sn == i - 1));']
+AnsSet: ['(i >= 1)', '(i <= 9)', 'sn == i - 1', '(i - 1 == sn)', 'i >= 1', 'i <= 9', '(sn == i - 1)']
+=================Verifivation Begin=================
+CombineCandidate: assert(((i >= 1)) && ((i <= 9)) && (sn == i - 1) && ((i - 1 == sn)) && (i >= 1) && (i <= 9) && ((sn == i - 1)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (>= i 1) (<= i 9)) (= sn (- i 1))) (= (- i 1) sn)) (>= i 1)) (<= i 9)) (= sn (- i 1))))
+ (and (and (and (and (and (and (>= i 1) (<= i 9)) (= sn (- i 1))) (= (- i 1) sn)) (>= i 1)) (<= i 9)) (= sn (- i 1)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((i >= 1)) && ((i <= 9)) && (sn == i - 1) && ((i - 1 == sn)) && (i >= 1) && (i <= 9) && ((sn == i - 1)));
+Time cost is :  18.34971857070923
+The proposal times is :  2

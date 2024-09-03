@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/90.c
+GPT Answer: ['assert((x == y) || (lock == 0 && x != y));', 'assert((lock == 0 || lock == 1) && x != y);', 'assert((x == y) || (x + 1 == y));', 'assert(lock == 1 || lock == 0);', 'assert((lock == 1 && x == y) || (lock == 0 && x != y));', 'assert((lock == 0 || lock == 1) && (x == y || x + 1 == y));']
+AnsSet: ['((x == y))||((lock == 0 && x != y))', '(lock == 0 || lock == 1)', '((x == y))||((x + 1 == y))', '(lock == 1)||(lock == 0)', '((lock == 1 && x == y))||((lock == 0 && x != y))', '(x == y || x + 1 == y)']
+Candidate: assert((x == y) || (lock == 0 && x != y));
+SMTLIB2: (assert (or (= x y) (and (= lock 0) (not (= x y)))))
+ (or (= x y) (and (= lock 0) (not (= x y))))
+n{'lock': 2, 'y': 0, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert((x == y) || (lock == 0 && x != y));', 'assert((lock == 0 || lock == 1) && x != y);', 'assert((x == y) || (x + 1 == y));', 'assert(lock == 1 || lock == 0);', 'assert((lock == 1 && x == y) || (lock == 0 && x != y));', 'assert((lock == 0 || lock == 1) && (x == y || x + 1 == y));', 'assert((x == y) || (lock == 0 && x < y));']
+AnsSet: ['((x == y))||((lock == 0 && x != y))', '(lock == 0 || lock == 1)', '((x == y))||((x + 1 == y))', '(lock == 1)||(lock == 0)', '((lock == 1 && x == y))||((lock == 0 && x != y))', '(x == y || x + 1 == y)']
+GPT Answer: ['assert((x == y) || (lock == 0 && x != y));', 'assert((lock == 0 || lock == 1) && x != y);', 'assert((x == y) || (x + 1 == y));', 'assert(lock == 1 || lock == 0);', 'assert((lock == 1 && x == y) || (lock == 0 && x != y));', 'assert((lock == 0 || lock == 1) && (x == y || x + 1 == y));', 'assert((x == y) || (lock == 0 && x < y));', 'assert((x == y) || (lock == 0 && x + 1 == y));']
+AnsSet: ['((x == y))||((lock == 0 && x != y))', '(lock == 0 || lock == 1)', '((x == y))||((x + 1 == y))', '(lock == 1)||(lock == 0)', '((lock == 1 && x == y))||((lock == 0 && x != y))', '(x == y || x + 1 == y)', '((x == y))||((lock == 0 && x + 1 == y))']
+=================Verifivation Begin=================
+CombineCandidate: assert((((x == y))||((lock == 0 && x != y))) && ((lock == 0 || lock == 1)) && (((x == y))||((x + 1 == y))) && ((lock == 1)||(lock == 0)) && (((lock == 1 && x == y))||((lock == 0 && x != y))) && ((x == y || x + 1 == y)) && (((x == y))||((lock == 0 && x + 1 == y))));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (or (= x y) (and (= lock 0) (not (= x y)))) (or (= lock 0) (= lock 1))) (or (= x y) (= (+ x 1) y))) (or (= lock 1) (= lock 0))) (or (and (= lock 1) (= x y)) (and (= lock 0) (not (= x y))))) (or (= x y) (= (+ x 1) y))) (or (= x y) (and (= lock 0) (= (+ x 1) y)))))
+ (and (and (and (and (and (and (or (= x y) (and (= lock 0) (not (= x y)))) (or (= lock 0) (= lock 1))) (or (= x y) (= (+ x 1) y))) (or (= lock 1) (= lock 0))) (or (and (= lock 1) (= x y)) (and (= lock 0) (not (= x y))))) (or (= x y) (= (+ x 1) y))) (or (= x y) (and (= lock 0) (= (+ x 1) y))))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((((x == y))||((lock == 0 && x != y))) && ((lock == 0 || lock == 1)) && (((x == y))||((x + 1 == y))) && ((lock == 1)||(lock == 0)) && (((lock == 1 && x == y))||((lock == 0 && x != y))) && ((x == y || x + 1 == y)) && (((x == y))||((lock == 0 && x + 1 == y))));
+Time cost is :  25.90322732925415
+The proposal times is :  2

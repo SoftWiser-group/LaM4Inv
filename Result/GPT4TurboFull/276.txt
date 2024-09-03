@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/276.c
+GPT Answer: ['assert(i == j / 2);', 'assert(i >= 0);', 'assert(i >= 0 && j >= 0);', 'assert(j == 2 * i);', 'assert(i >= 0 && i <= 100);', 'assert(j >= 0 && j <= 200);', 'assert(i <= 100 && j <= 200);']
+AnsSet: ['i == j / 2', 'i >= 0', 'j >= 0', 'j == 2 * i', 'i <= 100', 'j <= 200']
+Candidate: assert(i == j / 2);
+SMTLIB2: (assert (= i (/ j 2)))
+ (= i (/ j 2))
+n{'j': 202, 'i': 101}
+Size of CE: 1
+GPT Answer: ['assert(i == j / 2);', 'assert(i >= 0);', 'assert(i >= 0 && j >= 0);', 'assert(j == 2 * i);', 'assert(i >= 0 && i <= 100);', 'assert(j >= 0 && j <= 200);', 'assert(i <= 100 && j <= 200);', 'assert(i == j / 2 && i <= 100);']
+AnsSet: ['i == j / 2', 'i >= 0', 'j >= 0', 'j == 2 * i', 'i <= 100', 'j <= 200']
+GPT Answer: ['assert(i == j / 2);', 'assert(i >= 0);', 'assert(i >= 0 && j >= 0);', 'assert(j == 2 * i);', 'assert(i >= 0 && i <= 100);', 'assert(j >= 0 && j <= 200);', 'assert(i <= 100 && j <= 200);', 'assert(i == j / 2 && i <= 100);', 'assert(i <= 100 && j == 2 * i);']
+AnsSet: ['i == j / 2', 'i >= 0', 'j >= 0', 'j == 2 * i', 'i <= 100', 'j <= 200']
+=================Verifivation Begin=================
+CombineCandidate: assert((i == j / 2) && (i >= 0) && (j >= 0) && (j == 2 * i) && (i <= 100) && (j <= 200));
+CombineSMTLIB2: (assert (and (and (and (and (and (= i (/ j 2)) (>= i 0)) (>= j 0)) (= j (* 2 i))) (<= i 100)) (<= j 200)))
+ (and (and (and (and (and (= i (/ j 2)) (>= i 0)) (>= j 0)) (= j (* 2 i))) (<= i 100)) (<= j 200))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((i == j / 2) && (i >= 0) && (j >= 0) && (j == 2 * i) && (i <= 100) && (j <= 200));
+Time cost is :  17.163835287094116
+The proposal times is :  2

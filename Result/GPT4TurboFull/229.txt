@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/229.c
+GPT Answer: ['assert(x == 1 || x == 2);']
+AnsSet: ['(x == 1)||(x == 2)']
+Candidate: assert(x == 1 || x == 2);
+SMTLIB2: (assert (or (= x 1) (= x 2)))
+ (or (= x 1) (= x 2))
+The answer is :  assert(x == 1 || x == 2);
+Time cost is :  18.549421072006226
+The proposal times is :  1

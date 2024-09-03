@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/194.c
+GPT Answer: ['assert(i >= 0);', 'assert(y == i - 2 * z);', 'assert(y == 2 * x);', 'assert(y == x - 2*z);', 'assert(z >= 0);', 'assert(y == 2 * x - z);', 'assert(x + z == i);', 'assert(y + 2 * z == i);', 'assert(y + 2*z == i);']
+AnsSet: ['i >= 0', 'y == i - 2 * z', 'z >= 0', 'x + z == i', 'y + 2 * z == i', 'y + 2*z == i']
+Candidate: assert(i >= 0);
+SMTLIB2: (assert (>= i 0))
+ (>= i 0)
+n{'y': 1, 'z': 0, 'i': 0, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert(i >= 0);', 'assert(y == i - 2 * z);', 'assert(y == 2 * x);', 'assert(y == x - 2*z);', 'assert(z >= 0);', 'assert(y == 2 * x - z);', 'assert(x + z == i);', 'assert(y + 2 * z == i);', 'assert(y + 2*z == i);', 'assert(y == 2 * x - i && z == i - x && i >= 0);']
+AnsSet: ['i >= 0', 'y == i - 2 * z', 'z >= 0', 'x + z == i', 'y + 2 * z == i', 'y + 2*z == i', 'y == 2 * x - i', 'z == i - x']
+GPT Answer: ['assert(i >= 0);', 'assert(y == i - 2 * z);', 'assert(y == 2 * x);', 'assert(y == x - 2*z);', 'assert(z >= 0);', 'assert(y == 2 * x - z);', 'assert(x + z == i);', 'assert(y + 2 * z == i);', 'assert(y + 2*z == i);', 'assert(y == 2 * x - i && z == i - x && i >= 0);', 'assert(y == -2 * z + i && x + z == i);']
+AnsSet: ['i >= 0', 'y == i - 2 * z', 'z >= 0', 'x + z == i', 'y + 2 * z == i', 'y + 2*z == i', 'y == 2 * x - i', 'z == i - x', 'y == -2 * z + i']
+=================Verifivation Begin=================
+CombineCandidate: assert((i >= 0) && (y == i - 2 * z) && (z >= 0) && (x + z == i) && (y + 2 * z == i) && (y + 2*z == i) && (y == 2 * x - i) && (z == i - x) && (y == -2 * z + i));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (and (>= i 0) (= y (- i (* 2 z)))) (>= z 0)) (= (+ x z) i)) (= (+ y (* 2 z)) i)) (= (+ y (* 2 z)) i)) (= y (- (* 2 x) i))) (= z (- i x))) (= y (+ (* (- 0 2) z) i))))
+ (and (and (and (and (and (and (and (and (>= i 0) (= y (- i (* 2 z)))) (>= z 0)) (= (+ x z) i)) (= (+ y (* 2 z)) i)) (= (+ y (* 2 z)) i)) (= y (- (* 2 x) i))) (= z (- i x))) (= y (+ (* (- 0 2) z) i)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((i >= 0) && (y == i - 2 * z) && (z >= 0) && (x + z == i) && (y + 2 * z == i) && (y + 2*z == i) && (y == 2 * x - i) && (z == i - x) && (y == -2 * z + i));
+Time cost is :  27.93059253692627
+The proposal times is :  2

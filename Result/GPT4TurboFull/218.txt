@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/218.c
+GPT Answer: ['assert(x == 5 || (x - 5) % 8 == 0);', 'assert((x % 8) == 5);', 'assert(x % 8 == 5);']
+AnsSet: ['(x == 5)||((x - 5) % 8 == 0)', '(x % 8) == 5', 'x % 8 == 5']
+Candidate: assert(x == 5 || (x - 5) % 8 == 0);
+SMTLIB2: (assert (or (= x 5) (= (mod (- x 5) 8) 0)))
+ (or (= x 5) (= (mod (- x 5) 8) 0))
+The answer is :  assert(x == 5 || (x - 5) % 8 == 0);
+Time cost is :  12.859834432601929
+The proposal times is :  1

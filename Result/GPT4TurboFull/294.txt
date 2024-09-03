@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/294.c
+GPT Answer: ['assert(xa + ya > 0);', 'assert(xa >= 0);', 'assert(ya >= 0);']
+AnsSet: ['xa + ya > 0']
+Candidate: assert(xa + ya > 0);
+SMTLIB2: (assert (> (+ xa ya) 0))
+ (> (+ xa ya) 0)
+The answer is :  assert(xa + ya > 0);
+Time cost is :  13.063560724258423
+The proposal times is :  1

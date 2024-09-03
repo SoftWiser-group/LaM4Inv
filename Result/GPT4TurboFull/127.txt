@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/127.c
+GPT Answer: ['assert(x == y);', 'assert((x == 0) || (x != y));', 'assert((x == y) && (i - x == j - y));', 'assert(y == j - i);', 'assert(y == (j - i));', 'assert((x == y) && (i - j == x - y));']
+AnsSet: ['(i - x == j - y)', '(i - j == x - y)']
+Candidate: assert(x == y);
+SMTLIB2: (assert (= x y))
+ (= x y)
+p{'x': 1, 'y': 0, 'i': 1, 'j': 0}
+Size of CE: 1
+GPT Answer: ['assert(x == y);', 'assert((x == 0) || (x != y));', 'assert((x == y) && (i - x == j - y));', 'assert(y == j - i);', 'assert(y == (j - i));', 'assert((x == y) && (i - j == x - y));', 'assert(x == y || x == 0);']
+AnsSet: ['(i - x == j - y)', '(i - j == x - y)']
+GPT Answer: ['assert(x == y);', 'assert((x == 0) || (x != y));', 'assert((x == y) && (i - x == j - y));', 'assert(y == j - i);', 'assert(y == (j - i));', 'assert((x == y) && (i - j == x - y));', 'assert(x == y || x == 0);', 'assert((x == y) || (x == 0));']
+AnsSet: ['(i - x == j - y)', '(i - j == x - y)']
+=================Verifivation Begin=================
+CombineCandidate: assert(((i - x == j - y)) && ((i - j == x - y)));
+CombineSMTLIB2: (assert (and (= (- i x) (- j y)) (= (- i j) (- x y))))
+ (and (= (- i x) (- j y)) (= (- i j) (- x y)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((i - x == j - y)) && ((i - j == x - y)));
+Time cost is :  19.267403602600098
+The proposal times is :  2

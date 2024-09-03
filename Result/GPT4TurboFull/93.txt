@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/93.c
+GPT Answer: ['assert(i <= n);', 'assert(x + y == 3 * i);', 'assert((x + y) == 3 * i);', 'assert(i == x + y);', 'assert((2*i == x + y) || (3*i == x + y));', 'assert((i == x + y) && (x <= 2 * i) && (y <= 2 * i) && (x >= i) && (y >= i));']
+AnsSet: ['i <= n', 'x + y == 3 * i', '(x + y) == 3 * i', '((2*i == x + y))||((3*i == x + y))', '(x <= 2 * i)', '(y <= 2 * i)', '(x >= i)', '(y >= i)']
+Candidate: assert(i <= n);
+SMTLIB2: (assert (<= i n))
+ (<= i n)
+n{'y': 0, 'i': 0, 'x': 1, 'n': 0}
+Size of CE: 1
+GPT Answer: ['assert(i <= n);', 'assert(x + y == 3 * i);', 'assert((x + y) == 3 * i);', 'assert(i == x + y);', 'assert((2*i == x + y) || (3*i == x + y));', 'assert((i == x + y) && (x <= 2 * i) && (y <= 2 * i) && (x >= i) && (y >= i));', 'assert((i >= 0) && (i <= n) && ((x + y) == (3 * i)));']
+AnsSet: ['i <= n', 'x + y == 3 * i', '(x + y) == 3 * i', '((2*i == x + y))||((3*i == x + y))', '(x <= 2 * i)', '(y <= 2 * i)', '(x >= i)', '(y >= i)', '(i >= 0)', '(i <= n)', '((x + y) == (3 * i))']
+GPT Answer: ['assert(i <= n);', 'assert(x + y == 3 * i);', 'assert((x + y) == 3 * i);', 'assert(i == x + y);', 'assert((2*i == x + y) || (3*i == x + y));', 'assert((i == x + y) && (x <= 2 * i) && (y <= 2 * i) && (x >= i) && (y >= i));', 'assert((i >= 0) && (i <= n) && ((x + y) == (3 * i)));', 'assert((i >= 0) && (i <= n) && (x + y == 3 * i));']
+AnsSet: ['i <= n', 'x + y == 3 * i', '(x + y) == 3 * i', '((2*i == x + y))||((3*i == x + y))', '(x <= 2 * i)', '(y <= 2 * i)', '(x >= i)', '(y >= i)', '(i >= 0)', '(i <= n)', '((x + y) == (3 * i))', '(x + y == 3 * i)']
+=================Verifivation Begin=================
+CombineCandidate: assert((i <= n) && (x + y == 3 * i) && ((x + y) == 3 * i) && (((2*i == x + y))||((3*i == x + y))) && ((x <= 2 * i)) && ((y <= 2 * i)) && ((x >= i)) && ((y >= i)) && ((i >= 0)) && ((i <= n)) && (((x + y) == (3 * i))) && ((x + y == 3 * i)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (and (and (and (and (<= i n) (= (+ x y) (* 3 i))) (= (+ x y) (* 3 i))) (or (= (* 2 i) (+ x y)) (= (* 3 i) (+ x y)))) (<= x (* 2 i))) (<= y (* 2 i))) (>= x i)) (>= y i)) (>= i 0)) (<= i n)) (= (+ x y) (* 3 i))) (= (+ x y) (* 3 i))))
+ (and (and (and (and (and (and (and (and (and (and (and (<= i n) (= (+ x y) (* 3 i))) (= (+ x y) (* 3 i))) (or (= (* 2 i) (+ x y)) (= (* 3 i) (+ x y)))) (<= x (* 2 i))) (<= y (* 2 i))) (>= x i)) (>= y i)) (>= i 0)) (<= i n)) (= (+ x y) (* 3 i))) (= (+ x y) (* 3 i)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((i <= n) && (x + y == 3 * i) && ((x + y) == 3 * i) && (((2*i == x + y))||((3*i == x + y))) && ((x <= 2 * i)) && ((y <= 2 * i)) && ((x >= i)) && ((y >= i)) && ((i >= 0)) && ((i <= n)) && (((x + y) == (3 * i))) && ((x + y == 3 * i)));
+Time cost is :  23.765512466430664
+The proposal times is :  2

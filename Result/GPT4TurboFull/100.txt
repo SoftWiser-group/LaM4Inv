@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/100.c
+GPT Answer: ['assert(x >= 0);', 'assert(y >= 0);', 'assert(x + y == n);', 'assert((y >= 0) && (x >= 0) && (y + x == n));', 'assert((y + x == n) && (y >= 0) && (x >= 0));', 'assert((x >= 0) && (y + x == n));', 'assert(y + x == n);']
+AnsSet: ['x >= 0', 'y >= 0', 'x + y == n', '(y >= 0)', '(x >= 0)', '(y + x == n)', 'y + x == n']
+Candidate: assert(x >= 0);
+SMTLIB2: (assert (>= x 0))
+ (>= x 0)
+n{'y': 1, 'x': 0, 'n': 0}
+Size of CE: 1
+GPT Answer: ['assert(x >= 0);', 'assert(y >= 0);', 'assert(x + y == n);', 'assert((y >= 0) && (x >= 0) && (y + x == n));', 'assert((y + x == n) && (y >= 0) && (x >= 0));', 'assert((x >= 0) && (y + x == n));', 'assert(y + x == n);']
+AnsSet: ['x >= 0', 'y >= 0', 'x + y == n', '(y >= 0)', '(x >= 0)', '(y + x == n)', 'y + x == n']
+GPT Answer: ['assert(x >= 0);', 'assert(y >= 0);', 'assert(x + y == n);', 'assert((y >= 0) && (x >= 0) && (y + x == n));', 'assert((y + x == n) && (y >= 0) && (x >= 0));', 'assert((x >= 0) && (y + x == n));', 'assert(y + x == n);', 'assert(x >= 0 && y >= 0 && x + y == n);']
+AnsSet: ['x >= 0', 'y >= 0', 'x + y == n', '(y >= 0)', '(x >= 0)', '(y + x == n)', 'y + x == n']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 0) && (y >= 0) && (x + y == n) && ((y >= 0)) && ((x >= 0)) && ((y + x == n)) && (y + x == n));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (>= x 0) (>= y 0)) (= (+ x y) n)) (>= y 0)) (>= x 0)) (= (+ y x) n)) (= (+ y x) n)))
+ (and (and (and (and (and (and (>= x 0) (>= y 0)) (= (+ x y) n)) (>= y 0)) (>= x 0)) (= (+ y x) n)) (= (+ y x) n))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x >= 0) && (y >= 0) && (x + y == n) && ((y >= 0)) && ((x >= 0)) && ((y + x == n)) && (y + x == n));
+Time cost is :  18.799320220947266
+The proposal times is :  2

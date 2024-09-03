@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/10.c
+GPT Answer: ['assert((x >= 0) && (y >= 0));', 'assert((x % 2 == y % 2));', 'assert(x >= 0);', 'assert(y >= 0);', 'assert((y == 0 && x != 4) || y > 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0) && (y <= 4));', 'assert((x % 2) == (y % 2));', 'assert((x >= 0) && (x <= 4) && (y >= 0) && ((x % 2) == (y % 2)));']
+AnsSet: ['(x >= 0)', '(y >= 0)', 'x >= 0', 'y >= 0', '((y == 0 && x != 4))||(y > 0)']
+Candidate: assert((x >= 0) && (y >= 0));
+SMTLIB2: (assert (and (>= x 0) (>= y 0)))
+ (and (>= x 0) (>= y 0))
+n{'x': 4, 'y': 0}
+Size of CE: 1
+GPT Answer: ['assert((x >= 0) && (y >= 0));', 'assert((x % 2 == y % 2));', 'assert(x >= 0);', 'assert(y >= 0);', 'assert((y == 0 && x != 4) || y > 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0) && (y <= 4));', 'assert((x % 2) == (y % 2));', 'assert((x >= 0) && (x <= 4) && (y >= 0) && ((x % 2) == (y % 2)));', 'assert((x >= 0) && (x % 2 == 0) && (y % 2 == 0));']
+AnsSet: ['(x >= 0)', '(y >= 0)', 'x >= 0', 'y >= 0', '((y == 0 && x != 4))||(y > 0)']
+GPT Answer: ['assert((x >= 0) && (y >= 0));', 'assert((x % 2 == y % 2));', 'assert(x >= 0);', 'assert(y >= 0);', 'assert((y == 0 && x != 4) || y > 0);', 'assert((x >= 0) && (x <= 4));', 'assert((y >= 0) && (y <= 4));', 'assert((x % 2) == (y % 2));', 'assert((x >= 0) && (x <= 4) && (y >= 0) && ((x % 2) == (y % 2)));', 'assert((x >= 0) && (x % 2 == 0) && (y % 2 == 0));', 'assert((x >= 0) && (x % 2 == 0) && (y % 2 == 0) && (x == y));']
+AnsSet: ['(x >= 0)', '(y >= 0)', 'x >= 0', 'y >= 0', '((y == 0 && x != 4))||(y > 0)']
+=================Verifivation Begin=================
+CombineCandidate: assert(((x >= 0)) && ((y >= 0)) && (x >= 0) && (y >= 0) && (((y == 0 && x != 4))||(y > 0)));
+CombineSMTLIB2: (assert (and (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0)) (or (and (= y 0) (not (= x 4))) (> y 0))))
+ (and (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0)) (or (and (= y 0) (not (= x 4))) (> y 0)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((x >= 0)) && ((y >= 0)) && (x >= 0) && (y >= 0) && (((y == 0 && x != 4))||(y > 0)));
+Time cost is :  28.953685522079468
+The proposal times is :  2

@@ -1,0 +1,648 @@
+Release Notes of the ESBMC model checker
+
+*** Version 7.4
+* Python Frontend
+- Support for logical and/or (#1423)
+- Handling asserts (#1420)
+- Function definitions/calls (#1419)
+- Add support for GtE, LtE, and mod operators (#1414)
+- While statements (#1406)
+- If/else support (#1396)
+- Initial implementation of Python frontend (#1390)
+* Operational Models
+- RFC: Low-precision models for log() family, exp() and pow() (#1421)
+- <fenv.h> only use own definitions on FreeBSD (#1417)
+- Add models for frexp() and ldexp() (#1413)
+- Replaced malloc with __ESBMC_alloca in getenv (#1250)
+* Abstract Interpretation
+- Interval Analysis unit tests now deletes migration reference (#1409)
+- Interval now uses std::optional to keep the bounds (#1407)
+- CNF generation no longer removes typecast (#1393)
+- Support for symbol expressions during interval analysis (#1330)
+- Support for symbol expressions during interval analysis (#1330)
+- Interval expression generation for floats (#1327)
+- Interval Analysis assumptions now only uses local symbols (#1319)
+- Propagation of Boolean Intervals (#1313)
+- Interval singleton propagation (#1305)
+- Make Interval Analysis reset state after pointer operation (#1234)
+* Solidity frontend
+- Support "require" keywords (#1321)
+- Verify the contract as a whole (#1309)
+- Set the class/contract name for function verification (#1304)
+- Solidity frontend update (#1298)
+* SMT backend
+- Added Bitwutzla 0.2.0 to ESBMC (#1318)
+- Bring smtlib backend on par with other backends (#1237)
+- Fix emitting bvsgt (#1235)
+- fp_conv: fix gte: not(less) is not equiv to get (#1227)
+- Changed smtlib linker flags (#1216)
+* Concurrency
+- CUDA verification: Support for more TCS (#1314)
+- Analyze global variables for goto instructions during symex (#1276)
+- CUDA OM: replaced __ESBMC_alloca with infinite array size (#1275)
+- Remove unviable interleaving (#1269)
+- Kernel concurrency model - SPIN LOCK (#1268)
+- Do not produce interleavings after __ESBMC_main ends (#1265)
+- CUDA: Add CuDNN OM (#1260)
+- CUDA OM: Clean up and optimize the CUDA operational models #1258
+- Guard fix (#1242)
+- Add benchmarks for CUDA (#1228)
+* Memory Safety
+- Enhance the memsafety analysis (#1295)
+- Add memory cleanup check (#1273)
+- Add option to avoid checking memory-leaks on abort() (#1270)
+* General Improvements:
+- Unions are not required to have an init member anymore (#1427)
+- Empty loops are now converted to assume 0 (#1412)
+- Counter-example: only recurse if generating a sub-expr has been possible (#1410)
+- Adhere to C semantics for pointer-arithmetic (#1402)
+- FreeBSD/CheriBSD compatibility (#1397)
+- Simplify irep1: do not resolve index on constants under addr-of #1376
+- Unify simplification of modulus2t with div2t (#1360)
+- Support bit-casting to multi-dimensional arrays (#1358)
+- --unwindset refine (#1306)
+- Allow more fine-grained control over debug log messages (#1281)
+- Add memory consumption metrics (#1272)
+- Make irep2 construction a bit more C++ (#1264)
+- K-induction fix (#1218)
+- Show the exact location of function call (#1217)
+
+*** Version 7.3
+* Clang CHERI-C frontend
+- Prepare CHERI-C support (#905).
+* Abstract Interpretation Framework:
+- Revamp on interval analysis options (#1153).
+- Replaced cmath with its cpp counterpart (#1073).
+- Interval Analysis: the get_interval function is more generic (#1065).
+- Fixed wrong computation for type bounds (#1052).
+- Abstract interpretation revamp (#915).
+* GOTO to C translator (#842)
+* Linux Kernel Verification:
+- simulation for Kernel user space copy (#1192).
+- Mock kernel (#1135).
+* Clang C++ Frontend:
+- Improve code structure/ add new methods (#1189).
+- Fix temporary object constructs for a single argument (#1196).
+- Replaced throw with assert in string OM (#1163).
+- Various fixes for C++ verification (#1138).
+- Added CUDA and Qt/QtCore to include paths in CPP (#1131).
+- Fix for TC template2 in 1108 (#1134).
+- Embed CPP headers into ESBMC (#1124).
+- Return a constant for MemberExpr to enumerator (#1119).
+- Decouple TC20/36/39 from zero initialization (#1113).
+- Fixed missing argument in copy constructor (#1112).
+- Refactor/modify the COM (#1111).
+- Fixed nested MemberExpr to struct/class method (#1102).
+- Add TCs for CUDA OM (#1095).
+- Fixed static member access (#1094).
+- Fixed global initialization (#1086).
+- Fixed inconsistent template specialization ids (#1079).
+* SMT-backend:
+- Fix usage of mk_ite by properly dispatching (#1201).
+- More smtlib fixes (#1193).
+- Fix symbol names and emission of AST node types in the smtlib backend (#1117).
+- Restore some smtlib functionality with external solver (#1114).
+- tuple-array-ast requires flattened array subtype in tuple-node-flattener (#1096).
+* General Fixes:
+- Fix intrinsic memset errors (#1199).
+- Check for overflow during the generation of VLAs (#1190).
+- Added an option to ignore strings (#1185).
+- Only use custom limits.h for the old frontend; otherwise, clang provides its own for us (#1168).
+- Restrict --unsigned-overflow-check to unsigned types only (#1143).
+- Fixing arch for 32-bit arm analysis as armv6 (#1142).
+- rename_type() should also recurse into operands (#1123).
+- Bug fixing for printf return value (#1115).
+- Add some more support for dynamic array sizes (#1101).
+- Support dyn-off structures w/ array members from byte-arrays (#1090).
+- Adjust also symbol's type and handle VLAs in adjust_type() (#1083).
+- Opt into collecting types only for (some?) known irep annotations (#1077).
+- Fix scanf bigint bug (#1076).
+- Add support for malloc-scanf overflow checking (#1063).
+- Fix overflow check for unsigned integer (#1058).
+- Improve code coverage by modifing/adding assertions in GOTO (#1048).
+
+*** Version 7.2
+* Clang-C++ frontend:
+  ** Added support for polymorphism (#919, #922, #923, #926, #927)
+  ** Fixed crash regarding the definition of template functions in structs (#1045).
+  ** Used value initialization for aggregate, including Plain Old Data (#1040).
+  ** Fixed object composition, turning "this->itr = iterator()" into "iterator(&this->itr)" (#1007).
+  ** Fixed various issues in our C++ operational models (e..g, #948, #995, #993, #988).
+* Solidity frontend:
+  ** Extended solidity-frontend to support Method Overload, Inheritance, and more return types for function calls (#1013).
+  ** Added support for the solidity constructor and multiple contracts #949
+  ** Fixed an error when calling a member function to get the Solidity return value (#1002).
+* Operational models:
+  ** Added overflow checks for the C functions scanf and fscanf (#976).
+  ** Added model for aligned_alloc() via the combination of malloc and __ESBMC_assume on the address (#1035).
+  ** Added lookup-based atoi, atol and atoll (#957, #958, #960, #1014, #1033).
+  ** Optimize memset operations by initializing the entire object with the result of the C memset function (#640).
+* Property Checking
+  ** Added support for checking undefined behavior for shift operations  (#996, #1024).
+  ** Added support for multiple property verification with three options: --multi-property, --multi-fail-fast, and  --parallel-solving (#1022).
+  ** Added a color scheme when printing a message if a property has been successful or violated (#1022).
+* Concurrency support:
+  ** Added missing global variable information for a context switch (#1012).
+  ** Fixed guard issues for multi-threaded goto programs (#974).
+* Test case generation:
+  ** Produce a test case in XML if a counterexample is found via the option --generate-testcase (#855).
+* General fixes:
+  ** Fixed the union used to generate doubles (Fix ieee_floatt to_double() #1038).
+  ** Fixed access to multi-dim array members of unions (#1036).
+  ** Added support for LLVM-16 compat (#1034).
+  ** Made Z3 SMT formulas compatible with other solvers (#1023).
+  ** ESBMC no longer throws errors for returning void expressions. (#1020).
+  ** Improved bit mungling in the simplifier by adding a check that the operation can actually be performed meaningfully (#1019).
+  ** Removed __ESBMC prefix when generating CE for intrinsic functions (#999).
+  ** Do not call tuple_node_flattener for constant arrays of unions (#917).
+  ** Fixed union initializer for cast-to-union cases supported by Clang and GCC (#1000).
+
+*** Version 7.1
+* Added an experimental flag to cache SSA assertions with `--cache-asserts` (SSA caching #827).
+* Support for macOS M1 architecture (Fixed macOS M1 build #810).
+* Additional operators for the goto-contractor with `--goto-contractor` (Goto contractor: support for multiple operators. #852).
+* Interval analysis now supports integer and floating-point interval contraction for relational operators with `--interval-analysis` (Interval analysis fixes #861).
+* Added `atexit` operational model (Atexit model implementation #859).
+* Fixed an issue that caused extern variables to be linked incorrectly (Changes in the c_link and contextt to handle extern variables #881).
+* The Clang C++ frontend now has support for the following features:
+  ** single-inheritance (Single inheritance #882).
+  ** multiple-inheritance (Multiple inheritance #884).
+  ** arrow operator for objects (Method callsite via arrow operator #891).
+* Various fixes (Fix returning instance of void #846, Fixed some warnings #860, [clang-c] fixed double type adjustment #866, Fix float cast #878, Fix union initializer type #904, [util] replace_symbolt learned to handle argumentt #907, Fix WinCI #911)  
+
+*** Version 7
+* Added support for GCC Vectors.
+* Added support for the Jimple language.
+* Added option to disable slicing on particular symbols, specified by annotation or on the command line (Support not slicing particular symbols #814).
+* New C++ frontend now correctly handles new and delete ([clang-cpp-frontend] added support for new/delete #815) and references ([clang-cpp-frontend] Fix references #804).
+* Fixed initialization of static storage compound literals ([clang-c-converter] fix initialization of static storage compound literals #816).
+* Various fixes in old and new C++ frontends ([clang-c*-frontend] Minor fixes #808, [cpp] Fixed zombie operand #811, [cpp] quick fix for more zombie codet operand #839).
+* Various bugfixes in the --goto-contractor option (#836).
+
+*** Version 6.10
+* Lots of bugs related to unions have been fixed.
+* Compound Literals are now supported.
+* _ExtInt struct fields now have proper padding and alignment.
+* A bug where the size of 3-dimensional arrays was not being computed correctly has been solved.
+* A new intrinsic for stack allocation has been added: __ESBMC_alloca.
+* The Solidity frontend now has support for: bool literal and while.
+* The clang-cpp-frontend now has support for: CXXThisExpr and CXXConstructor.
+* New options have been added: --file-output, --cex-output, --initialize-nondet-variables, and --non-supported-models-as-zero.
+* A new experimental optimization for intervals contraction was added: --goto-contractor. More details about this optimization at: https://arxiv.org/pdf/2012.11245.pdf. 
+
+*** Version 6.9
+* Fixed a bug where Z3 bv were not encoded correctly for signed numbers.
+* Improved counterexample line numbering.
+* Improvements over concurrency checks.
+* Bug fixes.
+
+*** Version 6.8
+* ARM Release!
+* Solidity Support!
+* Value set analysis.
+* New message system.
+* Bounded goto unroll algorithm.
+
+*** Version 6.7
+* Memory Model allignment improvements.
+* Added a new option for compact-trace (--compact-trace).
+* Added support for gcc's Cast to Union extension.
+* Windows Release (Z3 only).
+
+*** Version 6.6
+* Fix parallel k-induction verification.
+* Removed incremental context bound options.
+
+*** Version 6.5
+* Initial C++ clang frontend.
+* Added new option for incremental context bound verification.
+* Added support for _ExtInt to create custom sized bitvectors.
+* Several fixes and improvements to our libc models.
+* Fix infinite loop when verifying recursive programs with k-induction.
+* Update clang to 11.0.
+* Several minor bug fixes.
+
+*** Version 6.4
+* Refactored concurrency to check global writes in arrays.
+* Removed python API from ESBMC.
+* Updated CVC4 build instructions.
+* Fixed pointer arithmetic in the dereference module.
+* Added models for cond_broadcast and mutex_destroy.
+* Rename test cases that give trouble in Windows.
+* Added models for key_create, getspecific, and setspecific.
+
+*** Version 6.3
+* Stack property verification support.
+* ESBMC now supports Microsoft extensions.
+* -f an -W flags are forwarded into clang.
+* Float models refactoring, which enabled macOS CI..
+* Fixed issue that caused a deref violation in VLAs.
+* Union bitfields no longer throws a segfault.
+* Unary sideeffects are handled properly.
+* CVC4 enconding for FPs is fixed.
+
+*** Version 6.2
+* Cmake is now the default build system.
+* ESBMC now defaults to 64 bits mode.
+* ESBMC now defaults to use floating-points.
+* Updated ESBMC to use clang version to 9.0 minimal.
+* Updated ESBMC to use Boolector 3.2.
+* Updated Z3 and boolector licenses.
+* Simplified some methods in our SMT conversion API.
+* Removed goto-unwind option.
+* Removed duplicated Z3 header.
+* Removed unnecessary code due to new c++ standards.
+* Removed unnecessary mp_integer typedef.
+* Removed old regressions.
+* Removed autotools.
+* Added support for Float128 in the frontend.
+* Several expression optimizations implemented.
+* Several new cex queries implemented.
+* Fixed several small issues in all SMT backends.
+* Fixed alloca'd variables not being destroyed at the end of frames.
+* Fixed some variables going out of scope but not being marked as detroyed.
+
+*** Version 6.1
+* Use clang to generate declaration names.
+* Added support for popcount.
+* Added support for bswap.
+* Added support for __auto_type.
+* Added support for atomic types.
+* Added support for atomic expressions.
+* Added support for Boolector 3.0.
+* Update clang headers to 7.0.
+* Update Z3 header to 4.8.0.
+* Fix ESBMC not reporting bugs when accessing variables that went out of scope.
+* Several minor bug fixes.
+
+*** Version 6.0
+* New bidirectional k-induction algorithm (bkind).
+* New invariant generator based on intervals from CPROVER.
+* Improvements to constraint generation in the k-induction algorithm.
+* Fix hash calculation for floats.
+* Fix missing typecasts for shift operations.
+* Fix correctness witnesses not being generated.
+
+*** Version 5.1
+* Backported fixes to the floating-point API from Z3 4.7.1.
+* Fixed compilation with clang.
+* Fixed wrong integer division simplification.
+* Fixed infinite loop reported in #7.
+
+*** Version 5.0
+* Massive update to the SMT backend:
+  - New floating-point API, supporting all solvers (based on Z3).
+  - Improved AST and Sort wrappers.
+  - Improved solver wrappers (now with pre-condition checks).
+  - Removed variadic method to create sorts.
+  - Removed ID based method to create ASTs.
+* Improved support for memset with constant size.
+* Fixed a number of wrong optimizations.
+* Fixed cex generation for arrays.
+* Fix model generation in MacOS.
+* Update APIs for Z3 4.6, MathSAT 5.5.2 and clang 6.0.0.
+* Applied clang-format in the whole code base.
+
+*** Version 4.6
+* New support for bitfield verification.
+* New option to slice assumes.
+* New option to check termination.
+* New floating-point API in the backend.
+* Improvements to cex and witness generation.
+* Removed a lot of dead code.
+
+*** Version 4.5
+* We use clang to generate tag names now.
+* General improvements to SSA generation.
+* Fix alignof evaluation by clang.
+* Fix cex generation of structs.
+* Fix VLA encoding of structs.
+* Fix statement expressions generating out of order instructions.
+* Removed a lot of dead code.
+
+*** Version 4.4.1
+* Remove option to disable clang.
+* Improvements to ax_clang to support Ubuntu/Debian/Fedora.
+* Fix struct/union symbol dump.
+* Fix a number of status messages.
+* Fix cex when using z3 in fp mode.
+* Fix old c++ frontend not finding a program entry point.
+
+*** Version 4.4
+* Fix crash with --smt-during-symex due to equations being shared_ptr.
+* Fix a double increment when encoding tuples.
+* Fix crash when building ESBMC with an assertions enabled clang build.
+* Fix a bug when trying to verify a program with a free(NULL) statement.
+* New --ssa-* options to add information and/or change SSA printing format.
+* A number of improvements to the code base thanks to clang-tidy.
+* Improved clang detection in autotools.
+
+*** Version 4.3
+* New support to encode square root operations using fp.sqrt.
+* Improvements to cex generation.
+* Improvements to status messages.
+* Clang is now the default frontend.
+* Fix VLA bounds check.
+* Fix verification of programs with envp.
+* Fix wrong message when using __ESBMC_assert.
+* Fix wrong index generation when using multidimensional arrays.
+
+*** Version 4.2.1
++ Fix bug when inlining functions and esbmc would assume that.
+the variables from the inlined function were global.
++ Fix python compilation on MacOS.
+
+*** Version 4.2
++ Full support for va_args.
++ Dropped openssl dependency.
++ Update clang headers to clang 4.0.
++ Cleanup ESBMC options.
++ Fix build on MacOS.
++ Fix creation of multidimensional arrays.
+
+*** Version 4.1
++ Support for Boolector 2.4.1.
++ Fix static libesbmc not being built.
++ Fix a static initialization order fiasco.
++ Removed the need for ac_config.h when using libesbmc.
+
+*** Version 4.0
++ 100% more python: new python API for faster prototyping.
++ Support to build ESBMC as library.
++ Improved guards generation: greatly decrease in memory usage.
++ Fix support for addition, subtraction and multiplication for
+  MathSAT, when running in integer/real mode (no division for now).
++ Memory leak fixes in a number of places.
++ General bug fixes.
+
+*** Version 3.2
++ Support for integer/real arithmetic when using MathSAT.
++ New option to dump the SMT formula (only Z3).
++ Partial support for va_args.
+
+*** Version 3.1
++ Rewritten k-induction (should greatly reduce false positives).
++ Support for floating point with Z3 and Mathsat (use --floatbv).
++ Improved witness generation (no need for tokenizer anymore).
++ Correctness witness generation.
++ Shipping with Mathsat 5.3.14, Z3 4.5.0 and Boolector 2.2.0.
++ General bug fixes.
+
+*** Version 3.0.2
++ Fix bug on deadlock verification.
++ Fix an off-by-allthenumbers when dealing with dynamic structs.
++ Fix compilation with newer version of GCC.
++ Updates to support clang 3.9.0 on our frontend.
++ We now ship with all clang 3.9.0 headers.
+
+*** Version 3.0.1
++ Fix falsification crash.
++ Fix switch condition typecast.
++ Fix float literal generation.
++ Back to Z3 v4.4.1 (stable API).
++ Update to Boolector v2.2.0.
+
+*** Version 3.0.0
++ Several bugfixes.
++ New clang frontend!
++ Update Z3 to v4.4.2 (commit 0870b4a5).
++ Update Boolector to v2.1.1.
+
+*** Version 2.1.0
++ Several bugfixes.
++ New option to fully inline a program.
++ New option to unwind loops at goto level.
+
+*** Version 2.0.0
++ Released ESBMC open source at https://github.com/esbmc/esbmc.
++ Build with autoconf.
++ Adjust union implementation: because SMT does not have a good way of.
+  representing unions, we now allocate a byte array as storage for unions, and
+  force all union accesses to be performed through pointers. The dereference
+  layer handles the decomposition of these accesses to byte array accesses.
+  This seems to work well; the only limitation is that assignments of type
+  union become assignments of type array, which the dereference layer can't
+  handle. This will be fixed in a future release.
++ Support assignments with structure type better, and dereferences that
+  evaluate to a structure.
++ Fix a number of byte-order inaccuracies. The "byte_extract" and update ireps
+  will now only operate on scalars; the pointer layer handles all other.
+  circumstances where the byte model representation is required
+- For this release, K-Induction support is disabled. Please use a previous
+  version for kinduction.
+
+*** Version 1.25
++ Bugfixes for the k-induction implementation.
++ Boolector is now the default solver.
++ Improved the C++ parser and template.
++ Decreased memory usage.
+
+*** Version 1.23
++ Bugfixes for the k-induction implementation.
++ Added the ability to run each step of the k-induction process concurrently.
+  --k-induction-parallel will run the base, forward condition, and inductive
+  step in separate concurrent subprocesses.
+
+*** Version 1.22
+TACAS14 competition release.
++ Substantially altered the memory model. The majority of dereferencing logic
+  now occurs while the SSA program is produced (and thus is visible in
+  --program-only), rather than at the solver level.
++ Unaligned dereferences will now produce an assertion failure; disable them
+  with --no-align-check.
++ Expunged a large variety amount of the stringly-typed internal representation
++ Updated Z3 api to 4.0, to use their reference counting approach and new
+  solver API. We recommend using Z3 4.0 itself, as later versions seem to
+  exhibit a performance regression.
+
+*** Version 1.21.1
++ Fixed an option-passing failure present in 1.21, that led to K-induction
++ not operating correclty.
+
+*** Version 1.21
++ Enhance support for C++ model checking.
++ Switch LTL modelling to support checking multiple property truth values.
++ Fixed a pointer-tracking error breaking some leaked-memory detection tests.
+
+*** Version 1.20 ***
+TACAS13 competition release.
+
+*** Version 1.19 ***
+Date 20/06/2012
++ Support more of the pthreads library (pthread_join).
++ Fix an issue with guards not being shared between threads.
+  - Under certain circumstances, a condition guarding a visible instruction is
+    not applied to other threads after a context switch, leading to impossible
+    counterexamples.
++ Fixed a problem where some dynamically allocated objects allocation status
+  became incorrect.
+
+*** Version 1.18 ***
+Date 19/01/2012
++ Internal efficiency improvements.
++ Fixed many pointer model errors encountered during TACAS 2012.
++ Binaries for running on MS Windows (MinGW).
+
+*** Version 1.17 ***
+Date 15/10/2011
++ Release for TACAS 2012 Software Verification competition.
++ Numerous minor bug fixes related to the Z3 solver backend.
+
+*** Version 1.16 ***
+Date: 10/05/2011
++ New Feature
+ - Support for state hashing to reduce the number of redundant interleavings.
++ Enhancements
+ - Minor bug fixes related to the C enumeration, code location ordering and
+   memory leaks.
+
+*** Version 1.15.1 ***
+Date: 18/01/2011
++ Enhancements
+ - Minor bug fixes related to data race detection of arrays and the
+   counterexample beautification;
+
+*** Version 1.15 ***
+Date: 17/01/2011
++ Enhancements
+ - Implementation of constant propagation for arrays, structs and unions.
+ - Minor bug fixes in the front-end;
+
+*** Version 1.14 ***
+Date: 15/12/2010
++ Enhancements
+ - Minor bug fixes related to the integer and real arithmetic encoding;
+ - Implementation of some optimization to improve the performance
+   during the loop unwinding.
+
+*** Version 1.13 ***
+Date: 23/11/2010
++ Enhancements
+ - Fixed one bug related to the SMT encoding of arrays that contain
+   structs reported by Jeremy;
+ - Integration of a new version of the SMT solver Z3 (i.e., v2.13).
+
+*** Version 1.12 ***
+Date: 08/11/2010
++ New Feature
+ - Output verification conditions into the SMT-lib logics QF_AUFBV
+   and QF_AUFLIRA (use the option --qf_aufbv or qf_auflira followed by
+   --outfile file.smt).
++ Enhancements
+ - Minor bug fixes related to the ANSI-C front-end and dynamic memory allocation.
+
+*** Version 1.11 ***
+Date: 18/10/2010
++ New Features
+ - Preliminary support for detecting memory leaks.
+
+*** Version 1.10 ***
+Date: 13/10/2010
++ New Feature
+ - Support for static partial order reduction (use the
+   option --no-por to disable it);
++ Enhancements
+ - Fixed one bug related to context-switch before array updates;
+ - Fixed one bug related to pointer typecast reported by Jie Gao.
+
+*** Version 1.9 ***
+Date: 17/09/2010
++ New Feature
+ - Support for checking atomicity violation at visible statements
+   (use the option --atomicity-check).
+
+*** Version 1.8 ***
+Date: 06/09/2010
++ Enhancements
+ - Included an option --control-flow-test to allow context switch before
+   control flow tests;
+ - Integration of a new version of the SMT solver Z3 (i.e., v2.11).
++ Known Issues
+ - We do not add data race checks for structs and pointers.
+
+*** Version 1.7.1 ***
+Date: 26/07/2010
++ Enhancements
+ - Fixed one bug reported by Jie Gao related to dynamic memory allocation.
++ Known Issues
+ - We do not add data race checks for structs and pointers.
+
+*** Version 1.7 ***
+Date: 22/07/2010
++ Enhancements
+ - Fixed two bugs reported by Jie Gao related to atomicity violation
+   and condition checking of "for" loops;
+ - Fixed a bug related to function pointers;
+ - Integration of a new version of the SMT solver Z3 (i.e., v2.8).
++ Known Issues
+ - We do not add data race checks for structs and pointers.
+
+*** Version 1.6 ***
+Date: 03/06/2010
++ Enhancements
+ - Integration of a new version of the SMT solver Z3 (v2.7);
+ - The UW procedure is able to find deadlocks.
++ Known Issues
+ - We do not add data race checks for pointers (i.e., we miss data race
+   bugs originated from pointers).
+
+*** Version 1.5 ***
+Date: 14/05/2010
++ New Features
+ - Support for data race detection (use the option --data-races-detection).
++ Enhancements
+ - Improved the command-line interface: (i) we provide more details about the
+   UW algorithm in the console and (ii) we also allow the user to disable the
+   deadlock detection through the command line (thus simplifying the formula
+   to be sent to the SMT solver);
+ - Minor bug fixes related to the pthread_join function and the UW procedure
+   (now we can support thousands of control literals).
++ Known Issues
+ - We do not add deadlock assertions to be checked using the UW procedure;
+ - We do not add data race assertions for pointers (i.e., we miss data race
+   bugs originating from pointers).
+
+*** Version 1.4.1 ***
+Date: 10/05/2010
++ Enhancements
+ - Minor bug fixes related to the concurrency stuffs.
+ - Integration of a new version of the SMT solver Z3 (v2.6).
++ Known Issues
+ - The UW procedure does not work for multi-threaded C programs that require
+   more than 500 control literals.
+
+*** Version 1.4 ***
+Date: 25/04/2010
++ New Features
+ - Support for context-bounded model checking (use option --context-switch nr);
+ - Support for detecting the potential for deadlock;
+ - Detection of abandoned locks;
+ - Detection of lost signals;
+ - Support for creating dynamically threads, mutexes, and condition variables.
++ Known Issues
+ - The UW procedure does not work for multi-threaded C programs that require
+   more than 500 control literals.
+
+*** Version 1.3.2 ***
+Date: 08/04/2010
++ Enhancements
+ - Minor bug fixes related to concurrency reported by Byron Cook.
+
+*** Version: 1.3.1 ***
+Date: 29/03/2010
++ Enhancements
+ - Minor bug fixes related to dynamic memory allocation;
+ - Improvement in the command-line interface;
+ - Integration of a new version of the SMT solver Z3 (v2.5).
+
+*** Version: 1.3 ***
+Date: 13/03/2010
++ New features:
+ - Lazy exploration of the threads interleavings;
+ - Generate one single formula using the schedule recording approach to verify multi-threaded programs;
+ - Generate underapproximation and widening models for the multi-threaded programs;
+ - Support for concurrent C programs with shared memory;
+ - Support for synchronization primitives with mutexes and conditions;
+ - Detection of global deadlock with mutexes and conditions;
+ - Additional support for atomic sections through the functions __ESBMC_atomic_begin() and __ESBMC_atomic_end().
+

@@ -1,0 +1,53 @@
+Begin_process:   Benchmarks/Linear/c/232.c
+GPT Answer: ['assert(x >= 2);', 'assert(y > 2);', 'assert(x <= y);']
+AnsSet: ['y > 2', 'x >= 2']
+Candidate: assert(x >= 2);
+SMTLIB2: (assert (>= x 2))
+ (>= x 2)
+n{'y': 0, 'x': 2}
+Size of CE: 1
+GPT Answer: ['assert(x >= 2);', 'assert(y > 2);', 'assert(x <= y);', 'assert(x >= 2 && y > 2 && x <= y);']
+AnsSet: ['y > 2', 'x >= 2']
+GPT Answer: ['assert(x >= 2);', 'assert(y > 2);', 'assert(x <= y);', 'assert(x >= 2 && y > 2 && x <= y);', 'assert(x >= 2 && y >= 3);']
+AnsSet: ['y > 2', 'x >= 2', 'y >= 3']
+=================Verifivation Begin=================
+CombineCandidate: assert((y > 2) && (x >= 2) && (y >= 3));
+CombineSMTLIB2: (assert (and (and (> y 2) (>= x 2)) (>= y 3)))
+ (and (and (> y 2) (>= x 2)) (>= y 3))
+n{'y': 3, 'x': 4}
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert(y > 2);
+SMTLIB2: (assert (> y 2))
+ (> y 2)
+n{'y': 3, 'x': 4}
+Size of CE: 3
+GPT Answer: ['assert(x >= 2);', 'assert(y > 2);', 'assert(x <= y);', 'assert(x >= 2 && y > 2 && x <= y);', 'assert(x >= 2 && y >= 3);', 'assert(x >= 2 && y > 2);']
+AnsSet: ['y > 2', 'x >= 2', 'y >= 3']
+GPT Answer: ['assert(x >= 2);', 'assert(y > 2);', 'assert(x <= y);', 'assert(x >= 2 && y > 2 && x <= y);', 'assert(x >= 2 && y >= 3);', 'assert(x >= 2 && y > 2);', 'assert(x >= 1 && x <= y);']
+AnsSet: ['y > 2', 'x >= 2', 'y >= 3', 'x >= 1']
+=================Verifivation Begin=================
+CombineCandidate: assert((y > 2) && (x >= 2) && (y >= 3) && (x >= 1));
+CombineSMTLIB2: (assert (and (and (and (> y 2) (>= x 2)) (>= y 3)) (>= x 1)))
+ (and (and (and (> y 2) (>= x 2)) (>= y 3)) (>= x 1))
+n{'y': 3, 'x': 4}
+Size of CE: 4
+=================Verifivation Compelete=================
+
+Candidate: assert(x <= y);
+SMTLIB2: (assert (<= x y))
+ (<= x y)
+i({'y': 0, 'x': -1, '/0': [else -> 0]}, {'x': 1, 'y': 0})
+Size of CE: 5
+GPT Answer: ['assert(x >= 2);', 'assert(y > 2);', 'assert(x <= y);', 'assert(x >= 2 && y > 2 && x <= y);', 'assert(x >= 2 && y >= 3);', 'assert(x >= 2 && y > 2);', 'assert(x >= 1 && x <= y);', 'assert(x >= 2 && x <= y);']
+AnsSet: ['y > 2', 'x >= 2', 'y >= 3', 'x >= 1']
+GPT Answer: ['assert(x >= 2);', 'assert(y > 2);', 'assert(x <= y);', 'assert(x >= 2 && y > 2 && x <= y);', 'assert(x >= 2 && y >= 3);', 'assert(x >= 2 && y > 2);', 'assert(x >= 1 && x <= y);', 'assert(x >= 2 && x <= y);']
+AnsSet: ['y > 2', 'x >= 2', 'y >= 3', 'x >= 1']
+
+Candidate: assert(x >= 2 && y > 2 && x <= y);
+SMTLIB2: (assert (and (and (>= x 2) (> y 2)) (<= x y)))
+ (and (and (>= x 2) (> y 2)) (<= x y))
+The answer is :  assert(x >= 2 && y > 2 && x <= y);
+Time cost is :  227.1587598323822
+The proposal times is :  6

@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/207.c
+GPT Answer: ['assert(y <= 1000000);', 'assert(x >= 0);', 'assert(y <= 0 || x >= 100);', 'assert(x >= 0 || y <= 0);', 'assert(x < 100 || y <= 0 || x >= 100);', 'assert(x < 100 || y <= 0);']
+AnsSet: ['y <= 1000000', '(x < 100)||(y <= 0)||(x >= 100)']
+Candidate: assert(y <= 1000000);
+SMTLIB2: (assert (<= y 1000000))
+ (<= y 1000000)
+The answer is :  assert(y <= 1000000);
+Time cost is :  22.308478593826294
+The proposal times is :  1

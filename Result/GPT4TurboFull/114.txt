@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/114.c
+GPT Answer: ['assert(sn == x);']
+AnsSet: ['sn == x']
+Candidate: assert(sn == x);
+SMTLIB2: (assert (= sn x))
+ (= sn x)
+The answer is :  assert(sn == x);
+Time cost is :  6.779626369476318
+The proposal times is :  1

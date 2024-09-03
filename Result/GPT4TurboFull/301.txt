@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/301.c
+GPT Answer: ['assert(i % 3 == 0);', 'assert(i >= 0);', 'assert(i <= n);', 'assert(i >= 0 && i <= n);', 'assert(n <= 50000001);']
+AnsSet: ['j == 0', 'n <= 50000001', 'i % 3 == 0', 'i >= 0']
+Candidate: assert(i % 3 == 0);
+SMTLIB2: (assert (= (mod i 3) 0))
+ (= (mod i 3) 0)
+The answer is :  assert(i % 3 == 0);
+Time cost is :  16.728363752365112
+The proposal times is :  1

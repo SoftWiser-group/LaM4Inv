@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/281.c
+GPT Answer: ['assert(x < y || x == y);', 'assert(x <= y + 99);', 'assert(x < y || x >= y);', 'assert(y <= 20000001);', 'assert((x - y) % 100 == 0 || x >= y);']
+AnsSet: ['y <= 20000001', 'x <= y + 99', '(x < y)||(x >= y)']
+Candidate: assert(x < y || x == y);
+SMTLIB2: (assert (or (< x y) (= x y)))
+ (or (< x y) (= x y))
+i({'y': 0, 'x': -1}, {'x': 99, 'y': 0})
+Size of CE: 1
+GPT Answer: ['assert(x < y || x == y);', 'assert(x <= y + 99);', 'assert(x < y || x >= y);', 'assert(y <= 20000001);', 'assert((x - y) % 100 == 0 || x >= y);', 'assert(x >= -99 && x < y);']
+AnsSet: ['y <= 20000001', 'x <= y + 99', '(x < y)||(x >= y)']
+GPT Answer: ['assert(x < y || x == y);', 'assert(x <= y + 99);', 'assert(x < y || x >= y);', 'assert(y <= 20000001);', 'assert((x - y) % 100 == 0 || x >= y);', 'assert(x >= -99 && x < y);', 'assert(x >= -99 && x < y + 100);']
+AnsSet: ['y <= 20000001', 'x <= y + 99', '(x < y)||(x >= y)', 'x < y + 100']
+=================Verifivation Begin=================
+CombineCandidate: assert((y <= 20000001) && (x <= y + 99) && ((x < y)||(x >= y)) && (x < y + 100));
+CombineSMTLIB2: (assert (and (and (and (<= y 20000001) (<= x (+ y 99))) (or (< x y) (>= x y))) (< x (+ y 100))))
+ (and (and (and (<= y 20000001) (<= x (+ y 99))) (or (< x y) (>= x y))) (< x (+ y 100)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((y <= 20000001) && (x <= y + 99) && ((x < y)||(x >= y)) && (x < y + 100));
+Time cost is :  27.955411672592163
+The proposal times is :  2

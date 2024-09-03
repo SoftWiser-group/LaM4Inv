@@ -1,0 +1,115 @@
+(set-logic QF_NIA)
+
+( declare-const a Int )
+( declare-const a! Int )
+( declare-const n Int )
+( declare-const n! Int )
+( declare-const s Int )
+( declare-const s! Int )
+( declare-const t Int )
+( declare-const t! Int )
+
+( declare-const a_0 Int )
+( declare-const a_1 Int )
+( declare-const a_2 Int )
+( declare-const n_0 Int )
+( declare-const s_0 Int )
+( declare-const s_1 Int )
+( declare-const s_2 Int )
+( declare-const t_0 Int )
+( declare-const t_1 Int )
+( declare-const t_2 Int )
+
+( define-fun inv-f( ( a Int )( n Int )( s Int )( t Int ) ) Bool
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+)
+
+( define-fun pre-f ( ( a Int )( n Int )( s Int )( t Int )( a_0 Int )( a_1 Int )( a_2 Int )( n_0 Int )( s_0 Int )( s_1 Int )( s_2 Int )( t_0 Int )( t_1 Int )( t_2 Int ) ) Bool
+	( and
+		( = a a_0 )
+		( = n n_0 )
+		( = s s_0 )
+		( = t t_0 )
+		( >= n_0 0 )
+		( = a_0 0 )
+		( = s_0 1 )
+		( = t_0 1 )
+	)
+)
+
+( define-fun trans-f ( ( a Int )( n Int )( s Int )( t Int )( a! Int )( n! Int )( s! Int )( t! Int )( a_0 Int )( a_1 Int )( a_2 Int )( n_0 Int )( s_0 Int )( s_1 Int )( s_2 Int )( t_0 Int )( t_1 Int )( t_2 Int ) ) Bool
+	( or
+		( and
+			( = a_1 a )
+			( = s_1 s )
+			( = t_1 t )
+			( = a_1 a! )
+			( = s_1 s! )
+			( = t_1 t! )
+			( = n n_0 )
+			( = n! n_0 )
+			( = a a! )
+			( = t t! )
+		)
+		( and
+			( = a_1 a )
+			( = s_1 s )
+			( = t_1 t )
+			( <= s_1 n_0 )
+			( = a_2 ( + a_1 1 ) )
+			( = t_2 ( + t_1 2 ) )
+			( = s_2 ( + s_1 t_2 ) )
+			( = a_2 a! )
+			( = s_2 s! )
+			( = t_2 t! )
+			(= n n_0 )
+			(= n! n_0 )
+		)
+	)
+)
+
+( define-fun post-f ( ( a Int )( n Int )( s Int )( t Int )( a_0 Int )( a_1 Int )( a_2 Int )( n_0 Int )( s_0 Int )( s_1 Int )( s_2 Int )( t_0 Int )( t_1 Int )( t_2 Int ) ) Bool
+	( or
+		( not
+			( and
+				( = a a_1)
+				( = n n_0)
+				( = s s_1)
+				( = t t_1)
+			)
+		)
+		( not
+			( and
+				( not ( <= s_1 n_0 ) )
+				( not ( < n_0 ( * ( + a_1 1 ) ( + a_1 1 ) ) ) )
+			)
+		)
+	)
+)
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+( assert ( not
+	( =>
+		( pre-f a n s t a_0 a_1 a_2 n_0 s_0 s_1 s_2 t_0 t_1 t_2  )
+		( inv-f a n s t )
+	)
+))
+
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+( assert ( not
+	( =>
+		( and
+			( inv-f a n s t )
+			( trans-f a n s t a! n! s! t! a_0 a_1 a_2 n_0 s_0 s_1 s_2 t_0 t_1 t_2 )
+		)
+		( inv-f a! n! s! t! )
+	)
+))
+
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+( assert ( not
+	( =>
+		( inv-f a n s t  )
+		( post-f a n s t a_0 a_1 a_2 n_0 s_0 s_1 s_2 t_0 t_1 t_2 )
+	)
+))
+

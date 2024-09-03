@@ -1,0 +1,39 @@
+Begin_process:   Benchmarks/Linear/c/183.c
+GPT Answer: ['assert(x <= 0 || y >= t);', 'assert(x != y);', 'assert(x <= 0 || y > t);', 'assert(t == y || y >= t);', 'assert(y >= t);']
+AnsSet: ['i == 0']
+Candidate: assert(x <= 0 || y >= t);
+SMTLIB2: (assert (or (<= x 0) (>= y t)))
+ (or (<= x 0) (>= y t))
+n{'y': -1, 't': 0, 'i': 0, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert(x <= 0 || y >= t);', 'assert(x != y);', 'assert(x <= 0 || y > t);', 'assert(t == y || y >= t);', 'assert(y >= t);', 'assert(x >= 0 && y >= t);']
+AnsSet: ['i == 0']
+GPT Answer: ['assert(x <= 0 || y >= t);', 'assert(x != y);', 'assert(x <= 0 || y > t);', 'assert(t == y || y >= t);', 'assert(y >= t);', 'assert(x >= 0 && y >= t);', 'assert(x <= 0 || (y >= t && y - t >= x));']
+AnsSet: ['i == 0']
+
+Candidate: assert(x != y);
+SMTLIB2: (assert (not (= x y)))
+ (not (= x y))
+i({'t': 0, 'i': 0, 'y': 0, 'x': 1}, {'y': 1, 't': 0, 'i': 0, 'x': 1})
+Size of CE: 2
+GPT Answer: ['assert(x <= 0 || y >= t);', 'assert(x != y);', 'assert(x <= 0 || y > t);', 'assert(t == y || y >= t);', 'assert(y >= t);', 'assert(x >= 0 && y >= t);', 'assert(x <= 0 || (y >= t && y - t >= x));', 'assert(y >= t && x > 0);']
+AnsSet: ['i == 0']
+GPT Answer: ['assert(x <= 0 || y >= t);', 'assert(x != y);', 'assert(x <= 0 || y > t);', 'assert(t == y || y >= t);', 'assert(y >= t);', 'assert(x >= 0 && y >= t);', 'assert(x <= 0 || (y >= t && y - t >= x));', 'assert(y >= t && x > 0);']
+AnsSet: ['i == 0']
+
+Candidate: assert(x <= 0 || y > t);
+SMTLIB2: (assert (or (<= x 0) (> y t)))
+ (or (<= x 0) (> y t))
+p{'y': 2, 't': 2, 'i': 0, 'x': 1}
+Size of CE: 3
+GPT Answer: ['assert(x <= 0 || y >= t);', 'assert(x != y);', 'assert(x <= 0 || y > t);', 'assert(t == y || y >= t);', 'assert(y >= t);', 'assert(x >= 0 && y >= t);', 'assert(x <= 0 || (y >= t && y - t >= x));', 'assert(y >= t && x > 0);']
+AnsSet: ['i == 0']
+GPT Answer: ['assert(x <= 0 || y >= t);', 'assert(x != y);', 'assert(x <= 0 || y > t);', 'assert(t == y || y >= t);', 'assert(y >= t);', 'assert(x >= 0 && y >= t);', 'assert(x <= 0 || (y >= t && y - t >= x));', 'assert(y >= t && x > 0);']
+AnsSet: ['i == 0']
+
+Candidate: assert(t == y || y >= t);
+SMTLIB2: (assert (or (= t y) (>= y t)))
+ (or (= t y) (>= y t))
+The answer is :  assert(t == y || y >= t);
+Time cost is :  32.8887882232666
+The proposal times is :  4

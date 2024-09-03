@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/7.c
+GPT Answer: ['assert((x >= 0) && (x <= 20));', 'assert((y >= 0) && (y <= 20));', 'assert((x == y));', 'assert((x >= 0) && (y >= 0) && (x == y));', 'assert(x >= 0 && y >= 0);', 'assert(x <= y + 10);']
+AnsSet: ['(x >= 0)', '(y >= 0)', 'x >= 0', 'y >= 0', 'x <= y + 10']
+Candidate: assert((x >= 0) && (x <= 20));
+SMTLIB2: (assert (and (>= x 0) (<= x 20)))
+ (and (>= x 0) (<= x 20))
+i({'x': 11, 'y': 0, 'tmp': 0}, {'x': 21, 'y': 10, 'tmp': 0})
+Size of CE: 1
+GPT Answer: ['assert((x >= 0) && (x <= 20));', 'assert((y >= 0) && (y <= 20));', 'assert((x == y));', 'assert((x >= 0) && (y >= 0) && (x == y));', 'assert(x >= 0 && y >= 0);', 'assert(x <= y + 10);', 'assert((x % 10 == y % 10));']
+AnsSet: ['(x >= 0)', '(y >= 0)', 'x >= 0', 'y >= 0', 'x <= y + 10']
+GPT Answer: ['assert((x >= 0) && (x <= 20));', 'assert((y >= 0) && (y <= 20));', 'assert((x == y));', 'assert((x >= 0) && (y >= 0) && (x == y));', 'assert(x >= 0 && y >= 0);', 'assert(x <= y + 10);', 'assert((x % 10 == y % 10));']
+AnsSet: ['(x >= 0)', '(y >= 0)', 'x >= 0', 'y >= 0', 'x <= y + 10']
+=================Verifivation Begin=================
+CombineCandidate: assert(((x >= 0)) && ((y >= 0)) && (x >= 0) && (y >= 0) && (x <= y + 10));
+CombineSMTLIB2: (assert (and (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0)) (<= x (+ y 10))))
+ (and (and (and (and (>= x 0) (>= y 0)) (>= x 0)) (>= y 0)) (<= x (+ y 10)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((x >= 0)) && ((y >= 0)) && (x >= 0) && (y >= 0) && (x <= y + 10));
+Time cost is :  21.413136959075928
+The proposal times is :  2

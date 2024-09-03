@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/71.c
+GPT Answer: ['assert(y >= 0 && y <= 127);', 'assert(z >= 36 * y);', 'assert(c >= 0 && c <= 36);', 'assert((z >= (36 * y)) && (z <= (36 * y) + 36) && (c >= 0) && (c <= 36));', 'assert(y >= 0);', 'assert(y <= 127);', 'assert(c >= 0);', 'assert(c <= 36);', 'assert((c < 36) || (z == 36 * y + c));', 'assert((c >= 0) && (z >= (36 * y) + c) && (c <= 36));', 'assert(z >= 36 * y && z <= 36 * y + 36);']
+AnsSet: ['y >= 0', 'y <= 127', 'z >= 36 * y', 'c >= 0', 'c <= 36', '(z >= (36 * y))', '(z <= (36 * y) + 36)', '(c >= 0)', '(c <= 36)', '((c < 36))||((z == 36 * y + c))', '(z >= (36 * y) + c)', 'z <= 36 * y + 36']
+Candidate: assert(y >= 0 && y <= 127);
+SMTLIB2: (assert (and (>= y 0) (<= y 127)))
+ (and (>= y 0) (<= y 127))
+n{'y': 0, 'c': 35, 'z': -1}
+Size of CE: 1
+GPT Answer: ['assert(y >= 0 && y <= 127);', 'assert(z >= 36 * y);', 'assert(c >= 0 && c <= 36);', 'assert((z >= (36 * y)) && (z <= (36 * y) + 36) && (c >= 0) && (c <= 36));', 'assert(y >= 0);', 'assert(y <= 127);', 'assert(c >= 0);', 'assert(c <= 36);', 'assert((c < 36) || (z == 36 * y + c));', 'assert((c >= 0) && (z >= (36 * y) + c) && (c <= 36));', 'assert(z >= 36 * y && z <= 36 * y + 36);', 'assert(c >= 0 && c <= 36 && z == 36 * y + c);']
+AnsSet: ['y >= 0', 'y <= 127', 'z >= 36 * y', 'c >= 0', 'c <= 36', '(z >= (36 * y))', '(z <= (36 * y) + 36)', '(c >= 0)', '(c <= 36)', '((c < 36))||((z == 36 * y + c))', '(z >= (36 * y) + c)', 'z <= 36 * y + 36', 'z == 36 * y + c']
+GPT Answer: ['assert(y >= 0 && y <= 127);', 'assert(z >= 36 * y);', 'assert(c >= 0 && c <= 36);', 'assert((z >= (36 * y)) && (z <= (36 * y) + 36) && (c >= 0) && (c <= 36));', 'assert(y >= 0);', 'assert(y <= 127);', 'assert(c >= 0);', 'assert(c <= 36);', 'assert((c < 36) || (z == 36 * y + c));', 'assert((c >= 0) && (z >= (36 * y) + c) && (c <= 36));', 'assert(z >= 36 * y && z <= 36 * y + 36);', 'assert(c >= 0 && c <= 36 && z == 36 * y + c);', 'assert((c >= 0) && (z == 36 * y + c) && (c <= 36));']
+AnsSet: ['y >= 0', 'y <= 127', 'z >= 36 * y', 'c >= 0', 'c <= 36', '(z >= (36 * y))', '(z <= (36 * y) + 36)', '(c >= 0)', '(c <= 36)', '((c < 36))||((z == 36 * y + c))', '(z >= (36 * y) + c)', 'z <= 36 * y + 36', 'z == 36 * y + c', '(z == 36 * y + c)']
+=================Verifivation Begin=================
+CombineCandidate: assert((y >= 0) && (y <= 127) && (z >= 36 * y) && (c >= 0) && (c <= 36) && ((z >= (36 * y))) && ((z <= (36 * y) + 36)) && ((c >= 0)) && ((c <= 36)) && (((c < 36))||((z == 36 * y + c))) && ((z >= (36 * y) + c)) && (z <= 36 * y + 36) && (z == 36 * y + c) && ((z == 36 * y + c)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (and (and (and (and (and (and (>= y 0) (<= y 127)) (>= z (* 36 y))) (>= c 0)) (<= c 36)) (>= z (* 36 y))) (<= z (+ (* 36 y) 36))) (>= c 0)) (<= c 36)) (or (< c 36) (= z (+ (* 36 y) c)))) (>= z (+ (* 36 y) c))) (<= z (+ (* 36 y) 36))) (= z (+ (* 36 y) c))) (= z (+ (* 36 y) c))))
+ (and (and (and (and (and (and (and (and (and (and (and (and (and (>= y 0) (<= y 127)) (>= z (* 36 y))) (>= c 0)) (<= c 36)) (>= z (* 36 y))) (<= z (+ (* 36 y) 36))) (>= c 0)) (<= c 36)) (or (< c 36) (= z (+ (* 36 y) c)))) (>= z (+ (* 36 y) c))) (<= z (+ (* 36 y) 36))) (= z (+ (* 36 y) c))) (= z (+ (* 36 y) c)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((y >= 0) && (y <= 127) && (z >= 36 * y) && (c >= 0) && (c <= 36) && ((z >= (36 * y))) && ((z <= (36 * y) + 36)) && ((c >= 0)) && ((c <= 36)) && (((c < 36))||((z == 36 * y + c))) && ((z >= (36 * y) + c)) && (z <= 36 * y + 36) && (z == 36 * y + c) && ((z == 36 * y + c)));
+Time cost is :  33.275848388671875
+The proposal times is :  2

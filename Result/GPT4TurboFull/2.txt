@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/2.c
+GPT Answer: ['assert((y >= 0) && (x >= y));', 'assert((y <= 1000));', 'assert(x >= y);', 'assert(y >= 0);', 'assert(x >= 1);', 'assert((y >= 0) && (x >= y) && (x >= 1));']
+AnsSet: ['(y >= 0)', '(x >= y)', '(y <= 1000)', 'x >= y', 'y >= 0', 'x >= 1', '(x >= 1)']
+Candidate: assert((y >= 0) && (x >= y));
+SMTLIB2: (assert (and (>= y 0) (>= x y)))
+ (and (>= y 0) (>= x y))
+i({'x': 0, 'y': 0}, {'x': 0, 'y': 1})
+Size of CE: 1
+GPT Answer: ['assert((y >= 0) && (x >= y));', 'assert((y <= 1000));', 'assert(x >= y);', 'assert(y >= 0);', 'assert(x >= 1);', 'assert((y >= 0) && (x >= y) && (x >= 1));', 'assert((y >= 0) && (x == y * (y + 1) / 2 + 1));']
+AnsSet: ['(y >= 0)', '(x >= y)', '(y <= 1000)', 'x >= y', 'y >= 0', 'x >= 1', '(x >= 1)']
+GPT Answer: ['assert((y >= 0) && (x >= y));', 'assert((y <= 1000));', 'assert(x >= y);', 'assert(y >= 0);', 'assert(x >= 1);', 'assert((y >= 0) && (x >= y) && (x >= 1));', 'assert((y >= 0) && (x == y * (y + 1) / 2 + 1));', 'assert((y >= 0) && (x == (y * (y - 1)) / 2 + 1));']
+AnsSet: ['(y >= 0)', '(x >= y)', '(y <= 1000)', 'x >= y', 'y >= 0', 'x >= 1', '(x >= 1)', '(x == (y * (y - 1)) / 2 + 1)']
+=================Verifivation Begin=================
+CombineCandidate: assert(((y >= 0)) && ((x >= y)) && ((y <= 1000)) && (x >= y) && (y >= 0) && (x >= 1) && ((x >= 1)) && ((x == (y * (y - 1)) / 2 + 1)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (>= y 0) (>= x y)) (<= y 1000)) (>= x y)) (>= y 0)) (>= x 1)) (>= x 1)) (= x (+ (/ (* y (- y 1)) 2) 1))))
+ (and (and (and (and (and (and (and (>= y 0) (>= x y)) (<= y 1000)) (>= x y)) (>= y 0)) (>= x 1)) (>= x 1)) (= x (+ (/ (* y (- y 1)) 2) 1)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((y >= 0)) && ((x >= y)) && ((y <= 1000)) && (x >= y) && (y >= 0) && (x >= 1) && ((x >= 1)) && ((x == (y * (y - 1)) / 2 + 1)));
+Time cost is :  20.128379583358765
+The proposal times is :  2

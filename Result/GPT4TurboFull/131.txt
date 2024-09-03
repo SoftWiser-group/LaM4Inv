@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/131.c
+GPT Answer: ['assert(x2 >= x1 && x3 >= x1 && x1 >= 0);', 'assert(x1 >= 0 && x2 >= x1 && x3 >= x1);', 'assert(x1 >= 0);', 'assert(x2 >= 0);', 'assert(x3 >= 0);', 'assert((x2 >= x1) || (x1 <= 0));', 'assert((x3 >= x1) || (x1 <= 0));', 'assert(x2 >= x1);', 'assert(x3 >= x1);']
+AnsSet: ['d1 == 1', 'd2 == 1', 'd3 == 1', 'x2 >= x1', 'x3 >= x1', 'x1 >= 0', 'x2 >= 0', 'x3 >= 0', '((x2 >= x1))||((x1 <= 0))', '((x3 >= x1))||((x1 <= 0))']
+Candidate: assert(x2 >= x1 && x3 >= x1 && x1 >= 0);
+SMTLIB2: (assert (and (and (>= x2 x1) (>= x3 x1)) (>= x1 0)))
+ (and (and (>= x2 x1) (>= x3 x1)) (>= x1 0))
+i({'d2': 0, 'd1': -1, 'd3': 1, 'x1': 1, 'x2': 1, 'x3': 1}, {'x3': 0, 'x1': 2, 'x2': 1, 'd1': -1, 'd3': 1, 'd2': 0})
+Size of CE: 1
+GPT Answer: ['assert(x2 >= x1 && x3 >= x1 && x1 >= 0);', 'assert(x1 >= 0 && x2 >= x1 && x3 >= x1);', 'assert(x1 >= 0);', 'assert(x2 >= 0);', 'assert(x3 >= 0);', 'assert((x2 >= x1) || (x1 <= 0));', 'assert((x3 >= x1) || (x1 <= 0));', 'assert(x2 >= x1);', 'assert(x3 >= x1);']
+AnsSet: ['d1 == 1', 'd2 == 1', 'd3 == 1', 'x2 >= x1', 'x3 >= x1', 'x1 >= 0', 'x2 >= 0', 'x3 >= 0', '((x2 >= x1))||((x1 <= 0))', '((x3 >= x1))||((x1 <= 0))']
+GPT Answer: ['assert(x2 >= x1 && x3 >= x1 && x1 >= 0);', 'assert(x1 >= 0 && x2 >= x1 && x3 >= x1);', 'assert(x1 >= 0);', 'assert(x2 >= 0);', 'assert(x3 >= 0);', 'assert((x2 >= x1) || (x1 <= 0));', 'assert((x3 >= x1) || (x1 <= 0));', 'assert(x2 >= x1);', 'assert(x3 >= x1);']
+AnsSet: ['d1 == 1', 'd2 == 1', 'd3 == 1', 'x2 >= x1', 'x3 >= x1', 'x1 >= 0', 'x2 >= 0', 'x3 >= 0', '((x2 >= x1))||((x1 <= 0))', '((x3 >= x1))||((x1 <= 0))']
+=================Verifivation Begin=================
+CombineCandidate: assert((d1 == 1) && (d2 == 1) && (d3 == 1) && (x2 >= x1) && (x3 >= x1) && (x1 >= 0) && (x2 >= 0) && (x3 >= 0) && (((x2 >= x1))||((x1 <= 0))) && (((x3 >= x1))||((x1 <= 0))));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (and (and (= d1 1) (= d2 1)) (= d3 1)) (>= x2 x1)) (>= x3 x1)) (>= x1 0)) (>= x2 0)) (>= x3 0)) (or (>= x2 x1) (<= x1 0))) (or (>= x3 x1) (<= x1 0))))
+ (and (and (and (and (and (and (and (and (and (= d1 1) (= d2 1)) (= d3 1)) (>= x2 x1)) (>= x3 x1)) (>= x1 0)) (>= x2 0)) (>= x3 0)) (or (>= x2 x1) (<= x1 0))) (or (>= x3 x1) (<= x1 0)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((d1 == 1) && (d2 == 1) && (d3 == 1) && (x2 >= x1) && (x3 >= x1) && (x1 >= 0) && (x2 >= 0) && (x3 >= 0) && (((x2 >= x1))||((x1 <= 0))) && (((x3 >= x1))||((x1 <= 0))));
+Time cost is :  25.70464015007019
+The proposal times is :  2

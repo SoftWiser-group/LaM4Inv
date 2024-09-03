@@ -1,0 +1,105 @@
+Begin_process:   Benchmarks/Linear/c/157.c
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+Candidate: assert(j > 0);
+SMTLIB2: (assert (> j 0))
+ (> j 0)
+n{'a': -1, 'm': 0, 'j': 1}
+Size of CE: 1
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+=================Verifivation Begin=================
+CombineCandidate: assert((m > 0) && (j > 0) && (a >= 0 - (j - 1)) && (a <= j - 1) && (a >= 1 - j) && (j >= 1) && (a >= -j + 1) && (a >= -(j - 1)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (> m 0) (> j 0)) (>= a (- 0 (- j 1)))) (<= a (- j 1))) (>= a (- 1 j))) (>= j 1)) (>= a (+ (- 0 j) 1))) (>= a (- 0 (- j 1)))))
+ (and (and (and (and (and (and (and (> m 0) (> j 0)) (>= a (- 0 (- j 1)))) (<= a (- j 1))) (>= a (- 1 j))) (>= j 1)) (>= a (+ (- 0 j) 1))) (>= a (- 0 (- j 1))))
+n{'a': -2, 'm': 1, 'j': 3}
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert(a >= 0 - (j - 1) && a <= j - 1);
+SMTLIB2: (assert (and (>= a (- 0 (- j 1))) (<= a (- j 1))))
+ (and (>= a (- 0 (- j 1))) (<= a (- j 1)))
+n{'a': 0, 'm': -1, 'j': 1}
+Size of CE: 3
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+
+Candidate: assert(a >= 1 - j && a <= j - 1);
+SMTLIB2: (assert (and (>= a (- 1 j)) (<= a (- j 1))))
+ (and (>= a (- 1 j)) (<= a (- j 1)))
+n{'a': 0, 'm': -1, 'j': 1}
+Size of CE: 4
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+
+Candidate: assert(j >= 1 && j <= m + 1);
+SMTLIB2: (assert (and (>= j 1) (<= j (+ m 1))))
+ (and (>= j 1) (<= j (+ m 1)))
+n{'a': -1, 'm': 0, 'j': 1}
+Size of CE: 5
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+
+Candidate: assert(a >= -j + 1);
+SMTLIB2: (assert (>= a (+ (- 0 j) 1)))
+ (>= a (+ (- 0 j) 1))
+n{'a': -1, 'm': 0, 'j': 2}
+Size of CE: 6
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);', 'assert(j > 0 && a >= 1 - j && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);', 'assert(j > 0 && a >= 1 - j && a <= j - 1);', 'assert(j > 0 && j <= m + 1 && a >= -j + 1 && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+
+Candidate: assert(a <= j - 1);
+SMTLIB2: (assert (<= a (- j 1)))
+ (<= a (- j 1))
+n{'a': -1, 'm': 0, 'j': 1}
+Size of CE: 7
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);', 'assert(j > 0 && a >= 1 - j && a <= j - 1);', 'assert(j > 0 && j <= m + 1 && a >= -j + 1 && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);', 'assert(j > 0 && a >= 1 - j && a <= j - 1);', 'assert(j > 0 && j <= m + 1 && a >= -j + 1 && a <= j - 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+
+Candidate: assert(a >= -(j - 1) && a <= j - 1);
+SMTLIB2: (assert (and (>= a (- 0 (- j 1))) (<= a (- j 1))))
+ (and (>= a (- 0 (- j 1))) (<= a (- j 1)))
+n{'a': 0, 'm': -1, 'j': 1}
+Size of CE: 8
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);', 'assert(j > 0 && a >= 1 - j && a <= j - 1);', 'assert(j > 0 && j <= m + 1 && a >= -j + 1 && a <= j - 1);', 'assert(j > 0 && a >= -(j - 1) && a <= j - 1 && j <= m + 1);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)']
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);', 'assert(j > 0 && a >= 1 - j && a <= j - 1);', 'assert(j > 0 && j <= m + 1 && a >= -j + 1 && a <= j - 1);', 'assert(j > 0 && a >= -(j - 1) && a <= j - 1 && j <= m + 1);', 'assert(j >= 1 && a >= -(j - 1) && a <= j - 1 && m >= 0);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)', 'm >= 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((m > 0) && (j > 0) && (a >= 0 - (j - 1)) && (a <= j - 1) && (a >= 1 - j) && (j >= 1) && (a >= -j + 1) && (a >= -(j - 1)) && (m >= 0));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (and (> m 0) (> j 0)) (>= a (- 0 (- j 1)))) (<= a (- j 1))) (>= a (- 1 j))) (>= j 1)) (>= a (+ (- 0 j) 1))) (>= a (- 0 (- j 1)))) (>= m 0)))
+ (and (and (and (and (and (and (and (and (> m 0) (> j 0)) (>= a (- 0 (- j 1)))) (<= a (- j 1))) (>= a (- 1 j))) (>= j 1)) (>= a (+ (- 0 j) 1))) (>= a (- 0 (- j 1)))) (>= m 0))
+n{'a': -2, 'm': 1, 'j': 3}
+Size of CE: 9
+=================Verifivation Compelete=================
+
+Candidate: assert(j > 0 && j <= m + 1);
+SMTLIB2: (assert (and (> j 0) (<= j (+ m 1))))
+ (and (> j 0) (<= j (+ m 1)))
+n{'a': -1, 'm': 0, 'j': 1}
+Size of CE: 10
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);', 'assert(j > 0 && a >= 1 - j && a <= j - 1);', 'assert(j > 0 && j <= m + 1 && a >= -j + 1 && a <= j - 1);', 'assert(j > 0 && a >= -(j - 1) && a <= j - 1 && j <= m + 1);', 'assert(j >= 1 && a >= -(j - 1) && a <= j - 1 && m >= 0);', 'assert(j > 0 && j <= m + 1 && a >= -m && a <= m);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)', 'm >= 0', 'a >= -m', 'a <= m']
+GPT Answer: ['assert(j > 0);', 'assert(a >= 0 - (j - 1) && a <= j - 1);', 'assert(a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1);', 'assert(a >= -j + 1);', 'assert(a <= j - 1);', 'assert(a >= -(j - 1) && a <= j - 1);', 'assert(j > 0 && j <= m + 1);', 'assert(j > 0 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(a >= -j + 1 && a <= j - 1);', 'assert(m > 0 && j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -(j - 1) && a <= j - 1);', 'assert(j >= 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= 1 - j && a <= j - 1);', 'assert(j >= 1 && j <= m + 1 && a >= -j + 1);', 'assert(j > 0 && a >= 1 - j && a <= j - 1);', 'assert(j > 0 && j <= m + 1 && a >= -j + 1 && a <= j - 1);', 'assert(j > 0 && a >= -(j - 1) && a <= j - 1 && j <= m + 1);', 'assert(j >= 1 && a >= -(j - 1) && a <= j - 1 && m >= 0);', 'assert(j > 0 && j <= m + 1 && a >= -m && a <= m);']
+AnsSet: ['m > 0', 'j > 0', 'a >= 0 - (j - 1)', 'a <= j - 1', 'a >= 1 - j', 'j >= 1', 'a >= -j + 1', 'a >= -(j - 1)', 'm >= 0', 'a >= -m', 'a <= m']
+=================Verifivation Begin=================
+CombineCandidate: assert((m > 0) && (j > 0) && (a >= 0 - (j - 1)) && (a <= j - 1) && (a >= 1 - j) && (j >= 1) && (a >= -j + 1) && (a >= -(j - 1)) && (m >= 0) && (a >= -m) && (a <= m));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (and (and (and (> m 0) (> j 0)) (>= a (- 0 (- j 1)))) (<= a (- j 1))) (>= a (- 1 j))) (>= j 1)) (>= a (+ (- 0 j) 1))) (>= a (- 0 (- j 1)))) (>= m 0)) (>= a (- 0 m))) (<= a m)))
+ (and (and (and (and (and (and (and (and (and (and (> m 0) (> j 0)) (>= a (- 0 (- j 1)))) (<= a (- j 1))) (>= a (- 1 j))) (>= j 1)) (>= a (+ (- 0 j) 1))) (>= a (- 0 (- j 1)))) (>= m 0)) (>= a (- 0 m))) (<= a m))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((m > 0) && (j > 0) && (a >= 0 - (j - 1)) && (a <= j - 1) && (a >= 1 - j) && (j >= 1) && (a >= -j + 1) && (a >= -(j - 1)) && (m >= 0) && (a >= -m) && (a <= m));
+Time cost is :  67.96902799606323
+The proposal times is :  11

@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/145.c
+GPT Answer: ['assert(hi - lo == mid * 2 && mid >= 0);', 'assert(lo + hi == 2 * mid && mid >= 0);', 'assert(mid >= 0);', 'assert(lo + hi == 2 * mid);', 'assert(lo == hi || mid != 0);', 'assert(lo - hi == 0);']
+AnsSet: ['hi - lo == mid * 2', 'mid >= 0', '(lo == hi)||(mid != 0)']
+Candidate: assert(hi - lo == mid * 2 && mid >= 0);
+SMTLIB2: (assert (and (= (- hi lo) (* mid 2)) (>= mid 0)))
+ (and (= (- hi lo) (* mid 2)) (>= mid 0))
+The answer is :  assert(hi - lo == mid * 2 && mid >= 0);
+Time cost is :  17.529561758041382
+The proposal times is :  1

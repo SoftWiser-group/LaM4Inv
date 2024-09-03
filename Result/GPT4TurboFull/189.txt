@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/189.c
+GPT Answer: ['assert(x >= 0 && y == 50 + x && x <= 100);', 'assert(x >= 0 && x <= 100);', 'assert(y == 50 || y == x);', 'assert(x >= 50 || y == 50);', 'assert(y == 50 || (y >= 50 && y <= 100));', 'assert(y == x || y == 50);', 'assert(y == 50 + (x - 50));', 'assert(x >= 0 && y == 50 + (x - 50));', 'assert(x >= 50 && y >= 50);']
+AnsSet: ['x >= 0', 'x <= 100', '(y == 50)||(y == x)', '(x >= 50)||(y == 50)', '(y == x)||(y == 50)', 'y >= 50']
+Candidate: assert(x >= 0 && y == 50 + x && x <= 100);
+SMTLIB2: (assert (and (and (>= x 0) (= y (+ 50 x))) (<= x 100)))
+ (and (and (>= x 0) (= y (+ 50 x))) (<= x 100))
+i({'y': 50, 'x': 0}, {'x': 1, 'y': 50})
+Size of CE: 1
+GPT Answer: ['assert(x >= 0 && y == 50 + x && x <= 100);', 'assert(x >= 0 && x <= 100);', 'assert(y == 50 || y == x);', 'assert(x >= 50 || y == 50);', 'assert(y == 50 || (y >= 50 && y <= 100));', 'assert(y == x || y == 50);', 'assert(y == 50 + (x - 50));', 'assert(x >= 0 && y == 50 + (x - 50));', 'assert(x >= 50 && y >= 50);', 'assert(x >= 0 && x <= 100 && y == 50 + x);']
+AnsSet: ['x >= 0', 'x <= 100', '(y == 50)||(y == x)', '(x >= 50)||(y == 50)', '(y == x)||(y == 50)', 'y >= 50']
+GPT Answer: ['assert(x >= 0 && y == 50 + x && x <= 100);', 'assert(x >= 0 && x <= 100);', 'assert(y == 50 || y == x);', 'assert(x >= 50 || y == 50);', 'assert(y == 50 || (y >= 50 && y <= 100));', 'assert(y == x || y == 50);', 'assert(y == 50 + (x - 50));', 'assert(x >= 0 && y == 50 + (x - 50));', 'assert(x >= 50 && y >= 50);', 'assert(x >= 0 && x <= 100 && y == 50 + x);', 'assert(x >= 0 && (x >= 50 || y == 50) && (x < 50 || y == x) && x <= 100);']
+AnsSet: ['x >= 0', 'x <= 100', '(y == 50)||(y == x)', '(x >= 50)||(y == 50)', '(y == x)||(y == 50)', 'y >= 50', '(x >= 50 || y == 50)', '(x < 50 || y == x)']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 0) && (x <= 100) && ((y == 50)||(y == x)) && ((x >= 50)||(y == 50)) && ((y == x)||(y == 50)) && (y >= 50) && ((x >= 50 || y == 50)) && ((x < 50 || y == x)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (>= x 0) (<= x 100)) (or (= y 50) (= y x))) (or (>= x 50) (= y 50))) (or (= y x) (= y 50))) (>= y 50)) (or (>= x 50) (= y 50))) (or (< x 50) (= y x))))
+ (and (and (and (and (and (and (and (>= x 0) (<= x 100)) (or (= y 50) (= y x))) (or (>= x 50) (= y 50))) (or (= y x) (= y 50))) (>= y 50)) (or (>= x 50) (= y 50))) (or (< x 50) (= y x)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x >= 0) && (x <= 100) && ((y == 50)||(y == x)) && ((x >= 50)||(y == 50)) && ((y == x)||(y == 50)) && (y >= 50) && ((x >= 50 || y == 50)) && ((x < 50 || y == x)));
+Time cost is :  87.77387619018555
+The proposal times is :  2

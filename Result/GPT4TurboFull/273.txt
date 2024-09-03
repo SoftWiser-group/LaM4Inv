@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/273.c
+GPT Answer: ['assert(i >= 0);', 'assert(i <= 200);']
+AnsSet: ['i >= 0', 'i <= 200']
+Candidate: assert(i >= 0);
+SMTLIB2: (assert (>= i 0))
+ (>= i 0)
+The answer is :  assert(i >= 0);
+Time cost is :  9.109564781188965
+The proposal times is :  1

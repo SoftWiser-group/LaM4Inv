@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/191.c
+GPT Answer: ['assert(res == a + b - cnt);', 'assert(cnt >= 0);', 'assert(res >= a);', 'assert(res == a + (b - cnt));']
+AnsSet: ['a <= 1000000', 'b >= 0', 'b <= 1000000', 'res == a + b - cnt', 'cnt >= 0', 'res >= a', 'res == a + (b - cnt)']
+Candidate: assert(res == a + b - cnt);
+SMTLIB2: (assert (= res (- (+ a b) cnt)))
+ (= res (- (+ a b) cnt))
+n{'b': 0, 'cnt': -1, 'res': 0, 'a': -1}
+Size of CE: 1
+GPT Answer: ['assert(res == a + b - cnt);', 'assert(cnt >= 0);', 'assert(res >= a);', 'assert(res == a + (b - cnt));', 'assert(res == a + b - cnt && cnt >= 0);']
+AnsSet: ['a <= 1000000', 'b >= 0', 'b <= 1000000', 'res == a + b - cnt', 'cnt >= 0', 'res >= a', 'res == a + (b - cnt)']
+GPT Answer: ['assert(res == a + b - cnt);', 'assert(cnt >= 0);', 'assert(res >= a);', 'assert(res == a + (b - cnt));', 'assert(res == a + b - cnt && cnt >= 0);']
+AnsSet: ['a <= 1000000', 'b >= 0', 'b <= 1000000', 'res == a + b - cnt', 'cnt >= 0', 'res >= a', 'res == a + (b - cnt)']
+=================Verifivation Begin=================
+CombineCandidate: assert((a <= 1000000) && (b >= 0) && (b <= 1000000) && (res == a + b - cnt) && (cnt >= 0) && (res >= a) && (res == a + (b - cnt)));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (<= a 1000000) (>= b 0)) (<= b 1000000)) (= res (- (+ a b) cnt))) (>= cnt 0)) (>= res a)) (= res (+ a (- b cnt)))))
+ (and (and (and (and (and (and (<= a 1000000) (>= b 0)) (<= b 1000000)) (= res (- (+ a b) cnt))) (>= cnt 0)) (>= res a)) (= res (+ a (- b cnt))))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((a <= 1000000) && (b >= 0) && (b <= 1000000) && (res == a + b - cnt) && (cnt >= 0) && (res >= a) && (res == a + (b - cnt)));
+Time cost is :  19.609869718551636
+The proposal times is :  2

@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/99.c
+GPT Answer: ['assert((x >= 0) && (y >= 0) && (n == (x + y)));', 'assert((x >= 0));', 'assert((y >= 0));', 'assert((n == (x + y)));', 'assert((x >= 0) && (y >= 0) && (n == x + y));', 'assert(n >= 0);', 'assert(x >= 0);', 'assert(y >= 0);', 'assert(n == x + y);']
+AnsSet: ['(x >= 0)', '(y >= 0)', '(n == (x + y))', '(n == x + y)', 'n >= 0', 'x >= 0', 'y >= 0', 'n == x + y']
+Candidate: assert((x >= 0) && (y >= 0) && (n == (x + y)));
+SMTLIB2: (assert (and (and (>= x 0) (>= y 0)) (= n (+ x y))))
+ (and (and (>= x 0) (>= y 0)) (= n (+ x y)))
+The answer is :  assert((x >= 0) && (y >= 0) && (n == (x + y)));
+Time cost is :  13.178321599960327
+The proposal times is :  1

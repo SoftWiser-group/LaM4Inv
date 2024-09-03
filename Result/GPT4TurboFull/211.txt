@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/211.c
+GPT Answer: ['assert(x >= 0);', 'assert(y >= 0);', 'assert(z >= 0);', 'assert(z == 3 * x);', 'assert(y == 2 * x);', 'assert(x * 3 == z);', 'assert(y * 3 == 2 * z);', 'assert(x * 2 == y);', 'assert(x == y / 2);', 'assert(z == 1.5 * y);', 'assert(x == 0.5 * y);']
+AnsSet: ['x >= 0', 'y >= 0', 'z >= 0', 'z == 3 * x', 'y == 2 * x', 'x * 3 == z', 'y * 3 == 2 * z', 'x * 2 == y', 'x == y / 2']
+Candidate: assert(x >= 0);
+SMTLIB2: (assert (>= x 0))
+ (>= x 0)
+n{'y': 0, 'z': -1, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert(x >= 0);', 'assert(y >= 0);', 'assert(z >= 0);', 'assert(z == 3 * x);', 'assert(y == 2 * x);', 'assert(x * 3 == z);', 'assert(y * 3 == 2 * z);', 'assert(x * 2 == y);', 'assert(x == y / 2);', 'assert(z == 1.5 * y);', 'assert(x == 0.5 * y);', 'assert(z >= 0 && x >= 0 && y >= 0 && 2 * x == y && 3 * x == z);']
+AnsSet: ['x >= 0', 'y >= 0', 'z >= 0', 'z == 3 * x', 'y == 2 * x', 'x * 3 == z', 'y * 3 == 2 * z', 'x * 2 == y', 'x == y / 2', '2 * x == y', '3 * x == z']
+GPT Answer: ['assert(x >= 0);', 'assert(y >= 0);', 'assert(z >= 0);', 'assert(z == 3 * x);', 'assert(y == 2 * x);', 'assert(x * 3 == z);', 'assert(y * 3 == 2 * z);', 'assert(x * 2 == y);', 'assert(x == y / 2);', 'assert(z == 1.5 * y);', 'assert(x == 0.5 * y);', 'assert(z >= 0 && x >= 0 && y >= 0 && 2 * x == y && 3 * x == z);']
+AnsSet: ['x >= 0', 'y >= 0', 'z >= 0', 'z == 3 * x', 'y == 2 * x', 'x * 3 == z', 'y * 3 == 2 * z', 'x * 2 == y', 'x == y / 2', '2 * x == y', '3 * x == z']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 0) && (y >= 0) && (z >= 0) && (z == 3 * x) && (y == 2 * x) && (x * 3 == z) && (y * 3 == 2 * z) && (x * 2 == y) && (x == y / 2) && (2 * x == y) && (3 * x == z));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (and (and (and (>= x 0) (>= y 0)) (>= z 0)) (= z (* 3 x))) (= y (* 2 x))) (= (* x 3) z)) (= (* y 3) (* 2 z))) (= (* x 2) y)) (= x (/ y 2))) (= (* 2 x) y)) (= (* 3 x) z)))
+ (and (and (and (and (and (and (and (and (and (and (>= x 0) (>= y 0)) (>= z 0)) (= z (* 3 x))) (= y (* 2 x))) (= (* x 3) z)) (= (* y 3) (* 2 z))) (= (* x 2) y)) (= x (/ y 2))) (= (* 2 x) y)) (= (* 3 x) z))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x >= 0) && (y >= 0) && (z >= 0) && (z == 3 * x) && (y == 2 * x) && (x * 3 == z) && (y * 3 == 2 * z) && (x * 2 == y) && (x == y / 2) && (2 * x == y) && (3 * x == z));
+Time cost is :  67.08444428443909
+The proposal times is :  2

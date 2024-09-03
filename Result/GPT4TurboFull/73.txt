@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/73.c
+GPT Answer: ['assert((c >= 0) && (c <= 36) && (z == 36 * y + c));', 'assert((z >= 36 * y) && (z <= 36 * y + c));', 'assert((c >= 0) && (c <= 36));', 'assert(y >= 0);', 'assert(y <= 127);', 'assert(z == 36 * y + c);', 'assert(c >= 0);', 'assert(c <= 36);', 'assert((z >= 36 * y) && (z <= 36 * y + c) && (c <= 36));', 'assert((z >= 36 * y) && (z <= 36 * y + c) && (c >= 0) && (c <= 36));']
+AnsSet: ['(c >= 0)', '(c <= 36)', '(z == 36 * y + c)', '(z >= 36 * y)', '(z <= 36 * y + c)', 'y >= 0', 'y <= 127', 'z == 36 * y + c', 'c >= 0', 'c <= 36']
+Candidate: assert((c >= 0) && (c <= 36) && (z == 36 * y + c));
+SMTLIB2: (assert (and (and (>= c 0) (<= c 36)) (= z (+ (* 36 y) c))))
+ (and (and (>= c 0) (<= c 36)) (= z (+ (* 36 y) c)))
+The answer is :  assert((c >= 0) && (c <= 36) && (z == 36 * y + c));
+Time cost is :  15.464458703994751
+The proposal times is :  1

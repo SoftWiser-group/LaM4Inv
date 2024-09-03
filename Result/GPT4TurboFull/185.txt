@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/185.c
+GPT Answer: ['assert(n == 1 || n == 2);', 'assert(i >= 0 && j == n * i);', 'assert(i == j / n);', 'assert(j == i * n);', 'assert(i >= 0 && j >= 0);']
+AnsSet: ['(n == 1)||(n == 2)', 'i >= 0', 'j == n * i', 'j == i * n', 'j >= 0']
+Candidate: assert(n == 1 || n == 2);
+SMTLIB2: (assert (or (= n 1) (= n 2)))
+ (or (= n 1) (= n 2))
+n{'j': 1, 'i': 0, 'n': 1, 'k': -1}
+Size of CE: 1
+GPT Answer: ['assert(n == 1 || n == 2);', 'assert(i >= 0 && j == n * i);', 'assert(i == j / n);', 'assert(j == i * n);', 'assert(i >= 0 && j >= 0);']
+AnsSet: ['(n == 1)||(n == 2)', 'i >= 0', 'j == n * i', 'j == i * n', 'j >= 0']
+GPT Answer: ['assert(n == 1 || n == 2);', 'assert(i >= 0 && j == n * i);', 'assert(i == j / n);', 'assert(j == i * n);', 'assert(i >= 0 && j >= 0);', 'assert(j == n * i);', 'assert(i >= 0);']
+AnsSet: ['(n == 1)||(n == 2)', 'i >= 0', 'j == n * i', 'j == i * n', 'j >= 0']
+=================Verifivation Begin=================
+CombineCandidate: assert(((n == 1)||(n == 2)) && (i >= 0) && (j == n * i) && (j == i * n) && (j >= 0));
+CombineSMTLIB2: (assert (and (and (and (and (or (= n 1) (= n 2)) (>= i 0)) (= j (* n i))) (= j (* i n))) (>= j 0)))
+ (and (and (and (and (or (= n 1) (= n 2)) (>= i 0)) (= j (* n i))) (= j (* i n))) (>= j 0))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert(((n == 1)||(n == 2)) && (i >= 0) && (j == n * i) && (j == i * n) && (j >= 0));
+Time cost is :  92.86649465560913
+The proposal times is :  2

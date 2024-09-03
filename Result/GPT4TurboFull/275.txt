@@ -1,0 +1,9 @@
+Begin_process:   Benchmarks/Linear/c/275.c
+GPT Answer: ['assert(y > 0 || x > 0);', 'assert(x + y > -2);']
+AnsSet: []
+Candidate: assert(y > 0 || x > 0);
+SMTLIB2: (assert (or (> y 0) (> x 0)))
+ (or (> y 0) (> x 0))
+The answer is :  assert(y > 0 || x > 0);
+Time cost is :  16.80605983734131
+The proposal times is :  1

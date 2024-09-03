@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/213.c
+GPT Answer: ['assert(invalid >= 0);', 'assert(nonexclusive >= 0);', 'assert(exclusive >= 0);', 'assert(unowned >= 0);', 'assert(invalid >= 1 || (nonexclusive + unowned) >= 1);', 'assert(invalid >= 1);', 'assert((nonexclusive + unowned) >= 1 || invalid >= 1);', 'assert((exclusive == 1 && nonexclusive == 0 && unowned == 0) || (exclusive == 0 && nonexclusive >= 0 && unowned >= 0));', 'assert(exclusive == 0 || exclusive == 1);', 'assert((nonexclusive + unowned) >= 0);', 'assert((nonexclusive + unowned >= 1 && invalid >= 1) || invalid >= 1);', 'assert((nonexclusive + unowned) >= 1 && invalid >= 1 || nonexclusive + unowned == 0);']
+AnsSet: ['nonexclusive >= 0', 'exclusive >= 0', 'unowned >= 0', '((exclusive == 1 && nonexclusive == 0 && unowned == 0))||((exclusive == 0 && nonexclusive >= 0 && unowned >= 0))', '(exclusive == 0)||(exclusive == 1)', '(nonexclusive + unowned) >= 0']
+Candidate: assert(invalid >= 0);
+SMTLIB2: (assert (>= invalid 0))
+ (>= invalid 0)
+n{'exclusive': 0, 'invalid': 1, 'nonexclusive': -1, 'unowned': 2}
+Size of CE: 1
+GPT Answer: ['assert(invalid >= 0);', 'assert(nonexclusive >= 0);', 'assert(exclusive >= 0);', 'assert(unowned >= 0);', 'assert(invalid >= 1 || (nonexclusive + unowned) >= 1);', 'assert(invalid >= 1);', 'assert((nonexclusive + unowned) >= 1 || invalid >= 1);', 'assert((exclusive == 1 && nonexclusive == 0 && unowned == 0) || (exclusive == 0 && nonexclusive >= 0 && unowned >= 0));', 'assert(exclusive == 0 || exclusive == 1);', 'assert((nonexclusive + unowned) >= 0);', 'assert((nonexclusive + unowned >= 1 && invalid >= 1) || invalid >= 1);', 'assert((nonexclusive + unowned) >= 1 && invalid >= 1 || nonexclusive + unowned == 0);']
+AnsSet: ['nonexclusive >= 0', 'exclusive >= 0', 'unowned >= 0', '((exclusive == 1 && nonexclusive == 0 && unowned == 0))||((exclusive == 0 && nonexclusive >= 0 && unowned >= 0))', '(exclusive == 0)||(exclusive == 1)', '(nonexclusive + unowned) >= 0']
+GPT Answer: ['assert(invalid >= 0);', 'assert(nonexclusive >= 0);', 'assert(exclusive >= 0);', 'assert(unowned >= 0);', 'assert(invalid >= 1 || (nonexclusive + unowned) >= 1);', 'assert(invalid >= 1);', 'assert((nonexclusive + unowned) >= 1 || invalid >= 1);', 'assert((exclusive == 1 && nonexclusive == 0 && unowned == 0) || (exclusive == 0 && nonexclusive >= 0 && unowned >= 0));', 'assert(exclusive == 0 || exclusive == 1);', 'assert((nonexclusive + unowned) >= 0);', 'assert((nonexclusive + unowned >= 1 && invalid >= 1) || invalid >= 1);', 'assert((nonexclusive + unowned) >= 1 && invalid >= 1 || nonexclusive + unowned == 0);', 'assert(nonexclusive + unowned + exclusive + invalid > 0);']
+AnsSet: ['nonexclusive >= 0', 'exclusive >= 0', 'unowned >= 0', '((exclusive == 1 && nonexclusive == 0 && unowned == 0))||((exclusive == 0 && nonexclusive >= 0 && unowned >= 0))', '(exclusive == 0)||(exclusive == 1)', '(nonexclusive + unowned) >= 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((nonexclusive >= 0) && (exclusive >= 0) && (unowned >= 0) && (((exclusive == 1 && nonexclusive == 0 && unowned == 0))||((exclusive == 0 && nonexclusive >= 0 && unowned >= 0))) && ((exclusive == 0)||(exclusive == 1)) && ((nonexclusive + unowned) >= 0));
+CombineSMTLIB2: (assert (and (and (and (and (and (>= nonexclusive 0) (>= exclusive 0)) (>= unowned 0)) (or (and (and (= exclusive 1) (= nonexclusive 0)) (= unowned 0)) (and (and (= exclusive 0) (>= nonexclusive 0)) (>= unowned 0)))) (or (= exclusive 0) (= exclusive 1))) (>= (+ nonexclusive unowned) 0)))
+ (and (and (and (and (and (>= nonexclusive 0) (>= exclusive 0)) (>= unowned 0)) (or (and (and (= exclusive 1) (= nonexclusive 0)) (= unowned 0)) (and (and (= exclusive 0) (>= nonexclusive 0)) (>= unowned 0)))) (or (= exclusive 0) (= exclusive 1))) (>= (+ nonexclusive unowned) 0))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((nonexclusive >= 0) && (exclusive >= 0) && (unowned >= 0) && (((exclusive == 1 && nonexclusive == 0 && unowned == 0))||((exclusive == 0 && nonexclusive >= 0 && unowned >= 0))) && ((exclusive == 0)||(exclusive == 1)) && ((nonexclusive + unowned) >= 0));
+Time cost is :  39.84905385971069
+The proposal times is :  2

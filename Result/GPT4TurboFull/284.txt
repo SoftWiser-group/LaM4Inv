@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/284.c
+GPT Answer: ['assert(y >= 0);', 'assert(x == 4 * y);', 'assert(x >= 0);', 'assert(x % 4 == 0);']
+AnsSet: ['y >= 0', 'y <= 20000001', 'x == 4 * y', 'x >= 0', 'x % 4 == 0']
+Candidate: assert(y >= 0);
+SMTLIB2: (assert (>= y 0))
+ (>= y 0)
+i({'y': 0, 'x': 4}, {'x': 0, 'y': -1})
+Size of CE: 1
+GPT Answer: ['assert(y >= 0);', 'assert(x == 4 * y);', 'assert(x >= 0);', 'assert(x % 4 == 0);', 'assert(x == 4 * y && y >= 0);']
+AnsSet: ['y >= 0', 'y <= 20000001', 'x == 4 * y', 'x >= 0', 'x % 4 == 0']
+GPT Answer: ['assert(y >= 0);', 'assert(x == 4 * y);', 'assert(x >= 0);', 'assert(x % 4 == 0);', 'assert(x == 4 * y && y >= 0);']
+AnsSet: ['y >= 0', 'y <= 20000001', 'x == 4 * y', 'x >= 0', 'x % 4 == 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((y >= 0) && (y <= 20000001) && (x == 4 * y) && (x >= 0) && (x % 4 == 0));
+CombineSMTLIB2: (assert (and (and (and (and (>= y 0) (<= y 20000001)) (= x (* 4 y))) (>= x 0)) (= (mod x 4) 0)))
+ (and (and (and (and (>= y 0) (<= y 20000001)) (= x (* 4 y))) (>= x 0)) (= (mod x 4) 0))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((y >= 0) && (y <= 20000001) && (x == 4 * y) && (x >= 0) && (x % 4 == 0));
+Time cost is :  15.090502500534058
+The proposal times is :  2

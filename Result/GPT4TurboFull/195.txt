@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/195.c
+GPT Answer: ['assert(i == j);', 'assert(x == y);', 'assert(i >= 0);', 'assert(j >= 0);', 'assert(x >= 0);', 'assert(y >= 0);', 'assert(i == j || i < j);', 'assert(i == j || i == j - x);', 'assert(j >= i);']
+AnsSet: ['x == y', 'i >= 0', 'j >= 0', 'x >= 0', 'y >= 0', '(i == j)||(i < j)', 'j >= i']
+Candidate: assert(i == j);
+SMTLIB2: (assert (= i j))
+ (= i j)
+i({'j': 0, 'i': 0, 'tmp': 0, 'x': 0, 'y': -1}, {'x': 1, 'j': 0, 'i': 1, 'y': 0, 'tmp': 0})
+Size of CE: 1
+GPT Answer: ['assert(i == j);', 'assert(x == y);', 'assert(i >= 0);', 'assert(j >= 0);', 'assert(x >= 0);', 'assert(y >= 0);', 'assert(i == j || i < j);', 'assert(i == j || i == j - x);', 'assert(j >= i);']
+AnsSet: ['x == y', 'i >= 0', 'j >= 0', 'x >= 0', 'y >= 0', '(i == j)||(i < j)', 'j >= i']
+GPT Answer: ['assert(i == j);', 'assert(x == y);', 'assert(i >= 0);', 'assert(j >= 0);', 'assert(x >= 0);', 'assert(y >= 0);', 'assert(i == j || i < j);', 'assert(i == j || i == j - x);', 'assert(j >= i);', 'assert(j >= i && x == y);']
+AnsSet: ['x == y', 'i >= 0', 'j >= 0', 'x >= 0', 'y >= 0', '(i == j)||(i < j)', 'j >= i']
+=================Verifivation Begin=================
+CombineCandidate: assert((x == y) && (i >= 0) && (j >= 0) && (x >= 0) && (y >= 0) && ((i == j)||(i < j)) && (j >= i));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (= x y) (>= i 0)) (>= j 0)) (>= x 0)) (>= y 0)) (or (= i j) (< i j))) (>= j i)))
+ (and (and (and (and (and (and (= x y) (>= i 0)) (>= j 0)) (>= x 0)) (>= y 0)) (or (= i j) (< i j))) (>= j i))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x == y) && (i >= 0) && (j >= 0) && (x >= 0) && (y >= 0) && ((i == j)||(i < j)) && (j >= i));
+Time cost is :  34.11855697631836
+The proposal times is :  2

@@ -1,0 +1,136 @@
+(set-logic QF_NIA)
+( declare-const n Int )
+( declare-const n! Int )
+( declare-const p Int )
+( declare-const p! Int )
+( declare-const w Int )
+( declare-const w! Int )
+( declare-const x Int )
+( declare-const x! Int )
+( declare-const y Int )
+( declare-const y! Int )
+( declare-const z Int )
+( declare-const z! Int )
+
+( declare-const n_0 Int )
+( declare-const n_1 Int )
+( declare-const n_2 Int )
+( declare-const p_0 Int )
+( declare-const p_1 Int )
+( declare-const p_2 Int )
+( declare-const w_0 Int )
+( declare-const w_1 Int )
+( declare-const w_2 Int )
+( declare-const x_0 Int )
+( declare-const y_0 Int )
+( declare-const z_0 Int )
+( declare-const z_1 Int )
+( declare-const z_2 Int )
+
+( define-fun inv-f( ( n Int )( p Int )( w Int )( x Int )( y Int )( z Int ) ) Bool
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+)
+
+( define-fun pre-f ( ( n Int )( p Int )( w Int )( x Int )( y Int )( z Int )( n_0 Int )( n_1 Int )( n_2 Int )( p_0 Int )( p_1 Int )( p_2 Int )( w_0 Int )( w_1 Int )( w_2 Int )( x_0 Int )( y_0 Int )( z_0 Int )( z_1 Int )( z_2 Int ) ) Bool
+	( and
+		( = n n_0 )
+		( = p p_0 )
+		( = w w_0 )
+		( = x x_0 )
+		( = y y_0 )
+		( = z z_0 )
+		( >= x_0 0 )
+		( >= y_0 0 )
+		( >= n_0 0 )
+		( = z_0 0 )
+		( = w_0 0 )
+		( = p_0 0 )
+	)
+)
+
+( define-fun trans-f ( ( n Int )( p Int )( w Int )( x Int )( y Int )( z Int )( n! Int )( p! Int )( w! Int )( x! Int )( y! Int )( z! Int )( n_0 Int )( n_1 Int )( n_2 Int )( p_0 Int )( p_1 Int )( p_2 Int )( w_0 Int )( w_1 Int )( w_2 Int )( x_0 Int )( y_0 Int )( z_0 Int )( z_1 Int )( z_2 Int ) ) Bool
+	( or
+		( and
+			( = n_1 n )
+			( = p_1 p )
+			( = w_1 w )
+			( = z_1 z )
+			( = n_1 n! )
+			( = p_1 p! )
+			( = w_1 w! )
+			( = z_1 z! )
+			( = p p! )
+			( = w w! )
+			( = x x! )
+			( = y y! )
+			( = z z! )
+		)
+		( and
+			( = n_1 n )
+			( = p_1 p )
+			( = w_1 w )
+			( = z_1 z )
+			( > n_1 0 )
+			( = z_2 ( + z_1 ( * x_0 x_0 ) ) )
+			( = w_2 ( + w_1 ( * y_0 y_0 ) ) )
+			( = p_2 ( + p_1 ( * x_0 y_0 ) ) )
+			( = n_2 ( - n_1 1 ) )
+			( = n_2 n! )
+			( = p_2 p! )
+			( = w_2 w! )
+			( = z_2 z! )
+			(= x x_0 )
+			(= x! x_0 )
+			(= y y_0 )
+			(= y! y_0 )
+		)
+	)
+)
+
+( define-fun post-f ( ( n Int )( p Int )( w Int )( x Int )( y Int )( z Int )( n_0 Int )( n_1 Int )( n_2 Int )( p_0 Int )( p_1 Int )( p_2 Int )( w_0 Int )( w_1 Int )( w_2 Int )( x_0 Int )( y_0 Int )( z_0 Int )( z_1 Int )( z_2 Int ) ) Bool
+	( or
+		( not
+			( and
+				( = n n_1)
+				( = p p_1)
+				( = w w_1)
+				( = x x_0)
+				( = y y_0)
+				( = z z_1)
+			)
+		)
+		( not
+			( and
+				( not ( > n_1 0 ) )
+				( not ( >= ( * z_1 w_1 ) ( * p_1 p_1 ) ) )
+			)
+		)
+	)
+)
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+( assert ( not
+	( =>
+		( pre-f n p w x y z n_0 n_1 n_2 p_0 p_1 p_2 w_0 w_1 w_2 x_0 y_0 z_0 z_1 z_2  )
+		( inv-f n p w x y z )
+	)
+))
+
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+( assert ( not
+	( =>
+		( and
+			( inv-f n p w x y z )
+			( trans-f n p w x y z n! p! w! x! y! z! n_0 n_1 n_2 p_0 p_1 p_2 w_0 w_1 w_2 x_0 y_0 z_0 z_1 z_2 )
+		)
+		( inv-f n! p! w! x! y! z! )
+	)
+))
+
+SPLIT_HERE_asdfghjklzxcvbnmqwertyuiop
+( assert ( not
+	( =>
+		( inv-f n p w x y z  )
+		( post-f n p w x y z n_0 n_1 n_2 p_0 p_1 p_2 w_0 w_1 w_2 x_0 y_0 z_0 z_1 z_2 )
+	)
+))
+

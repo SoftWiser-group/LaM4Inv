@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/81.c
+GPT Answer: ['assert(x >= 0);', 'assert(y >= 0);', 'assert(x >= y);', 'assert(0 <= i && i <= y);', 'assert((i >= 0) && (i <= y));', 'assert(i >= 0 && i <= y);']
+AnsSet: ['x >= 0', 'y >= 0', 'x >= y', '0 <= i', 'i <= y', '(i >= 0)', '(i <= y)', 'i >= 0']
+Candidate: assert(x >= 0);
+SMTLIB2: (assert (>= x 0))
+ (>= x 0)
+n{'y': 0, 'i': -1, 'x': 0}
+Size of CE: 1
+GPT Answer: ['assert(x >= 0);', 'assert(y >= 0);', 'assert(x >= y);', 'assert(0 <= i && i <= y);', 'assert((i >= 0) && (i <= y));', 'assert(i >= 0 && i <= y);', 'assert(x >= 0 && y >= 0 && x >= y && i >= 0 && i <= y);']
+AnsSet: ['x >= 0', 'y >= 0', 'x >= y', '0 <= i', 'i <= y', '(i >= 0)', '(i <= y)', 'i >= 0']
+GPT Answer: ['assert(x >= 0);', 'assert(y >= 0);', 'assert(x >= y);', 'assert(0 <= i && i <= y);', 'assert((i >= 0) && (i <= y));', 'assert(i >= 0 && i <= y);', 'assert(x >= 0 && y >= 0 && x >= y && i >= 0 && i <= y);']
+AnsSet: ['x >= 0', 'y >= 0', 'x >= y', '0 <= i', 'i <= y', '(i >= 0)', '(i <= y)', 'i >= 0']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 0) && (y >= 0) && (x >= y) && (0 <= i) && (i <= y) && ((i >= 0)) && ((i <= y)) && (i >= 0));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (>= x 0) (>= y 0)) (>= x y)) (<= 0 i)) (<= i y)) (>= i 0)) (<= i y)) (>= i 0)))
+ (and (and (and (and (and (and (and (>= x 0) (>= y 0)) (>= x y)) (<= 0 i)) (<= i y)) (>= i 0)) (<= i y)) (>= i 0))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x >= 0) && (y >= 0) && (x >= y) && (0 <= i) && (i <= y) && ((i >= 0)) && ((i <= y)) && (i >= 0));
+Time cost is :  21.09866213798523
+The proposal times is :  2

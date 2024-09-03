@@ -1,0 +1,65 @@
+Begin_process:   Benchmarks/Linear/c/64.c
+GPT Answer: ['assert(x >= 1 && x <= 11);', 'assert(y >= 0 && y < 10);', 'assert(x > 0 && x <= 11);', 'assert(y >= 0 && y <= 9);', 'assert(y == 10 - x + 1);']
+AnsSet: ['x >= 1', 'x <= 11', 'x > 0']
+Candidate: assert(x >= 1 && x <= 11);
+SMTLIB2: (assert (and (>= x 1) (<= x 11)))
+ (and (>= x 1) (<= x 11))
+n{'y': 10, 'x': 11}
+Size of CE: 1
+GPT Answer: ['assert(x >= 1 && x <= 11);', 'assert(y >= 0 && y < 10);', 'assert(x > 0 && x <= 11);', 'assert(y >= 0 && y <= 9);', 'assert(y == 10 - x + 1);', 'assert(x >= 1 && x <= 11 && y == 10 - x + 1);']
+AnsSet: ['x >= 1', 'x <= 11', 'x > 0']
+GPT Answer: ['assert(x >= 1 && x <= 11);', 'assert(y >= 0 && y < 10);', 'assert(x > 0 && x <= 11);', 'assert(y >= 0 && y <= 9);', 'assert(y == 10 - x + 1);', 'assert(x >= 1 && x <= 11 && y == 10 - x + 1);', 'assert((x >= 1 && x <= 11) && (y == 10 - x || x == 1));']
+AnsSet: ['x >= 1', 'x <= 11', 'x > 0', '(x >= 1 && x <= 11)']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 1) && (x <= 11) && (x > 0) && ((x >= 1 && x <= 11)));
+CombineSMTLIB2: (assert (and (and (and (>= x 1) (<= x 11)) (> x 0)) (and (>= x 1) (<= x 11))))
+ (and (and (and (>= x 1) (<= x 11)) (> x 0)) (and (>= x 1) (<= x 11)))
+n{'y': 10, 'x': 11}
+Size of CE: 2
+=================Verifivation Compelete=================
+
+Candidate: assert(y >= 0 && y < 10);
+SMTLIB2: (assert (and (>= y 0) (< y 10)))
+ (and (>= y 0) (< y 10))
+p{'y': -1, 'x': 1}
+Size of CE: 3
+GPT Answer: ['assert(x >= 1 && x <= 11);', 'assert(y >= 0 && y < 10);', 'assert(x > 0 && x <= 11);', 'assert(y >= 0 && y <= 9);', 'assert(y == 10 - x + 1);', 'assert(x >= 1 && x <= 11 && y == 10 - x + 1);', 'assert((x >= 1 && x <= 11) && (y == 10 - x || x == 1));', 'assert((x > 10 && (y >= 0 && y < 10)) || (x <= 10 && y == 10 - x));']
+AnsSet: ['x >= 1', 'x <= 11', 'x > 0', '(x >= 1 && x <= 11)']
+GPT Answer: ['assert(x >= 1 && x <= 11);', 'assert(y >= 0 && y < 10);', 'assert(x > 0 && x <= 11);', 'assert(y >= 0 && y <= 9);', 'assert(y == 10 - x + 1);', 'assert(x >= 1 && x <= 11 && y == 10 - x + 1);', 'assert((x >= 1 && x <= 11) && (y == 10 - x || x == 1));', 'assert((x > 10 && (y >= 0 && y < 10)) || (x <= 10 && y == 10 - x));', 'assert((x > 10 && y == 0) || (x <= 10 && y >= 0 && y < 10));']
+AnsSet: ['x >= 1', 'x <= 11', 'x > 0', '(x >= 1 && x <= 11)']
+
+Candidate: assert(x > 0 && x <= 11);
+SMTLIB2: (assert (and (> x 0) (<= x 11)))
+ (and (> x 0) (<= x 11))
+n{'y': 10, 'x': 11}
+Size of CE: 4
+GPT Answer: ['assert(x >= 1 && x <= 11);', 'assert(y >= 0 && y < 10);', 'assert(x > 0 && x <= 11);', 'assert(y >= 0 && y <= 9);', 'assert(y == 10 - x + 1);', 'assert(x >= 1 && x <= 11 && y == 10 - x + 1);', 'assert((x >= 1 && x <= 11) && (y == 10 - x || x == 1));', 'assert((x > 10 && (y >= 0 && y < 10)) || (x <= 10 && y == 10 - x));', 'assert((x > 10 && y == 0) || (x <= 10 && y >= 0 && y < 10));', 'assert((x > 0 && x <= 11) && (y == 10 - x || x == 1));']
+AnsSet: ['x >= 1', 'x <= 11', 'x > 0', '(x >= 1 && x <= 11)', '(x > 0 && x <= 11)']
+GPT Answer: ['assert(x >= 1 && x <= 11);', 'assert(y >= 0 && y < 10);', 'assert(x > 0 && x <= 11);', 'assert(y >= 0 && y <= 9);', 'assert(y == 10 - x + 1);', 'assert(x >= 1 && x <= 11 && y == 10 - x + 1);', 'assert((x >= 1 && x <= 11) && (y == 10 - x || x == 1));', 'assert((x > 10 && (y >= 0 && y < 10)) || (x <= 10 && y == 10 - x));', 'assert((x > 10 && y == 0) || (x <= 10 && y >= 0 && y < 10));', 'assert((x > 0 && x <= 11) && (y == 10 - x || x == 1));', 'assert(x > 0 && x <= 11 && y == 10 - x && y >= 0 && y < 10);']
+AnsSet: ['x >= 1', 'x <= 11', 'x > 0', '(x >= 1 && x <= 11)', '(x > 0 && x <= 11)']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 1) && (x <= 11) && (x > 0) && ((x >= 1 && x <= 11)) && ((x > 0 && x <= 11)));
+CombineSMTLIB2: (assert (and (and (and (and (>= x 1) (<= x 11)) (> x 0)) (and (>= x 1) (<= x 11))) (and (> x 0) (<= x 11))))
+ (and (and (and (and (>= x 1) (<= x 11)) (> x 0)) (and (>= x 1) (<= x 11))) (and (> x 0) (<= x 11)))
+n{'y': 10, 'x': 11}
+Size of CE: 5
+=================Verifivation Compelete=================
+
+Candidate: assert(y >= 0 && y <= 9);
+SMTLIB2: (assert (and (>= y 0) (<= y 9)))
+ (and (>= y 0) (<= y 9))
+p{'y': -1, 'x': 1}
+Size of CE: 6
+GPT Answer: ['assert(x >= 1 && x <= 11);', 'assert(y >= 0 && y < 10);', 'assert(x > 0 && x <= 11);', 'assert(y >= 0 && y <= 9);', 'assert(y == 10 - x + 1);', 'assert(x >= 1 && x <= 11 && y == 10 - x + 1);', 'assert((x >= 1 && x <= 11) && (y == 10 - x || x == 1));', 'assert((x > 10 && (y >= 0 && y < 10)) || (x <= 10 && y == 10 - x));', 'assert((x > 10 && y == 0) || (x <= 10 && y >= 0 && y < 10));', 'assert((x > 0 && x <= 11) && (y == 10 - x || x == 1));', 'assert(x > 0 && x <= 11 && y == 10 - x && y >= 0 && y < 10);', 'assert((x > 10 && y == 0) || (x >= 1 && x <= 10 && y == 10 - x));']
+AnsSet: ['x >= 1', 'x <= 11', 'x > 0', '(x >= 1 && x <= 11)', '(x > 0 && x <= 11)']
+GPT Answer: ['assert(x >= 1 && x <= 11);', 'assert(y >= 0 && y < 10);', 'assert(x > 0 && x <= 11);', 'assert(y >= 0 && y <= 9);', 'assert(y == 10 - x + 1);', 'assert(x >= 1 && x <= 11 && y == 10 - x + 1);', 'assert((x >= 1 && x <= 11) && (y == 10 - x || x == 1));', 'assert((x > 10 && (y >= 0 && y < 10)) || (x <= 10 && y == 10 - x));', 'assert((x > 10 && y == 0) || (x <= 10 && y >= 0 && y < 10));', 'assert((x > 0 && x <= 11) && (y == 10 - x || x == 1));', 'assert(x > 0 && x <= 11 && y == 10 - x && y >= 0 && y < 10);', 'assert((x > 10 && y == 0) || (x >= 1 && x <= 10 && y == 10 - x));', 'assert(x > 1 && y >= 0 && y < 10 || x == 1);']
+AnsSet: ['x >= 1', 'x <= 11', 'x > 0', '(x >= 1 && x <= 11)', '(x > 0 && x <= 11)', '(x > 1 && y >= 0 && y < 10)||(x == 1)']
+=================Verifivation Begin=================
+CombineCandidate: assert((x >= 1) && (x <= 11) && (x > 0) && ((x >= 1 && x <= 11)) && ((x > 0 && x <= 11)) && ((x > 1 && y >= 0 && y < 10)||(x == 1)));
+CombineSMTLIB2: (assert (and (and (and (and (and (>= x 1) (<= x 11)) (> x 0)) (and (>= x 1) (<= x 11))) (and (> x 0) (<= x 11))) (or (and (and (> x 1) (>= y 0)) (< y 10)) (= x 1))))
+ (and (and (and (and (and (>= x 1) (<= x 11)) (> x 0)) (and (>= x 1) (<= x 11))) (and (> x 0) (<= x 11))) (or (and (and (> x 1) (>= y 0)) (< y 10)) (= x 1)))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((x >= 1) && (x <= 11) && (x > 0) && ((x >= 1 && x <= 11)) && ((x > 0 && x <= 11)) && ((x > 1 && y >= 0 && y < 10)||(x == 1)));
+Time cost is :  39.45515441894531
+The proposal times is :  7

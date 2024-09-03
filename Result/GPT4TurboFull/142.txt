@@ -1,0 +1,21 @@
+Begin_process:   Benchmarks/Linear/c/142.c
+GPT Answer: ['assert(x1 == 100 + t * v1);', 'assert(x3 == -50 + t * v3);', 'assert(v2 * 2 - v1 - v3 == 0);', 'assert(v2 + 5 >= 0 && v2 <= 5);', 'assert(v2 == (100 - x1 + x3 + 50) / 2);', 'assert(v2 + 5 >= 0);', 'assert(v2 <= 5);', 'assert(x2 + t * 5 >= 75);', 'assert(t >= 0);', 'assert(v1 <= 5 && v3 >= 0);', 'assert((v1 - v3) >= 0);']
+AnsSet: ['v3 >= 0', 'v1 <= 5', 'x1 == 100 + t * v1', 'x3 == -50 + t * v3', 'x2 + t * 5 >= 75', 't >= 0', '(v1 - v3) >= 0']
+Candidate: assert(x1 == 100 + t * v1);
+SMTLIB2: (assert (= x1 (+ 100 (* t v1))))
+ (= x1 (+ 100 (* t v1)))
+n{'v3': 0, 't': 0, 'x2': 74, 'x1': 100, 'v2': -6, 'x3': 0, 'v1': 0}
+Size of CE: 1
+GPT Answer: ['assert(x1 == 100 + t * v1);', 'assert(x3 == -50 + t * v3);', 'assert(v2 * 2 - v1 - v3 == 0);', 'assert(v2 + 5 >= 0 && v2 <= 5);', 'assert(v2 == (100 - x1 + x3 + 50) / 2);', 'assert(v2 + 5 >= 0);', 'assert(v2 <= 5);', 'assert(x2 + t * 5 >= 75);', 'assert(t >= 0);', 'assert(v1 <= 5 && v3 >= 0);', 'assert((v1 - v3) >= 0);', 'assert((v2 + 5 >= 0 && v2 <= 5) || (v2 + 5 < 0 || v2 > 5));']
+AnsSet: ['v3 >= 0', 'v1 <= 5', 'x1 == 100 + t * v1', 'x3 == -50 + t * v3', 'x2 + t * 5 >= 75', 't >= 0', '(v1 - v3) >= 0', '((v2 + 5 >= 0 && v2 <= 5))||((v2 + 5 < 0 || v2 > 5))']
+GPT Answer: ['assert(x1 == 100 + t * v1);', 'assert(x3 == -50 + t * v3);', 'assert(v2 * 2 - v1 - v3 == 0);', 'assert(v2 + 5 >= 0 && v2 <= 5);', 'assert(v2 == (100 - x1 + x3 + 50) / 2);', 'assert(v2 + 5 >= 0);', 'assert(v2 <= 5);', 'assert(x2 + t * 5 >= 75);', 'assert(t >= 0);', 'assert(v1 <= 5 && v3 >= 0);', 'assert((v1 - v3) >= 0);', 'assert((v2 + 5 >= 0 && v2 <= 5) || (v2 + 5 < 0 || v2 > 5));', 'assert(v1 <= 5 && v1 >= v3);']
+AnsSet: ['v3 >= 0', 'v1 <= 5', 'x1 == 100 + t * v1', 'x3 == -50 + t * v3', 'x2 + t * 5 >= 75', 't >= 0', '(v1 - v3) >= 0', '((v2 + 5 >= 0 && v2 <= 5))||((v2 + 5 < 0 || v2 > 5))']
+=================Verifivation Begin=================
+CombineCandidate: assert((v3 >= 0) && (v1 <= 5) && (x1 == 100 + t * v1) && (x3 == -50 + t * v3) && (x2 + t * 5 >= 75) && (t >= 0) && ((v1 - v3) >= 0) && (((v2 + 5 >= 0 && v2 <= 5))||((v2 + 5 < 0 || v2 > 5))));
+CombineSMTLIB2: (assert (and (and (and (and (and (and (and (>= v3 0) (<= v1 5)) (= x1 (+ 100 (* t v1)))) (= x3 (+ (- 0 50) (* t v3)))) (>= (+ x2 (* t 5)) 75)) (>= t 0)) (>= (- v1 v3) 0)) (or (and (>= (+ v2 5) 0) (<= v2 5)) (or (< (+ v2 5) 0) (> v2 5)))))
+ (and (and (and (and (and (and (and (>= v3 0) (<= v1 5)) (= x1 (+ 100 (* t v1)))) (= x3 (+ (- 0 50) (* t v3)))) (>= (+ x2 (* t 5)) 75)) (>= t 0)) (>= (- v1 v3) 0)) (or (and (>= (+ v2 5) 0) (<= v2 5)) (or (< (+ v2 5) 0) (> v2 5))))
+Correct loop invariant
+=================Verifivation Compelete=================
+The answer is :  assert((v3 >= 0) && (v1 <= 5) && (x1 == 100 + t * v1) && (x3 == -50 + t * v3) && (x2 + t * 5 >= 75) && (t >= 0) && ((v1 - v3) >= 0) && (((v2 + 5 >= 0 && v2 <= 5))||((v2 + 5 < 0 || v2 > 5))));
+Time cost is :  41.2827353477478
+The proposal times is :  2
